@@ -29,3 +29,4 @@ export function logEvent(payload: LogPayload) {
     console.log(output);
   }
 }
+

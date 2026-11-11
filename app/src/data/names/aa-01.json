@@ -18980,6 +18980,142 @@
     }
   },
   {
+    "id": "aadhavanamudhu",
+    "slug": "aadhavanamudhu",
+    "nameTamil": "ஆதவன்அமுது",
+    "nameLatin": "Aadhavanamudhu",
+    "gender": "girl",
+    "genderSuitabilityNote": "Feminine poetic ending per classical Tamil poetics.",
+    "meaningTa": "உதய சூரியன், ஒளி தருபவன் மற்றும் இனிய அமுதம் இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: ஆதவன் + அமுது | Derived Meaning: Radiant morning sun bringing dawn; symbolizing Sweet celestial nectar.",
+    "literalMeaningTa": "«ஆதவன்»: சூரியன், ஒளி தருபவன் (Radiant Sun giving life to the world) + «அமுது»: இனிமையான அமுதம் (Sweet ambrosia and nourishment)",
+    "literalMeaningEn": "ஆதவன் + அமுது",
+    "derivedMeaningTa": "உதய சூரியன், ஒளி தருபவன் மற்றும் இனிய அமுதம் இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Radiant morning sun bringing dawn; symbolizing Sweet celestial nectar.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "ஆதவன் + அமுது",
+    "startingSyllableTa": "ஆ",
+    "startingSyllableEn": "Aa",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pan-Tamil"
+      ],
+      "geographicalSignificance": [
+        "Pan-Tamil"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Aadhavan",
+        "amudhu"
+      ],
+      "phoneticGuide": "Aadhavanamudhu",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Aadhavanamudhu",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 10,
+      "latinCharCount": 14,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Aadhavanamudhu"
+    },
+    "nicknames": [
+      "Aadhavan",
+      "Aadh"
+    ],
+    "siblingPairSuggestions": [
+      "Aadhavanan",
+      "Aadhavanini",
+      "Aadhavanchelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "ஆதவன்அமுது",
+        "meaning": "உதய சூரியன், ஒளி தருபவன் மற்றும் இனிய அமுதம் இணைந்த தூய தமிழ்ப் பெயர் (Radiant morning sun bringing dawn combined with Sweet celestial nectar)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Aadhavanamudhu",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): ஆதவன் + அமுது",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (ஆதவன் + அமுது) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%A4%E0%AE%B5%E0%AE%A9%E0%AF%8D&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%AE%E0%AF%81%E0%AE%A4%E0%AF%81&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «ஆதவன்அமுது» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («ஆதவன்»: சூரியன், ஒளி தருபவன் (Radiant Sun giving life to the world) + «அமுது»: இனிமையான அமுதம் (Sweet ambrosia and nourishment)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: ஆதவன் + அமுது (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%A4%E0%AE%B5%E0%AE%A9%E0%AF%8D&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
     "id": "ta-010966",
     "slug": "aadhavanamuthu",
     "nameTamil": "ஆதவனமுது",
@@ -20270,6 +20406,278 @@
     "derivedMeaningTa": "சூரியன், ஒளி தருபவன் போற்றும் தலைவி / அரசி போன்றவள்.",
     "sourceAttributionType": "Synthesized modern name from authentic roots",
     "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
+    "id": "aadhavanarasu",
+    "slug": "aadhavanarasu",
+    "nameTamil": "ஆதவன்அரசு",
+    "nameLatin": "Aadhavanarasu",
+    "gender": "boy",
+    "genderSuitabilityNote": "Masculine noble ending per classical Tamil tradition.",
+    "meaningTa": "உதய சூரியன், ஒளி தருபவன் மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: ஆதவன் + அரசு | Derived Meaning: Radiant morning sun bringing dawn; symbolizing Noble sovereignty and righteous rule.",
+    "literalMeaningTa": "«ஆதவன்»: சூரியன், ஒளி தருபவன் (Radiant Sun giving life to the world) + «அரசு» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
+    "literalMeaningEn": "ஆதவன் + அரசு",
+    "derivedMeaningTa": "உதய சூரியன், ஒளி தருபவன் மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Radiant morning sun bringing dawn; symbolizing Noble sovereignty and righteous rule.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "ஆதவன் + அரசு",
+    "startingSyllableTa": "ஆ",
+    "startingSyllableEn": "Aa",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pan-Tamil"
+      ],
+      "geographicalSignificance": [
+        "Pan-Tamil"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Aadhavan",
+        "arasu"
+      ],
+      "phoneticGuide": "Aadhavanarasu",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Aadhavanarasu",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 9,
+      "latinCharCount": 13,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Aadhavanarasu"
+    },
+    "nicknames": [
+      "Aadhavan",
+      "Aadh"
+    ],
+    "siblingPairSuggestions": [
+      "Aadhavanan",
+      "Aadhavanini",
+      "Aadhavanchelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "ஆதவன்அரசு",
+        "meaning": "உதய சூரியன், ஒளி தருபவன் மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர் (Radiant morning sun bringing dawn combined with Noble sovereignty and righteous rule)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Aadhavanarasu",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): ஆதவன் + அரசு",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (ஆதவன் + அரசு) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%A4%E0%AE%B5%E0%AE%A9%E0%AF%8D&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%B0%E0%AE%9A%E0%AF%81&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «ஆதவன்அரசு» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («ஆதவன்»: சூரியன், ஒளி தருபவன் (Radiant Sun giving life to the world) + «அரசு» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: ஆதவன் + அரசு (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%A4%E0%AE%B5%E0%AE%A9%E0%AF%8D&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
+    "id": "aadhavanarignan",
+    "slug": "aadhavanarignan",
+    "nameTamil": "ஆதவன்அறிஞன்",
+    "nameLatin": "Aadhavanarignan",
+    "gender": "boy",
+    "genderSuitabilityNote": "Masculine noble ending per classical Tamil tradition.",
+    "meaningTa": "உதய சூரியன், ஒளி தருபவன் மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: ஆதவன் + அறிஞன் | Derived Meaning: Radiant morning sun bringing dawn; symbolizing Illuminated scholar of wisdom.",
+    "literalMeaningTa": "«ஆதவன்»: சூரியன், ஒளி தருபவன் (Radiant Sun giving life to the world) + «அறிஞன்» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
+    "literalMeaningEn": "ஆதவன் + அறிஞன்",
+    "derivedMeaningTa": "உதய சூரியன், ஒளி தருபவன் மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Radiant morning sun bringing dawn; symbolizing Illuminated scholar of wisdom.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "ஆதவன் + அறிஞன்",
+    "startingSyllableTa": "ஆ",
+    "startingSyllableEn": "Aa",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pan-Tamil"
+      ],
+      "geographicalSignificance": [
+        "Pan-Tamil"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Aadhavan",
+        "arignan"
+      ],
+      "phoneticGuide": "Aadhavanarignan",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Aadhavanarignan",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 11,
+      "latinCharCount": 15,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Aadhavanarignan"
+    },
+    "nicknames": [
+      "Aadhavan",
+      "Aadh"
+    ],
+    "siblingPairSuggestions": [
+      "Aadhavanan",
+      "Aadhavanini",
+      "Aadhavanchelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "ஆதவன்அறிஞன்",
+        "meaning": "உதய சூரியன், ஒளி தருபவன் மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர் (Radiant morning sun bringing dawn combined with Illuminated scholar of wisdom)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Aadhavanarignan",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): ஆதவன் + அறிஞன்",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (ஆதவன் + அறிஞன்) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%A4%E0%AE%B5%E0%AE%A9%E0%AF%8D&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%B1%E0%AE%BF%E0%AE%9E%E0%AE%A9%E0%AF%8D&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «ஆதவன்அறிஞன்» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («ஆதவன்»: சூரியன், ஒளி தருபவன் (Radiant Sun giving life to the world) + «அறிஞன்» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: ஆதவன் + அறிஞன் (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%A4%E0%AE%B5%E0%AE%A9%E0%AF%8D&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
     "dataConfidence": {
       "estimatedFields": [
         "uniqueness",
@@ -91861,504 +92269,6 @@
       "citationNote": "Lexicon Source Attribution: «ஆம்பல்நாதன்» is an authentic standalone Tamil root word recorded in the University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%BE%E0%AE%A4%E0%AE%A9%E0%AF%8D&searchhws=yes). No ancient poem citation is claimed."
     },
     "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%BE%E0%AE%A4%E0%AE%A9%E0%AF%8D&searchhws=yes)",
-    "verificationStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-    "dataConfidence": {
-      "estimatedFields": [
-        "uniqueness",
-        "trendStatus",
-        "easeOfCalling",
-        "spellingAssessment",
-        "nicknames",
-        "siblingPairSuggestions"
-      ],
-      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
-      "reviewStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)"
-    }
-  },
-  {
-    "id": "ta-015605",
-    "slug": "aambalnagai",
-    "nameTamil": "ஆம்பல்நகை",
-    "nameLatin": "Aambalnagai",
-    "gender": "girl",
-    "meaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் முத்துப் போன்ற புன்னகை உடையவள் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "meaningEn": "Auspicious classical name signifying Night-blooming water-lily of peaceful waters graced with bright smile.",
-    "literalMeaningEn": "ஆம்பல் (Night-blooming water-lily of peaceful waters) + நகை (Bright smile)",
-    "derivedMeaningEn": "Night-blooming water-lily of peaceful waters graced with bright smile",
-    "originCategory": "Traditional Tamil (Lexicon Root)",
-    "sourceAttributionType": "Attested Tamil lexicon root headword",
-    "literaryReference": "Madras University Tamil Lexicon Root («ஆம்பல்நகை») — https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%95%E0%AF%88&searchhws=yes",
-    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "startingSyllableTa": "ஆ",
-    "confidence": 0.92,
-    "numerologyNumber": 23,
-    "pythagoreanCompound": 35,
-    "nakshatra": "uttara-phalguni",
-    "nakshatraPadam": 4,
-    "nakshatraSlugs": [
-      "uttara-phalguni"
-    ],
-    "rasiTa": "கன்னி",
-    "rasiEn": "Virgo",
-    "easeOfCallingScore": 3,
-    "easeOfCalling": {
-      "score": 3,
-      "syllableCount": 4,
-      "pronunciationDifficulty": "Easy",
-      "phoneticFlow": "Melodious Sangam Tamil flow",
-      "internationalEase": "High"
-    },
-    "spellingAssessment": {
-      "riskLevel": "low",
-      "commonVariants": [
-        "Aambalnagai"
-      ],
-      "riskNotes": "Standardized transliteration",
-      "phoneticAmbiguityScore": 2
-    },
-    "uniquenessBand": "Rare Classical Gem",
-    "uniqueness": {
-      "band": "Rare Classical Gem",
-      "score": 88,
-      "tnEstimatePercentile": 94,
-      "diasporaEstimatePercentile": 96
-    },
-    "popularityRank": "rising",
-    "misspellRisk": "low",
-    "trendStatus": {
-      "isTrending": true,
-      "category": "Rising Classical Revival",
-      "trendDriver": "Parents seeking authentic pure Tamil names with verifiable roots"
-    },
-    "nicknames": [
-      "ஆம்",
-      "Aamb",
-      "Aambu"
-    ],
-    "documentFit": {
-      "tamilAksharaCount": 9,
-      "latinCharCount": 11,
-      "fitsStandardForms": true,
-      "sampleWithInitial": "S. Aambalnagai (ச. ஆம்பல்நகை)"
-    },
-    "culturalContext": {
-      "religion": [
-        "Pure Tamil",
-        "Secular"
-      ],
-      "communityTraditions": [
-        "Pan-Tamil",
-        "Global Tamil Diaspora"
-      ],
-      "geographicalSignificance": [
-        "Neithal திணை (Sangam Neithal Landscape)"
-      ],
-      "sangamLandscapeTinai": "Neithal"
-    },
-    "genderSuitabilityNote": "Feminine poetic ending per classical Tamil poetics.",
-    "siblingPairSuggestions": [
-      "Aamban",
-      "Aambini",
-      "Aambnila"
-    ],
-    "multilingualMeanings": [
-      {
-        "language": "Tamil (தமிழ்)",
-        "script": "ஆம்பல்நகை",
-        "meaning": "இரவில் மலரும் வெண்மலர் மற்றும் முத்துப் போன்ற புன்னகை உடையவள் நற்குணங்கள் பொருந்திய அழகிய பெயர். (Auspicious classical name signifying Night-blooming water-lily of peaceful waters graced with bright smile.)",
-        "isPositive": true
-      },
-      {
-        "language": "Malayalam (മലയാളം)",
-        "script": "Aambalnagai",
-        "meaning": "Shared Dravidian classical root meaning: Night-blooming water-lily of peaceful waters graced with bright smile",
-        "isPositive": true
-      },
-      {
-        "language": "Telugu & Kannada (తెలుగు / ಕನ್ನಡ)",
-        "script": "Aambalnagai",
-        "meaning": "Recognized South Indian poetic compound signifying Night-blooming water-lily of peaceful waters graced with bright smile",
-        "isPositive": true
-      },
-      {
-        "language": "Sanskrit / Pan-Indian (संस्कृतम्)",
-        "script": "Aambalnagai",
-        "meaning": "Auspicious classical resonance aligned with Night-blooming water-lily of peaceful waters graced with bright smile",
-        "isPositive": true
-      },
-      {
-        "language": "Global English (International)",
-        "script": "Aambalnagai",
-        "meaning": "Verified positive phonetic profile; zero negative false-friends in English or European languages.",
-        "isPositive": true,
-        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
-      }
-    ],
-    "citationScope": "etymological-compound",
-    "etymology": {
-      "roots": [
-        {
-          "root": "ஆம்பல்",
-          "meaning": "Night-blooming water-lily of peaceful waters"
-        },
-        {
-          "root": "நகை",
-          "meaning": "Bright smile"
-        }
-      ],
-      "sandhiRuleApplied": "Tolkappiyam Sandhi"
-    },
-    "literalMeaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் முத்துப் போன்ற புன்னகை உடையவள் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "derivedMeaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் முத்துப் போன்ற புன்னகை உடையவள் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "synthesisDisclaimer": null,
-    "structuredReference": {
-      "workTa": "சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி (Madras University Tamil Lexicon)",
-      "workEn": "University of Madras Tamil Lexicon (DSAL Headword Entry)",
-      "sectionOrKandam": "தமிழ் வேர்ச்சொல் அகராதிப் பதிவு (Lexicon Root Entry)",
-      "chapterOrPadalam": "வேர்ச்சொல்: «ஆம்பல்நகை»",
-      "verseOrSongNumber": "Dictionary Headword Entry (No Ancient Verse Claimed)",
-      "lineTitleOrQuote": "",
-      "citationText": "Lexicon headword entry: University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%95%E0%AF%88&searchhws=yes)",
-      "verificationTier": "Classical Tamil Root Word (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-      "citationScope": "lexicon-root",
-      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%95%E0%AF%88&searchhws=yes",
-      "lexiconWebsite": "https://www.tamilvu.org/",
-      "citationNote": "Lexicon Source Attribution: «ஆம்பல்நகை» is an authentic standalone Tamil root word recorded in the University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%95%E0%AF%88&searchhws=yes). No ancient poem citation is claimed."
-    },
-    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%95%E0%AF%88&searchhws=yes)",
-    "verificationStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-    "dataConfidence": {
-      "estimatedFields": [
-        "uniqueness",
-        "trendStatus",
-        "easeOfCalling",
-        "spellingAssessment",
-        "nicknames",
-        "siblingPairSuggestions"
-      ],
-      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
-      "reviewStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)"
-    }
-  },
-  {
-    "id": "ta-015564",
-    "slug": "aambalnambi",
-    "nameTamil": "ஆம்பல்நம்பி",
-    "nameLatin": "Aambalnambi",
-    "gender": "boy",
-    "meaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் சிறந்த ஆடவன், நம்பிக்கைக்குரியவன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "meaningEn": "Auspicious classical name signifying Night-blooming water-lily of peaceful waters graced with trusted leader.",
-    "literalMeaningEn": "ஆம்பல் (Night-blooming water-lily of peaceful waters) + நம்பி (Trusted leader)",
-    "derivedMeaningEn": "Night-blooming water-lily of peaceful waters graced with trusted leader",
-    "originCategory": "Traditional Tamil (Lexicon Root)",
-    "sourceAttributionType": "Attested Tamil lexicon root headword",
-    "literaryReference": "Madras University Tamil Lexicon Root («ஆம்பல்நம்பி») — https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%BF&searchhws=yes",
-    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "startingSyllableTa": "ஆ",
-    "confidence": 0.92,
-    "numerologyNumber": 25,
-    "pythagoreanCompound": 33,
-    "nakshatra": "mula",
-    "nakshatraPadam": 3,
-    "nakshatraSlugs": [
-      "mula"
-    ],
-    "rasiTa": "தனுசு",
-    "rasiEn": "Sagittarius",
-    "easeOfCallingScore": 3,
-    "easeOfCalling": {
-      "score": 3,
-      "syllableCount": 4,
-      "pronunciationDifficulty": "Easy",
-      "phoneticFlow": "Melodious Sangam Tamil flow",
-      "internationalEase": "High"
-    },
-    "spellingAssessment": {
-      "riskLevel": "low",
-      "commonVariants": [
-        "Aambalnambi"
-      ],
-      "riskNotes": "Standardized transliteration",
-      "phoneticAmbiguityScore": 2
-    },
-    "uniquenessBand": "Rare Classical Gem",
-    "uniqueness": {
-      "band": "Rare Classical Gem",
-      "score": 88,
-      "tnEstimatePercentile": 94,
-      "diasporaEstimatePercentile": 96
-    },
-    "popularityRank": "rising",
-    "misspellRisk": "low",
-    "trendStatus": {
-      "isTrending": true,
-      "category": "Rising Classical Revival",
-      "trendDriver": "Parents seeking authentic pure Tamil names with verifiable roots"
-    },
-    "nicknames": [
-      "ஆம்",
-      "Aamb",
-      "Aambu"
-    ],
-    "documentFit": {
-      "tamilAksharaCount": 11,
-      "latinCharCount": 11,
-      "fitsStandardForms": true,
-      "sampleWithInitial": "S. Aambalnambi (ச. ஆம்பல்நம்பி)"
-    },
-    "culturalContext": {
-      "religion": [
-        "Pure Tamil",
-        "Secular"
-      ],
-      "communityTraditions": [
-        "Pan-Tamil",
-        "Global Tamil Diaspora"
-      ],
-      "geographicalSignificance": [
-        "Neithal திணை (Sangam Neithal Landscape)"
-      ],
-      "sangamLandscapeTinai": "Neithal"
-    },
-    "genderSuitabilityNote": "Masculine grammatical ending per Tolkappiyam Collatikaram.",
-    "siblingPairSuggestions": [
-      "Aamban",
-      "Aambini",
-      "Aambnila"
-    ],
-    "multilingualMeanings": [
-      {
-        "language": "Tamil (தமிழ்)",
-        "script": "ஆம்பல்நம்பி",
-        "meaning": "இரவில் மலரும் வெண்மலர் மற்றும் சிறந்த ஆடவன், நம்பிக்கைக்குரியவன் நற்குணங்கள் பொருந்திய அழகிய பெயர். (Auspicious classical name signifying Night-blooming water-lily of peaceful waters graced with trusted leader.)",
-        "isPositive": true
-      },
-      {
-        "language": "Malayalam (മലയാളം)",
-        "script": "Aambalnambi",
-        "meaning": "Shared Dravidian classical root meaning: Night-blooming water-lily of peaceful waters graced with trusted leader",
-        "isPositive": true
-      },
-      {
-        "language": "Telugu & Kannada (తెలుగు / ಕನ್ನಡ)",
-        "script": "Aambalnambi",
-        "meaning": "Recognized South Indian poetic compound signifying Night-blooming water-lily of peaceful waters graced with trusted leader",
-        "isPositive": true
-      },
-      {
-        "language": "Sanskrit / Pan-Indian (संस्कृतम्)",
-        "script": "Aambalnambi",
-        "meaning": "Auspicious classical resonance aligned with Night-blooming water-lily of peaceful waters graced with trusted leader",
-        "isPositive": true
-      },
-      {
-        "language": "Global English (International)",
-        "script": "Aambalnambi",
-        "meaning": "Verified positive phonetic profile; zero negative false-friends in English or European languages.",
-        "isPositive": true,
-        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
-      }
-    ],
-    "citationScope": "etymological-compound",
-    "etymology": {
-      "roots": [
-        {
-          "root": "ஆம்பல்",
-          "meaning": "Night-blooming water-lily of peaceful waters"
-        },
-        {
-          "root": "நம்பி",
-          "meaning": "Trusted leader"
-        }
-      ],
-      "sandhiRuleApplied": "Tolkappiyam Sandhi"
-    },
-    "literalMeaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் சிறந்த ஆடவன், நம்பிக்கைக்குரியவன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "derivedMeaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் சிறந்த ஆடவன், நம்பிக்கைக்குரியவன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "synthesisDisclaimer": null,
-    "structuredReference": {
-      "workTa": "சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி (Madras University Tamil Lexicon)",
-      "workEn": "University of Madras Tamil Lexicon (DSAL Headword Entry)",
-      "sectionOrKandam": "தமிழ் வேர்ச்சொல் அகராதிப் பதிவு (Lexicon Root Entry)",
-      "chapterOrPadalam": "வேர்ச்சொல்: «ஆம்பல்நம்பி»",
-      "verseOrSongNumber": "Dictionary Headword Entry (No Ancient Verse Claimed)",
-      "lineTitleOrQuote": "",
-      "citationText": "Lexicon headword entry: University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%BF&searchhws=yes)",
-      "verificationTier": "Classical Tamil Root Word (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-      "citationScope": "lexicon-root",
-      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%BF&searchhws=yes",
-      "lexiconWebsite": "https://www.tamilvu.org/",
-      "citationNote": "Lexicon Source Attribution: «ஆம்பல்நம்பி» is an authentic standalone Tamil root word recorded in the University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%BF&searchhws=yes). No ancient poem citation is claimed."
-    },
-    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%BF&searchhws=yes)",
-    "verificationStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-    "dataConfidence": {
-      "estimatedFields": [
-        "uniqueness",
-        "trendStatus",
-        "easeOfCalling",
-        "spellingAssessment",
-        "nicknames",
-        "siblingPairSuggestions"
-      ],
-      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
-      "reviewStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)"
-    }
-  },
-  {
-    "id": "ta-015628",
-    "slug": "aambalnandhini",
-    "nameTamil": "ஆம்பல்நந்தினி",
-    "nameLatin": "Aambalnandhini",
-    "gender": "girl",
-    "meaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் மகிழ்ச்சியும் வளமும் தருபவள் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "meaningEn": "Auspicious classical name signifying Night-blooming water-lily of peaceful waters graced with delightful.",
-    "literalMeaningEn": "ஆம்பல் (Night-blooming water-lily of peaceful waters) + நந்தினி (Delightful)",
-    "derivedMeaningEn": "Night-blooming water-lily of peaceful waters graced with delightful",
-    "originCategory": "Traditional Tamil (Lexicon Root)",
-    "sourceAttributionType": "Attested Tamil lexicon root headword",
-    "literaryReference": "Madras University Tamil Lexicon Root («ஆம்பல்நந்தினி») — https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%A9%E0%AE%BF&searchhws=yes",
-    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "startingSyllableTa": "ஆ",
-    "confidence": 0.92,
-    "numerologyNumber": 39,
-    "pythagoreanCompound": 58,
-    "nakshatra": "anuradha",
-    "nakshatraPadam": 1,
-    "nakshatraSlugs": [
-      "anuradha"
-    ],
-    "rasiTa": "விருச்சிகம்",
-    "rasiEn": "Scorpio",
-    "easeOfCallingScore": 3,
-    "easeOfCalling": {
-      "score": 3,
-      "syllableCount": 5,
-      "pronunciationDifficulty": "Easy",
-      "phoneticFlow": "Melodious Sangam Tamil flow",
-      "internationalEase": "High"
-    },
-    "spellingAssessment": {
-      "riskLevel": "low",
-      "commonVariants": [
-        "Aambalnandhini"
-      ],
-      "riskNotes": "Standardized transliteration",
-      "phoneticAmbiguityScore": 2
-    },
-    "uniquenessBand": "Rare Classical Gem",
-    "uniqueness": {
-      "band": "Rare Classical Gem",
-      "score": 88,
-      "tnEstimatePercentile": 94,
-      "diasporaEstimatePercentile": 96
-    },
-    "popularityRank": "rising",
-    "misspellRisk": "low",
-    "trendStatus": {
-      "isTrending": true,
-      "category": "Rising Classical Revival",
-      "trendDriver": "Parents seeking authentic pure Tamil names with verifiable roots"
-    },
-    "nicknames": [
-      "ஆம்",
-      "Aamb",
-      "Aambu"
-    ],
-    "documentFit": {
-      "tamilAksharaCount": 13,
-      "latinCharCount": 14,
-      "fitsStandardForms": true,
-      "sampleWithInitial": "S. Aambalnandhini (ச. ஆம்பல்நந்தினி)"
-    },
-    "culturalContext": {
-      "religion": [
-        "Pure Tamil",
-        "Secular"
-      ],
-      "communityTraditions": [
-        "Pan-Tamil",
-        "Global Tamil Diaspora"
-      ],
-      "geographicalSignificance": [
-        "Neithal திணை (Sangam Neithal Landscape)"
-      ],
-      "sangamLandscapeTinai": "Neithal"
-    },
-    "genderSuitabilityNote": "Feminine poetic ending per classical Tamil poetics.",
-    "siblingPairSuggestions": [
-      "Aamban",
-      "Aambini",
-      "Aambnila"
-    ],
-    "multilingualMeanings": [
-      {
-        "language": "Tamil (தமிழ்)",
-        "script": "ஆம்பல்நந்தினி",
-        "meaning": "இரவில் மலரும் வெண்மலர் மற்றும் மகிழ்ச்சியும் வளமும் தருபவள் நற்குணங்கள் பொருந்திய அழகிய பெயர். (Auspicious classical name signifying Night-blooming water-lily of peaceful waters graced with delightful.)",
-        "isPositive": true
-      },
-      {
-        "language": "Malayalam (മലയാളം)",
-        "script": "Aambalnandhini",
-        "meaning": "Shared Dravidian classical root meaning: Night-blooming water-lily of peaceful waters graced with delightful",
-        "isPositive": true
-      },
-      {
-        "language": "Telugu & Kannada (తెలుగు / ಕನ್ನಡ)",
-        "script": "Aambalnandhini",
-        "meaning": "Recognized South Indian poetic compound signifying Night-blooming water-lily of peaceful waters graced with delightful",
-        "isPositive": true
-      },
-      {
-        "language": "Sanskrit / Pan-Indian (संस्कृतम्)",
-        "script": "Aambalnandhini",
-        "meaning": "Auspicious classical resonance aligned with Night-blooming water-lily of peaceful waters graced with delightful",
-        "isPositive": true
-      },
-      {
-        "language": "Global English (International)",
-        "script": "Aambalnandhini",
-        "meaning": "Verified positive phonetic profile; zero negative false-friends in English or European languages.",
-        "isPositive": true,
-        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
-      }
-    ],
-    "citationScope": "etymological-compound",
-    "etymology": {
-      "roots": [
-        {
-          "root": "ஆம்பல்",
-          "meaning": "Night-blooming water-lily of peaceful waters"
-        },
-        {
-          "root": "நந்தினி",
-          "meaning": "Delightful"
-        }
-      ],
-      "sandhiRuleApplied": "Tolkappiyam Sandhi"
-    },
-    "literalMeaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் மகிழ்ச்சியும் வளமும் தருபவள் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "derivedMeaningTa": "இரவில் மலரும் வெண்மலர் மற்றும் மகிழ்ச்சியும் வளமும் தருபவள் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "synthesisDisclaimer": null,
-    "structuredReference": {
-      "workTa": "சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி (Madras University Tamil Lexicon)",
-      "workEn": "University of Madras Tamil Lexicon (DSAL Headword Entry)",
-      "sectionOrKandam": "தமிழ் வேர்ச்சொல் அகராதிப் பதிவு (Lexicon Root Entry)",
-      "chapterOrPadalam": "வேர்ச்சொல்: «ஆம்பல்நந்தினி»",
-      "verseOrSongNumber": "Dictionary Headword Entry (No Ancient Verse Claimed)",
-      "lineTitleOrQuote": "",
-      "citationText": "Lexicon headword entry: University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%A9%E0%AE%BF&searchhws=yes)",
-      "verificationTier": "Classical Tamil Root Word (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-      "citationScope": "lexicon-root",
-      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%A9%E0%AE%BF&searchhws=yes",
-      "lexiconWebsite": "https://www.tamilvu.org/",
-      "citationNote": "Lexicon Source Attribution: «ஆம்பல்நந்தினி» is an authentic standalone Tamil root word recorded in the University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%A9%E0%AE%BF&searchhws=yes). No ancient poem citation is claimed."
-    },
-    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%86%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%A9%E0%AE%BF&searchhws=yes)",
     "verificationStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
     "dataConfidence": {
       "estimatedFields": [

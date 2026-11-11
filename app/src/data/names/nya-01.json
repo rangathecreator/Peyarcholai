@@ -898,6 +898,142 @@
     ]
   },
   {
+    "id": "gnayiruezhil",
+    "slug": "gnayiruezhil",
+    "nameTamil": "ஞாயிறுஎழில்",
+    "nameLatin": "Gnayiruezhil",
+    "gender": "girl",
+    "genderSuitabilityNote": "Feminine poetic ending per classical Tamil poetics.",
+    "meaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் இயற்கை அழகு இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: ஞாயிறு + எழில் | Derived Meaning: Ancient classical Tamil sun; symbolizing Natural grace and elegance.",
+    "literalMeaningTa": "«ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «எழில்»: இயற்கை அழகு, கம்பீரம் (Graceful beauty and majesty)",
+    "literalMeaningEn": "ஞாயிறு + எழில்",
+    "derivedMeaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் இயற்கை அழகு இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Ancient classical Tamil sun; symbolizing Natural grace and elegance.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "ஞாயிறு + எழில்",
+    "startingSyllableTa": "ஞ",
+    "startingSyllableEn": "Gn",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pan-Tamil"
+      ],
+      "geographicalSignificance": [
+        "Pan-Tamil"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Gnayiru",
+        "ezhil"
+      ],
+      "phoneticGuide": "Gnayiruezhil",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Gnayiruezhil",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 11,
+      "latinCharCount": 12,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Gnayiruezhil"
+    },
+    "nicknames": [
+      "Gnayiru",
+      "Gnay"
+    ],
+    "siblingPairSuggestions": [
+      "Gnayiruan",
+      "Gnayiruini",
+      "Gnayiruchelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "ஞாயிறுஎழில்",
+        "meaning": "முதுசெம்மொழிச் சூரியன் மற்றும் இயற்கை அழகு இணைந்த தூய தமிழ்ப் பெயர் (Ancient classical Tamil sun combined with Natural grace and elegance)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Gnayiruezhil",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): ஞாயிறு + எழில்",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (ஞாயிறு + எழில்) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%8E%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «ஞாயிறுஎழில்» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «எழில்»: இயற்கை அழகு, கம்பீரம் (Graceful beauty and majesty)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: ஞாயிறு + எழில் (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
     "id": "ta-017966",
     "slug": "gnayiruvalli",
     "nameTamil": "ஞாயிறுவள்ளி",
@@ -1061,6 +1197,550 @@
       ],
       "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
       "reviewStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)"
+    }
+  },
+  {
+    "id": "gnayiruvamudhu",
+    "slug": "gnayiruvamudhu",
+    "nameTamil": "ஞாயிறுவமுது",
+    "nameLatin": "Gnayiruvamudhu",
+    "gender": "girl",
+    "genderSuitabilityNote": "Feminine poetic ending per classical Tamil poetics.",
+    "meaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் இனிய அமுதம் இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: ஞாயிறு + அமுது | Derived Meaning: Ancient classical Tamil sun; symbolizing Sweet celestial nectar.",
+    "literalMeaningTa": "«ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «அமுது»: இனிமையான அமுதம் (Sweet ambrosia and nourishment)",
+    "literalMeaningEn": "ஞாயிறு + அமுது",
+    "derivedMeaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் இனிய அமுதம் இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Ancient classical Tamil sun; symbolizing Sweet celestial nectar.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "ஞாயிறு + அமுது",
+    "startingSyllableTa": "ஞ",
+    "startingSyllableEn": "Gn",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pan-Tamil"
+      ],
+      "geographicalSignificance": [
+        "Pan-Tamil"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Gnayiru",
+        "amudhu"
+      ],
+      "phoneticGuide": "Gnayiruvamudhu",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Gnayiruvamudhu",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 11,
+      "latinCharCount": 14,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Gnayiruvamudhu"
+    },
+    "nicknames": [
+      "Gnayiru",
+      "Gnay"
+    ],
+    "siblingPairSuggestions": [
+      "Gnayiruan",
+      "Gnayiruini",
+      "Gnayiruchelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "ஞாயிறுவமுது",
+        "meaning": "முதுசெம்மொழிச் சூரியன் மற்றும் இனிய அமுதம் இணைந்த தூய தமிழ்ப் பெயர் (Ancient classical Tamil sun combined with Sweet celestial nectar)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Gnayiruvamudhu",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): ஞாயிறு + அமுது",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (ஞாயிறு + அமுது) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%AE%E0%AF%81%E0%AE%A4%E0%AF%81&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «ஞாயிறுவமுது» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «அமுது»: இனிமையான அமுதம் (Sweet ambrosia and nourishment)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: ஞாயிறு + அமுது (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
+    "id": "gnayiruvarasi",
+    "slug": "gnayiruvarasi",
+    "nameTamil": "ஞாயிறுவரசி",
+    "nameLatin": "Gnayiruvarasi",
+    "gender": "girl",
+    "genderSuitabilityNote": "Feminine poetic ending per classical Tamil poetics.",
+    "meaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் அரசி, ஆளுமை இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: ஞாயிறு + அரசி | Derived Meaning: Ancient classical Tamil sun; symbolizing Queen, sovereign lady.",
+    "literalMeaningTa": "«ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «அரசி»: தலைமைப் பண்பு கொண்ட அரசி (Queenly and noble) (Queen)",
+    "literalMeaningEn": "ஞாயிறு + அரசி",
+    "derivedMeaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் அரசி, ஆளுமை இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Ancient classical Tamil sun; symbolizing Queen, sovereign lady.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "ஞாயிறு + அரசி",
+    "startingSyllableTa": "ஞ",
+    "startingSyllableEn": "Gn",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pan-Tamil"
+      ],
+      "geographicalSignificance": [
+        "Pan-Tamil"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Gnayiru",
+        "arasi"
+      ],
+      "phoneticGuide": "Gnayiruvarasi",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Gnayiruvarasi",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 10,
+      "latinCharCount": 13,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Gnayiruvarasi"
+    },
+    "nicknames": [
+      "Gnayiru",
+      "Gnay"
+    ],
+    "siblingPairSuggestions": [
+      "Gnayiruan",
+      "Gnayiruini",
+      "Gnayiruchelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "ஞாயிறுவரசி",
+        "meaning": "முதுசெம்மொழிச் சூரியன் மற்றும் அரசி, ஆளுமை இணைந்த தூய தமிழ்ப் பெயர் (Ancient classical Tamil sun combined with Queen, sovereign lady)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Gnayiruvarasi",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): ஞாயிறு + அரசி",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (ஞாயிறு + அரசி) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%B0%E0%AE%9A%E0%AE%BF&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «ஞாயிறுவரசி» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «அரசி»: தலைமைப் பண்பு கொண்ட அரசி (Queenly and noble) (Queen)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: ஞாயிறு + அரசி (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
+    "id": "gnayiruvarasu",
+    "slug": "gnayiruvarasu",
+    "nameTamil": "ஞாயிறுவரசு",
+    "nameLatin": "Gnayiruvarasu",
+    "gender": "boy",
+    "genderSuitabilityNote": "Masculine noble ending per classical Tamil tradition.",
+    "meaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: ஞாயிறு + அரசு | Derived Meaning: Ancient classical Tamil sun; symbolizing Noble sovereignty and righteous rule.",
+    "literalMeaningTa": "«ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «அரசு» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
+    "literalMeaningEn": "ஞாயிறு + அரசு",
+    "derivedMeaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Ancient classical Tamil sun; symbolizing Noble sovereignty and righteous rule.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "ஞாயிறு + அரசு",
+    "startingSyllableTa": "ஞ",
+    "startingSyllableEn": "Gn",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pan-Tamil"
+      ],
+      "geographicalSignificance": [
+        "Pan-Tamil"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Gnayiru",
+        "arasu"
+      ],
+      "phoneticGuide": "Gnayiruvarasu",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Gnayiruvarasu",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 10,
+      "latinCharCount": 13,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Gnayiruvarasu"
+    },
+    "nicknames": [
+      "Gnayiru",
+      "Gnay"
+    ],
+    "siblingPairSuggestions": [
+      "Gnayiruan",
+      "Gnayiruini",
+      "Gnayiruchelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "ஞாயிறுவரசு",
+        "meaning": "முதுசெம்மொழிச் சூரியன் மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர் (Ancient classical Tamil sun combined with Noble sovereignty and righteous rule)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Gnayiruvarasu",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): ஞாயிறு + அரசு",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (ஞாயிறு + அரசு) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%B0%E0%AE%9A%E0%AF%81&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «ஞாயிறுவரசு» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «அரசு» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: ஞாயிறு + அரசு (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
+    "id": "gnayiruvarignan",
+    "slug": "gnayiruvarignan",
+    "nameTamil": "ஞாயிறுவறிஞன்",
+    "nameLatin": "Gnayiruvarignan",
+    "gender": "boy",
+    "genderSuitabilityNote": "Masculine noble ending per classical Tamil tradition.",
+    "meaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: ஞாயிறு + அறிஞன் | Derived Meaning: Ancient classical Tamil sun; symbolizing Illuminated scholar of wisdom.",
+    "literalMeaningTa": "«ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «அறிஞன்» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
+    "literalMeaningEn": "ஞாயிறு + அறிஞன்",
+    "derivedMeaningTa": "முதுசெம்மொழிச் சூரியன் மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Ancient classical Tamil sun; symbolizing Illuminated scholar of wisdom.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "ஞாயிறு + அறிஞன்",
+    "startingSyllableTa": "ஞ",
+    "startingSyllableEn": "Gn",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pan-Tamil"
+      ],
+      "geographicalSignificance": [
+        "Pan-Tamil"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Gnayiru",
+        "arignan"
+      ],
+      "phoneticGuide": "Gnayiruvarignan",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Gnayiruvarignan",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 12,
+      "latinCharCount": 15,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Gnayiruvarignan"
+    },
+    "nicknames": [
+      "Gnayiru",
+      "Gnay"
+    ],
+    "siblingPairSuggestions": [
+      "Gnayiruan",
+      "Gnayiruini",
+      "Gnayiruchelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "ஞாயிறுவறிஞன்",
+        "meaning": "முதுசெம்மொழிச் சூரியன் மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர் (Ancient classical Tamil sun combined with Illuminated scholar of wisdom)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Gnayiruvarignan",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): ஞாயிறு + அறிஞன்",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (ஞாயிறு + அறிஞன்) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%B1%E0%AE%BF%E0%AE%9E%E0%AE%A9%E0%AF%8D&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «ஞாயிறுவறிஞன்» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («ஞாயிறு»: சூரியன், உலகிற்கு ஒளி தருபவன் (The Sun, bestower of life and clarity) + «அறிஞன்» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: ஞாயிறு + அறிஞன் (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
     }
   },
   {

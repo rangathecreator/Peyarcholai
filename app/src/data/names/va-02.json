@@ -27224,6 +27224,142 @@
     }
   },
   {
+    "id": "vaigaiezhil",
+    "slug": "vaigaiezhil",
+    "nameTamil": "வைகைஎழில்",
+    "nameLatin": "Vaigaiezhil",
+    "gender": "girl",
+    "genderSuitabilityNote": "Feminine poetic ending per classical Tamil poetics.",
+    "meaningTa": "மதுரையின் வரலாற்று நதி வைகை மற்றும் இயற்கை அழகு இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: வைகை + எழில் | Derived Meaning: Historic Vaigai River of Madurai; symbolizing Natural grace and elegance.",
+    "literalMeaningTa": "«வைகை»: மதுரை மாநகரை வளப்படுத்தும் தமிழ் நதி (Sacred River Vaigai celebrated in Paripadal) + «எழில்»: இயற்கை அழகு, கம்பீரம் (Graceful beauty and majesty)",
+    "literalMeaningEn": "வைகை + எழில்",
+    "derivedMeaningTa": "மதுரையின் வரலாற்று நதி வைகை மற்றும் இயற்கை அழகு இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Historic Vaigai River of Madurai; symbolizing Natural grace and elegance.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "வைகை + எழில்",
+    "startingSyllableTa": "வ",
+    "startingSyllableEn": "Va",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pandya / Madurai"
+      ],
+      "geographicalSignificance": [
+        "Pandya / Madurai"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Vaigai",
+        "ezhil"
+      ],
+      "phoneticGuide": "Vaigaiezhil",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Vaigaiezhil",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 9,
+      "latinCharCount": 11,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Vaigaiezhil"
+    },
+    "nicknames": [
+      "Vaigai",
+      "Vaig"
+    ],
+    "siblingPairSuggestions": [
+      "Vaigaian",
+      "Vaigaiini",
+      "Vaigaichelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "வைகைஎழில்",
+        "meaning": "மதுரையின் வரலாற்று நதி வைகை மற்றும் இயற்கை அழகு இணைந்த தூய தமிழ்ப் பெயர் (Historic Vaigai River of Madurai combined with Natural grace and elegance)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Vaigaiezhil",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): வைகை + எழில்",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (வைகை + எழில்) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AF%88%E0%AE%95%E0%AF%88&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%8E%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «வைகைஎழில்» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («வைகை»: மதுரை மாநகரை வளப்படுத்தும் தமிழ் நதி (Sacred River Vaigai celebrated in Paripadal) + «எழில்»: இயற்கை அழகு, கம்பீரம் (Graceful beauty and majesty)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: வைகை + எழில் (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AF%88%E0%AE%95%E0%AF%88&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
     "id": "ta-013859",
     "slug": "vaigaikaaviya",
     "nameTamil": "வைகைகாவியா",
@@ -41995,6 +42131,278 @@
       ],
       "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
       "reviewStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)"
+    }
+  },
+  {
+    "id": "vaigaiyarasu",
+    "slug": "vaigaiyarasu",
+    "nameTamil": "வைகையரசு",
+    "nameLatin": "Vaigaiyarasu",
+    "gender": "boy",
+    "genderSuitabilityNote": "Masculine noble ending per classical Tamil tradition.",
+    "meaningTa": "மதுரையின் வரலாற்று நதி வைகை மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: வைகை + அரசு | Derived Meaning: Historic Vaigai River of Madurai; symbolizing Noble sovereignty and righteous rule.",
+    "literalMeaningTa": "«வைகை»: மதுரை மாநகரை வளப்படுத்தும் தமிழ் நதி (Sacred River Vaigai celebrated in Paripadal) + «அரசு» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
+    "literalMeaningEn": "வைகை + அரசு",
+    "derivedMeaningTa": "மதுரையின் வரலாற்று நதி வைகை மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Historic Vaigai River of Madurai; symbolizing Noble sovereignty and righteous rule.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "வைகை + அரசு",
+    "startingSyllableTa": "வ",
+    "startingSyllableEn": "Va",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pandya / Madurai"
+      ],
+      "geographicalSignificance": [
+        "Pandya / Madurai"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Vaigai",
+        "arasu"
+      ],
+      "phoneticGuide": "Vaigaiyarasu",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Vaigaiyarasu",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 8,
+      "latinCharCount": 12,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Vaigaiyarasu"
+    },
+    "nicknames": [
+      "Vaigai",
+      "Vaig"
+    ],
+    "siblingPairSuggestions": [
+      "Vaigaian",
+      "Vaigaiini",
+      "Vaigaichelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "வைகையரசு",
+        "meaning": "மதுரையின் வரலாற்று நதி வைகை மற்றும் நீதி ஆட்சி, தலைமை இணைந்த தூய தமிழ்ப் பெயர் (Historic Vaigai River of Madurai combined with Noble sovereignty and righteous rule)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Vaigaiyarasu",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): வைகை + அரசு",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (வைகை + அரசு) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AF%88%E0%AE%95%E0%AF%88&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%B0%E0%AE%9A%E0%AF%81&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «வைகையரசு» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («வைகை»: மதுரை மாநகரை வளப்படுத்தும் தமிழ் நதி (Sacred River Vaigai celebrated in Paripadal) + «அரசு» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: வைகை + அரசு (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AF%88%E0%AE%95%E0%AF%88&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
+    }
+  },
+  {
+    "id": "vaigaiyarignan",
+    "slug": "vaigaiyarignan",
+    "nameTamil": "வைகையறிஞன்",
+    "nameLatin": "Vaigaiyarignan",
+    "gender": "boy",
+    "genderSuitabilityNote": "Masculine noble ending per classical Tamil tradition.",
+    "meaningTa": "மதுரையின் வரலாற்று நதி வைகை மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர்",
+    "meaningEn": "Literal Root Meaning: வைகை + அறிஞன் | Derived Meaning: Historic Vaigai River of Madurai; symbolizing Illuminated scholar of wisdom.",
+    "literalMeaningTa": "«வைகை»: மதுரை மாநகரை வளப்படுத்தும் தமிழ் நதி (Sacred River Vaigai celebrated in Paripadal) + «அறிஞன்» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
+    "literalMeaningEn": "வைகை + அறிஞன்",
+    "derivedMeaningTa": "மதுரையின் வரலாற்று நதி வைகை மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர்",
+    "derivedMeaningEn": "Historic Vaigai River of Madurai; symbolizing Illuminated scholar of wisdom.",
+    "originCategory": "Modern Tamil",
+    "confidence": 0.9,
+    "popularityRank": "moderate",
+    "etymologyRoot": "வைகை + அறிஞன்",
+    "startingSyllableTa": "வ",
+    "startingSyllableEn": "Va",
+    "rasiTa": "மேஷம்",
+    "rasiEn": "Aries",
+    "nakshatraSlugs": [
+      "aswini",
+      "rohini"
+    ],
+    "theme": [
+      "Pure Tamil",
+      "Marutham",
+      "Heritage"
+    ],
+    "culturalContext": {
+      "religion": [
+        "Traditional Tamil",
+        "Secular"
+      ],
+      "communityTraditions": [
+        "Pan-Tamil",
+        "Pandya / Madurai"
+      ],
+      "geographicalSignificance": [
+        "Pandya / Madurai"
+      ],
+      "sangamLandscapeTinai": "Marutham"
+    },
+    "easeOfCalling": {
+      "overallScore": 88,
+      "nativeTamilScore": 95,
+      "panIndiaScore": 85,
+      "globalScore": 84,
+      "syllables": [
+        "Vaigai",
+        "arignan"
+      ],
+      "phoneticGuide": "Vaigaiyarignan",
+      "callOutNote": "Flows rhythmically with clean consonant-vowel meter."
+    },
+    "spellingAssessment": {
+      "riskLevel": "Low",
+      "officialRecommendedSpelling": "Vaigaiyarignan",
+      "commonMisspellings": [],
+      "reason": "Standard Roman transliteration aligned with Tolkappiyam sandhi rules."
+    },
+    "uniqueness": {
+      "band": "Rare",
+      "score": 86,
+      "tnEstimatePercentile": 88,
+      "diasporaEstimatePercentile": 90
+    },
+    "trendStatus": {
+      "isTrending": true,
+      "category": "Timeless Classic",
+      "trendDriver": "Pure Sangam Tamil heritage revival."
+    },
+    "documentFit": {
+      "tamilAksharaCount": 10,
+      "latinCharCount": 14,
+      "fitsStandardForms": true,
+      "sampleWithInitial": "S. Vaigaiyarignan"
+    },
+    "nicknames": [
+      "Vaigai",
+      "Vaig"
+    ],
+    "siblingPairSuggestions": [
+      "Vaigaian",
+      "Vaigaiini",
+      "Vaigaichelvan"
+    ],
+    "multilingualMeanings": [
+      {
+        "language": "Tamil (தமிழ்)",
+        "script": "வைகையறிஞன்",
+        "meaning": "மதுரையின் வரலாற்று நதி வைகை மற்றும் நுண்ணறிவு கொண்ட மேதை இணைந்த தூய தமிழ்ப் பெயர் (Historic Vaigai River of Madurai combined with Illuminated scholar of wisdom)",
+        "isPositive": true
+      },
+      {
+        "language": "Global English",
+        "script": "Vaigaiyarignan",
+        "meaning": "Verified positive phonetic profile with zero cross-language false-friends.",
+        "isPositive": true,
+        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
+      }
+    ],
+    "citationScope": "etymological-compound",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "structuredReference": {
+      "workTa": "நவீனத் தமிழ்ப் பெயர் ஆக்கம் — சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி வேர்ச்சொற்கள்",
+      "workEn": "Synthesized modern name from authentic roots (Madras University Tamil Lexicon)",
+      "sectionOrKandam": "வேர்ச்சொல் பிரிப்பு (Morphological Split): வைகை + அறிஞன்",
+      "chapterOrPadalam": "Literal Lexicon Root Definitions (No Ancient Poem Citation)",
+      "verseOrSongNumber": "Modern Synthesis (Post-Classical Coinage)",
+      "lineTitleOrQuote": "",
+      "citationText": "Synthesized modern name from authentic roots (வைகை + அறிஞன்) — University of Madras Tamil Lexicon",
+      "verificationTier": "Modern Synthesis (நவீனத் தமிழ்ப் பெயர் ஆக்கம்)",
+      "citationScope": "etymological-compound",
+      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AF%88%E0%AE%95%E0%AF%88&searchhws=yes",
+      "lexiconWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%85%E0%AE%B1%E0%AE%BF%E0%AE%9E%E0%AE%A9%E0%AF%8D&searchhws=yes",
+      "citationNote": "Modern Synthesis Disclaimer: «வைகையறிஞன்» is a synthesized modern Tamil compound name formed from authentic Tamil lexicon roots («வைகை»: மதுரை மாநகரை வளப்படுத்தும் தமிழ் நதி (Sacred River Vaigai celebrated in Paripadal) + «அறிஞன்» (தமிழ்ப் பேரகராதி வேர்ச்சொல்)). It does not appear as a compound word in ancient Sangam or epic texts."
+    },
+    "synthesisDisclaimer": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி): Coined from authentic Tamil lexicon roots; not claimed as an ancient poem verse.",
+    "literaryReference": "Synthesized modern name from authentic roots: வைகை + அறிஞன் (Madras University Tamil Lexicon)",
+    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AF%88%E0%AE%95%E0%AF%88&searchhws=yes)",
+    "verificationStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)",
+    "dataConfidence": {
+      "estimatedFields": [
+        "uniqueness",
+        "trendStatus",
+        "easeOfCalling",
+        "spellingAssessment",
+        "nicknames",
+        "siblingPairSuggestions"
+      ],
+      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
+      "reviewStatus": "Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)"
     }
   },
   {
@@ -65956,504 +66364,6 @@
       "citationNote": "Lexicon Source Attribution: «வள்ளல்தீரன்» is an authentic standalone Tamil root word recorded in the University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D%E0%AE%A4%E0%AF%80%E0%AE%B0%E0%AE%A9%E0%AF%8D&searchhws=yes). No ancient poem citation is claimed."
     },
     "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D%E0%AE%A4%E0%AF%80%E0%AE%B0%E0%AE%A9%E0%AF%8D&searchhws=yes)",
-    "verificationStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-    "dataConfidence": {
-      "estimatedFields": [
-        "uniqueness",
-        "trendStatus",
-        "easeOfCalling",
-        "spellingAssessment",
-        "nicknames",
-        "siblingPairSuggestions"
-      ],
-      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
-      "reviewStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)"
-    }
-  },
-  {
-    "id": "ta-019443",
-    "slug": "vallaldurai",
-    "nameTamil": "வள்ளல்துரை",
-    "nameLatin": "Vallaldurai",
-    "gender": "boy",
-    "meaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் மரியாதைக்குரிய தலைவன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "meaningEn": "Auspicious classical name signifying Benevolent patron and philanthropist graced with leader.",
-    "literalMeaningEn": "வள்ளல் (Benevolent patron and philanthropist) + துரை (Leader)",
-    "derivedMeaningEn": "Benevolent patron and philanthropist graced with leader",
-    "originCategory": "Traditional Tamil (Lexicon Root)",
-    "sourceAttributionType": "Attested Tamil lexicon root headword",
-    "literaryReference": "Madras University Tamil Lexicon Root («வள்ளல்துரை») — https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%B0%E0%AF%88&searchhws=yes",
-    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "startingSyllableTa": "வ",
-    "confidence": 0.92,
-    "numerologyNumber": 31,
-    "pythagoreanCompound": 41,
-    "nakshatra": "ashlesha",
-    "nakshatraPadam": 1,
-    "nakshatraSlugs": [
-      "ashlesha"
-    ],
-    "rasiTa": "கடகம்",
-    "rasiEn": "Cancer",
-    "easeOfCallingScore": 3,
-    "easeOfCalling": {
-      "score": 3,
-      "syllableCount": 4,
-      "pronunciationDifficulty": "Easy",
-      "phoneticFlow": "Melodious Sangam Tamil flow",
-      "internationalEase": "High"
-    },
-    "spellingAssessment": {
-      "riskLevel": "low",
-      "commonVariants": [
-        "Vallaldurai"
-      ],
-      "riskNotes": "Standardized transliteration",
-      "phoneticAmbiguityScore": 2
-    },
-    "uniquenessBand": "Rare Classical Gem",
-    "uniqueness": {
-      "band": "Rare Classical Gem",
-      "score": 88,
-      "tnEstimatePercentile": 94,
-      "diasporaEstimatePercentile": 96
-    },
-    "popularityRank": "rising",
-    "misspellRisk": "low",
-    "trendStatus": {
-      "isTrending": true,
-      "category": "Rising Classical Revival",
-      "trendDriver": "Parents seeking authentic pure Tamil names with verifiable roots"
-    },
-    "nicknames": [
-      "வள்",
-      "Vall",
-      "Vallu"
-    ],
-    "documentFit": {
-      "tamilAksharaCount": 10,
-      "latinCharCount": 11,
-      "fitsStandardForms": true,
-      "sampleWithInitial": "S. Vallaldurai (ச. வள்ளல்துரை)"
-    },
-    "culturalContext": {
-      "religion": [
-        "Pure Tamil",
-        "Secular"
-      ],
-      "communityTraditions": [
-        "Pan-Tamil",
-        "Global Tamil Diaspora"
-      ],
-      "geographicalSignificance": [
-        "Marutham திணை (Sangam Marutham Landscape)"
-      ],
-      "sangamLandscapeTinai": "Marutham"
-    },
-    "genderSuitabilityNote": "Masculine grammatical ending per Tolkappiyam Collatikaram.",
-    "siblingPairSuggestions": [
-      "Vallan",
-      "Vallini",
-      "Vallnila"
-    ],
-    "multilingualMeanings": [
-      {
-        "language": "Tamil (தமிழ்)",
-        "script": "வள்ளல்துரை",
-        "meaning": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் மரியாதைக்குரிய தலைவன் நற்குணங்கள் பொருந்திய அழகிய பெயர். (Auspicious classical name signifying Benevolent patron and philanthropist graced with leader.)",
-        "isPositive": true
-      },
-      {
-        "language": "Malayalam (മലയാളം)",
-        "script": "Vallaldurai",
-        "meaning": "Shared Dravidian classical root meaning: Benevolent patron and philanthropist graced with leader",
-        "isPositive": true
-      },
-      {
-        "language": "Telugu & Kannada (తెలుగు / ಕನ್ನಡ)",
-        "script": "Vallaldurai",
-        "meaning": "Recognized South Indian poetic compound signifying Benevolent patron and philanthropist graced with leader",
-        "isPositive": true
-      },
-      {
-        "language": "Sanskrit / Pan-Indian (संस्कृतम्)",
-        "script": "Vallaldurai",
-        "meaning": "Auspicious classical resonance aligned with Benevolent patron and philanthropist graced with leader",
-        "isPositive": true
-      },
-      {
-        "language": "Global English (International)",
-        "script": "Vallaldurai",
-        "meaning": "Verified positive phonetic profile; zero negative false-friends in English or European languages.",
-        "isPositive": true,
-        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
-      }
-    ],
-    "citationScope": "etymological-compound",
-    "etymology": {
-      "roots": [
-        {
-          "root": "வள்ளல்",
-          "meaning": "Benevolent patron and philanthropist"
-        },
-        {
-          "root": "துரை",
-          "meaning": "Leader"
-        }
-      ],
-      "sandhiRuleApplied": "Tolkappiyam Sandhi"
-    },
-    "literalMeaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் மரியாதைக்குரிய தலைவன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "derivedMeaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் மரியாதைக்குரிய தலைவன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "synthesisDisclaimer": null,
-    "structuredReference": {
-      "workTa": "சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி (Madras University Tamil Lexicon)",
-      "workEn": "University of Madras Tamil Lexicon (DSAL Headword Entry)",
-      "sectionOrKandam": "தமிழ் வேர்ச்சொல் அகராதிப் பதிவு (Lexicon Root Entry)",
-      "chapterOrPadalam": "வேர்ச்சொல்: «வள்ளல்துரை»",
-      "verseOrSongNumber": "Dictionary Headword Entry (No Ancient Verse Claimed)",
-      "lineTitleOrQuote": "",
-      "citationText": "Lexicon headword entry: University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%B0%E0%AF%88&searchhws=yes)",
-      "verificationTier": "Classical Tamil Root Word (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-      "citationScope": "lexicon-root",
-      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%B0%E0%AF%88&searchhws=yes",
-      "lexiconWebsite": "https://www.tamilvu.org/",
-      "citationNote": "Lexicon Source Attribution: «வள்ளல்துரை» is an authentic standalone Tamil root word recorded in the University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%B0%E0%AF%88&searchhws=yes). No ancient poem citation is claimed."
-    },
-    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%B0%E0%AF%88&searchhws=yes)",
-    "verificationStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-    "dataConfidence": {
-      "estimatedFields": [
-        "uniqueness",
-        "trendStatus",
-        "easeOfCalling",
-        "spellingAssessment",
-        "nicknames",
-        "siblingPairSuggestions"
-      ],
-      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
-      "reviewStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)"
-    }
-  },
-  {
-    "id": "ta-019491",
-    "slug": "vallalezhil",
-    "nameTamil": "வள்ளலெழில்",
-    "nameLatin": "Vallalezhil",
-    "gender": "unisex",
-    "meaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் இயற்கையான அழகும் கம்பீரமும் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "meaningEn": "Auspicious classical name signifying Benevolent patron and philanthropist graced with elegance.",
-    "literalMeaningEn": "வள்ளல் (Benevolent patron and philanthropist) + எழில் (Elegance)",
-    "derivedMeaningEn": "Benevolent patron and philanthropist graced with elegance",
-    "originCategory": "Traditional Tamil (Lexicon Root)",
-    "sourceAttributionType": "Attested Tamil lexicon root headword",
-    "literaryReference": "Madras University Tamil Lexicon Root («வள்ளலெழில்») — https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%86%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "startingSyllableTa": "வ",
-    "confidence": 0.92,
-    "numerologyNumber": 38,
-    "pythagoreanCompound": 48,
-    "nakshatra": "vishakha",
-    "nakshatraPadam": 4,
-    "nakshatraSlugs": [
-      "vishakha"
-    ],
-    "rasiTa": "விருச்சிகம்",
-    "rasiEn": "Scorpio",
-    "easeOfCallingScore": 3,
-    "easeOfCalling": {
-      "score": 3,
-      "syllableCount": 4,
-      "pronunciationDifficulty": "Easy",
-      "phoneticFlow": "Melodious Sangam Tamil flow",
-      "internationalEase": "High"
-    },
-    "spellingAssessment": {
-      "riskLevel": "medium",
-      "commonVariants": [
-        "Vallalezhil"
-      ],
-      "riskNotes": "Standardized transliteration",
-      "phoneticAmbiguityScore": 2
-    },
-    "uniquenessBand": "Rare Classical Gem",
-    "uniqueness": {
-      "band": "Rare Classical Gem",
-      "score": 88,
-      "tnEstimatePercentile": 94,
-      "diasporaEstimatePercentile": 96
-    },
-    "popularityRank": "rising",
-    "misspellRisk": "medium",
-    "trendStatus": {
-      "isTrending": true,
-      "category": "Rising Classical Revival",
-      "trendDriver": "Parents seeking authentic pure Tamil names with verifiable roots"
-    },
-    "nicknames": [
-      "வள்",
-      "Vall",
-      "Vallu"
-    ],
-    "documentFit": {
-      "tamilAksharaCount": 10,
-      "latinCharCount": 11,
-      "fitsStandardForms": true,
-      "sampleWithInitial": "S. Vallalezhil (ச. வள்ளலெழில்)"
-    },
-    "culturalContext": {
-      "religion": [
-        "Pure Tamil",
-        "Secular"
-      ],
-      "communityTraditions": [
-        "Pan-Tamil",
-        "Global Tamil Diaspora"
-      ],
-      "geographicalSignificance": [
-        "Marutham திணை (Sangam Marutham Landscape)"
-      ],
-      "sangamLandscapeTinai": "Marutham"
-    },
-    "genderSuitabilityNote": "Gender-neutral pure Tamil noun stem suitable for all.",
-    "siblingPairSuggestions": [
-      "Vallan",
-      "Vallini",
-      "Vallnila"
-    ],
-    "multilingualMeanings": [
-      {
-        "language": "Tamil (தமிழ்)",
-        "script": "வள்ளலெழில்",
-        "meaning": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் இயற்கையான அழகும் கம்பீரமும் நற்குணங்கள் பொருந்திய அழகிய பெயர். (Auspicious classical name signifying Benevolent patron and philanthropist graced with elegance.)",
-        "isPositive": true
-      },
-      {
-        "language": "Malayalam (മലയാളം)",
-        "script": "Vallalezhil",
-        "meaning": "Shared Dravidian classical root meaning: Benevolent patron and philanthropist graced with elegance",
-        "isPositive": true
-      },
-      {
-        "language": "Telugu & Kannada (తెలుగు / ಕನ್ನಡ)",
-        "script": "Vallalezhil",
-        "meaning": "Recognized South Indian poetic compound signifying Benevolent patron and philanthropist graced with elegance",
-        "isPositive": true
-      },
-      {
-        "language": "Sanskrit / Pan-Indian (संस्कृतम्)",
-        "script": "Vallalezhil",
-        "meaning": "Auspicious classical resonance aligned with Benevolent patron and philanthropist graced with elegance",
-        "isPositive": true
-      },
-      {
-        "language": "Global English (International)",
-        "script": "Vallalezhil",
-        "meaning": "Verified positive phonetic profile; zero negative false-friends in English or European languages.",
-        "isPositive": true,
-        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
-      }
-    ],
-    "citationScope": "etymological-compound",
-    "etymology": {
-      "roots": [
-        {
-          "root": "வள்ளல்",
-          "meaning": "Benevolent patron and philanthropist"
-        },
-        {
-          "root": "எழில்",
-          "meaning": "Elegance"
-        }
-      ],
-      "sandhiRuleApplied": "Tolkappiyam Sandhi"
-    },
-    "literalMeaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் இயற்கையான அழகும் கம்பீரமும் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "derivedMeaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் இயற்கையான அழகும் கம்பீரமும் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "synthesisDisclaimer": null,
-    "structuredReference": {
-      "workTa": "சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி (Madras University Tamil Lexicon)",
-      "workEn": "University of Madras Tamil Lexicon (DSAL Headword Entry)",
-      "sectionOrKandam": "தமிழ் வேர்ச்சொல் அகராதிப் பதிவு (Lexicon Root Entry)",
-      "chapterOrPadalam": "வேர்ச்சொல்: «வள்ளலெழில்»",
-      "verseOrSongNumber": "Dictionary Headword Entry (No Ancient Verse Claimed)",
-      "lineTitleOrQuote": "",
-      "citationText": "Lexicon headword entry: University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%86%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D&searchhws=yes)",
-      "verificationTier": "Classical Tamil Root Word (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-      "citationScope": "lexicon-root",
-      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%86%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D&searchhws=yes",
-      "lexiconWebsite": "https://www.tamilvu.org/",
-      "citationNote": "Lexicon Source Attribution: «வள்ளலெழில்» is an authentic standalone Tamil root word recorded in the University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%86%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D&searchhws=yes). No ancient poem citation is claimed."
-    },
-    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%86%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D&searchhws=yes)",
-    "verificationStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-    "dataConfidence": {
-      "estimatedFields": [
-        "uniqueness",
-        "trendStatus",
-        "easeOfCalling",
-        "spellingAssessment",
-        "nicknames",
-        "siblingPairSuggestions"
-      ],
-      "estimateBasis": "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics (name length, syllables, numerology); they are NOT birth-registry or market data.",
-      "reviewStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)"
-    }
-  },
-  {
-    "id": "ta-019441",
-    "slug": "vallalilango",
-    "nameTamil": "வள்ளலிளங்கோ",
-    "nameLatin": "Vallalilango",
-    "gender": "boy",
-    "meaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் இளவரசன் மற்றும் கவிஞன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "meaningEn": "Auspicious classical name signifying Benevolent patron and philanthropist graced with young prince.",
-    "literalMeaningEn": "வள்ளல் (Benevolent patron and philanthropist) + இளங்கோ (Young prince)",
-    "derivedMeaningEn": "Benevolent patron and philanthropist graced with young prince",
-    "originCategory": "Traditional Tamil (Lexicon Root)",
-    "sourceAttributionType": "Attested Tamil lexicon root headword",
-    "literaryReference": "Madras University Tamil Lexicon Root («வள்ளலிளங்கோ») — https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AE%BF%E0%AE%B3%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%8B&searchhws=yes",
-    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AF%8D&searchhws=yes",
-    "startingSyllableTa": "வ",
-    "confidence": 0.92,
-    "numerologyNumber": 37,
-    "pythagoreanCompound": 46,
-    "nakshatra": "bharani",
-    "nakshatraPadam": 2,
-    "nakshatraSlugs": [
-      "bharani"
-    ],
-    "rasiTa": "மேஷம்",
-    "rasiEn": "Aries",
-    "easeOfCallingScore": 3,
-    "easeOfCalling": {
-      "score": 3,
-      "syllableCount": 4,
-      "pronunciationDifficulty": "Easy",
-      "phoneticFlow": "Melodious Sangam Tamil flow",
-      "internationalEase": "High"
-    },
-    "spellingAssessment": {
-      "riskLevel": "low",
-      "commonVariants": [
-        "Vallalilango"
-      ],
-      "riskNotes": "Standardized transliteration",
-      "phoneticAmbiguityScore": 2
-    },
-    "uniquenessBand": "Rare Classical Gem",
-    "uniqueness": {
-      "band": "Rare Classical Gem",
-      "score": 88,
-      "tnEstimatePercentile": 94,
-      "diasporaEstimatePercentile": 96
-    },
-    "popularityRank": "rising",
-    "misspellRisk": "low",
-    "trendStatus": {
-      "isTrending": true,
-      "category": "Rising Classical Revival",
-      "trendDriver": "Parents seeking authentic pure Tamil names with verifiable roots"
-    },
-    "nicknames": [
-      "வள்",
-      "Vall",
-      "Vallu"
-    ],
-    "documentFit": {
-      "tamilAksharaCount": 11,
-      "latinCharCount": 12,
-      "fitsStandardForms": true,
-      "sampleWithInitial": "S. Vallalilango (ச. வள்ளலிளங்கோ)"
-    },
-    "culturalContext": {
-      "religion": [
-        "Pure Tamil",
-        "Secular"
-      ],
-      "communityTraditions": [
-        "Pan-Tamil",
-        "Global Tamil Diaspora"
-      ],
-      "geographicalSignificance": [
-        "Marutham திணை (Sangam Marutham Landscape)"
-      ],
-      "sangamLandscapeTinai": "Marutham"
-    },
-    "genderSuitabilityNote": "Masculine grammatical ending per Tolkappiyam Collatikaram.",
-    "siblingPairSuggestions": [
-      "Vallan",
-      "Vallini",
-      "Vallnila"
-    ],
-    "multilingualMeanings": [
-      {
-        "language": "Tamil (தமிழ்)",
-        "script": "வள்ளலிளங்கோ",
-        "meaning": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் இளவரசன் மற்றும் கவிஞன் நற்குணங்கள் பொருந்திய அழகிய பெயர். (Auspicious classical name signifying Benevolent patron and philanthropist graced with young prince.)",
-        "isPositive": true
-      },
-      {
-        "language": "Malayalam (മലയാളം)",
-        "script": "Vallalilango",
-        "meaning": "Shared Dravidian classical root meaning: Benevolent patron and philanthropist graced with young prince",
-        "isPositive": true
-      },
-      {
-        "language": "Telugu & Kannada (తెలుగు / ಕನ್ನಡ)",
-        "script": "Vallalilango",
-        "meaning": "Recognized South Indian poetic compound signifying Benevolent patron and philanthropist graced with young prince",
-        "isPositive": true
-      },
-      {
-        "language": "Sanskrit / Pan-Indian (संस्कृतम्)",
-        "script": "Vallalilango",
-        "meaning": "Auspicious classical resonance aligned with Benevolent patron and philanthropist graced with young prince",
-        "isPositive": true
-      },
-      {
-        "language": "Global English (International)",
-        "script": "Vallalilango",
-        "meaning": "Verified positive phonetic profile; zero negative false-friends in English or European languages.",
-        "isPositive": true,
-        "falseFriendWarning": "None (Passed Cross-Language Safety Gate)"
-      }
-    ],
-    "citationScope": "etymological-compound",
-    "etymology": {
-      "roots": [
-        {
-          "root": "வள்ளல்",
-          "meaning": "Benevolent patron and philanthropist"
-        },
-        {
-          "root": "இளங்கோ",
-          "meaning": "Young prince"
-        }
-      ],
-      "sandhiRuleApplied": "Tolkappiyam Sandhi"
-    },
-    "literalMeaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் இளவரசன் மற்றும் கவிஞன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "derivedMeaningTa": "ஈகை உள்ளம் கொண்ட பெருந்தகை மற்றும் இளவரசன் மற்றும் கவிஞன் நற்குணங்கள் பொருந்திய அழகிய பெயர்.",
-    "synthesisDisclaimer": null,
-    "structuredReference": {
-      "workTa": "சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி (Madras University Tamil Lexicon)",
-      "workEn": "University of Madras Tamil Lexicon (DSAL Headword Entry)",
-      "sectionOrKandam": "தமிழ் வேர்ச்சொல் அகராதிப் பதிவு (Lexicon Root Entry)",
-      "chapterOrPadalam": "வேர்ச்சொல்: «வள்ளலிளங்கோ»",
-      "verseOrSongNumber": "Dictionary Headword Entry (No Ancient Verse Claimed)",
-      "lineTitleOrQuote": "",
-      "citationText": "Lexicon headword entry: University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AE%BF%E0%AE%B3%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%8B&searchhws=yes)",
-      "verificationTier": "Classical Tamil Root Word (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
-      "citationScope": "lexicon-root",
-      "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AE%BF%E0%AE%B3%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%8B&searchhws=yes",
-      "lexiconWebsite": "https://www.tamilvu.org/",
-      "citationNote": "Lexicon Source Attribution: «வள்ளலிளங்கோ» is an authentic standalone Tamil root word recorded in the University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AE%BF%E0%AE%B3%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%8B&searchhws=yes). No ancient poem citation is claimed."
-    },
-    "sourceCitation": "University of Madras Tamil Lexicon (https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AF%8D%E0%AE%B3%E0%AE%B2%E0%AE%BF%E0%AE%B3%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%8B&searchhws=yes)",
     "verificationStatus": "Lexicon Root Attested (தமிழ்ப் பேரகராதி வேர்ச்சொல்)",
     "dataConfidence": {
       "estimatedFields": [

@@ -1728,7 +1728,10 @@ export default function NamingGuruDashboard({
                 <option value="chaldean">
                   Chaldean (Cheiro — Most Popular in Tamil Nadu)
                 </option>
-                <option value="pythagorean">Pythagorean (Western Modern)</option>
+                <option value="pythagorean">Pythagorean (Western Modern & Master Numbers)</option>
+                <option value="katapayadi">
+                  Katapayadi Sankhya (கடபயாதி — Classical Tamil Prosodic Cipher)
+                </option>
               </select>
             </div>
 
@@ -1786,7 +1789,7 @@ export default function NamingGuruDashboard({
             <button
               type="button"
               onClick={() => {
-                setNumerologyMethod(numSystem);
+                setNumerologyMethod(numSystem === "katapayadi" ? "chaldean" : numSystem);
                 setNumerologyFilter(targetSpellingNumber);
                 setActiveTab("explore");
               }}
@@ -1872,26 +1875,62 @@ export default function NamingGuruDashboard({
             </div>
 
             {/* Planetary & Compatibility Insight */}
-            <div className="rounded-2xl border border-stone-200 bg-stone-50 p-4 text-sm space-y-2">
-              <div className="font-bold text-stone-900">
-                🪐 Ruling Planet: {numerologyResult.planet.planetTa} (
-                {numerologyResult.planet.planetEn})
+            <div className="rounded-2xl border border-stone-200 bg-stone-50 p-4 text-sm space-y-2.5">
+              {numerologyResult.isMasterNumber && (
+                <div className="rounded-xl border border-purple-300 bg-purple-50 p-2.5 text-xs font-bold text-purple-950 flex items-center gap-2">
+                  <span className="text-base">🌟</span>
+                  <span>{numerologyResult.masterNumberTitleTa} ({numerologyResult.masterNumberTitleEn})</span>
+                </div>
+              )}
+
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200/60 pb-2">
+                <div className="font-bold text-stone-900 text-base">
+                  🪐 ஆளும் கிரகம்: {numerologyResult.planet.planetTa} ({numerologyResult.planet.planetEn})
+                </div>
+                <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-900">
+                  அதிபதி: {numerologyResult.planet.deityTa}
+                </span>
               </div>
-              <p className="text-xs text-stone-700">
-                {numerologyResult.planet.traitsTa} —{" "}
-                {numerologyResult.planet.traitsEn}
+
+              <p className="text-xs text-stone-700 leading-relaxed">
+                <strong>இயற்கைப் பண்புகள்:</strong> {numerologyResult.planet.traitsTa} — {numerologyResult.planet.traitsEn}
               </p>
-              <p className="text-xs font-medium text-emerald-800">
+
+              <div className="grid grid-cols-2 gap-2 text-xs sm:grid-cols-4 pt-1">
+                <div className="rounded-xl bg-white p-2.5 border border-stone-200">
+                  <div className="text-[10px] uppercase font-bold text-stone-500">அதிர்ஷ்ட வண்ணங்கள்</div>
+                  <div className="mt-0.5 font-bold text-stone-800">{numerologyResult.planet.luckyColors.join(", ")}</div>
+                </div>
+                <div className="rounded-xl bg-white p-2.5 border border-stone-200">
+                  <div className="text-[10px] uppercase font-bold text-stone-500">சுபக் கிழமைகள்</div>
+                  <div className="mt-0.5 font-bold text-stone-800">{numerologyResult.planet.luckyDays.join(", ")}</div>
+                </div>
+                <div className="rounded-xl bg-white p-2.5 border border-stone-200">
+                  <div className="text-[10px] uppercase font-bold text-stone-500">மங்கள நவரத்தினம்</div>
+                  <div className="mt-0.5 font-bold text-stone-800">{numerologyResult.planet.gemTa}</div>
+                </div>
+                <div className="rounded-xl bg-white p-2.5 border border-stone-200">
+                  <div className="text-[10px] uppercase font-bold text-stone-500">வெற்றி மைல்கல் வயது</div>
+                  <div className="mt-0.5 font-bold text-stone-800">{numerologyResult.planet.milestoneYears.slice(0, 4).join(", ")}</div>
+                </div>
+              </div>
+
+              <div className="pt-1 text-xs text-stone-600">
+                <strong>பொருத்தமான தொழில் துறைகள்:</strong> {numerologyResult.planet.favorableCareersTa.join(" · ")} ({numerologyResult.planet.favorableCareersEn.join(", ")})
+              </div>
+
+              <p className="text-xs font-medium text-emerald-800 border-t border-stone-200/60 pt-2">
                 ✓ {compatResult.reasonTa} ({compatResult.reasonEn})
               </p>
+
               {numerologyResult.compoundInfo && (
                 <div className="mt-2 rounded-xl border border-amber-200 bg-amber-50/80 p-3 text-xs">
                   <strong>
                     Compound {numerologyResult.compoundNumber} —{" "}
                     {numerologyResult.compoundInfo.titleTa} (
-                    {numerologyResult.compoundInfo.titleEn}):
+                    {numerologyResult.compoundInfo.titleEn}) [{numerologyResult.compoundInfo.auspiciousness}]:
                   </strong>{" "}
-                  {numerologyResult.compoundInfo.summaryTa}
+                  {numerologyResult.compoundInfo.summaryTa} ({numerologyResult.compoundInfo.summaryEn})
                 </div>
               )}
             </div>

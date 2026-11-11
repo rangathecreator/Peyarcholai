@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-11T09:47:40.845Z",
-  "total": 21357,
+  "generatedAt": "2026-11-11T20:17:33.561Z",
+  "total": 22612,
   "maxPerShard": 400,
   "shards": [
     {
@@ -27,7 +27,12 @@
     {
       "file": "a-05.json",
       "letter": "அ",
-      "count": 376
+      "count": 400
+    },
+    {
+      "file": "a-06.json",
+      "letter": "அ",
+      "count": 79
     },
     {
       "file": "aa-01.json",
@@ -37,7 +42,7 @@
     {
       "file": "aa-02.json",
       "letter": "ஆ",
-      "count": 279
+      "count": 285
     },
     {
       "file": "i-01.json",
@@ -52,7 +57,7 @@
     {
       "file": "i-03.json",
       "letter": "இ",
-      "count": 196
+      "count": 293
     },
     {
       "file": "ii-01.json",
@@ -77,12 +82,12 @@
     {
       "file": "e-01.json",
       "letter": "எ",
-      "count": 225
+      "count": 250
     },
     {
       "file": "ee-01.json",
       "letter": "ஏ",
-      "count": 110
+      "count": 157
     },
     {
       "file": "ai-01.json",
@@ -142,7 +147,7 @@
     {
       "file": "ka-09.json",
       "letter": "க",
-      "count": 7
+      "count": 209
     },
     {
       "file": "sa-01.json",
@@ -177,12 +182,12 @@
     {
       "file": "sa-07.json",
       "letter": "ச",
-      "count": 258
+      "count": 366
     },
     {
       "file": "nya-01.json",
       "letter": "ஞ",
-      "count": 119
+      "count": 124
     },
     {
       "file": "tha-01.json",
@@ -202,7 +207,7 @@
     {
       "file": "tha-04.json",
       "letter": "த",
-      "count": 127
+      "count": 205
     },
     {
       "file": "na-01.json",
@@ -227,7 +232,7 @@
     {
       "file": "na-05.json",
       "letter": "ந",
-      "count": 148
+      "count": 295
     },
     {
       "file": "pa-01.json",
@@ -262,7 +267,7 @@
     {
       "file": "pa-07.json",
       "letter": "ப",
-      "count": 144
+      "count": 355
     },
     {
       "file": "ma-01.json",
@@ -292,12 +297,12 @@
     {
       "file": "ma-06.json",
       "letter": "ம",
-      "count": 232
+      "count": 355
     },
     {
       "file": "ya-01.json",
       "letter": "ய",
-      "count": 114
+      "count": 139
     },
     {
       "file": "ra-01.json",
@@ -337,7 +342,7 @@
     {
       "file": "va-06.json",
       "letter": "வ",
-      "count": 101
+      "count": 179
     },
     {
       "file": "ja-01.json",

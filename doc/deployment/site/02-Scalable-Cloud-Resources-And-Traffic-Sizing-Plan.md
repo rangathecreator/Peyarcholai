@@ -203,3 +203,4 @@ $$\text{Max Pool Size} = (\text{Total Cores} \times 2) + \text{Effective Spindle
    - Attach Upstash / Memorystore Redis instance.
 3. **Phase 3 Transition (At 100,000 DAU):**
    - Deploy GKE Autopilot cluster and configure AlloyDB read replicas.
+
