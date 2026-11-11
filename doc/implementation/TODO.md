@@ -318,3 +318,16 @@
   - **Structured JSON Logging**: Implemented in [`app/src/lib/logger.ts`](../../app/src/lib/logger.ts) and [`E:\project\Apps\common\code\observability\index.ts`](file:///E:/project/Apps/common/code/observability/index.ts).
   - **Prometheus Metrics Endpoint (`/api/metrics`)**: Implemented in [`app/src/app/api/metrics/route.ts`](../../app/src/app/api/metrics/route.ts) returning RED metrics, search counts, dossier views, poll votes, and subscription conversions.
   - **Scalable Site Infrastructure Plan**: Authored [`doc/deployment/site/02-Scalable-Cloud-Resources-And-Traffic-Sizing-Plan.md`](../deployment/site/02-Scalable-Cloud-Resources-And-Traffic-Sizing-Plan.md) modeling DonorConnect's scalable architecture across 0-10k, 10k-100k, and 100k-1M+ DAU.
+
+### Task 13: DonorConnect Subdomain Beta Deployment (`peyarcholai.donorconnect.in`)
+- [x] **Zero-Incremental-Cost Beta Subdomain Deployment Setup**:
+  - **Target Subdomains**: `peyarcholai.donorconnect.in` (Primary) and `names.donorconnect.in` (Short alias).
+  - **Ecosystem Reuse**: Reuses DonorConnect's existing Cloudflare zone (`donorconnect.in`) and Vercel Pro/Free team tier at **₹0 incremental cost**.
+  - **Cloudflare CNAME Records**:
+    - `peyarcholai` $\rightarrow$ `cname.vercel-dns.com` (DNS Only during initial verification, then Full Strict Proxied).
+    - `names` $\rightarrow$ `cname.vercel-dns.com` (Redirect or alias).
+  - **Vercel Deployment Automation**:
+    - Configured root [`vercel.json`](../../vercel.json) and [`app/vercel.json`](../../app/vercel.json) pointing to Next.js framework in `app/`.
+    - Added security headers, prefetching, and compression in [`app/next.config.mjs`](../../app/next.config.mjs).
+    - Authored [`app/.env.production.example`](../../app/.env.production.example) for production environment variable management.
+    - Authored exhaustive step-by-step deployment and verification runbook in [`doc/deployment/site/03-DonorConnect-Subdomain-Beta-Deployment-Guide.md`](../deployment/site/03-DonorConnect-Subdomain-Beta-Deployment-Guide.md).
