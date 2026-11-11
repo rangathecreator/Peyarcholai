@@ -147,3 +147,4 @@ KidNamingApp/
 
 All rights reserved © 2026 **பெயர்ச்சோலை (Peyarcholai)**.  
 Linguistic etymologies referenced against the University of Madras Tamil Lexicon and the Project Madurai digital archives.
+

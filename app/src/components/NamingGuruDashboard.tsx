@@ -16,9 +16,16 @@ import {
 import { evaluateNameScorecard } from "@/core/scorecard";
 import { TamilNameRecord, PublicSuggestionRecord } from "@/lib/repository";
 import { AdBanner } from "@/components/MonetizationBanner";
+import {
+  buildQueryAndPrompt,
+  QueryGeneratorConstraints,
+  GeneratedQueryPayload,
+} from "@/lib/query-generator";
+import { calculateEmpiricalRarity } from "@/lib/frequency-engine";
 
 type ActiveTab =
   | "explore"
+  | "querygen"
   | "numerology"
   | "nakshatra"
   | "scorecard"
@@ -138,6 +145,20 @@ export default function NamingGuruDashboard({
       planetEn: string;
     }>;
   } | null>(null);
+
+  // 5B. Visual Query & Prompt Synthesizer state (Task 7)
+  const [qgGender, setQgGender] = useState<"boy" | "girl" | "unisex" | "all">("girl");
+  const [qgStartingLetters, setQgStartingLetters] = useState<string>("யா, க, வி");
+  const [qgNakshatra, setQgNakshatra] = useState<string>("rohini");
+  const [qgTargetNum, setQgTargetNum] = useState<number>(5);
+  const [qgNumerologySystem, setQgNumerologySystem] = useState<"pythagorean" | "chaldean">("chaldean");
+  const [qgSiblingNames, setQgSiblingNames] = useState<string>("செங்குட்டுவன்");
+  const [qgGrandparentNames, setQgGrandparentNames] = useState<string>("இளங்கோவன்");
+  const [qgParentNames, setQgParentNames] = useState<string>("அன்பரசன், பூங்கொடி");
+  const [qgThemes, setQgThemes] = useState<string>("இசை (Music), இயற்கையெழில் (Nature), அறிவு (Wisdom)");
+  const [qgPureTamilOnly, setQgPureTamilOnly] = useState<boolean>(true);
+  const [qgMaxSpellingRisk, setQgMaxSpellingRisk] = useState<"low" | "medium" | "any">("low");
+  const [promptCopied, setPromptCopied] = useState<boolean>(false);
 
   // 6. Social Poll state
   const [pollTitle, setPollTitle] = useState(
@@ -387,6 +408,81 @@ export default function NamingGuruDashboard({
       },
     });
   }, [selectedNameForModal, siblingNamesStr]);
+
+  const modalEmpiricalRarity = useMemo(() => {
+    if (!selectedNameForModal) return null;
+    return calculateEmpiricalRarity(
+      selectedNameForModal.nameTamil,
+      selectedNameForModal.popularityRank
+    );
+  }, [selectedNameForModal]);
+
+  const generatedQuery = useMemo(() => {
+    return buildQueryAndPrompt({
+      gender: qgGender,
+      startingLetters: qgStartingLetters
+        .split(/[, ]+/)
+        .map((s) => s.trim())
+        .filter(Boolean),
+      nakshatraSlug: qgNakshatra !== "all" ? qgNakshatra : undefined,
+      targetNumerologyNumber: qgTargetNum || undefined,
+      numerologySystem: qgNumerologySystem,
+      siblingNames: qgSiblingNames
+        .split(/[, ]+/)
+        .map((s) => s.trim())
+        .filter(Boolean),
+      grandparentNames: qgGrandparentNames
+        .split(/[, ]+/)
+        .map((s) => s.trim())
+        .filter(Boolean),
+      parentNames: qgParentNames
+        .split(/[, ]+/)
+        .map((s) => s.trim())
+        .filter(Boolean),
+      meaningThemes: qgThemes
+        .split(/[, ]+/)
+        .map((s) => s.trim())
+        .filter(Boolean),
+      isNativeTamilOnly: qgPureTamilOnly,
+      allowedSpellingRisk: qgMaxSpellingRisk,
+    });
+  }, [
+    qgGender,
+    qgStartingLetters,
+    qgNakshatra,
+    qgTargetNum,
+    qgNumerologySystem,
+    qgSiblingNames,
+    qgGrandparentNames,
+    qgParentNames,
+    qgThemes,
+    qgPureTamilOnly,
+    qgMaxSpellingRisk,
+  ]);
+
+  function applyQueryToExplorer() {
+    if (generatedQuery.deterministicFilter.gender) {
+      setGenderFilter(generatedQuery.deterministicFilter.gender);
+    }
+    if (
+      generatedQuery.deterministicFilter.startingLetters &&
+      generatedQuery.deterministicFilter.startingLetters.length > 0
+    ) {
+      setStartingLetter(generatedQuery.deterministicFilter.startingLetters[0]);
+    }
+    if (generatedQuery.deterministicFilter.numerologyNumber) {
+      setNumerologyFilter(generatedQuery.deterministicFilter.numerologyNumber);
+      setNumerologyMethod(qgNumerologySystem);
+    }
+    if (qgNakshatra && qgNakshatra !== "all") {
+      setNakshatraFilter(qgNakshatra);
+    }
+    if (generatedQuery.deterministicFilter.isNativeTamilOnly) {
+      setOriginFilter("sangam");
+    }
+    setActiveTab("explore");
+    setPage(1);
+  }
   const birthNumResult = useMemo(
     () => calculateBirthNumbers(numDob || "2026-11-09"),
     [numDob]
@@ -776,6 +872,12 @@ export default function NamingGuruDashboard({
             id: "scorecard",
             labelTa: "7-பரிமாண மதிப்பீடு",
             labelEn: "7D Scorecard",
+          },
+          {
+            id: "querygen",
+            labelTa: "AI வினவல் வடிவமைப்பு",
+            labelEn: "Prompt Synthesizer",
+            badge: `${generatedQuery.activeConstraintCount} Rules`,
           },
           {
             id: "advisor",
@@ -1942,6 +2044,277 @@ export default function NamingGuruDashboard({
         </div>
       )}
 
+      {/* TAB: VISUAL QUERY & AI PROMPT SYNTHESIZER (Task 7) */}
+      {activeTab === "querygen" && (
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+          {/* Controls Column */}
+          <div className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm lg:col-span-5">
+            <div>
+              <div className="flex items-center justify-between">
+                <h3 className="font-bold text-stone-900 text-lg">
+                  🎯 வினவல் வடிவமைப்பு
+                </h3>
+                <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-900">
+                  {generatedQuery.activeConstraintCount} செயலில் உள்ள விதிகள்
+                </span>
+              </div>
+              <p className="mt-1 text-xs text-stone-500">
+                குடும்பத் தலைமுறை மரபுகள், உடன்பிறப்பு ஒலி ஒற்றுமை மற்றும் எண் கணித விதிகளுடன் வினவலை உருவாக்கவும்.
+              </p>
+            </div>
+
+            <div className="space-y-3.5 text-xs">
+              <div>
+                <label className="font-bold text-stone-700">பாலினம் (Gender):</label>
+                <div className="mt-1 flex gap-2">
+                  {(["girl", "boy", "unisex", "all"] as const).map((g) => (
+                    <button
+                      key={g}
+                      type="button"
+                      onClick={() => setQgGender(g)}
+                      className={`flex-1 rounded-xl py-2 font-semibold capitalize transition ${
+                        qgGender === g
+                          ? "bg-amber-600 text-white shadow-xs"
+                          : "border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100"
+                      }`}
+                    >
+                      {g === "girl"
+                        ? "பெண்"
+                        : g === "boy"
+                        ? "ஆண்"
+                        : g === "unisex"
+                        ? "இருபாலர்"
+                        : "அனைத்தும்"}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="font-bold text-stone-700">
+                  தொடக்க எழுத்துக்கள் (Starting Syllables - கமா கொண்டு பிரிக்கவும்):
+                </label>
+                <input
+                  type="text"
+                  value={qgStartingLetters}
+                  onChange={(e) => setQgStartingLetters(e.target.value)}
+                  placeholder="எ.கா: யா, க, வி"
+                  className="mt-1 w-full rounded-xl border border-stone-300 p-2.5 text-xs focus:border-amber-600 focus:outline-hidden"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <label className="font-bold text-stone-700">பிறப்பு நட்சத்திரம்:</label>
+                  <select
+                    value={qgNakshatra}
+                    onChange={(e) => setQgNakshatra(e.target.value)}
+                    className="mt-1 w-full rounded-xl border border-stone-300 p-2 text-xs focus:border-amber-600 focus:outline-hidden"
+                  >
+                    <option value="all">அனைத்து நட்சத்திரங்கள்</option>
+                    {TAMIL_NAKSHATRAS.map((n) => (
+                      <option key={n.slug} value={n.slug}>
+                        {n.nameTa} ({n.nameEn})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="font-bold text-stone-700">இலக்கு எண் (1–9):</label>
+                  <select
+                    value={qgTargetNum}
+                    onChange={(e) => setQgTargetNum(Number(e.target.value))}
+                    className="mt-1 w-full rounded-xl border border-stone-300 p-2 text-xs focus:border-amber-600 focus:outline-hidden"
+                  >
+                    <option value={0}>எண் கணிதம் தேவையில்லை</option>
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                      <option key={num} value={num}>
+                        எண் {num}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="font-bold text-stone-700">
+                  உடன்பிறப்பு பெயர்கள் (Sibling Harmonic Matching):
+                </label>
+                <input
+                  type="text"
+                  value={qgSiblingNames}
+                  onChange={(e) => setQgSiblingNames(e.target.value)}
+                  placeholder="எ.கா: செங்குட்டுவன், யாழினி"
+                  className="mt-1 w-full rounded-xl border border-stone-300 p-2.5 text-xs focus:border-amber-600 focus:outline-hidden"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <label className="font-bold text-stone-700">
+                    தாத்தா/பாட்டி பெயர்கள்:
+                  </label>
+                  <input
+                    type="text"
+                    value={qgGrandparentNames}
+                    onChange={(e) => setQgGrandparentNames(e.target.value)}
+                    placeholder="எ.கா: இளங்கோவன்"
+                    className="mt-1 w-full rounded-xl border border-stone-300 p-2 text-xs focus:border-amber-600 focus:outline-hidden"
+                  />
+                </div>
+                <div>
+                  <label className="font-bold text-stone-700">
+                    பெற்றோர் பெயர்கள்:
+                  </label>
+                  <input
+                    type="text"
+                    value={qgParentNames}
+                    onChange={(e) => setQgParentNames(e.target.value)}
+                    placeholder="எ.கா: அன்பரசன், பூங்கொடி"
+                    className="mt-1 w-full rounded-xl border border-stone-300 p-2 text-xs focus:border-amber-600 focus:outline-hidden"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="font-bold text-stone-700">
+                  கருப்பொருள் / நற்பண்புகள் (Themes):
+                </label>
+                <input
+                  type="text"
+                  value={qgThemes}
+                  onChange={(e) => setQgThemes(e.target.value)}
+                  placeholder="எ.கா: இசை (Music), இயற்கையெழில் (Nature), அறிவு (Wisdom)"
+                  className="mt-1 w-full rounded-xl border border-stone-300 p-2.5 text-xs focus:border-amber-600 focus:outline-hidden"
+                />
+              </div>
+
+              <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-3 space-y-2">
+                <label className="flex items-center gap-2 cursor-pointer font-semibold text-amber-950">
+                  <input
+                    type="checkbox"
+                    checked={qgPureTamilOnly}
+                    onChange={(e) => setQgPureTamilOnly(e.target.checked)}
+                    className="h-4 w-4 rounded-sm text-amber-700 focus:ring-amber-500"
+                  />
+                  <span>🏛️ 100% தூய தமிழ்ச் செம்மொழி வேர்ச்சொல் மட்டும் (≥85% Confidence)</span>
+                </label>
+                <div className="flex items-center justify-between text-[11px] text-amber-900">
+                  <span>பாஸ்போர்ட் எழுத்துப் பிழை இடர்:</span>
+                  <select
+                    value={qgMaxSpellingRisk}
+                    onChange={(e) =>
+                      setQgMaxSpellingRisk(e.target.value as "low" | "medium" | "any")
+                    }
+                    className="rounded-lg border border-amber-300 bg-white px-2 py-0.5 text-xs"
+                  >
+                    <option value="low">குறைந்த இடர் (Low Risk Only)</option>
+                    <option value="medium">மிதமான இடர் வரை (Up to Medium)</option>
+                    <option value="any">எல்லா இடர் நிலைகளும்</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Synthesizer Output Column */}
+          <div className="space-y-4 lg:col-span-7">
+            {/* Action Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-amber-200 bg-amber-50/80 p-4">
+              <div>
+                <h4 className="font-bold text-amber-950 text-sm">
+                  ⚡ உடனடி இயக்க விருப்பங்கள்
+                </h4>
+                <p className="text-xs text-amber-800">
+                  உருவாக்கப்பட்ட வடிப்பான்களை தேடலில் பயன்படுத்தலாம் அல்லது AI-க்கு அனுப்பலாம்.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={applyQueryToExplorer}
+                  className="rounded-xl bg-amber-700 px-3.5 py-2 text-xs font-bold text-white shadow-xs hover:bg-amber-800 transition"
+                >
+                  ⚡ Apply to Explorer (தேடலுக்கு மாற்று)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAdvisorPrompt(generatedQuery.aiLinguisticPrompt);
+                    setActiveTab("advisor");
+                  }}
+                  className="rounded-xl border border-amber-300 bg-white px-3.5 py-2 text-xs font-bold text-amber-950 shadow-xs hover:bg-amber-100 transition"
+                >
+                  🤖 Send to AI Advisor
+                </button>
+              </div>
+            </div>
+
+            {/* AI Linguistic Prompt Box */}
+            <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+              <div className="flex items-center justify-between border-b border-stone-100 pb-2.5">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">📜</span>
+                  <h4 className="font-bold text-stone-900 text-sm">
+                    AI மொழிவடிவ அறிவுறுத்தல் உரை (Synthesized LLM Prompt)
+                  </h4>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(generatedQuery.aiLinguisticPrompt);
+                    setPromptCopied(true);
+                    setTimeout(() => setPromptCopied(false), 2000);
+                  }}
+                  className="rounded-lg border border-stone-300 bg-stone-50 px-2.5 py-1 text-xs font-bold text-stone-800 hover:bg-amber-50 transition"
+                >
+                  {promptCopied ? "✓ Copied!" : "📋 Copy Prompt"}
+                </button>
+              </div>
+              <pre className="mt-3 max-h-72 overflow-y-auto whitespace-pre-wrap rounded-xl bg-stone-900 p-4 text-xs font-mono text-emerald-400 leading-relaxed">
+                {generatedQuery.aiLinguisticPrompt}
+              </pre>
+            </div>
+
+            {/* Deterministic Filter Shard Parameters */}
+            <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+              <h4 className="font-bold text-stone-900 text-sm">
+                🔍 தரவுத்தள வடிப்பான் அளவுருக்கள் (Deterministic Database Filter)
+              </h4>
+              <p className="mt-0.5 text-xs text-stone-500">
+                இவை பெயர்ச்சோலையின் 21,350+ நினைவகப் பகிர்வுகளில் (In-Memory Shards) உடனடியாக &lt;10ms-ல் செயல்படும்.
+              </p>
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4 text-xs">
+                <div className="rounded-xl bg-stone-50 p-2.5 border border-stone-200">
+                  <div className="text-[10px] text-stone-500 uppercase font-semibold">Gender</div>
+                  <div className="mt-0.5 font-bold text-stone-800">
+                    {generatedQuery.deterministicFilter.gender || "All"}
+                  </div>
+                </div>
+                <div className="rounded-xl bg-stone-50 p-2.5 border border-stone-200">
+                  <div className="text-[10px] text-stone-500 uppercase font-semibold">Starting Syllables</div>
+                  <div className="mt-0.5 font-bold text-stone-800">
+                    {generatedQuery.deterministicFilter.startingLetters?.join(", ") || "Any"}
+                  </div>
+                </div>
+                <div className="rounded-xl bg-stone-50 p-2.5 border border-stone-200">
+                  <div className="text-[10px] text-stone-500 uppercase font-semibold">Numerology No.</div>
+                  <div className="mt-0.5 font-bold text-stone-800">
+                    {generatedQuery.deterministicFilter.numerologyNumber || "Any"}
+                  </div>
+                </div>
+                <div className="rounded-xl bg-stone-50 p-2.5 border border-stone-200">
+                  <div className="text-[10px] text-stone-500 uppercase font-semibold">Min Confidence</div>
+                  <div className="mt-0.5 font-bold text-stone-800">
+                    {Math.round(generatedQuery.deterministicFilter.minConfidence * 100)}%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* TAB 5: AI NAME ADVISOR */}
       {activeTab === "advisor" && (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -2694,6 +3067,15 @@ export default function NamingGuruDashboard({
                   ? "♥ In Family Shortlist"
                   : "♡ Add to Shortlist"}
               </button>
+              <a
+                href={`/api/reports/download-pdf?slug=${selectedNameForModal.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-amber-900 px-3.5 py-1.5 text-xs font-bold text-white shadow-xs hover:bg-black transition flex items-center gap-1.5"
+              >
+                <span>📜</span>
+                <span>Download Official PDF Dossier (சுவடி அறிக்கை)</span>
+              </a>
               <button
                 type="button"
                 onClick={() => loadIntoNumerology(selectedNameForModal.nameLatin)}
@@ -2715,6 +3097,52 @@ export default function NamingGuruDashboard({
                 Full 14-Dimension SEO Page ↗
               </Link>
             </div>
+
+            {/* Empirical Cohort Rarity & Classroom Frequency Gauge (Task 8) */}
+            {modalEmpiricalRarity && (
+              <div className="mt-4 rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 text-xs">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-indigo-200/60 pb-2">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-base">{modalEmpiricalRarity.icon}</span>
+                    <span className="font-bold uppercase tracking-wider text-indigo-950">
+                      வகுப்பறை அதிர்வெண் & தனித்துவம் (Cohort Frequency Index)
+                    </span>
+                  </div>
+                  <span className="rounded-full bg-indigo-600 px-2.5 py-0.5 text-[11px] font-bold text-white">
+                    {modalEmpiricalRarity.observedFrequencyPercent}% Frequency
+                  </span>
+                </div>
+                <div className="mt-2.5 grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+                  <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
+                    <div className="text-[10px] uppercase font-bold text-stone-500">
+                      Classroom (40 Kids)
+                    </div>
+                    <div className="mt-0.5 font-bold text-indigo-950">
+                      ~{modalEmpiricalRarity.classroomRepetitionIndex} peers
+                    </div>
+                  </div>
+                  <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
+                    <div className="text-[10px] uppercase font-bold text-stone-500">
+                      Grade Cohort (1,000 Kids)
+                    </div>
+                    <div className="mt-0.5 font-bold text-indigo-950">
+                      ~{modalEmpiricalRarity.gradeCohortIndex} students
+                    </div>
+                  </div>
+                  <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
+                    <div className="text-[10px] uppercase font-bold text-stone-500">
+                      Rarity Band
+                    </div>
+                    <div className="mt-0.5 font-bold text-indigo-950">
+                      {modalEmpiricalRarity.badgeTitleTamil}
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-2 text-[11px] text-indigo-900 leading-relaxed">
+                  💡 <strong>பெற்றோர் வழிகாட்டல்:</strong> {modalEmpiricalRarity.parentAdviceTamil} ({modalEmpiricalRarity.parentAdviceEnglish})
+                </p>
+              </div>
+            )}
 
             {/* Meaning, Etymology & Verified Citation (>= 80% Confidence Gate) */}
             <div className="mt-4 space-y-2.5 rounded-2xl bg-amber-50 p-4 text-sm">

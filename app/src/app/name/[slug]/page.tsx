@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllTamilNames, getNameBySlug } from "@/lib/repository";
 import { calculateNumerology } from "@/core/numerology";
 import { evaluateNameScorecard } from "@/core/scorecard";
+import { calculateEmpiricalRarity } from "@/lib/frequency-engine";
 import { AdBanner } from "@/components/MonetizationBanner";
 
 export const dynamicParams = true;
@@ -37,14 +38,33 @@ export default async function NameDetailPage({
     popularityRank: item.popularityRank,
   });
 
+  const empiricalRarity = calculateEmpiricalRarity(
+    item.nameTamil,
+    item.popularityRank
+  );
+
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <Link
-        href="/"
-        className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-900 hover:underline"
-      >
-        ← Back to பெயர்ச்சோலை (Peyarcholai) Explorer
-      </Link>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-900 hover:underline"
+        >
+          ← Back to பெயர்ச்சோலை (Peyarcholai) Explorer
+        </Link>
+        <a
+          href={`/api/reports/download-pdf?slug=${item.slug}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-xl bg-amber-800 px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-amber-900 transition"
+        >
+          <span>📜</span>
+          <span>Download Official PDF Dossier (சுவடி அறிக்கை)</span>
+          <span className="rounded-md bg-amber-950/60 px-1.5 py-0.5 text-[10px] text-amber-200">
+            A4 Print Ready
+          </span>
+        </a>
+      </div>
 
       <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -73,11 +93,9 @@ export default async function NameDetailPage({
                   🔥 {item.trendStatus.category}
                 </span>
               )}
-              {item.uniqueness && (
-                <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-semibold text-stone-800">
-                  💎 {item.uniqueness.band} ({item.uniqueness.score}/100)
-                </span>
-              )}
+              <span className="rounded-full bg-indigo-50 border border-indigo-200 px-3 py-1 text-xs font-bold text-indigo-900">
+                {empiricalRarity.icon} {empiricalRarity.badgeTitleTamil} ({empiricalRarity.badgeTitleEnglish})
+              </span>
             </div>
             <h1 className="mt-3 text-4xl font-black text-stone-900">
               {item.nameTamil}{" "}
@@ -98,14 +116,68 @@ export default async function NameDetailPage({
             )}
           </div>
 
-          <div className="rounded-2xl bg-emerald-600 px-5 py-3 text-center text-white">
-            <div className="text-[11px] font-semibold uppercase">
-              14D Parent Score
+          <div className="flex flex-col items-end gap-2">
+            <div className="rounded-2xl bg-emerald-600 px-5 py-3 text-center text-white">
+              <div className="text-[11px] font-semibold uppercase">
+                14D Parent Score
+              </div>
+              <div className="text-3xl font-black">
+                {scorecard.overallScore}/100
+              </div>
             </div>
-            <div className="text-3xl font-black">
-              {scorecard.overallScore}/100
+            <a
+              href={`/api/reports/download-pdf?slug=${item.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] font-bold text-amber-800 hover:underline"
+            >
+              📄 Printable Suvadi Certificate ↗
+            </a>
+          </div>
+        </div>
+
+        {/* Empirical Cohort Rarity & Classroom Frequency Gauge */}
+        <div className="mt-6 rounded-2xl border border-indigo-100 bg-indigo-50/60 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-indigo-200/60 pb-2">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">{empiricalRarity.icon}</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-indigo-950">
+                நிகழ்காலப் பயன்பாட்டு அதிர்வெண் & வகுப்பறைத் தனித்துவம் (Empirical Cohort Frequency)
+              </span>
+            </div>
+            <span className="rounded-full bg-indigo-600 px-2.5 py-0.5 text-[11px] font-bold text-white">
+              {empiricalRarity.observedFrequencyPercent}% Frequency
+            </span>
+          </div>
+          <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3 text-xs">
+            <div className="rounded-xl bg-white/80 p-2.5 border border-indigo-100">
+              <div className="text-[10px] uppercase font-bold text-stone-500">
+                Classroom Peers (40 Students)
+              </div>
+              <div className="mt-1 font-bold text-indigo-950">
+                ~{empiricalRarity.classroomRepetitionIndex} peers in 40-student class
+              </div>
+            </div>
+            <div className="rounded-xl bg-white/80 p-2.5 border border-indigo-100">
+              <div className="text-[10px] uppercase font-bold text-stone-500">
+                School Cohort (1,000 Students)
+              </div>
+              <div className="mt-1 font-bold text-indigo-950">
+                ~{empiricalRarity.gradeCohortIndex} students across entire school
+              </div>
+            </div>
+            <div className="rounded-xl bg-white/80 p-2.5 border border-indigo-100">
+              <div className="text-[10px] uppercase font-bold text-stone-500">
+                Rarity Classification
+              </div>
+              <div className="mt-1 font-bold text-indigo-950">
+                {empiricalRarity.badgeTitleEnglish}
+              </div>
             </div>
           </div>
+          <p className="mt-2.5 text-xs text-indigo-900 leading-relaxed">
+            💡 <strong>பெற்றோர் வழிகாட்டல்:</strong> {empiricalRarity.parentAdviceTamil} ({empiricalRarity.parentAdviceEnglish})
+          </p>
         </div>
 
         {/* 1 & 3: Meaning, Root Breakdown & Granular Literary Reference */}
