@@ -1,0 +1,615 @@
+{
+  "customNames": [
+    {
+      "id": "sug-mwapqq6c",
+      "slug": "tamilisai",
+      "nameTamil": "தமிழிசை",
+      "nameLatin": "Tamilisai",
+      "gender": "girl",
+      "meaningTa": "இனிமையான தமிழ் இசை",
+      "meaningEn": "Sweet Tamil music and melody",
+      "originCategory": "Community + AI Verified",
+      "theme": [
+        "Community Contributed",
+        "Tamil"
+      ],
+      "nakshatraSlugs": [
+        "karthigai"
+      ],
+      "startingSyllableTa": "த",
+      "startingSyllableEn": "Ta",
+      "rasiTa": "தமிழ் மரபு",
+      "rasiEn": "Tamil Tradition",
+      "literaryReference": "சிலப்பதிகாரம் — அரங்கேற்று காதை",
+      "sourceCitation": "Reviewed by OmniRoute (allam-2-7b)",
+      "confidence": 0.95,
+      "popularityRank": "rare",
+      "verificationStatus": "AI-Approved (allam-2-7b)"
+    },
+    {
+      "id": "sug-mw8qw9h7",
+      "slug": "sengathir",
+      "nameTamil": "Sengathir",
+      "nameLatin": "Sengathir",
+      "gender": "boy",
+      "meaningTa": "Crimson rays of the rising sun",
+      "meaningEn": "Crimson rays of the rising sun",
+      "originCategory": "Community + AI Verified",
+      "theme": [
+        "Community Contributed",
+        "Tamil"
+      ],
+      "nakshatraSlugs": [
+        "karthigai"
+      ],
+      "startingSyllableTa": "S",
+      "startingSyllableEn": "Se",
+      "rasiTa": "தமிழ் மரபு",
+      "rasiEn": "Tamil Tradition",
+      "literaryReference": "Purananuru",
+      "sourceCitation": "Reviewed by OmniRoute (openai/gpt-oss-120b)",
+      "confidence": 0.95,
+      "popularityRank": "rare",
+      "verificationStatus": "AI-Approved (openai/gpt-oss-120b)"
+    }
+  ],
+  "polls": [
+    {
+      "token": "poll-48cm23-i2q0",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:52:51.528Z",
+      "closesAt": "2026-11-17T23:52:51.528Z",
+      "votes": []
+    },
+    {
+      "token": "poll-90jwn3-gfya",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:51:35.362Z",
+      "closesAt": "2026-11-17T23:51:35.362Z",
+      "votes": []
+    },
+    {
+      "token": "poll-k5esoe-esvh",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:50:18.797Z",
+      "closesAt": "2026-11-17T23:50:18.797Z",
+      "votes": []
+    },
+    {
+      "token": "poll-wc0j7i-d8ib",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:49:05.747Z",
+      "closesAt": "2026-11-17T23:49:05.748Z",
+      "votes": []
+    },
+    {
+      "token": "poll-ybok2v-brmo",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:47:57.216Z",
+      "closesAt": "2026-11-17T23:47:57.216Z",
+      "votes": []
+    },
+    {
+      "token": "poll-qiytu3-8ink",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:45:25.616Z",
+      "closesAt": "2026-11-17T23:45:25.616Z",
+      "votes": []
+    },
+    {
+      "token": "poll-gooyyn-0uch",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:39:27.521Z",
+      "closesAt": "2026-11-17T23:39:27.521Z",
+      "votes": []
+    },
+    {
+      "token": "poll-djhn2g-y3sr",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:37:19.803Z",
+      "closesAt": "2026-11-17T23:37:19.803Z",
+      "votes": []
+    },
+    {
+      "token": "poll-70hm58-rgwb",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:32:10.187Z",
+      "closesAt": "2026-11-17T23:32:10.187Z",
+      "votes": []
+    },
+    {
+      "token": "poll-7s88yd-nt2g",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:29:19.336Z",
+      "closesAt": "2026-11-17T23:29:19.336Z",
+      "votes": []
+    },
+    {
+      "token": "poll-tb2xsl-jhhq",
+      "title": "Swarm Poll Check",
+      "parentName": "Swarm",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T23:25:57.710Z",
+      "closesAt": "2026-11-17T23:25:57.710Z",
+      "votes": []
+    },
+    {
+      "token": "poll-gtqe9c-v8i0",
+      "title": "Self-Improvement Test Poll #2",
+      "parentName": "Parent Tester Agent",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "Automated parent flow check",
+      "createdAt": "2026-11-10T13:47:13.992Z",
+      "closesAt": "2026-11-17T13:47:13.993Z",
+      "votes": [
+        {
+          "voterName": "Paatti (Grandma)",
+          "removedSlugs": [],
+          "lovedSlugs": [
+            "yazhini",
+            "iniya"
+          ],
+          "reason": "Personal preference",
+          "comment": "Both names are melodious and easy to call!",
+          "createdAt": "2026-11-10T13:47:13.997Z"
+        }
+      ]
+    },
+    {
+      "token": "poll-8he3yr-ugj8",
+      "title": "Self-Improvement Test Poll #1",
+      "parentName": "Parent Tester Agent",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "Automated parent flow check",
+      "createdAt": "2026-11-10T13:46:37.748Z",
+      "closesAt": "2026-11-17T13:46:37.748Z",
+      "votes": [
+        {
+          "voterName": "Paatti (Grandma)",
+          "removedSlugs": [],
+          "lovedSlugs": [
+            "yazhini",
+            "iniya"
+          ],
+          "reason": "Personal preference",
+          "comment": "Both names are melodious and easy to call!",
+          "createdAt": "2026-11-10T13:46:37.758Z"
+        }
+      ]
+    },
+    {
+      "token": "poll-zk80pd-takv",
+      "title": "Self-Improvement Test Poll #3",
+      "parentName": "Parent Tester Agent",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "Automated parent flow check",
+      "createdAt": "2026-11-10T13:17:43.759Z",
+      "closesAt": "2026-11-17T13:17:43.759Z",
+      "votes": [
+        {
+          "voterName": "Paatti (Grandma)",
+          "removedSlugs": [],
+          "lovedSlugs": [
+            "yazhini",
+            "iniya"
+          ],
+          "reason": "Personal preference",
+          "comment": "Both names are melodious and easy to call!",
+          "createdAt": "2026-11-10T13:17:43.784Z"
+        }
+      ]
+    },
+    {
+      "token": "poll-505343-rqe9",
+      "title": "Self-Improvement Test Poll #2",
+      "parentName": "Parent Tester Agent",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "Automated parent flow check",
+      "createdAt": "2026-11-10T13:16:30.945Z",
+      "closesAt": "2026-11-17T13:16:30.945Z",
+      "votes": [
+        {
+          "voterName": "Paatti (Grandma)",
+          "removedSlugs": [],
+          "lovedSlugs": [
+            "yazhini",
+            "iniya"
+          ],
+          "reason": "Personal preference",
+          "comment": "Both names are melodious and easy to call!",
+          "createdAt": "2026-11-10T13:16:30.975Z"
+        }
+      ]
+    },
+    {
+      "token": "poll-v0tnjl-qe62",
+      "title": "Self-Improvement Test Poll #1",
+      "parentName": "Parent Tester Agent",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "Automated parent flow check",
+      "createdAt": "2026-11-10T13:15:28.442Z",
+      "closesAt": "2026-11-17T13:15:28.442Z",
+      "votes": [
+        {
+          "voterName": "Paatti (Grandma)",
+          "removedSlugs": [],
+          "lovedSlugs": [
+            "yazhini",
+            "iniya"
+          ],
+          "reason": "Personal preference",
+          "comment": "Both names are melodious and easy to call!",
+          "createdAt": "2026-11-10T13:15:28.485Z"
+        }
+      ]
+    },
+    {
+      "token": "poll-010vfw-0js0",
+      "title": "Our Baby Name Shortlist — Vote Your Favourite!",
+      "parentName": "Santhosh & Family",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "Please mark your top favourites and flag any name that feels hard to pronounce.",
+      "createdAt": "2026-11-10T12:55:22.656Z",
+      "closesAt": "2026-11-17T12:55:22.656Z",
+      "votes": []
+    },
+    {
+      "token": "poll-wx51sy-0im4",
+      "title": "Our Baby Name Shortlist — Vote Your Favourite!",
+      "parentName": "Santhosh & Family",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "Please mark your top favourites and flag any name that feels hard to pronounce.",
+      "createdAt": "2026-11-10T12:55:21.148Z",
+      "closesAt": "2026-11-17T12:55:21.148Z",
+      "votes": []
+    },
+    {
+      "token": "poll-z8lpcq-oqhv",
+      "title": "Our Tamil Baby Name Shortlist",
+      "parentName": "Parents",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T12:18:11.875Z",
+      "closesAt": "2026-11-17T12:18:11.875Z",
+      "votes": []
+    },
+    {
+      "token": "poll-velx1g-opad",
+      "title": "Our Tamil Baby Name Shortlist",
+      "parentName": "Parents",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T12:18:10.309Z",
+      "closesAt": "2026-11-17T12:18:10.309Z",
+      "votes": []
+    },
+    {
+      "token": "poll-yf99oa-om9i",
+      "title": "Our Tamil Baby Name Shortlist",
+      "parentName": "Parents",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T12:18:06.390Z",
+      "closesAt": "2026-11-17T12:18:06.390Z",
+      "votes": []
+    },
+    {
+      "token": "poll-0ec44s-od1q",
+      "title": "Our Tamil Baby Name Shortlist",
+      "parentName": "Parents",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T12:17:54.446Z",
+      "closesAt": "2026-11-17T12:17:54.446Z",
+      "votes": []
+    },
+    {
+      "token": "poll-w0wdsh-ocz9",
+      "title": "Our Tamil Baby Name Shortlist",
+      "parentName": "Parents",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T12:17:54.357Z",
+      "closesAt": "2026-11-17T12:17:54.357Z",
+      "votes": []
+    },
+    {
+      "token": "poll-ek4fqj-o6oz",
+      "title": "Our Tamil Baby Name Shortlist",
+      "parentName": "Parents",
+      "candidateSlugs": [
+        "yazhini",
+        "kavin",
+        "iniya"
+      ],
+      "notes": "",
+      "createdAt": "2026-11-10T12:17:46.211Z",
+      "closesAt": "2026-11-17T12:17:46.211Z",
+      "votes": []
+    },
+    {
+      "token": "sample-tamil-poll",
+      "title": "Baby Girl Shortlist for Karthigai / Rohini Star",
+      "parentName": "Santhosh & Family",
+      "candidateSlugs": [
+        "yazhini",
+        "iniya",
+        "venba",
+        "oviya",
+        "magizhini"
+      ],
+      "notes": "Please vote for your favourite and mark any name that is hard to pronounce!",
+      "createdAt": "2026-11-09T04:12:29.563Z",
+      "closesAt": "2026-11-16T04:12:29.563Z",
+      "votes": [
+        {
+          "voterName": "Paatti (Grandma)",
+          "removedSlugs": [
+            "oviya"
+          ],
+          "lovedSlugs": [
+            "yazhini",
+            "iniya"
+          ],
+          "reason": "Prefer classical Sangam Tamil resonance",
+          "comment": "யாழினி மற்றும் இனியா இரண்டும் மிக இனிமையான தமிழ் பெயர்கள்!",
+          "createdAt": "2026-11-09T04:12:29.563Z"
+        },
+        {
+          "voterName": "Mama (Uncle)",
+          "removedSlugs": [],
+          "lovedSlugs": [
+            "venba",
+            "yazhini"
+          ],
+          "reason": "Easy to spell and call",
+          "comment": "Venba is short, pure Tamil, and easy on school forms.",
+          "createdAt": "2026-11-09T04:12:29.563Z"
+        },
+        {
+          "voterName": "santhosh",
+          "removedSlugs": [],
+          "lovedSlugs": [],
+          "reason": "Voted via Family Poll",
+          "comment": "happiness around",
+          "createdAt": "2026-11-10T12:55:06.645Z"
+        }
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "sug-mwaqvg89",
+      "nameTamil": "தமிழிசை",
+      "nameLatin": "Tamilisai",
+      "gender": "girl",
+      "meaningTa": "இனிமையான தமிழ் இசை",
+      "meaningEn": "Sweet Tamil music and melody",
+      "literaryReference": "சிலப்பதிகாரம் — அரங்கேற்று காதை",
+      "submittedBy": "Parent Tester Swarm",
+      "status": "AI-Approved",
+      "aiConfidence": 0.95,
+      "aiReviewNote": "The name appears to be a respectful representation of Tamil culture and language, with a literary reference to Silappadikaram - Aranگетற்று காதை, indicating a connection to Tamil history and literature.",
+      "aiModelUsed": "allam-2-7b",
+      "createdAt": "2026-11-10T13:47:24.009Z"
+    },
+    {
+      "id": "sug-mwaqurix",
+      "nameTamil": "தமிழிசை",
+      "nameLatin": "Tamilisai",
+      "gender": "girl",
+      "meaningTa": "இனிமையான தமிழ் இசை",
+      "meaningEn": "Sweet Tamil music and melody",
+      "literaryReference": "சிலப்பதிகாரம் — அரங்கேற்று காதை",
+      "submittedBy": "Parent Tester Swarm",
+      "status": "AI-Approved",
+      "aiConfidence": 0.95,
+      "aiReviewNote": "Verified for positive Tamil meaning and phonetic clarity.",
+      "aiModelUsed": "allam-2-7b",
+      "createdAt": "2026-11-10T13:46:51.993Z"
+    },
+    {
+      "id": "sug-mwaptmox",
+      "nameTamil": "தமிழிசை",
+      "nameLatin": "Tamilisai",
+      "gender": "girl",
+      "meaningTa": "இனிமையான தமிழ் இசை",
+      "meaningEn": "Sweet Tamil music and melody",
+      "literaryReference": "சிலப்பதிகாரம் — அரங்கேற்று காதை",
+      "submittedBy": "Parent Tester Swarm",
+      "status": "AI-Approved",
+      "aiConfidence": 0.95,
+      "aiReviewNote": "The name appears to be a respectful representation of Tamil culture and language, with a literary reference to Silappadikaram. The meaning and origin seem genuine and appropriate for a girl.",
+      "aiModelUsed": "allam-2-7b",
+      "createdAt": "2026-11-10T13:17:59.457Z"
+    },
+    {
+      "id": "sug-mwaps1d0",
+      "nameTamil": "தமிழிசை",
+      "nameLatin": "Tamilisai",
+      "gender": "girl",
+      "meaningTa": "இனிமையான தமிழ் இசை",
+      "meaningEn": "Sweet Tamil music and melody",
+      "literaryReference": "சிலப்பதிகாரம் — அரங்கேற்று காதை",
+      "submittedBy": "Parent Tester Swarm",
+      "status": "AI-Approved",
+      "aiConfidence": 0.95,
+      "aiReviewNote": "The name appears to be a respectful representation of Tamil culture and language, with a literary reference to Silappadikaram - Aranگетற்று காதை, indicating a connection to Tamil history and literature.",
+      "aiModelUsed": "allam-2-7b",
+      "createdAt": "2026-11-10T13:16:45.156Z"
+    },
+    {
+      "id": "sug-mwapqq6c",
+      "nameTamil": "தமிழிசை",
+      "nameLatin": "Tamilisai",
+      "gender": "girl",
+      "meaningTa": "இனிமையான தமிழ் இசை",
+      "meaningEn": "Sweet Tamil music and melody",
+      "literaryReference": "சிலப்பதிகாரம் — அரங்கேற்று காதை",
+      "submittedBy": "Parent Tester Swarm",
+      "status": "AI-Approved",
+      "aiConfidence": 0.95,
+      "aiReviewNote": "The name appears to be a respectful representation of Tamil culture and language, with a literary reference to Silappadikaram - Aranگетற்று காதை, indicating a connection to Tamil history and literature.",
+      "aiModelUsed": "allam-2-7b",
+      "createdAt": "2026-11-10T13:15:44.004Z"
+    },
+    {
+      "id": "sug-mwanp2a5",
+      "nameTamil": "Sengathir",
+      "nameLatin": "Sengathir",
+      "gender": "boy",
+      "meaningTa": "Crimson rays of the rising sun",
+      "meaningEn": "Crimson rays of the rising sun",
+      "literaryReference": "Purananuru",
+      "submittedBy": "Prerequisite Smoke Tester",
+      "status": "Needs-Review",
+      "aiConfidence": 0.65,
+      "aiReviewNote": "Verified for positive Tamil meaning and phonetic clarity.",
+      "aiModelUsed": "heuristic-validator",
+      "createdAt": "2026-11-10T12:18:27.149Z"
+    },
+    {
+      "id": "sug-mwab8efa",
+      "nameTamil": "Sengathir",
+      "nameLatin": "Sengathir",
+      "gender": "boy",
+      "meaningTa": "Crimson rays of the rising sun",
+      "meaningEn": "Crimson rays of the rising sun",
+      "literaryReference": "Purananuru",
+      "submittedBy": "Prerequisite Smoke Tester",
+      "status": "AI-Approved",
+      "aiConfidence": 0.93,
+      "aiReviewNote": "Verified 'செங்கதிர்' as a legitimate Tamil word meaning a red sunray; attested in Sangam literature (Purananuru); positive, respectful name",
+      "aiModelUsed": "openai/gpt-oss-120b",
+      "createdAt": "2026-11-10T06:29:34.342Z"
+    },
+    {
+      "id": "sug-mw8qw9h7",
+      "nameTamil": "Sengathir",
+      "nameLatin": "Sengathir",
+      "gender": "boy",
+      "meaningTa": "Crimson rays of the rising sun",
+      "meaningEn": "Crimson rays of the rising sun",
+      "literaryReference": "Purananuru",
+      "submittedBy": "Prerequisite Smoke Tester",
+      "status": "AI-Approved",
+      "aiConfidence": 0.95,
+      "aiReviewNote": "Verified as a legitimate Tamil word (செங்கதிர்) used in Sangam literature such as Purananuru, with a positive, nature‑related meaning.",
+      "aiModelUsed": "openai/gpt-oss-120b",
+      "createdAt": "2026-11-09T04:12:29.563Z"
+    }
+  ],
+  "errorReports": []
+}

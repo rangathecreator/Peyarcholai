@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-11T09:47:40.845Z",
+  "total": 21357,
+  "maxPerShard": 400,
+  "shards": [
+    {
+      "file": "a-01.json",
+      "letter": "அ",
+      "count": 400
+    },
+    {
+      "file": "a-02.json",
+      "letter": "அ",
+      "count": 400
+    },
+    {
+      "file": "a-03.json",
+      "letter": "அ",
+      "count": 400
+    },
+    {
+      "file": "a-04.json",
+      "letter": "அ",
+      "count": 400
+    },
+    {
+      "file": "a-05.json",
+      "letter": "அ",
+      "count": 376
+    },
+    {
+      "file": "aa-01.json",
+      "letter": "ஆ",
+      "count": 400
+    },
+    {
+      "file": "aa-02.json",
+      "letter": "ஆ",
+      "count": 279
+    },
+    {
+      "file": "i-01.json",
+      "letter": "இ",
+      "count": 400
+    },
+    {
+      "file": "i-02.json",
+      "letter": "இ",
+      "count": 400
+    },
+    {
+      "file": "i-03.json",
+      "letter": "இ",
+      "count": 196
+    },
+    {
+      "file": "ii-01.json",
+      "letter": "ஈ",
+      "count": 116
+    },
+    {
+      "file": "u-01.json",
+      "letter": "உ",
+      "count": 400
+    },
+    {
+      "file": "u-02.json",
+      "letter": "உ",
+      "count": 48
+    },
+    {
+      "file": "uu-01.json",
+      "letter": "ஊ",
+      "count": 115
+    },
+    {
+      "file": "e-01.json",
+      "letter": "எ",
+      "count": 225
+    },
+    {
+      "file": "ee-01.json",
+      "letter": "ஏ",
+      "count": 110
+    },
+    {
+      "file": "ai-01.json",
+      "letter": "ஐ",
+      "count": 116
+    },
+    {
+      "file": "o-01.json",
+      "letter": "ஒ",
+      "count": 115
+    },
+    {
+      "file": "oo-01.json",
+      "letter": "ஓ",
+      "count": 332
+    },
+    {
+      "file": "ka-01.json",
+      "letter": "க",
+      "count": 400
+    },
+    {
+      "file": "ka-02.json",
+      "letter": "க",
+      "count": 400
+    },
+    {
+      "file": "ka-03.json",
+      "letter": "க",
+      "count": 400
+    },
+    {
+      "file": "ka-04.json",
+      "letter": "க",
+      "count": 400
+    },
+    {
+      "file": "ka-05.json",
+      "letter": "க",
+      "count": 400
+    },
+    {
+      "file": "ka-06.json",
+      "letter": "க",
+      "count": 400
+    },
+    {
+      "file": "ka-07.json",
+      "letter": "க",
+      "count": 400
+    },
+    {
+      "file": "ka-08.json",
+      "letter": "க",
+      "count": 400
+    },
+    {
+      "file": "ka-09.json",
+      "letter": "க",
+      "count": 7
+    },
+    {
+      "file": "sa-01.json",
+      "letter": "ச",
+      "count": 400
+    },
+    {
+      "file": "sa-02.json",
+      "letter": "ச",
+      "count": 400
+    },
+    {
+      "file": "sa-03.json",
+      "letter": "ச",
+      "count": 400
+    },
+    {
+      "file": "sa-04.json",
+      "letter": "ச",
+      "count": 400
+    },
+    {
+      "file": "sa-05.json",
+      "letter": "ச",
+      "count": 400
+    },
+    {
+      "file": "sa-06.json",
+      "letter": "ச",
+      "count": 400
+    },
+    {
+      "file": "sa-07.json",
+      "letter": "ச",
+      "count": 258
+    },
+    {
+      "file": "nya-01.json",
+      "letter": "ஞ",
+      "count": 119
+    },
+    {
+      "file": "tha-01.json",
+      "letter": "த",
+      "count": 400
+    },
+    {
+      "file": "tha-02.json",
+      "letter": "த",
+      "count": 400
+    },
+    {
+      "file": "tha-03.json",
+      "letter": "த",
+      "count": 400
+    },
+    {
+      "file": "tha-04.json",
+      "letter": "த",
+      "count": 127
+    },
+    {
+      "file": "na-01.json",
+      "letter": "ந",
+      "count": 400
+    },
+    {
+      "file": "na-02.json",
+      "letter": "ந",
+      "count": 400
+    },
+    {
+      "file": "na-03.json",
+      "letter": "ந",
+      "count": 400
+    },
+    {
+      "file": "na-04.json",
+      "letter": "ந",
+      "count": 400
+    },
+    {
+      "file": "na-05.json",
+      "letter": "ந",
+      "count": 148
+    },
+    {
+      "file": "pa-01.json",
+      "letter": "ப",
+      "count": 400
+    },
+    {
+      "file": "pa-02.json",
+      "letter": "ப",
+      "count": 400
+    },
+    {
+      "file": "pa-03.json",
+      "letter": "ப",
+      "count": 400
+    },
+    {
+      "file": "pa-04.json",
+      "letter": "ப",
+      "count": 400
+    },
+    {
+      "file": "pa-05.json",
+      "letter": "ப",
+      "count": 400
+    },
+    {
+      "file": "pa-06.json",
+      "letter": "ப",
+      "count": 400
+    },
+    {
+      "file": "pa-07.json",
+      "letter": "ப",
+      "count": 144
+    },
+    {
+      "file": "ma-01.json",
+      "letter": "ம",
+      "count": 400
+    },
+    {
+      "file": "ma-02.json",
+      "letter": "ம",
+      "count": 400
+    },
+    {
+      "file": "ma-03.json",
+      "letter": "ம",
+      "count": 400
+    },
+    {
+      "file": "ma-04.json",
+      "letter": "ம",
+      "count": 400
+    },
+    {
+      "file": "ma-05.json",
+      "letter": "ம",
+      "count": 400
+    },
+    {
+      "file": "ma-06.json",
+      "letter": "ம",
+      "count": 232
+    },
+    {
+      "file": "ya-01.json",
+      "letter": "ய",
+      "count": 114
+    },
+    {
+      "file": "ra-01.json",
+      "letter": "ர",
+      "count": 21
+    },
+    {
+      "file": "la-01.json",
+      "letter": "ல",
+      "count": 15
+    },
+    {
+      "file": "va-01.json",
+      "letter": "வ",
+      "count": 400
+    },
+    {
+      "file": "va-02.json",
+      "letter": "வ",
+      "count": 400
+    },
+    {
+      "file": "va-03.json",
+      "letter": "வ",
+      "count": 400
+    },
+    {
+      "file": "va-04.json",
+      "letter": "வ",
+      "count": 400
+    },
+    {
+      "file": "va-05.json",
+      "letter": "வ",
+      "count": 400
+    },
+    {
+      "file": "va-06.json",
+      "letter": "வ",
+      "count": 101
+    },
+    {
+      "file": "ja-01.json",
+      "letter": "ஜ",
+      "count": 42
+    },
+    {
+      "file": "ha-01.json",
+      "letter": "ஹ",
+      "count": 1
+    }
+  ]
+}

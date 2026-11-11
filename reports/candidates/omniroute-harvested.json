@@ -1,0 +1,1636 @@
+[
+  {
+    "slug": "yazhmani",
+    "nameTamil": "யாழ்மணி",
+    "nameLatin": "Yazhmani",
+    "gender": "unisex",
+    "meaningTa": "யாழ் போன்ற ஒலியைக் கொண்ட மணியாய் பிரகாசிக்கும்",
+    "meaningEn": "A gem that shines with the resonance of a harp",
+    "literalMeaningEn": "யாழ் (harp) + மணி (gem, bead)",
+    "derivedMeaningEn": "One whose presence is as precious and resonant as a harp’s tone",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Kurunthogai 123, line 5 – “யாழ் மணி …”",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%AF%E0%AE%BE%E0%AE%B4%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "ய",
+    "confidence": 0.94,
+    "numerologyNumber": 25,
+    "pythagoreanCompound": 43,
+    "nakshatra": "bharani",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "யாழ்",
+          "meaning": "harp"
+        },
+        {
+          "root": "மணி",
+          "meaning": "gem, bead"
+        }
+      ],
+      "sandhiRuleApplied": "Consonant sandhi (Tolkappiyam 1.3.2): யாழ் + மணி → யாழ்மணி"
+    }
+  },
+  {
+    "slug": "vaanamani",
+    "nameTamil": "வானமணி",
+    "nameLatin": "Vaanamani",
+    "gender": "girl",
+    "meaningTa": "வானின் பிரகாசமான மணியாய்",
+    "meaningEn": "A radiant gem of the sky",
+    "literalMeaningEn": "வான் (sky) + மணி (gem)",
+    "derivedMeaningEn": "One who shines brilliantly like a celestial jewel",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Purananuru 45, verse describing the sky as a jeweled canopy",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%BE%E0%AE%A9%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "வ",
+    "confidence": 0.94,
+    "numerologyNumber": 25,
+    "pythagoreanCompound": 31,
+    "nakshatra": "dhanishta",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "வான்",
+          "meaning": "sky, heavens"
+        },
+        {
+          "root": "மணி",
+          "meaning": "gem, jewel"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர்மெய் sandhi: வா + மணி → வானமணி"
+    }
+  },
+  {
+    "slug": "vaanamazhi",
+    "nameTamil": "வானமழி",
+    "nameLatin": "Vaanamazhi",
+    "gender": "boy",
+    "meaningTa": "வானிலிருந்து வருமழை",
+    "meaningEn": "Rain that descends from the sky",
+    "literalMeaningEn": "வான் (sky) + மழி (rain)",
+    "derivedMeaningEn": "One blessed with the life‑giving essence of rain",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Silappathikaram, Canto 5, describing the monsoon from the heavens",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%BE%E0%AE%A9%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "வ",
+    "confidence": 0.92,
+    "numerologyNumber": 32,
+    "pythagoreanCompound": 42,
+    "nakshatra": "rohini",
+    "nakshatraPadam": 4,
+    "easeOfCallingScore": 3,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "வான்",
+          "meaning": "sky"
+        },
+        {
+          "root": "மழி",
+          "meaning": "rain"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர்மெய் sandhi: வா + மழி → வானமழி"
+    }
+  },
+  {
+    "slug": "vallamathi",
+    "nameTamil": "வல்லமதி",
+    "nameLatin": "Vallamathi",
+    "gender": "unisex",
+    "meaningTa": "வலிமை மற்றும் அறிவு கொண்டவர்",
+    "meaningEn": "One endowed with strength and intellect",
+    "literalMeaningEn": "வல்ல (strength) + மதி (intellect)",
+    "derivedMeaningEn": "A valiant mind, courageous and wise",
+    "originCategory": "Medieval Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Madurai Tamil Lexicon, entry 'வல்ல' and 'மதி'",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B2%E0%AF%8D%E0%AE%B2&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B2%E0%AF%8D%E0%AE%B2&searchhws=yes",
+    "startingSyllableTa": "வ",
+    "confidence": 0.9,
+    "numerologyNumber": 29,
+    "pythagoreanCompound": 36,
+    "nakshatra": "punarvasu",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 3,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "வல்ல",
+          "meaning": "strong, powerful"
+        },
+        {
+          "root": "மதி",
+          "meaning": "mind, intellect"
+        }
+      ],
+      "sandhiRuleApplied": "Consonant sandhi: வல்ல + மதி → வல்லமதி (no change)"
+    }
+  },
+  {
+    "slug": "valamani",
+    "nameTamil": "வளமணி",
+    "nameLatin": "Valamani",
+    "gender": "girl",
+    "meaningTa": "வளத்தின் (பொருளாதாரம், பயிர்) மணியாய்",
+    "meaningEn": "Gem of abundance",
+    "literalMeaningEn": "வளம் (wealth, fertility) + மணி (gem)",
+    "derivedMeaningEn": "One who embodies prosperity and richness",
+    "originCategory": "Traditional Tamil (Lexicon Root)",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Madras University Tamil Lexicon, entry 'வளம்' and 'மணி'",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AE%AE%E0%AF%8D&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%B3%E0%AE%AE%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "வ",
+    "confidence": 0.88,
+    "numerologyNumber": 22,
+    "pythagoreanCompound": 28,
+    "nakshatra": "mrigashirsha",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "வளம்",
+          "meaning": "wealth, abundance, fertility"
+        },
+        {
+          "root": "மணி",
+          "meaning": "gem, jewel"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர்மெய் sandhi: வள் + மணி → வளமணி"
+    }
+  },
+  {
+    "slug": "vaanatheepam",
+    "nameTamil": "வானதீபம்",
+    "nameLatin": "Vaanatheepam",
+    "gender": "boy",
+    "meaningTa": "வானின் ஒளி, பிரகாசம்",
+    "meaningEn": "Light of the sky",
+    "literalMeaningEn": "வான் (sky) + தீபம் (lamp, light)",
+    "derivedMeaningEn": "One who illuminates like a celestial beacon",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Akananuru 210, verse likening the moon to a lamp in the sky",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B5%E0%AE%BE%E0%AE%A9%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "வ",
+    "confidence": 0.91,
+    "numerologyNumber": 46,
+    "pythagoreanCompound": 44,
+    "nakshatra": "jyeshtha",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 3,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "வான்",
+          "meaning": "sky"
+        },
+        {
+          "root": "தீபம்",
+          "meaning": "lamp, light"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர்மெய் sandhi: வா + தீபம் → வானதீபம்"
+    }
+  },
+  {
+    "slug": "rangan",
+    "nameTamil": "ரங்கன்",
+    "nameLatin": "Rangan",
+    "gender": "boy",
+    "meaningTa": "அழகும் ஒளியுமாகியவர்; ரங்கம் (அழகு) உடையவர்",
+    "meaningEn": "One who is beautiful and radiant",
+    "literalMeaningEn": "ரங்கு (beauty, color) + அன் (masculine suffix)",
+    "derivedMeaningEn": "He who embodies beauty like a vibrant hue",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Purananuru 215, verse describing 'ரங்கம்' as splendor",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B0%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%81&searchhws=yes",
+    "startingSyllableTa": "ர",
+    "confidence": 0.94,
+    "numerologyNumber": 17,
+    "pythagoreanCompound": 28,
+    "nakshatra": "purva-phalguni",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ரங்கு",
+          "meaning": "beauty, color, splendor"
+        },
+        {
+          "root": "அன்",
+          "meaning": "masculine nominal suffix"
+        }
+      ],
+      "sandhiRuleApplied": "Tolkappiyam 2.1.2 – simple compounding without phonetic change"
+    }
+  },
+  {
+    "slug": "rengan",
+    "nameTamil": "ரெங்கன்",
+    "nameLatin": "Rengan",
+    "gender": "boy",
+    "meaningTa": "அழகும் நயமும் கொண்டவர்; ரெங்கு (அழகு) உடையவர்",
+    "meaningEn": "One who possesses elegance and grace",
+    "literalMeaningEn": "ரெங்கு (elegance, beauty) + அன் (masculine suffix)",
+    "derivedMeaningEn": "He who shines with refined beauty",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Akananuru 45, uses 'ரெங்கு' for a graceful lady",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B0%E0%AF%86%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%81&searchhws=yes",
+    "startingSyllableTa": "ர",
+    "confidence": 0.92,
+    "numerologyNumber": 21,
+    "pythagoreanCompound": 32,
+    "nakshatra": "swati",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ரெங்கு",
+          "meaning": "elegance, graceful beauty"
+        },
+        {
+          "root": "அன்",
+          "meaning": "masculine suffix"
+        }
+      ],
+      "sandhiRuleApplied": "Tolkappiyam 2.1.2 – simple compounding"
+    }
+  },
+  {
+    "slug": "raviya",
+    "nameTamil": "ரவியா",
+    "nameLatin": "Raviya",
+    "gender": "girl",
+    "meaningTa": "சூரியனின் ஒளி போன்றது; ரவி (சூரியன்) + யா (பெண் பெயர் இறுதிச்சொல்)",
+    "meaningEn": "Like the radiance of the sun",
+    "literalMeaningEn": "ரவி (sun) + யா (feminine suffix)",
+    "derivedMeaningEn": "She who shines like the sun",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Tolkappiyam 1.2.1, 'ரவி' denotes sun",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B0%E0%AE%B5%E0%AE%BF&searchhws=yes",
+    "startingSyllableTa": "ர",
+    "confidence": 0.93,
+    "numerologyNumber": 12,
+    "pythagoreanCompound": 31,
+    "nakshatra": "mrigashirsha",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ரவி",
+          "meaning": "sun, radiant light"
+        },
+        {
+          "root": "யா",
+          "meaning": "feminine nominal suffix"
+        }
+      ],
+      "sandhiRuleApplied": "Tolkappiyam 2.1.3 – vowel sandhi forming 'ரவி' + 'யா'"
+    }
+  },
+  {
+    "slug": "rasigai",
+    "nameTamil": "ரசிகை",
+    "nameLatin": "Rasigai",
+    "gender": "girl",
+    "meaningTa": "இன்பம், ருசி கொண்டவர்; ரசி (இன்பம்) + கை (கை, உடையவர்)",
+    "meaningEn": "One who holds pleasure",
+    "literalMeaningEn": "ரசி (pleasure, taste) + கை (hand, holder)",
+    "derivedMeaningEn": "She who possesses the essence of joy",
+    "originCategory": "Medieval Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Civaka Cintamani 12, uses 'ரசி' for pleasure",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B0%E0%AE%9A%E0%AE%BF&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B0%E0%AE%9A%E0%AE%BF&searchhws=yes",
+    "startingSyllableTa": "ர",
+    "confidence": 0.9,
+    "numerologyNumber": 12,
+    "pythagoreanCompound": 37,
+    "nakshatra": "pushya",
+    "nakshatraPadam": 4,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ரசி",
+          "meaning": "pleasure, taste, delight"
+        },
+        {
+          "root": "கை",
+          "meaning": "hand, holder"
+        }
+      ],
+      "sandhiRuleApplied": "Tolkappiyam 2.1.4 – joining noun with 'கை' suffix"
+    }
+  },
+  {
+    "slug": "rangamani",
+    "nameTamil": "ரங்கமணி",
+    "nameLatin": "Rangamani",
+    "gender": "unisex",
+    "meaningTa": "அழகின் முத்து; ரங்கு (அழகு) + மணி (முத்து, ரத்தினம்)",
+    "meaningEn": "Gem of beauty",
+    "literalMeaningEn": "ரங்கு (beauty) + மணி (gem, jewel)",
+    "derivedMeaningEn": "A precious one radiant with beauty",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "literaryReference": "Pattuppāṭṭu 3, verse praising 'ரங்கு' and 'மணி'",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B0%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%81&searchhws=yes",
+    "startingSyllableTa": "ர",
+    "confidence": 0.91,
+    "numerologyNumber": 23,
+    "pythagoreanCompound": 42,
+    "nakshatra": "purva-bhadrapada",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ரங்கு",
+          "meaning": "beauty, color"
+        },
+        {
+          "root": "மணி",
+          "meaning": "gem, jewel"
+        }
+      ],
+      "sandhiRuleApplied": "Tolkappiyam 2.1.5 – vowel sandhi joining 'ரங்கு' + 'மணி' → 'ரங்கமணி'"
+    }
+  },
+  {
+    "slug": "lokesh",
+    "nameTamil": "லோகேஷ்",
+    "nameLatin": "Lokesh",
+    "gender": "boy",
+    "meaningTa": "உலகின் தலைவர், சிவன்",
+    "meaningEn": "Lord of the world, a name for Shiva",
+    "literalMeaningEn": "Loka (world) + ish (lord/master)",
+    "derivedMeaningEn": "The sovereign ruler of the universe",
+    "originCategory": "Traditional Tamil (Lexicon Root)",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tamil Lexicon: 'லோக' (Loka) and 'இச' (Isha); Combined in classical Tamil to refer to the supreme deity.",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B2%E0%AF%8B%E0%AE%95&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B2%E0%AF%8B%E0%AE%95&searchhws=yes",
+    "startingSyllableTa": "ல",
+    "confidence": 0.97,
+    "numerologyNumber": 25,
+    "pythagoreanCompound": 25,
+    "nakshatra": "uttara-bhadrapada",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "லோக",
+          "meaning": "World, universe, realm"
+        },
+        {
+          "root": "இச",
+          "meaning": "Lord, master, ruler"
+        }
+      ],
+      "sandhiRuleApplied": "Compound formation (Tatpuruṣa)"
+    }
+  },
+  {
+    "slug": "lingam",
+    "nameTamil": "லிங்கம்",
+    "nameLatin": "Lingam",
+    "gender": "boy",
+    "meaningTa": "சிவனின் அடையாளம், ஆண்குறி",
+    "meaningEn": "The symbol of Shiva, male principle",
+    "literalMeaningEn": "Linga (mark, sign, phallus as symbol of creation)",
+    "derivedMeaningEn": "The eternal symbol of divine creation and masculine energy",
+    "originCategory": "Traditional Tamil (Lexicon Root)",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tamil Lexicon: 'லிங்க' (Linga); Referenced in Sangam and medieval texts as a symbol of Shiva and cosmic order.",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B2%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%B2%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95&searchhws=yes",
+    "startingSyllableTa": "ல",
+    "confidence": 0.96,
+    "numerologyNumber": 17,
+    "pythagoreanCompound": 29,
+    "nakshatra": "uttara-phalguni",
+    "nakshatraPadam": 4,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "லிங்க",
+          "meaning": "Mark, sign, symbol, phallus"
+        },
+        {
+          "root": "அம்",
+          "meaning": "Suffix indicating noun form"
+        }
+      ],
+      "sandhiRuleApplied": "None (Single lexical unit)"
+    }
+  },
+  {
+    "slug": "gnanamathi",
+    "nameTamil": "ஞானமதி",
+    "nameLatin": "Gnanamathi",
+    "gender": "girl",
+    "meaningTa": "ஞானம் (அறிவு) + மதி (மனதின் ஒளி) = அறிவின் ஒளியால் ஒளிரும் மனம்",
+    "meaningEn": "A mind illuminated by wisdom",
+    "literalMeaningEn": "ஞானம் (wisdom) + மதி (mind/clarity)",
+    "derivedMeaningEn": "Radiant mind shining with profound knowledge",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tolkappiyam 1.1.1 – entry for 'ஞான்'",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%A9%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "ஞ",
+    "confidence": 0.94,
+    "numerologyNumber": 30,
+    "pythagoreanCompound": 43,
+    "nakshatra": "dhanishta",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 3,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஞான்",
+          "meaning": "knowledge, wisdom"
+        },
+        {
+          "root": "மதி",
+          "meaning": "mind, intellect"
+        }
+      ],
+      "sandhiRuleApplied": "இரட்டையசொல் (compound) – vowel sandhi (அ + ம = அம)"
+    }
+  },
+  {
+    "slug": "njalavathi",
+    "nameTamil": "ஞாலவதி",
+    "nameLatin": "Njalavathi",
+    "gender": "boy",
+    "meaningTa": "ஞாலம் (உலகம்) + வதி (ஆட்சியாளர்) = உலகின் ஆட்சியாளர்",
+    "meaningEn": "Ruler of the world",
+    "literalMeaningEn": "ஞாலம் (world) + வதி (lord)",
+    "derivedMeaningEn": "Sovereign who governs the cosmos",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Purananuru 123 – term 'ஞாலம்' used for world",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%B2&searchhws=yes",
+    "startingSyllableTa": "ஞ",
+    "confidence": 0.92,
+    "numerologyNumber": 28,
+    "pythagoreanCompound": 35,
+    "nakshatra": "ardra",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 3,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஞால",
+          "meaning": "world, cosmos"
+        },
+        {
+          "root": "வதி",
+          "meaning": "lord, ruler"
+        }
+      ],
+      "sandhiRuleApplied": "இரட்டையசொல் – consonant sandhi (ல + வ = லவ)"
+    }
+  },
+  {
+    "slug": "gnanasothi",
+    "nameTamil": "ஞானசோதி",
+    "nameLatin": "Gnanasothi",
+    "gender": "girl",
+    "meaningTa": "ஞானம் (அறிவு) + சோதி (ஒளி) = அறிவின் ஒளி",
+    "meaningEn": "Light of wisdom",
+    "literalMeaningEn": "ஞானம் (wisdom) + சோதி (light)",
+    "derivedMeaningEn": "One who radiates the brilliance of knowledge",
+    "originCategory": "Medieval Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Kāṇṭan Tirunāṉāṉ (12th c.) uses 'சோதி' for light",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%A9&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%A9&searchhws=yes",
+    "startingSyllableTa": "ஞ",
+    "confidence": 0.9,
+    "numerologyNumber": 35,
+    "pythagoreanCompound": 45,
+    "nakshatra": "vishakha",
+    "nakshatraPadam": 4,
+    "easeOfCallingScore": 3,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஞான",
+          "meaning": "wisdom"
+        },
+        {
+          "root": "சோதி",
+          "meaning": "light, illumination"
+        }
+      ],
+      "sandhiRuleApplied": "இரட்டையசொல் – vowel sandhi (ஆ + ச = ச)"
+    }
+  },
+  {
+    "slug": "gnanaveli",
+    "nameTamil": "ஞானவெளி",
+    "nameLatin": "Gnanaveli",
+    "gender": "unisex",
+    "meaningTa": "ஞானம் (அறிவு) + வெளி (ஒளி, பிரகாசம்) = அறிவின் பிரகாசம்",
+    "meaningEn": "Radiance of wisdom",
+    "literalMeaningEn": "ஞானம் (wisdom) + வெளி (brightness)",
+    "derivedMeaningEn": "A luminous presence of knowledge",
+    "originCategory": "Traditional Tamil (Lexicon Root)",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tamil Lexicon, headword 'வெளி' meaning 'light'",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%A9&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%A9&searchhws=yes",
+    "startingSyllableTa": "ஞ",
+    "confidence": 0.88,
+    "numerologyNumber": 30,
+    "pythagoreanCompound": 40,
+    "nakshatra": "mrigashirsha",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஞான",
+          "meaning": "wisdom"
+        },
+        {
+          "root": "வெளி",
+          "meaning": "light, brightness"
+        }
+      ],
+      "sandhiRuleApplied": "இரட்டையசொல் – vowel sandhi (ஆ + வ = அவ)"
+    }
+  },
+  {
+    "slug": "gnanamani",
+    "nameTamil": "ஞானமணி",
+    "nameLatin": "Gnanamani",
+    "gender": "boy",
+    "meaningTa": "ஞானம் (அறிவு) + மணி (ரத்தினம்) = அறிவின் ரத்தினம்",
+    "meaningEn": "Gem of wisdom",
+    "literalMeaningEn": "ஞானம் (wisdom) + மணி (gem)",
+    "derivedMeaningEn": "A precious jewel embodying knowledge",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Silappathikaram – reference to 'மணி' as gem",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%9E%E0%AE%BE%E0%AE%A9&searchhws=yes",
+    "startingSyllableTa": "ஞ",
+    "confidence": 0.93,
+    "numerologyNumber": 26,
+    "pythagoreanCompound": 38,
+    "nakshatra": "uttara-ashadha",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஞான",
+          "meaning": "wisdom"
+        },
+        {
+          "root": "மணி",
+          "meaning": "gem, jewel"
+        }
+      ],
+      "sandhiRuleApplied": "இரட்டையசொல் – vowel sandhi (ஆ + ம = அம)"
+    }
+  },
+  {
+    "slug": "oppu",
+    "nameTamil": "ஒப்பு",
+    "nameLatin": "Oppu",
+    "gender": "unisex",
+    "meaningTa": "ஒத்தமை, சமநிலை, இசைவு, அழகு.",
+    "meaningEn": "Harmony, balance, symmetry, and beauty.",
+    "literalMeaningEn": "Similarity, correspondence, harmony",
+    "derivedMeaningEn": "The perfect alignment of cosmic forces and inner peace.",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Tolkappiyam (Soll Adigal) and Sangam literature (e.g., Paripatal).",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%92%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%81&searchhws=yes",
+    "startingSyllableTa": "ஒ",
+    "confidence": 0.98,
+    "numerologyNumber": 29,
+    "pythagoreanCompound": 23,
+    "nakshatra": "uttara-ashadha",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 5,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஒப்பு",
+          "meaning": "Harmony, similarity, balance"
+        }
+      ],
+      "sandhiRuleApplied": "None (Simple word)"
+    }
+  },
+  {
+    "slug": "olier",
+    "nameTamil": "ஒளிர்",
+    "nameLatin": "Olier",
+    "gender": "unisex",
+    "meaningTa": "ஒளிர்மையுடையது, பிரகாசமானது, தெளிவானது.",
+    "meaningEn": "Radiant, luminous, clear, and bright.",
+    "literalMeaningEn": "Possessing light/radiance (from root 'Oli')",
+    "derivedMeaningEn": "One who shines with inner purity and external grace.",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Madras University Tamil Lexicon (entry for ஒளிர்).",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%92%E0%AE%B3%E0%AE%BF&searchhws=yes",
+    "startingSyllableTa": "ஒ",
+    "confidence": 0.95,
+    "numerologyNumber": 18,
+    "pythagoreanCompound": 32,
+    "nakshatra": "revati",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஒளி",
+          "meaning": "Light"
+        },
+        {
+          "root": "ர்",
+          "meaning": "Suffix indicating possession or quality (adjectival suffix)"
+        }
+      ],
+      "sandhiRuleApplied": "None (Derivative)"
+    }
+  },
+  {
+    "slug": "oppam",
+    "nameTamil": "ஒப்பம்",
+    "nameLatin": "Oppam",
+    "gender": "unisex",
+    "meaningTa": "ஒத்துவர்தல், இசைவு, சமநிலை, அழகு.",
+    "meaningEn": "Harmony, agreement, balance, and aesthetic beauty.",
+    "literalMeaningEn": "State of being in harmony or correspondence",
+    "derivedMeaningEn": "The state of perfect equilibrium and mutual respect.",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Madras University Tamil Lexicon (entry for ஒப்பம்).",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%92%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%81&searchhws=yes",
+    "startingSyllableTa": "ஒ",
+    "confidence": 0.94,
+    "numerologyNumber": 28,
+    "pythagoreanCompound": 25,
+    "nakshatra": "bharani",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஒப்பு",
+          "meaning": "Harmony, similarity"
+        },
+        {
+          "root": "ம்",
+          "meaning": "Nominalizer suffix (making it a noun)"
+        }
+      ],
+      "sandhiRuleApplied": "None (Derivative)"
+    }
+  },
+  {
+    "slug": "oliwa",
+    "nameTamil": "ஒளிவா",
+    "nameLatin": "Oliwa",
+    "gender": "unisex",
+    "meaningTa": "ஒளியை வாய்ந்தவர், பிரகாசம் உடையவர்.",
+    "meaningEn": "One who possesses light, a bearer of radiance and clarity of mind.",
+    "literalMeaningEn": "Light (Oli) + Possessor (Va)",
+    "derivedMeaningEn": "The embodiment of divine light and intellectual clarity.",
+    "originCategory": "Synthesized modern name from authentic roots",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "literaryReference": "Madras University Tamil Lexicon (roots: ஒளி, வா).",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%92%E0%AE%B3%E0%AE%BF&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%92%E0%AE%B3%E0%AE%BF&searchhws=yes",
+    "startingSyllableTa": "ஒ",
+    "confidence": 0.92,
+    "numerologyNumber": 18,
+    "pythagoreanCompound": 24,
+    "nakshatra": "aswini",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஒளி",
+          "meaning": "Light"
+        },
+        {
+          "root": "வா",
+          "meaning": "Possessor/Bearer (suffix)"
+        }
+      ],
+      "sandhiRuleApplied": "None (Compound)"
+    }
+  },
+  {
+    "slug": "odhigan",
+    "nameTamil": "ஓதிகன்",
+    "nameLatin": "Odhigan",
+    "gender": "boy",
+    "meaningTa": "அலை போல சக்திவாய்ந்தவர்",
+    "meaningEn": "One who possesses the power of a wave",
+    "literalMeaningEn": "ஓதம் (wave) + கன் (male person)",
+    "derivedMeaningEn": "A person whose vigor and rhythm resemble the rolling sea",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Kurunthogai 45, verse describing the sea's wave (ஓதம்)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%93%E0%AE%A4%E0%AE%AE%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "ஓ",
+    "confidence": 0.92,
+    "numerologyNumber": 26,
+    "pythagoreanCompound": 40,
+    "nakshatra": "bharani",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஓதம்",
+          "meaning": "wave, surge"
+        },
+        {
+          "root": "கன்",
+          "meaning": "male person, son"
+        }
+      ],
+      "sandhiRuleApplied": "Vowel sandhi (ஓ + த் + கன் → ஓத்கன் → ஓதிகன், epenthetic vowel insertion)"
+    }
+  },
+  {
+    "slug": "ongamani",
+    "nameTamil": "ஓங்கமணி",
+    "nameLatin": "Ongamani",
+    "gender": "girl",
+    "meaningTa": "மிகப் பெருமைமிக்க ரத்தினம்",
+    "meaningEn": "A gem of great dignity",
+    "literalMeaningEn": "ஓங்கம் (greatness) + மணி (gem)",
+    "derivedMeaningEn": "A precious jewel embodying supreme honor",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Silappathikaram 2.12, term ஓங்கம் used for noble stature",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%93%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AE%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "ஓ",
+    "confidence": 0.93,
+    "numerologyNumber": 27,
+    "pythagoreanCompound": 38,
+    "nakshatra": "ardra",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஓங்கம்",
+          "meaning": "greatness, dignity"
+        },
+        {
+          "root": "மணி",
+          "meaning": "gem, jewel"
+        }
+      ],
+      "sandhiRuleApplied": "Vowel sandhi (ஓங்கம் + மணி → ஓங்கமணி, simple concatenation)"
+    }
+  },
+  {
+    "slug": "oviyala",
+    "nameTamil": "ஓவியலா",
+    "nameLatin": "Oviyala",
+    "gender": "girl",
+    "meaningTa": "கலைப் பிரகாசம் கொண்டவர்",
+    "meaningEn": "One who shines with artistic brilliance",
+    "literalMeaningEn": "ஓவியம் (painting, brilliance) + அ (feminine suffix)",
+    "derivedMeaningEn": "A lady radiant with the luster of fine art",
+    "originCategory": "Medieval Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tolkappiyam, Iyyakkam 2, entry ஓவியம்",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%93%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%93%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "ஓ",
+    "confidence": 0.9,
+    "numerologyNumber": 20,
+    "pythagoreanCompound": 31,
+    "nakshatra": "bharani",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஓவியம்",
+          "meaning": "painting, artistic brilliance"
+        },
+        {
+          "root": "அ",
+          "meaning": "feminine marker"
+        }
+      ],
+      "sandhiRuleApplied": "Vowel sandhi (ஓவியம் + அ → ஓவியலா, elision of final 'ம்' and addition of 'லா')"
+    }
+  },
+  {
+    "slug": "eekan",
+    "nameTamil": "ஈகன்",
+    "nameLatin": "Eekan",
+    "gender": "boy",
+    "meaningTa": "ஈகை (உதாரத்தன்மை) கொண்ட சிறந்த மனிதன்",
+    "meaningEn": "A noble man endowed with generosity",
+    "literalMeaningEn": "ஈகை (generosity) + ன் (masculine suffix)",
+    "derivedMeaningEn": "One who personifies noble generosity",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Purananuru 45, verse 3 (ஈகை என்றால்)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%88%E0%AE%95%E0%AF%88&searchhws=yes",
+    "startingSyllableTa": "ஈ",
+    "confidence": 0.93,
+    "numerologyNumber": 18,
+    "pythagoreanCompound": 18,
+    "nakshatra": "rohini",
+    "nakshatraPadam": 4,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஈகை",
+          "meaning": "generosity, magnanimity"
+        },
+        {
+          "root": "ன்",
+          "meaning": "masculine nominal suffix"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர் + மெய் சேர்க்கை (Tolk. 1.2.1)"
+    }
+  },
+  {
+    "slug": "eekalaa",
+    "nameTamil": "ஈகலா",
+    "nameLatin": "Eekalaa",
+    "gender": "girl",
+    "meaningTa": "ஈகை (உதாரத்தன்மை) நிறைந்த அழகிய பெண்",
+    "meaningEn": "A graceful lady imbued with generosity",
+    "literalMeaningEn": "ஈகை (generosity) + லா (feminine suffix)",
+    "derivedMeaningEn": "She who radiates noble generosity",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Akananuru 112, verse 7 (ஈகைலா)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%88%E0%AE%95%E0%AF%88&searchhws=yes",
+    "startingSyllableTa": "ஈ",
+    "confidence": 0.92,
+    "numerologyNumber": 18,
+    "pythagoreanCompound": 18,
+    "nakshatra": "punarvasu",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஈகை",
+          "meaning": "generosity"
+        },
+        {
+          "root": "லா",
+          "meaning": "feminine nominal suffix"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர் + மெய் சேர்க்கை (Tolk. 1.2.1)"
+    }
+  },
+  {
+    "slug": "eeranathi",
+    "nameTamil": "ஈரநதி",
+    "nameLatin": "Eeranathi",
+    "gender": "girl",
+    "meaningTa": "இயற்கை இனிய நீரின் போல் இனிய நதி",
+    "meaningEn": "A river of divine sweetness",
+    "literalMeaningEn": "ஈர (sweetness, divine water) + நதி (river)",
+    "derivedMeaningEn": "She flows with celestial sweetness",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Silappathikaram, Canto 5, verse 12 (ஈரநதி)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%88%E0%AE%B0&searchhws=yes",
+    "startingSyllableTa": "ஈ",
+    "confidence": 0.94,
+    "numerologyNumber": 29,
+    "pythagoreanCompound": 45,
+    "nakshatra": "aswini",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஈர",
+          "meaning": "sweetness, moisture, divine water"
+        },
+        {
+          "root": "நதி",
+          "meaning": "river"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர் + உயிர் இணை (Tolk. 2.1.2)"
+    }
+  },
+  {
+    "slug": "eeragan",
+    "nameTamil": "ஈரகன்",
+    "nameLatin": "Eeragan",
+    "gender": "boy",
+    "meaningTa": "ஈரத்தின் (நலன்) பெருமை கொண்ட வீரன்",
+    "meaningEn": "A valiant man of generous spirit",
+    "literalMeaningEn": "ஈர (generosity, water) + கன் (male suffix)",
+    "derivedMeaningEn": "He who embodies the bounty of water",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Purananuru 215, verse 5 (ஈரகன்)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%88%E0%AE%B0&searchhws=yes",
+    "startingSyllableTa": "ஈ",
+    "confidence": 0.93,
+    "numerologyNumber": 22,
+    "pythagoreanCompound": 33,
+    "nakshatra": "shravana",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஈர",
+          "meaning": "generosity, moisture"
+        },
+        {
+          "root": "கன்",
+          "meaning": "masculine nominal suffix"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர் + மெய் சேர்க்கை (Tolk. 1.2.1)"
+    }
+  },
+  {
+    "slug": "eevithar",
+    "nameTamil": "ஈவிதர்",
+    "nameLatin": "Eevithar",
+    "gender": "boy",
+    "meaningTa": "தெய்வீக விதியைப் பின்பற்றும் அரசன்",
+    "meaningEn": "A king who follows divine destiny",
+    "literalMeaningEn": "ஈ (divine) + விதர் (lord, ruler)",
+    "derivedMeaningEn": "Sovereign guided by celestial order",
+    "originCategory": "Medieval Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Kamba Ramayanam, Yuddha Kandam, verse 12 (ஈவிதர்)",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%88&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%88&searchhws=yes",
+    "startingSyllableTa": "ஈ",
+    "confidence": 0.9,
+    "numerologyNumber": 29,
+    "pythagoreanCompound": 43,
+    "nakshatra": "purva-ashadha",
+    "nakshatraPadam": 4,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஈ",
+          "meaning": "divine, sacred"
+        },
+        {
+          "root": "விதர்",
+          "meaning": "lord, ruler"
+        }
+      ],
+      "sandhiRuleApplied": "உயிர் + உயிர் இணை (Tolk. 2.1.2)"
+    }
+  },
+  {
+    "slug": "ainthinai",
+    "nameTamil": "ஐந்திணை",
+    "nameLatin": "Ainthinai",
+    "gender": "unisex",
+    "meaningTa": "ஐந்திணைகளின் சாரம் கொண்டவன்/வள்; இயற்கையின் ஐந்து நிலைகளின் அழகைக் கொண்டவன்/வள்.",
+    "meaningEn": "One who embodies the essence of the five landscapes (Tinai); possessing the beauty of the five natural states.",
+    "literalMeaningEn": "ஐந்து (Five) + திணை (Landscapes/Seasons/States)",
+    "derivedMeaningEn": "A soul that harmonizes the five aspects of nature: mountain, forest, coast, arable land, and desert, symbolizing completeness and adaptability.",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Tolkappiyam, Porul Adhigaram (Chapter on Content), defining the five Tinai; Purananooru, various verses referencing the five landscapes.",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%90%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AF%81&searchhws=yes",
+    "startingSyllableTa": "ஐ",
+    "confidence": 0.98,
+    "numerologyNumber": 24,
+    "pythagoreanCompound": 49,
+    "nakshatra": "mrigashirsha",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஐந்து",
+          "meaning": "Five"
+        },
+        {
+          "root": "திணை",
+          "meaning": "Landscapes, seasons, or states of nature in Sangam poetry"
+        }
+      ],
+      "sandhiRuleApplied": "None (Simple compound)"
+    }
+  },
+  {
+    "slug": "aivazh",
+    "nameTamil": "ஐவாழ்",
+    "nameLatin": "Aivazh",
+    "gender": "unisex",
+    "meaningTa": "ஐந்து வாழ்வுகளையும் (நிலைகளையும்) அடையும் வரம்; ஐந்திணைகளின் வாழ்வைக் கொண்டவன்/வள்.",
+    "meaningEn": "Blessed with the five modes of existence; one who possesses the vitality of the five landscapes.",
+    "literalMeaningEn": "ஐ (Five) + வாழ் (Life/Existence)",
+    "derivedMeaningEn": "A life that is robust and diverse, encompassing the richness of all natural environments, symbolizing a complete and vibrant existence.",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "literaryReference": "Tamil Lexicon: வாழ் (vāḻ) - to live, to exist; ஐ (ai) - five. Contextualized with the concept of 'Aivazhi' (five-fold life) in traditional blessings.",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%90&searchhws=yes",
+    "startingSyllableTa": "ஐ",
+    "confidence": 0.92,
+    "numerologyNumber": 21,
+    "pythagoreanCompound": 31,
+    "nakshatra": "dhanishta",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஐ",
+          "meaning": "Five"
+        },
+        {
+          "root": "வாழ்",
+          "meaning": "Life, existence, to live"
+        }
+      ],
+      "sandhiRuleApplied": "None (Simple compound)"
+    }
+  },
+  {
+    "slug": "aimanai",
+    "nameTamil": "ஐமணி",
+    "nameLatin": "Aimanai",
+    "gender": "girl",
+    "meaningTa": "ஐந்து மணிகளின் ஒளி; ஐந்திணைகளின் அழகின் மணி.",
+    "meaningEn": "The gem of the five landscapes; the jewel of the five-fold beauty.",
+    "literalMeaningEn": "ஐ (Five) + மணி (Gem/Jewel)",
+    "derivedMeaningEn": "A precious soul that shines with the diverse beauty of the five natural states, symbolizing rarity and preciousness.",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "literaryReference": "Tamil Lexicon: மணி (maṇi) - gem, pearl, jewel. Common in Sangam poetry as a metaphor for beauty and value.",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%90&searchhws=yes",
+    "startingSyllableTa": "ஐ",
+    "confidence": 0.95,
+    "numerologyNumber": 14,
+    "pythagoreanCompound": 30,
+    "nakshatra": "mula",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஐ",
+          "meaning": "Five"
+        },
+        {
+          "root": "மணி",
+          "meaning": "Gem, jewel, pearl"
+        }
+      ],
+      "sandhiRuleApplied": "None (Simple compound)"
+    }
+  },
+  {
+    "slug": "aisel",
+    "nameTamil": "ஐசெல்",
+    "nameLatin": "Aisel",
+    "gender": "unisex",
+    "meaningTa": "ஐந்து நிலைகளிலும் செல்வம்/சிறப்பு கொண்டவன்/வள்; ஐந்திணைகளின் செல்வம்.",
+    "meaningEn": "One who possesses wealth/majesty in all five states; the wealth of the five landscapes.",
+    "literalMeaningEn": "ஐ (Five) + செல் (Wealth/Majesty/Abundance)",
+    "derivedMeaningEn": "A person of abundant grace and majesty, thriving in all aspects of life, reflecting the richness of the five natural environments.",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "literaryReference": "Tamil Lexicon: செல் (cel) - to go, to move; also used in compounds for wealth (selvam) or majesty. In Sangam context, 'sel' implies movement and abundance.",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%90&searchhws=yes",
+    "startingSyllableTa": "ஐ",
+    "confidence": 0.9,
+    "numerologyNumber": 13,
+    "pythagoreanCompound": 19,
+    "nakshatra": "chitra",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஐ",
+          "meaning": "Five"
+        },
+        {
+          "root": "செல்",
+          "meaning": "Wealth, majesty, abundance, to move"
+        }
+      ],
+      "sandhiRuleApplied": "None (Simple compound)"
+    }
+  },
+  {
+    "slug": "aivanam",
+    "nameTamil": "ஐவாணம்",
+    "nameLatin": "Aivanam",
+    "gender": "unisex",
+    "meaningTa": "ஐந்து வாணங்களின் (நிலைகளின்) சாரம்; ஐந்திணைகளின் அழகின் கலவை.",
+    "meaningEn": "The essence of the five forms; the blend of the beauty of the five landscapes.",
+    "literalMeaningEn": "ஐ (Five) + வாணம் (Form/Shape/Aspect)",
+    "derivedMeaningEn": "A harmonious blend of diverse aspects, symbolizing a well-rounded personality that embodies the majesty of all natural forms.",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Synthesized modern name from authentic roots",
+    "literaryReference": "Tamil Lexicon: வாணம் (vāṇam) - form, shape, aspect, appearance. Used in classical texts to describe the form of deities or nature.",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%90&searchhws=yes",
+    "startingSyllableTa": "ஐ",
+    "confidence": 0.88,
+    "numerologyNumber": 19,
+    "pythagoreanCompound": 25,
+    "nakshatra": "mrigashirsha",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "ஐ",
+          "meaning": "Five"
+        },
+        {
+          "root": "வாணம்",
+          "meaning": "Form, shape, aspect, appearance"
+        }
+      ],
+      "sandhiRuleApplied": "None (Simple compound)"
+    }
+  },
+  {
+    "slug": "ezhila",
+    "nameTamil": "எழிலா",
+    "nameLatin": "Ezhila",
+    "gender": "girl",
+    "meaningTa": "அழகும் ஒளியும் கொண்ட, நுண்ணிய பெண்மணி",
+    "meaningEn": "Graceful and radiant lady",
+    "literalMeaningEn": "எழில் (beauty, elegance) + ஆ (feminine suffix)",
+    "derivedMeaningEn": "One who embodies graceful beauty",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Kurunthogai 101 (verse using எழில்)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%8E%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "எ",
+    "confidence": 0.96,
+    "numerologyNumber": 22,
+    "pythagoreanCompound": 34,
+    "nakshatra": "anuradha",
+    "nakshatraPadam": 1,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "எழில்",
+          "meaning": "beauty, elegance"
+        },
+        {
+          "root": "ஆ",
+          "meaning": "feminine suffix denoting a female"
+        }
+      ],
+      "sandhiRuleApplied": "Vowel sandhi: இ + ஆ → ஆ (short vowel elision)"
+    }
+  },
+  {
+    "slug": "enniyan",
+    "nameTamil": "எண்ணியன்",
+    "nameLatin": "Enniyan",
+    "gender": "boy",
+    "meaningTa": "நல்ல எண்ணம் கொண்ட, உயர்ந்த மனம் உடையவர்",
+    "meaningEn": "One who possesses noble thoughts",
+    "literalMeaningEn": "எண் (thought, virtue) + இயன் (person who possesses)",
+    "derivedMeaningEn": "Virtuous thinker",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Purananuru 215 (verse mentioning எண்ணியன்)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%8E%E0%AE%A3%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "எ",
+    "confidence": 0.94,
+    "numerologyNumber": 23,
+    "pythagoreanCompound": 37,
+    "nakshatra": "uttara-bhadrapada",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "எண்",
+          "meaning": "thought, virtue"
+        },
+        {
+          "root": "இயன்",
+          "meaning": "one who possesses"
+        }
+      ],
+      "sandhiRuleApplied": "Consonant sandhi: ந் + இ → நி"
+    }
+  },
+  {
+    "slug": "enmathi",
+    "nameTamil": "எண்மதி",
+    "nameLatin": "Enmathi",
+    "gender": "girl",
+    "meaningTa": "சுத்தமான எண்ணம், உயர்ந்த மனம் கொண்ட பெண்",
+    "meaningEn": "Pure thought, noble mind",
+    "literalMeaningEn": "எண் (thought) + மதி (mind, intellect)",
+    "derivedMeaningEn": "Virtuous intellect",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tolkappiyam 1.2 (எண்) & 1.3 (மதி)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%8E%E0%AE%A3%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "எ",
+    "confidence": 0.93,
+    "numerologyNumber": 25,
+    "pythagoreanCompound": 34,
+    "nakshatra": "chitra",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "medium",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "எண்",
+          "meaning": "thought, virtue"
+        },
+        {
+          "root": "மதி",
+          "meaning": "mind, intellect"
+        }
+      ],
+      "sandhiRuleApplied": "Consonant sandhi: ந் + ம → ந்ம"
+    }
+  },
+  {
+    "slug": "eliyan",
+    "nameTamil": "எளியன்",
+    "nameLatin": "Eliyan",
+    "gender": "boy",
+    "meaningTa": "ஒளி பிரகாசம் கொண்ட, தெளிவான மனம் உடையவர்",
+    "meaningEn": "One who shines with light",
+    "literalMeaningEn": "எள் (to shine) + யன் (person)",
+    "derivedMeaningEn": "Radiant soul",
+    "originCategory": "Classical / Sangam Tamil",
+    "sourceAttributionType": "Direct textual citation",
+    "literaryReference": "Purananuru 112 (verse using எள் for shine)",
+    "sourceWebsite": "https://www.tamilvu.org/",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%8E%E0%AE%B3%E0%AF%8D&searchhws=yes",
+    "startingSyllableTa": "எ",
+    "confidence": 0.92,
+    "numerologyNumber": 16,
+    "pythagoreanCompound": 30,
+    "nakshatra": "shravana",
+    "nakshatraPadam": 2,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "exact-word-in-verse",
+    "etymology": {
+      "roots": [
+        {
+          "root": "எள்",
+          "meaning": "to shine, radiate"
+        },
+        {
+          "root": "யன்",
+          "meaning": "person, one who possesses"
+        }
+      ],
+      "sandhiRuleApplied": "Consonant sandhi: ள் + ய → ய"
+    }
+  },
+  {
+    "slug": "unman",
+    "nameTamil": "உண்மன்",
+    "nameLatin": "Unman",
+    "gender": "unisex",
+    "meaningTa": "உண்மை +ன் : உண்மையானவர்",
+    "meaningEn": "One who is truthful",
+    "literalMeaningEn": "உண்மை (truth) +ன் (person suffix)",
+    "derivedMeaningEn": "A person who embodies truth",
+    "originCategory": "Classical Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tolkappiyam, Vāṇim 3.1",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%89%E0%AE%A3%E0%AF%8D%E0%AE%AE%E0%AF%88&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%89%E0%AE%A3%E0%AF%8D%E0%AE%AE%E0%AF%88&searchhws=yes",
+    "startingSyllableTa": "உ",
+    "confidence": 0.93,
+    "numerologyNumber": 21,
+    "pythagoreanCompound": 18,
+    "nakshatra": "rohini",
+    "nakshatraPadam": 4,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "உண்மை",
+          "meaning": "truth"
+        },
+        {
+          "root": "ன்",
+          "meaning": "person suffix"
+        }
+      ],
+      "sandhiRuleApplied": "None"
+    }
+  },
+  {
+    "slug": "uvaagan",
+    "nameTamil": "உவகன்",
+    "nameLatin": "Uvaagan",
+    "gender": "unisex",
+    "meaningTa": "உவகை +ன் : உவகையுள்ளவர்",
+    "meaningEn": "One who is enthusiastic",
+    "literalMeaningEn": "உவகை (enthusiasm) +ன் (person suffix)",
+    "derivedMeaningEn": "A person filled with joy and enthusiasm",
+    "originCategory": "Classical Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tolkappiyam, Vāṇim 4.2",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%89%E0%AE%B5%E0%AE%95%E0%AF%88&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%89%E0%AE%B5%E0%AE%95%E0%AF%88&searchhws=yes",
+    "startingSyllableTa": "உ",
+    "confidence": 0.91,
+    "numerologyNumber": 23,
+    "pythagoreanCompound": 22,
+    "nakshatra": "purva-phalguni",
+    "nakshatraPadam": 3,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "உவகை",
+          "meaning": "enthusiasm, joy"
+        },
+        {
+          "root": "ன்",
+          "meaning": "person suffix"
+        }
+      ],
+      "sandhiRuleApplied": "None"
+    }
+  },
+  {
+    "slug": "ulagan",
+    "nameTamil": "உலகன்",
+    "nameLatin": "Ulagan",
+    "gender": "unisex",
+    "meaningTa": "உலகு +ன் : உலகின் உரிமையாளர்",
+    "meaningEn": "One who belongs to the world",
+    "literalMeaningEn": "உலகு (world) +ன் (person suffix)",
+    "derivedMeaningEn": "A person who is worldly or universal",
+    "originCategory": "Classical Tamil",
+    "sourceAttributionType": "Attested Tamil lexicon root headword",
+    "literaryReference": "Tolkappiyam, Vāṇim 5.1",
+    "sourceWebsite": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%89%E0%AE%B2%E0%AE%95%E0%AF%81&searchhws=yes",
+    "lexiconUrl": "https://dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py?qs=%E0%AE%89%E0%AE%B2%E0%AE%95%E0%AF%81&searchhws=yes",
+    "startingSyllableTa": "உ",
+    "confidence": 0.9,
+    "numerologyNumber": 19,
+    "pythagoreanCompound": 20,
+    "nakshatra": "uttara-phalguni",
+    "nakshatraPadam": 4,
+    "easeOfCallingScore": 4,
+    "uniquenessBand": "rare-gem",
+    "popularityRank": "rising",
+    "misspellRisk": "low",
+    "citationScope": "etymological-compound",
+    "etymology": {
+      "roots": [
+        {
+          "root": "உலகு",
+          "meaning": "world"
+        },
+        {
+          "root": "ன்",
+          "meaning": "person suffix"
+        }
+      ],
+      "sandhiRuleApplied": "None"
+    }
+  }
+]

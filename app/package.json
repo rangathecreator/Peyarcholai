@@ -1,0 +1,36 @@
+{
+  "name": "peyarcholai-tamil-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "பெயர்ச்சோலை (Peyarcholai) — AI-Curated Tamil Baby Naming, Numerology, Natchathiram & Social Poll Platform",
+  "scripts": {
+    "dev": "next dev --webpack -p 3020",
+    "build": "next build --webpack",
+    "start": "next start -p 3020",
+    "lint": "next lint",
+    "test": "node --import tsx --test src/core/core.test.ts src/lib/catalog.test.ts",
+    "test:watch": "node --import tsx --test --watch src/core/core.test.ts",
+    "enrich:names": "node scripts/enrich-tamil-names.mjs",
+    "build:names": "node scripts/build-10k-tamil-names.mjs",
+    "names:split": "node scripts/split-seed.mjs",
+    "names:merge": "node scripts/merge-seed.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.460.0",
+    "next": "^15.1.0",
+    "pg": "^8.13.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

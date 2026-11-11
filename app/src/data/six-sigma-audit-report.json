@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-11-11T03:48:50.943Z",
+  "totalRecords": 10090,
+  "quarantinedBelow80Count": 628,
+  "structuralAudit": {
+    "opportunities": 70630,
+    "defects": {
+      "nonTamilScript": 0,
+      "missingDimension": 0,
+      "directLabelOnCompound": 0,
+      "falseVerifiedClaim": 0,
+      "missingEstimatedFlag": 0,
+      "compoundClaimingSangam": 0,
+      "compoundWithAncientQuote": 0
+    },
+    "totalDefects": 0,
+    "dpmo": 0
+  },
+  "gates": {
+    "SS-03_Query_Speed": {
+      "avgMsPerFilterPass": 3.56,
+      "pass": true
+    },
+    "SS-06_Parent_Transparency": {
+      "pass": true,
+      "note": "No false 'Direct'/'Verified' labels; estimated fields flagged on every record"
+    }
+  },
+  "contentQuality": {
+    "warning": "AI pre-screen (free OmniRoute models). Not ground truth. Human Tamil review required (A3).",
+    "citationAudit": {
+      "sample": 100,
+      "citationSupport": {
+        "doubtful": 90,
+        "no": 10
+      },
+      "meaningImplausible": 22,
+      "genderWrong": 0
+    },
+    "plausibility": {
+      "judged": 1030,
+      "ofRecords": 10090,
+      "unnatural": 441,
+      "genderMismatch": 41
+    }
+  },
+  "paidApiCostUsd": 0
+}

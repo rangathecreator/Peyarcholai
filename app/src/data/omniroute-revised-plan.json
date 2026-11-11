@@ -1,0 +1,15 @@
+{
+  "nameSchema":{
+    "name":{"type":"string","description":"Primary name in Tamil script"},
+    "meaning":{"type":"object","description":"Meanings in Tamil and English","properties":{"tamil":{"type":"string"},"english":{"type":"string"}}},
+    "multilingualMeanings":{"type":"array","description":"Meanings across languages with cross‑language false‑friend warnings","items":{"type":"object","properties":{"language":{"type":"string"},"meaning":{"type":"string"},"source":{"type":"string"},"falseFriendWarning":{"type":"string"}}}},
+    "reference":{"type":"object","description":"Exact literary reference","properties":{"work":{"type":"string"},"kandam":{"type":"string"},"padalam":{"type":"string"},"paadal":{"type":"string"},"lineOrVerse":{"type":"string"},"chapterOrAdhigaram":{"type":"string"},"kuralNumber":{"type":"string"}}},
+    "numerology":{"type":"object","description":"Numerology calculation details","properties":{"method":{"type":"string","enum":["Pythagorean","Chaldean"]},"letterValues":{"type":"array","items":{"type":"object","properties":{"letter":{"type":"string"},"value":{"type":"integer"}}}},"totalValue":{"type":"integer"},"interpretation":{"type":"string"}}},
+    "culturalContext":{"type":"object","description":"Religion, community tradition, and geographical significance","properties":{"religion":{"type":"string"},"communityTradition":{"type":"string"},"geographicalRegion":{"type":"string"}}},
+    "gender":{"type":"string","enum":["Boy","Girl","Unisex"]},
+    "phoneticEase":{"type":"object","description":"Ease of calling scores and syllable breakdown","properties":{"nativeTamilScore":{"type":"integer","minimum":0,"maximum":10},"panIndiaScore":{"type":"integer","minimum":0,"maximum":10},"globalScore":{"type":"integer","minimum":0,"maximum":10},"syllableCount":{"type":"integer"}}},
+    "spellingRisk":{"type":"object","description":"Miss‑spelling risk assessment","properties":{"riskLevel":{"type":"string","enum":["Low","Medium","High"]},"officialSpelling":{"type":"string"},"commonVariants":{"type":"array","items":{"type":"string"}}}},
+    "uniqueness":{"type":"object","description":"Rarity and percentile metrics","properties":{"rarityBand":{"type":"string","enum":["Very Common","Common","Uncommon","Rare","Very Rare"]},"tnPercentile":{"type":"number"},"diasporaPercentile":{"type":"number"}}},
+    "trendStatus":{"type":"string","enum":["Trending","Rising","Evergreen Classic","Rare Revival"]}
+  }
+}
