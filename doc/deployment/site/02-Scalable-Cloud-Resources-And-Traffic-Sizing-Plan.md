@@ -3,7 +3,7 @@
 
 **Document Version:** 1.0  
 **Target Application:** பெயர்ச்சோலை (Peyarcholai) — Classical Tamil Baby Names & Cultural Heritage Platform  
-**Target Domain:** `peyarcholai.com` / `names.donorconnect.in`  
+**Target Domain:** `peyarcholai.com` / `peyar.donorconnect.in`  
 **Location:** `E:\project\Apps\KidNamingApp\doc\deployment\site\02-Scalable-Cloud-Resources-And-Traffic-Sizing-Plan.md`  
 **Reference Model:** DonorConnect.in Evolutionary Architecture (`E:\project\donorconnect\doc-consolidated\Design\Design.md`)
 
@@ -194,7 +194,7 @@ $$\text{Max Pool Size} = (\text{Total Cores} \times 2) + \text{Effective Spindle
 ## 6. Implementation Action Plan
 
 1. **Phase 1 Deployment (Immediate):**
-   - Host `app/` on Vercel with Cloudflare DNS (`names.donorconnect.in` / `peyarcholai.com`).
+   - Host `app/` on Vercel with Cloudflare DNS (`peyar.donorconnect.in` / `peyarcholai.com`).
    - Neon / Supabase serverless PostgreSQL for user tables.
    - Keep 21,350+ name records packaged in-memory.
 2. **Phase 2 Transition (At 10,000 DAU):**

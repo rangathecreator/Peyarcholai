@@ -1,6 +1,6 @@
 # Production Site Deployment Guide (`deployment/site`)
 
-**Version:** 1.0 | **Date:** 2026-11-09 | **Target Domain:** `names.donorconnect.in` (Shared DonorConnect Infra Ecosystem)
+**Version:** 1.1 | **Date:** 2026-11-13 | **Target Domain:** `peyar.donorconnect.in` (Shared DonorConnect Infra Ecosystem)
 
 ---
 
@@ -10,7 +10,7 @@ Per Milestone **M0 (Free-infra foundation)** in [`doc/plan/10-Roadmap-WBS.md`](.
 
 ```mermaid
 flowchart LR
-    U["Tamil Parents & Families"] --> CF["Cloudflare DNS & SSL<br/>names.donorconnect.in"]
+    U["Tamil Parents & Families"] --> CF["Cloudflare DNS & SSL<br/>peyar.donorconnect.in"]
     CF --> VERCEL["Vercel Edge / Serverless<br/>(Next.js App Router Root: app/)"]
     VERCEL --> DB[("Dedicated Free Supabase / Neon<br/>PostgreSQL 15")]
     VERCEL --> OR["OmniRoute Gateway<br/>(Tunnel / Private Endpoint / Fallback)"]
@@ -39,17 +39,17 @@ flowchart LR
    OMNIROUTE_DEFAULT_MODEL=auto/best-free
    NEXT_PUBLIC_ENABLE_ADS=true
    NEXT_PUBLIC_ENABLE_SUBSCRIPTION_PAYWALL=false
-   NEXT_PUBLIC_SITE_URL=https://names.donorconnect.in
+   NEXT_PUBLIC_SITE_URL=https://peyar.donorconnect.in
    ```
 3. Click **Deploy**. Next.js will pre-render the static SEO name pages (`/name/[slug]`) and deploy the serverless API endpoints (`/api/*`).
 
 ### Step 3: Map Subdomain on Cloudflare (`donorconnect.in`)
 1. Log in to the **Cloudflare Dashboard** managing `donorconnect.in`.
 2. Add a `CNAME` record:
-   - **Name**: `names`
+   - **Name**: `peyar`
    - **Target**: `cname.vercel-dns.com`
-   - **Proxy status**: DNS only (or Proxied with Full Strict SSL)
-3. Verify `https://names.donorconnect.in` is live.
+   - **Proxy status**: DNS only initially (then Proxied with Full Strict SSL)
+3. Verify `https://peyar.donorconnect.in` is live.
 
 ### Step 4: Enabling Subscription Paywall Later (Milestone M5)
 Once the ecosystem reaches your target subscriber threshold:

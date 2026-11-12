@@ -319,9 +319,9 @@
   - **Prometheus Metrics Endpoint (`/api/metrics`)**: Implemented in [`app/src/app/api/metrics/route.ts`](../../app/src/app/api/metrics/route.ts) returning RED metrics, search counts, dossier views, poll votes, and subscription conversions.
   - **Scalable Site Infrastructure Plan**: Authored [`doc/deployment/site/02-Scalable-Cloud-Resources-And-Traffic-Sizing-Plan.md`](../deployment/site/02-Scalable-Cloud-Resources-And-Traffic-Sizing-Plan.md) modeling DonorConnect's scalable architecture across 0-10k, 10k-100k, and 100k-1M+ DAU.
 
-### Task 13: DonorConnect Subdomain Beta Deployment (`peyarcholai.donorconnect.in`)
+### Task 13: DonorConnect Subdomain Beta Deployment (`peyar.donorconnect.in`)
 - [x] **Zero-Incremental-Cost Beta Subdomain Deployment Setup**:
-  - **Target Subdomains**: `peyarcholai.donorconnect.in` (Primary) and `names.donorconnect.in` (Short alias).
+  - **Target Subdomains**: `peyar.donorconnect.in` (Active Primary Beta Subdomain) and `names.donorconnect.in` / `peyarcholai.donorconnect.in` (Optional Aliases).
   - **Ecosystem Reuse**: Reuses DonorConnect's existing Cloudflare zone (`donorconnect.in`) and Vercel Pro/Free team tier at **₹0 incremental cost**.
   - **Cloudflare CNAME Records**:
     - `peyarcholai` $\rightarrow$ `cname.vercel-dns.com` (DNS Only during initial verification, then Full Strict Proxied).

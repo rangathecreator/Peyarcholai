@@ -1,8 +1,8 @@
-# DonorConnect Subdomain Beta Deployment Guide (`peyarcholai.donorconnect.in`)
+# DonorConnect Subdomain Beta Deployment Guide (`peyar.donorconnect.in`)
 
 **Document:** `doc/deployment/site/03-DonorConnect-Subdomain-Beta-Deployment-Guide.md`  
 **Application:** பெயர்ச்சோலை (Peyarcholai) — Authentic Tamil Baby Names, Katapayadi Numerology & Cultural Insights  
-**Subdomain Targets:** `peyarcholai.donorconnect.in` (Primary) & `names.donorconnect.in` (Alias)  
+**Subdomain Targets:** `peyar.donorconnect.in` (Active Primary) | `peyarcholai.donorconnect.in` & `names.donorconnect.in` (Optional Aliases)  
 **Parent Ecosystem:** DonorConnect Infrastructure (`donorconnect.in` via Cloudflare, Vercel & Supabase)  
 **Git Repository:** `https://github.com/rangathecreator/Peyarcholai.git` (`branch: main`)  
 **Deployment Target Cost:** **₹0 / month** (Leverages existing DonorConnect Cloudflare and Vercel free-tier allowances)
@@ -15,13 +15,13 @@
                     ┌─────────────────────────────────────────────────────────┐
                     │                   PUBLIC INTERNET                        │
                     └────────────────┬────────────────────────────────────────┘
-                                     │  https://peyarcholai.donorconnect.in
-                                     │  https://names.donorconnect.in
+                                     │  https://peyar.donorconnect.in
+                                     │  (Optional aliases: peyarcholai / names)
                                      │
                     ┌────────────────▼────────────────────────────────────────┐
                     │              Cloudflare (donorconnect.in)               │
                     │   • Strict Full SSL + Edge Certificate                  │
-                    │   • DNS CNAME Routing -> cname.vercel-dns.com           │
+                    │   • DNS CNAME Routing: peyar -> cname.vercel-dns.com    │
                     │   • Global CDN Edge Caching + WAF & DDoS Shield         │
                     └────────────────┬────────────────────────────────────────┘
                                      │
@@ -55,8 +55,9 @@ Navigate to **DNS** -> **Records** and click **Add Record**:
 
 | Type | Name | Target | Proxy Status | Purpose |
 | :--- | :--- | :--- | :--- | :--- |
-| **CNAME** | `peyarcholai` | `cname.vercel-dns.com` | **DNS Only** (Grey Cloud)* | Primary brand subdomain |
-| **CNAME** | `names` | `cname.vercel-dns.com` | **DNS Only** (Grey Cloud)* | Short intuitive alias subdomain |
+| **CNAME** | `peyar` | `cname.vercel-dns.com` | **DNS Only** (Grey Cloud)* | **Active Primary Beta Subdomain** |
+| **CNAME** | `names` | `cname.vercel-dns.com` | **DNS Only** (Grey Cloud)* | Optional short alias subdomain |
+| **CNAME** | `peyarcholai` | `cname.vercel-dns.com` | **DNS Only** (Grey Cloud)* | Optional full brand alias subdomain |
 
 > [!IMPORTANT]
 > **Why DNS Only initially (Grey Cloud):** Per DonorConnect's proven deployment observations in [`cloudflare_validation.md`](file:///E:/project/donorconnect/doc/Deployment/FirstDeployment/validation/cloudflare_validation.md), Vercel requires direct DNS verification to generate its initial Let's Encrypt / DigiCert origin SSL certificate.  
@@ -92,7 +93,7 @@ In the **Environment Variables** section, copy the values from [`app/.env.produc
 
 ```bash
 NODE_ENV=production
-NEXT_PUBLIC_SITE_URL=https://peyarcholai.donorconnect.in
+NEXT_PUBLIC_SITE_URL=https://peyar.donorconnect.in
 NEXT_PUBLIC_APP_NAME="பெயர்ச்சோலை (Peyarcholai)"
 NEXT_PUBLIC_ENABLE_ADS=false
 NEXT_PUBLIC_ENABLE_SUBSCRIPTION_PAYWALL=true
@@ -110,11 +111,11 @@ Click **Deploy**. Vercel will build the project, run TypeScript checks, generate
 
 ### Step 3.4: Attach Custom Subdomains in Vercel
 1. In your Vercel Project Dashboard, navigate to **Settings** -> **Domains**.
-2. Add Domain: `peyarcholai.donorconnect.in`.
+2. Add Domain: **`peyar.donorconnect.in`** (Primary Domain).
    - Vercel will verify the CNAME pointing to `cname.vercel-dns.com`.
-3. Add Domain: `names.donorconnect.in`.
-   - Choose: **Redirect to peyarcholai.donorconnect.in** (301 Permanent redirect) or keep as independent alias.
-4. Once both show **Valid Configuration** (Green check), return to Cloudflare and toggle both records to **Proxied (Orange Cloud)**.
+3. (Optional) Add Domain: `names.donorconnect.in` or `peyarcholai.donorconnect.in`.
+   - Choose: **Redirect to peyar.donorconnect.in** (301 Permanent redirect).
+4. Once Vercel shows **Valid Configuration** (Green checkmark), return to Cloudflare and toggle `peyar` to **Proxied (Orange Cloud)**.
 
 ---
 
@@ -124,13 +125,13 @@ Before announcing the beta release, run the following validation tests:
 
 ### 4.1 DNS Propagation
 Check globally via [dnschecker.org](https://dnschecker.org):
-- Query `peyarcholai.donorconnect.in` (CNAME): Must resolve cleanly to `cname.vercel-dns.com` (or Cloudflare proxy IPs `104.x.x.x` when proxied).
+- Query `peyar.donorconnect.in` (CNAME): Must resolve cleanly to `cname.vercel-dns.com` (or Cloudflare proxy IPs `104.x.x.x` when proxied).
 
 ### 4.2 HTTPS & Certificate Verification
 Open an incognito browser window and visit:
-- `https://peyarcholai.donorconnect.in`
+- `https://peyar.donorconnect.in`
 - Verify the padlock icon indicates a valid SSL/TLS certificate.
-- Test HTTP to HTTPS redirection: `http://peyarcholai.donorconnect.in` must automatically redirect to `https://`.
+- Test HTTP to HTTPS redirection: `http://peyar.donorconnect.in` must automatically redirect to `https://`.
 
 ### 4.3 Feature Smoke Test Matrix
 
@@ -153,3 +154,5 @@ Open an incognito browser window and visit:
 - **Continuous Deployment**: Any commit pushed to the `main` branch of `rangathecreator/Peyarcholai` triggers an automatic, zero-downtime production deployment on Vercel.
 - **Rollback Capability**: In Vercel's **Deployments** tab, any previous build can be instantly rolled back with a single click.
 - **Monitoring**: Real-time traffic, function execution durations, and HTTP status codes are available in the Vercel **Analytics** and Cloudflare **Analytics** tabs.
+
+
