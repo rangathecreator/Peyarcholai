@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  webpack: (config) => {
+    return config;
+  },
   async headers() {
     return [
       {
