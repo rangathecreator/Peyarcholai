@@ -356,3 +356,6 @@
   - Added regression test in [`app/src/lib/catalog.test.ts`](../../app/src/lib/catalog.test.ts) enforcing `>= 50,000` active (`confidence >= 0.80`) names in each cultural category (`pure_tamil`, `tamilnadu_usage`, `other_heritage`; `>= 150,000` total) and validating `nameCategory` filtering + origin-source/meaning completeness.
   - Caught that 626 legacy seed names had `confidence < 0.80` (leaving 49,374 active `pure_tamil`); topped up `pure_tamil` by +650 high-confidence records (total catalog: 150,650 raw / 150,024 active).
   - Local validation passed **35 / 35 tests across 9 suites** (`npm test`) and compiled **112 routes** cleanly (`npm run build`).
+- **Cycle #2 (2026-11-13 09:55 IST)**:
+  - Ran `corpus-gender-audit.mjs` across all **150,650** records: **0** gender discrepancies found (100% culturally aligned).
+  - Audited mobile modal header flex-wrap behavior in [`NamingGuruDashboard.tsx`](../../app/src/components/NamingGuruDashboard.tsx) and verified full local test suite (**35 / 35**) and Next.js production build.
