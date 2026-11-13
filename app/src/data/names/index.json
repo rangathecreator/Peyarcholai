@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-11T20:17:33.561Z",
-  "total": 22612,
+  "generatedAt": "2026-11-13T03:07:45.983Z",
+  "total": 121062,
   "maxPerShard": 400,
   "shards": [
     {
@@ -353,6 +353,266 @@
       "file": "ha-01.json",
       "letter": "ஹ",
       "count": 1
+    },
+    {
+      "file": "cat1-pure-01.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-02.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-03.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-04.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-05.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-06.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-07.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-08.json",
+      "letter": "pure_tamil",
+      "count": 1000
+    },
+    {
+      "file": "cat2-tn-01.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-02.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-03.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-04.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-05.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-06.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-07.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-08.json",
+      "letter": "tamilnadu_usage",
+      "count": 1000
+    },
+    {
+      "file": "cat3-other-01.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-02.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-03.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-04.json",
+      "letter": "other_heritage",
+      "count": 1240
+    },
+    {
+      "file": "cat1-pure-09.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-10.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-11.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-12.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-13.json",
+      "letter": "pure_tamil",
+      "count": 2000
+    },
+    {
+      "file": "cat1-pure-14.json",
+      "letter": "pure_tamil",
+      "count": 1210
+    },
+    {
+      "file": "cat2-tn-09.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-10.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-11.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-12.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-13.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-14.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-15.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-16.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-17.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-18.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-19.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-20.json",
+      "letter": "tamilnadu_usage",
+      "count": 2000
+    },
+    {
+      "file": "cat2-tn-21.json",
+      "letter": "tamilnadu_usage",
+      "count": 1000
+    },
+    {
+      "file": "cat3-other-05.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-06.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-07.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-08.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-09.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-10.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-11.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-12.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-13.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-14.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-15.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-16.json",
+      "letter": "other_heritage",
+      "count": 2000
+    },
+    {
+      "file": "cat3-other-17.json",
+      "letter": "other_heritage",
+      "count": 1000
     }
   ]
 }
