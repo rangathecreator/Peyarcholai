@@ -7,8 +7,9 @@
 
 import fs from "node:fs";
 import path from "node:path";
-// The catalog is sharded into small JSON files (src/data/names/*.json, see its README)
-// and read lazily at runtime, so tsc / webpack never parse or bundle it.
+import zlib from "node:zlib";
+// The catalog is sharded into gzipped JSON files (src/data/names/*.json.gz, see its README)
+// and read lazily at runtime, so tsc / webpack never parse or bundle it and serverless bundles stay < 25MB.
 const NAMES_DIR = path.join(process.cwd(), "src", "data", "names");
 function readNameShards(): TamilNameRecord[] {
   const index = JSON.parse(fs.readFileSync(path.join(NAMES_DIR, "index.json"), "utf8")) as {
@@ -16,7 +17,11 @@ function readNameShards(): TamilNameRecord[] {
   };
   const out: TamilNameRecord[] = [];
   for (const s of index.shards) {
-    out.push(...(JSON.parse(fs.readFileSync(path.join(NAMES_DIR, s.file), "utf8")) as TamilNameRecord[]));
+    const filePath = path.join(NAMES_DIR, s.file);
+    const raw = s.file.endsWith(".gz")
+      ? zlib.gunzipSync(fs.readFileSync(filePath)).toString("utf8")
+      : fs.readFileSync(filePath, "utf8");
+    out.push(...(JSON.parse(raw) as TamilNameRecord[]));
   }
   return out;
 }

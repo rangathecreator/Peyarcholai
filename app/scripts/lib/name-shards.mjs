@@ -11,6 +11,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import zlib from "node:zlib";
 
 export const MAX_PER_SHARD = 400;
 export const NAMES_DIR = fs.existsSync(path.join(process.cwd(), "app", "src", "data", "names"))
@@ -61,10 +62,10 @@ export function writeShards(records, dir = NAMES_DIR) {
       .sort((a, b) => String(a.slug).localeCompare(String(b.slug)));
     for (let i = 0, n = 1; i < list.length; i += MAX_PER_SHARD, n++) {
       const chunk = list.slice(i, i + MAX_PER_SHARD);
-      const file = `${letterKey(letter)}-${String(n).padStart(2, "0")}.json`;
+      const file = `${letterKey(letter)}-${String(n).padStart(2, "0")}.json.gz`;
       const targetPath = path.join(dir, file);
       const tmpPath = `${targetPath}.tmp`;
-      fs.writeFileSync(tmpPath, JSON.stringify(chunk, null, 2) + "\n", "utf8");
+      fs.writeFileSync(tmpPath, zlib.gzipSync(JSON.stringify(chunk)));
       fs.renameSync(tmpPath, targetPath);
       writtenFiles.add(file);
       shards.push({ file, letter, count: chunk.length });
@@ -84,7 +85,7 @@ export function writeShards(records, dir = NAMES_DIR) {
   fs.renameSync(indexTmp, indexTarget);
 
   for (const f of fs.readdirSync(dir)) {
-    if (!writtenFiles.has(f) && (/^[a-z0-9-]+-\d{2}\.json$/.test(f) || f.endsWith(".tmp"))) {
+    if (!writtenFiles.has(f) && (/^[a-z0-9-]+-\d{2}\.json(\.gz)?$/.test(f) || f.endsWith(".tmp"))) {
       try {
         fs.unlinkSync(path.join(dir, f));
       } catch { }
@@ -100,7 +101,11 @@ export function readShards(dir = NAMES_DIR) {
   const index = JSON.parse(fs.readFileSync(indexFile, "utf8"));
   const out = [];
   for (const s of index.shards) {
-    out.push(...JSON.parse(fs.readFileSync(path.join(dir, s.file), "utf8")));
+    const filePath = path.join(dir, s.file);
+    const raw = s.file.endsWith(".gz")
+      ? zlib.gunzipSync(fs.readFileSync(filePath)).toString("utf8")
+      : fs.readFileSync(filePath, "utf8");
+    out.push(...JSON.parse(raw));
   }
   return out;
 }

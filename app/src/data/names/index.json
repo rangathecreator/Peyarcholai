@@ -5,1947 +5,1947 @@
   "maxPerShard": 400,
   "shards": [
     {
-      "file": "a-01.json",
+      "file": "a-01.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-02.json",
+      "file": "a-02.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-03.json",
+      "file": "a-03.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-04.json",
+      "file": "a-04.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-05.json",
+      "file": "a-05.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-06.json",
+      "file": "a-06.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-07.json",
+      "file": "a-07.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-08.json",
+      "file": "a-08.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-09.json",
+      "file": "a-09.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-10.json",
+      "file": "a-10.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-11.json",
+      "file": "a-11.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-12.json",
+      "file": "a-12.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-13.json",
+      "file": "a-13.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-14.json",
+      "file": "a-14.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-15.json",
+      "file": "a-15.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-16.json",
+      "file": "a-16.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-17.json",
+      "file": "a-17.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-18.json",
+      "file": "a-18.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-19.json",
+      "file": "a-19.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-20.json",
+      "file": "a-20.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-21.json",
+      "file": "a-21.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-22.json",
+      "file": "a-22.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-23.json",
+      "file": "a-23.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-24.json",
+      "file": "a-24.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-25.json",
+      "file": "a-25.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-26.json",
+      "file": "a-26.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-27.json",
+      "file": "a-27.json.gz",
       "letter": "அ",
       "count": 400
     },
     {
-      "file": "a-28.json",
+      "file": "a-28.json.gz",
       "letter": "அ",
       "count": 353
     },
     {
-      "file": "aa-01.json",
+      "file": "aa-01.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-02.json",
+      "file": "aa-02.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-03.json",
+      "file": "aa-03.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-04.json",
+      "file": "aa-04.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-05.json",
+      "file": "aa-05.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-06.json",
+      "file": "aa-06.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-07.json",
+      "file": "aa-07.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-08.json",
+      "file": "aa-08.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-09.json",
+      "file": "aa-09.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-10.json",
+      "file": "aa-10.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-11.json",
+      "file": "aa-11.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-12.json",
+      "file": "aa-12.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-13.json",
+      "file": "aa-13.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-14.json",
+      "file": "aa-14.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-15.json",
+      "file": "aa-15.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-16.json",
+      "file": "aa-16.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-17.json",
+      "file": "aa-17.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-18.json",
+      "file": "aa-18.json.gz",
       "letter": "ஆ",
       "count": 400
     },
     {
-      "file": "aa-19.json",
+      "file": "aa-19.json.gz",
       "letter": "ஆ",
       "count": 220
     },
     {
-      "file": "i-01.json",
+      "file": "i-01.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-02.json",
+      "file": "i-02.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-03.json",
+      "file": "i-03.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-04.json",
+      "file": "i-04.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-05.json",
+      "file": "i-05.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-06.json",
+      "file": "i-06.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-07.json",
+      "file": "i-07.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-08.json",
+      "file": "i-08.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-09.json",
+      "file": "i-09.json.gz",
       "letter": "இ",
       "count": 400
     },
     {
-      "file": "i-10.json",
+      "file": "i-10.json.gz",
       "letter": "இ",
       "count": 179
     },
     {
-      "file": "ii-01.json",
+      "file": "ii-01.json.gz",
       "letter": "ஈ",
       "count": 400
     },
     {
-      "file": "ii-02.json",
+      "file": "ii-02.json.gz",
       "letter": "ஈ",
       "count": 400
     },
     {
-      "file": "ii-03.json",
+      "file": "ii-03.json.gz",
       "letter": "ஈ",
       "count": 400
     },
     {
-      "file": "ii-04.json",
+      "file": "ii-04.json.gz",
       "letter": "ஈ",
       "count": 131
     },
     {
-      "file": "u-01.json",
+      "file": "u-01.json.gz",
       "letter": "உ",
       "count": 400
     },
     {
-      "file": "u-02.json",
+      "file": "u-02.json.gz",
       "letter": "உ",
       "count": 400
     },
     {
-      "file": "u-03.json",
+      "file": "u-03.json.gz",
       "letter": "உ",
       "count": 400
     },
     {
-      "file": "u-04.json",
+      "file": "u-04.json.gz",
       "letter": "உ",
       "count": 258
     },
     {
-      "file": "uu-01.json",
+      "file": "uu-01.json.gz",
       "letter": "ஊ",
       "count": 115
     },
     {
-      "file": "e-01.json",
+      "file": "e-01.json.gz",
       "letter": "எ",
       "count": 400
     },
     {
-      "file": "e-02.json",
+      "file": "e-02.json.gz",
       "letter": "எ",
       "count": 400
     },
     {
-      "file": "e-03.json",
+      "file": "e-03.json.gz",
       "letter": "எ",
       "count": 400
     },
     {
-      "file": "e-04.json",
+      "file": "e-04.json.gz",
       "letter": "எ",
       "count": 400
     },
     {
-      "file": "e-05.json",
+      "file": "e-05.json.gz",
       "letter": "எ",
       "count": 400
     },
     {
-      "file": "e-06.json",
+      "file": "e-06.json.gz",
       "letter": "எ",
       "count": 400
     },
     {
-      "file": "e-07.json",
+      "file": "e-07.json.gz",
       "letter": "எ",
       "count": 400
     },
     {
-      "file": "e-08.json",
+      "file": "e-08.json.gz",
       "letter": "எ",
       "count": 400
     },
     {
-      "file": "e-09.json",
+      "file": "e-09.json.gz",
       "letter": "எ",
       "count": 163
     },
     {
-      "file": "ee-01.json",
+      "file": "ee-01.json.gz",
       "letter": "ஏ",
       "count": 400
     },
     {
-      "file": "ee-02.json",
+      "file": "ee-02.json.gz",
       "letter": "ஏ",
       "count": 400
     },
     {
-      "file": "ee-03.json",
+      "file": "ee-03.json.gz",
       "letter": "ஏ",
       "count": 41
     },
     {
-      "file": "ai-01.json",
+      "file": "ai-01.json.gz",
       "letter": "ஐ",
       "count": 400
     },
     {
-      "file": "ai-02.json",
+      "file": "ai-02.json.gz",
       "letter": "ஐ",
       "count": 400
     },
     {
-      "file": "ai-03.json",
+      "file": "ai-03.json.gz",
       "letter": "ஐ",
       "count": 292
     },
     {
-      "file": "o-01.json",
+      "file": "o-01.json.gz",
       "letter": "ஒ",
       "count": 247
     },
     {
-      "file": "oo-01.json",
+      "file": "oo-01.json.gz",
       "letter": "ஓ",
       "count": 400
     },
     {
-      "file": "oo-02.json",
+      "file": "oo-02.json.gz",
       "letter": "ஓ",
       "count": 400
     },
     {
-      "file": "oo-03.json",
+      "file": "oo-03.json.gz",
       "letter": "ஓ",
       "count": 64
     },
     {
-      "file": "u0b83-01.json",
+      "file": "u0b83-01.json.gz",
       "letter": "ஃ",
       "count": 400
     },
     {
-      "file": "u0b83-02.json",
+      "file": "u0b83-02.json.gz",
       "letter": "ஃ",
       "count": 183
     },
     {
-      "file": "ka-01.json",
+      "file": "ka-01.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-02.json",
+      "file": "ka-02.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-03.json",
+      "file": "ka-03.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-04.json",
+      "file": "ka-04.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-05.json",
+      "file": "ka-05.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-06.json",
+      "file": "ka-06.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-07.json",
+      "file": "ka-07.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-08.json",
+      "file": "ka-08.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-09.json",
+      "file": "ka-09.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-10.json",
+      "file": "ka-10.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-11.json",
+      "file": "ka-11.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-12.json",
+      "file": "ka-12.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-13.json",
+      "file": "ka-13.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-14.json",
+      "file": "ka-14.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-15.json",
+      "file": "ka-15.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-16.json",
+      "file": "ka-16.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-17.json",
+      "file": "ka-17.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-18.json",
+      "file": "ka-18.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-19.json",
+      "file": "ka-19.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-20.json",
+      "file": "ka-20.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-21.json",
+      "file": "ka-21.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-22.json",
+      "file": "ka-22.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-23.json",
+      "file": "ka-23.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-24.json",
+      "file": "ka-24.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-25.json",
+      "file": "ka-25.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-26.json",
+      "file": "ka-26.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-27.json",
+      "file": "ka-27.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-28.json",
+      "file": "ka-28.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-29.json",
+      "file": "ka-29.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-30.json",
+      "file": "ka-30.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-31.json",
+      "file": "ka-31.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-32.json",
+      "file": "ka-32.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-33.json",
+      "file": "ka-33.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-34.json",
+      "file": "ka-34.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-35.json",
+      "file": "ka-35.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-36.json",
+      "file": "ka-36.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-37.json",
+      "file": "ka-37.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-38.json",
+      "file": "ka-38.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-39.json",
+      "file": "ka-39.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-40.json",
+      "file": "ka-40.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-41.json",
+      "file": "ka-41.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-42.json",
+      "file": "ka-42.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-43.json",
+      "file": "ka-43.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-44.json",
+      "file": "ka-44.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-45.json",
+      "file": "ka-45.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-46.json",
+      "file": "ka-46.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-47.json",
+      "file": "ka-47.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-48.json",
+      "file": "ka-48.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-49.json",
+      "file": "ka-49.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-50.json",
+      "file": "ka-50.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-51.json",
+      "file": "ka-51.json.gz",
       "letter": "க",
       "count": 400
     },
     {
-      "file": "ka-52.json",
+      "file": "ka-52.json.gz",
       "letter": "க",
       "count": 12
     },
     {
-      "file": "sa-01.json",
+      "file": "sa-01.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-02.json",
+      "file": "sa-02.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-03.json",
+      "file": "sa-03.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-04.json",
+      "file": "sa-04.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-05.json",
+      "file": "sa-05.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-06.json",
+      "file": "sa-06.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-07.json",
+      "file": "sa-07.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-08.json",
+      "file": "sa-08.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-09.json",
+      "file": "sa-09.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-10.json",
+      "file": "sa-10.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-11.json",
+      "file": "sa-11.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-12.json",
+      "file": "sa-12.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-13.json",
+      "file": "sa-13.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-14.json",
+      "file": "sa-14.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-15.json",
+      "file": "sa-15.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-16.json",
+      "file": "sa-16.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-17.json",
+      "file": "sa-17.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-18.json",
+      "file": "sa-18.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-19.json",
+      "file": "sa-19.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-20.json",
+      "file": "sa-20.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-21.json",
+      "file": "sa-21.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-22.json",
+      "file": "sa-22.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-23.json",
+      "file": "sa-23.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-24.json",
+      "file": "sa-24.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-25.json",
+      "file": "sa-25.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-26.json",
+      "file": "sa-26.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-27.json",
+      "file": "sa-27.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-28.json",
+      "file": "sa-28.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-29.json",
+      "file": "sa-29.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-30.json",
+      "file": "sa-30.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-31.json",
+      "file": "sa-31.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-32.json",
+      "file": "sa-32.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-33.json",
+      "file": "sa-33.json.gz",
       "letter": "ச",
       "count": 400
     },
     {
-      "file": "sa-34.json",
+      "file": "sa-34.json.gz",
       "letter": "ச",
       "count": 149
     },
     {
-      "file": "nya-01.json",
+      "file": "nya-01.json.gz",
       "letter": "ஞ",
       "count": 124
     },
     {
-      "file": "ta-retroflex-01.json",
+      "file": "ta-retroflex-01.json.gz",
       "letter": "ட",
       "count": 400
     },
     {
-      "file": "ta-retroflex-02.json",
+      "file": "ta-retroflex-02.json.gz",
       "letter": "ட",
       "count": 400
     },
     {
-      "file": "ta-retroflex-03.json",
+      "file": "ta-retroflex-03.json.gz",
       "letter": "ட",
       "count": 400
     },
     {
-      "file": "ta-retroflex-04.json",
+      "file": "ta-retroflex-04.json.gz",
       "letter": "ட",
       "count": 400
     },
     {
-      "file": "ta-retroflex-05.json",
+      "file": "ta-retroflex-05.json.gz",
       "letter": "ட",
       "count": 400
     },
     {
-      "file": "ta-retroflex-06.json",
+      "file": "ta-retroflex-06.json.gz",
       "letter": "ட",
       "count": 400
     },
     {
-      "file": "ta-retroflex-07.json",
+      "file": "ta-retroflex-07.json.gz",
       "letter": "ட",
       "count": 230
     },
     {
-      "file": "tha-01.json",
+      "file": "tha-01.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-02.json",
+      "file": "tha-02.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-03.json",
+      "file": "tha-03.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-04.json",
+      "file": "tha-04.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-05.json",
+      "file": "tha-05.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-06.json",
+      "file": "tha-06.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-07.json",
+      "file": "tha-07.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-08.json",
+      "file": "tha-08.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-09.json",
+      "file": "tha-09.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-10.json",
+      "file": "tha-10.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-11.json",
+      "file": "tha-11.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-12.json",
+      "file": "tha-12.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-13.json",
+      "file": "tha-13.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-14.json",
+      "file": "tha-14.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-15.json",
+      "file": "tha-15.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-16.json",
+      "file": "tha-16.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-17.json",
+      "file": "tha-17.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-18.json",
+      "file": "tha-18.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-19.json",
+      "file": "tha-19.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-20.json",
+      "file": "tha-20.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-21.json",
+      "file": "tha-21.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-22.json",
+      "file": "tha-22.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-23.json",
+      "file": "tha-23.json.gz",
       "letter": "த",
       "count": 400
     },
     {
-      "file": "tha-24.json",
+      "file": "tha-24.json.gz",
       "letter": "த",
       "count": 175
     },
     {
-      "file": "na-01.json",
+      "file": "na-01.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-02.json",
+      "file": "na-02.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-03.json",
+      "file": "na-03.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-04.json",
+      "file": "na-04.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-05.json",
+      "file": "na-05.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-06.json",
+      "file": "na-06.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-07.json",
+      "file": "na-07.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-08.json",
+      "file": "na-08.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-09.json",
+      "file": "na-09.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-10.json",
+      "file": "na-10.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-11.json",
+      "file": "na-11.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-12.json",
+      "file": "na-12.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-13.json",
+      "file": "na-13.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-14.json",
+      "file": "na-14.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-15.json",
+      "file": "na-15.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-16.json",
+      "file": "na-16.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-17.json",
+      "file": "na-17.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-18.json",
+      "file": "na-18.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-19.json",
+      "file": "na-19.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-20.json",
+      "file": "na-20.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-21.json",
+      "file": "na-21.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-22.json",
+      "file": "na-22.json.gz",
       "letter": "ந",
       "count": 400
     },
     {
-      "file": "na-23.json",
+      "file": "na-23.json.gz",
       "letter": "ந",
       "count": 377
     },
     {
-      "file": "pa-01.json",
+      "file": "pa-01.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-02.json",
+      "file": "pa-02.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-03.json",
+      "file": "pa-03.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-04.json",
+      "file": "pa-04.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-05.json",
+      "file": "pa-05.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-06.json",
+      "file": "pa-06.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-07.json",
+      "file": "pa-07.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-08.json",
+      "file": "pa-08.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-09.json",
+      "file": "pa-09.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-10.json",
+      "file": "pa-10.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-11.json",
+      "file": "pa-11.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-12.json",
+      "file": "pa-12.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-13.json",
+      "file": "pa-13.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-14.json",
+      "file": "pa-14.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-15.json",
+      "file": "pa-15.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-16.json",
+      "file": "pa-16.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-17.json",
+      "file": "pa-17.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-18.json",
+      "file": "pa-18.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-19.json",
+      "file": "pa-19.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-20.json",
+      "file": "pa-20.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-21.json",
+      "file": "pa-21.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-22.json",
+      "file": "pa-22.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-23.json",
+      "file": "pa-23.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-24.json",
+      "file": "pa-24.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-25.json",
+      "file": "pa-25.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-26.json",
+      "file": "pa-26.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-27.json",
+      "file": "pa-27.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-28.json",
+      "file": "pa-28.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-29.json",
+      "file": "pa-29.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-30.json",
+      "file": "pa-30.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-31.json",
+      "file": "pa-31.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-32.json",
+      "file": "pa-32.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-33.json",
+      "file": "pa-33.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-34.json",
+      "file": "pa-34.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-35.json",
+      "file": "pa-35.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-36.json",
+      "file": "pa-36.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-37.json",
+      "file": "pa-37.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-38.json",
+      "file": "pa-38.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-39.json",
+      "file": "pa-39.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-40.json",
+      "file": "pa-40.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-41.json",
+      "file": "pa-41.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-42.json",
+      "file": "pa-42.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-43.json",
+      "file": "pa-43.json.gz",
       "letter": "ப",
       "count": 400
     },
     {
-      "file": "pa-44.json",
+      "file": "pa-44.json.gz",
       "letter": "ப",
       "count": 141
     },
     {
-      "file": "ma-01.json",
+      "file": "ma-01.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-02.json",
+      "file": "ma-02.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-03.json",
+      "file": "ma-03.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-04.json",
+      "file": "ma-04.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-05.json",
+      "file": "ma-05.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-06.json",
+      "file": "ma-06.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-07.json",
+      "file": "ma-07.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-08.json",
+      "file": "ma-08.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-09.json",
+      "file": "ma-09.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-10.json",
+      "file": "ma-10.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-11.json",
+      "file": "ma-11.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-12.json",
+      "file": "ma-12.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-13.json",
+      "file": "ma-13.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-14.json",
+      "file": "ma-14.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-15.json",
+      "file": "ma-15.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-16.json",
+      "file": "ma-16.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-17.json",
+      "file": "ma-17.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-18.json",
+      "file": "ma-18.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-19.json",
+      "file": "ma-19.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-20.json",
+      "file": "ma-20.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-21.json",
+      "file": "ma-21.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-22.json",
+      "file": "ma-22.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-23.json",
+      "file": "ma-23.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-24.json",
+      "file": "ma-24.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-25.json",
+      "file": "ma-25.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-26.json",
+      "file": "ma-26.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-27.json",
+      "file": "ma-27.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-28.json",
+      "file": "ma-28.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-29.json",
+      "file": "ma-29.json.gz",
       "letter": "ம",
       "count": 400
     },
     {
-      "file": "ma-30.json",
+      "file": "ma-30.json.gz",
       "letter": "ம",
       "count": 380
     },
     {
-      "file": "ya-01.json",
+      "file": "ya-01.json.gz",
       "letter": "ய",
       "count": 400
     },
     {
-      "file": "ya-02.json",
+      "file": "ya-02.json.gz",
       "letter": "ய",
       "count": 400
     },
     {
-      "file": "ya-03.json",
+      "file": "ya-03.json.gz",
       "letter": "ய",
       "count": 262
     },
     {
-      "file": "ra-01.json",
+      "file": "ra-01.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-02.json",
+      "file": "ra-02.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-03.json",
+      "file": "ra-03.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-04.json",
+      "file": "ra-04.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-05.json",
+      "file": "ra-05.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-06.json",
+      "file": "ra-06.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-07.json",
+      "file": "ra-07.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-08.json",
+      "file": "ra-08.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-09.json",
+      "file": "ra-09.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-10.json",
+      "file": "ra-10.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-11.json",
+      "file": "ra-11.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-12.json",
+      "file": "ra-12.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-13.json",
+      "file": "ra-13.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-14.json",
+      "file": "ra-14.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-15.json",
+      "file": "ra-15.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-16.json",
+      "file": "ra-16.json.gz",
       "letter": "ர",
       "count": 400
     },
     {
-      "file": "ra-17.json",
+      "file": "ra-17.json.gz",
       "letter": "ர",
       "count": 350
     },
     {
-      "file": "la-01.json",
+      "file": "la-01.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-02.json",
+      "file": "la-02.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-03.json",
+      "file": "la-03.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-04.json",
+      "file": "la-04.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-05.json",
+      "file": "la-05.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-06.json",
+      "file": "la-06.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-07.json",
+      "file": "la-07.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-08.json",
+      "file": "la-08.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-09.json",
+      "file": "la-09.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-10.json",
+      "file": "la-10.json.gz",
       "letter": "ல",
       "count": 400
     },
     {
-      "file": "la-11.json",
+      "file": "la-11.json.gz",
       "letter": "ல",
       "count": 205
     },
     {
-      "file": "va-01.json",
+      "file": "va-01.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-02.json",
+      "file": "va-02.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-03.json",
+      "file": "va-03.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-04.json",
+      "file": "va-04.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-05.json",
+      "file": "va-05.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-06.json",
+      "file": "va-06.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-07.json",
+      "file": "va-07.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-08.json",
+      "file": "va-08.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-09.json",
+      "file": "va-09.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-10.json",
+      "file": "va-10.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-11.json",
+      "file": "va-11.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-12.json",
+      "file": "va-12.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-13.json",
+      "file": "va-13.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-14.json",
+      "file": "va-14.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-15.json",
+      "file": "va-15.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-16.json",
+      "file": "va-16.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-17.json",
+      "file": "va-17.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-18.json",
+      "file": "va-18.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-19.json",
+      "file": "va-19.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-20.json",
+      "file": "va-20.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-21.json",
+      "file": "va-21.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-22.json",
+      "file": "va-22.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-23.json",
+      "file": "va-23.json.gz",
       "letter": "வ",
       "count": 400
     },
     {
-      "file": "va-24.json",
+      "file": "va-24.json.gz",
       "letter": "வ",
       "count": 214
     },
     {
-      "file": "ja-01.json",
+      "file": "ja-01.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-02.json",
+      "file": "ja-02.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-03.json",
+      "file": "ja-03.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-04.json",
+      "file": "ja-04.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-05.json",
+      "file": "ja-05.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-06.json",
+      "file": "ja-06.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-07.json",
+      "file": "ja-07.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-08.json",
+      "file": "ja-08.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-09.json",
+      "file": "ja-09.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-10.json",
+      "file": "ja-10.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-11.json",
+      "file": "ja-11.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-12.json",
+      "file": "ja-12.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-13.json",
+      "file": "ja-13.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-14.json",
+      "file": "ja-14.json.gz",
       "letter": "ஜ",
       "count": 400
     },
     {
-      "file": "ja-15.json",
+      "file": "ja-15.json.gz",
       "letter": "ஜ",
       "count": 291
     },
     {
-      "file": "sha-01.json",
+      "file": "sha-01.json.gz",
       "letter": "ஷ",
       "count": 291
     },
     {
-      "file": "sa-grantha-01.json",
+      "file": "sa-grantha-01.json.gz",
       "letter": "ஸ",
       "count": 400
     },
     {
-      "file": "sa-grantha-02.json",
+      "file": "sa-grantha-02.json.gz",
       "letter": "ஸ",
       "count": 400
     },
     {
-      "file": "sa-grantha-03.json",
+      "file": "sa-grantha-03.json.gz",
       "letter": "ஸ",
       "count": 400
     },
     {
-      "file": "sa-grantha-04.json",
+      "file": "sa-grantha-04.json.gz",
       "letter": "ஸ",
       "count": 400
     },
     {
-      "file": "sa-grantha-05.json",
+      "file": "sa-grantha-05.json.gz",
       "letter": "ஸ",
       "count": 205
     },
     {
-      "file": "ha-01.json",
+      "file": "ha-01.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-02.json",
+      "file": "ha-02.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-03.json",
+      "file": "ha-03.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-04.json",
+      "file": "ha-04.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-05.json",
+      "file": "ha-05.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-06.json",
+      "file": "ha-06.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-07.json",
+      "file": "ha-07.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-08.json",
+      "file": "ha-08.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-09.json",
+      "file": "ha-09.json.gz",
       "letter": "ஹ",
       "count": 400
     },
     {
-      "file": "ha-10.json",
+      "file": "ha-10.json.gz",
       "letter": "ஹ",
       "count": 348
     },
     {
-      "file": "cat1-pure-01.json",
+      "file": "cat1-pure-01.json.gz",
       "letter": "pure_tamil",
       "count": 650
     }
