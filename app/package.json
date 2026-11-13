@@ -23,6 +23,9 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@jridgewell/gen-mapping": "^0.3.13",
+    "@jridgewell/sourcemap-codec": "^1.6.0",
+    "@jridgewell/trace-mapping": "^0.3.31",
     "@types/node": "^22.10.0",
     "@types/pg": "^8.11.10",
     "@types/react": "^19.0.0",

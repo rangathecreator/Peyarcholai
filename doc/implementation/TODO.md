@@ -342,3 +342,11 @@
   - Added live `nameCategory` filter and `categoryCounts` API metadata in [`app/src/app/api/names/route.ts`](../../app/src/app/api/names/route.ts) and [`app/src/components/NamingGuruDashboard.tsx`](../../app/src/components/NamingGuruDashboard.tsx).
   - Updated [`app/src/lib/catalog.test.ts`](../../app/src/lib/catalog.test.ts) to enforce QA Checklist v1.0 across all 150,000 records, including origin-source & meaning validation for non-pure Tamil categories.
   - Executed `corpus-gender-audit.mjs` across all 150,000 records, `npm test` (34/34 passing across 9 suites), and `npm run build` (112 static/dynamic routes).
+
+### Task 15: Mobile Responsiveness & Responsive CSS Pipeline (`peyar.donorconnect.in`)
+- [x] **Root Cause Identified & Fixed**:
+  - **Root Cause**: [`app/postcss.config.js`](../../app/postcss.config.js) was missing and [`app/src/app/globals.css`](../../app/src/app/globals.css) used a hand-written subset of CSS utilities instead of `@tailwind base; @tailwind components; @tailwind utilities;`, leaving 224 responsive classes (`sm:*`, `md:*`, `lg:*`, `hidden`, `overflow-x-auto`, `grid-cols-*`, etc.) uncompiled on mobile viewports.
+  - **Fix Implemented**:
+    1. Added [`app/postcss.config.js`](../../app/postcss.config.js) (`tailwindcss` + `autoprefixer`) so Next.js compiles the full Tailwind CSS responsive utility suite from [`app/tailwind.config.js`](../../app/tailwind.config.js).
+    2. Updated [`app/src/app/globals.css`](../../app/src/app/globals.css) with `@tailwind base/components/utilities`, `overflow-x: hidden`, `max-width: 100%`, and `touch-action: manipulation`.
+    3. Added explicit `viewport` export (`width: "device-width", initialScale: 1, maximumScale: 5`) and mobile-compact header/main padding (`px-3 sm:px-4`, `min-w-0`, `truncate`) in [`app/src/app/layout.tsx`](../../app/src/app/layout.tsx).

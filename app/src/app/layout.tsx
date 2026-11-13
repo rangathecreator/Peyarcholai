@@ -1,10 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import {
   DpdpConsentBanner,
   SubscriptionStatusPill,
 } from "@/components/MonetizationBanner";
 import Link from "next/link";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   title:
@@ -31,9 +37,9 @@ export default function RootLayout({
     <html lang="ta">
       <body className="min-h-screen bg-[#faf7f2] font-sans text-stone-900 antialiased">
         <header className="sticky top-0 z-40 border-b border-amber-200/70 bg-white/95 backdrop-blur shadow-[0_2px_15px_-3px_rgba(0,0,0,0.04)]">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5">
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="relative flex h-11 w-11 items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-4 py-2 sm:py-2.5">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+              <div className="relative flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/logo-transparent.png"
@@ -41,12 +47,12 @@ export default function RootLayout({
                   className="h-full w-full object-contain filter drop-shadow-[0_1px_3px_rgba(120,53,15,0.2)]"
                 />
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2">
-                  <span className="text-xl font-extrabold tracking-tight text-stone-900 transition-colors group-hover:text-amber-800">
+              <div className="flex flex-col min-w-0">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <span className="text-base sm:text-xl font-extrabold tracking-tight text-stone-900 transition-colors group-hover:text-amber-800 truncate">
                     பெயர்ச்சோலை
                   </span>
-                  <span className="rounded-full bg-amber-100/90 px-2.5 py-0.5 text-[11px] font-bold text-amber-950 border border-amber-300/60 shadow-xs">
+                  <span className="hidden xs:inline-block sm:inline-block rounded-full bg-amber-100/90 px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold text-amber-950 border border-amber-300/60 shadow-xs shrink-0">
                     Peyarcholai
                   </span>
                 </div>
@@ -56,10 +62,10 @@ export default function RootLayout({
               </div>
             </Link>
 
-            <div className="flex items-center gap-2.5 shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
               <Link
                 href="/docs"
-                className="inline-flex items-center gap-1.5 rounded-xl border border-amber-300 bg-amber-50/90 px-3 py-1.5 text-xs font-semibold text-amber-900 transition hover:bg-amber-100 hover:shadow-xs"
+                className="inline-flex items-center gap-1 sm:gap-1.5 rounded-xl border border-amber-300 bg-amber-50/90 px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-amber-900 transition hover:bg-amber-100 hover:shadow-xs"
               >
                 <span>📖</span>
                 <span className="hidden md:inline">User Guide &amp; Docs</span>
@@ -73,7 +79,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
+        <main className="mx-auto max-w-7xl px-3 sm:px-4 py-4 sm:py-6">{children}</main>
 
         <footer className="mt-16 border-t border-stone-200 bg-white py-8 text-xs text-stone-600">
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-4 sm:flex-row">
