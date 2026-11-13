@@ -82,6 +82,29 @@ describe('Empirical Name Frequency & Cohort Rarity Scoring (Task 8)', () => {
     assert.equal(rarity.icon, '🏛️');
     assert.ok(rarity.observedFrequencyPercent > 0.50);
   });
+
+  it('differentiates names meaningfully without explicit popularityRank (Task 20)', () => {
+    const tnShort = calculateEmpiricalRarity('கவி', undefined, {
+      nameLatin: 'Kavi',
+      nameCategory: 'tamilnadu_usage',
+    });
+    const rareCompound = calculateEmpiricalRarity('அகழ்மங்கை', undefined, {
+      nameLatin: 'Agazhmangai',
+      nameCategory: 'pure_tamil',
+      originCategory: 'Modern Tamil',
+    });
+    const sangamShort = calculateEmpiricalRarity('யாழ்', undefined, {
+      nameLatin: 'Yaazh',
+      nameCategory: 'pure_tamil',
+      originCategory: 'Classical / Sangam Tamil',
+    });
+
+    assert.notEqual(tnShort.observedFrequencyPercent, rareCompound.observedFrequencyPercent);
+    assert.notEqual(sangamShort.observedFrequencyPercent, rareCompound.observedFrequencyPercent);
+    assert.ok(tnShort.cohortCountPer10k > rareCompound.cohortCountPer10k);
+    assert.ok(rareCompound.oneInClassrooms > tnShort.oneInClassrooms);
+    assert.ok(rareCompound.methodologyNoteEn.length > 10);
+  });
 });
 
 describe('Subscription Entitlements & Cultural Tiers (Task 1 & Task 4)', () => {

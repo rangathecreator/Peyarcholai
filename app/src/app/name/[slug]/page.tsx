@@ -274,7 +274,11 @@ export default async function NameDetailPage({
                   </p>
                   {item.structuredReference.citationNote && (
                     <p className="mt-1 text-[11px] text-stone-700">
-                      ℹ️ {item.structuredReference.citationNote}
+                      ℹ️{" "}
+                      {item.structuredReference.citationNote.replace(
+                        /\s*\(https?:\/\/[^)]+\)/g,
+                        ""
+                      )}
                     </p>
                   )}
                   {item.structuredReference.sourceWebsite && (

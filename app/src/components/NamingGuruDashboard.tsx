@@ -424,7 +424,12 @@ export default function NamingGuruDashboard({
     if (!selectedNameForModal) return null;
     return calculateEmpiricalRarity(
       selectedNameForModal.nameTamil,
-      selectedNameForModal.popularityRank
+      selectedNameForModal.popularityRank,
+      {
+        nameLatin: selectedNameForModal.nameLatin,
+        nameCategory: selectedNameForModal.nameCategory,
+        originCategory: selectedNameForModal.originCategory,
+      }
     );
   }, [selectedNameForModal]);
 
@@ -1413,14 +1418,14 @@ export default function NamingGuruDashboard({
                       </button>
                     </div>
 
-                    <div className="mt-3 space-y-1.5 border-t border-stone-100 pt-3 text-sm">
-                      <p className="font-medium text-stone-800">
+                    <div className="mt-2.5 space-y-1 border-t border-stone-100 pt-2.5 text-sm">
+                      <p className="font-medium text-stone-800 line-clamp-2 leading-snug">
                         {item.meaningTa}
                       </p>
-                      <p className="text-xs text-stone-600">{item.meaningEn}</p>
+                      <p className="text-xs text-stone-600 line-clamp-2 leading-snug">{item.meaningEn}</p>
                     </div>
 
-                    <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                    <div className="mt-2.5 flex flex-wrap gap-1.5 text-[11px]">
                       {item.nameCategory === "tamilnadu_usage" ? (
                         <span className="rounded-md border border-indigo-200 bg-indigo-50 px-2 py-0.5 font-semibold text-indigo-900">
                           🏛️ தமிழ்நாட்டுப் பயன்பாடு ({item.categoryOriginSource || "TN Cultural Usage"})
@@ -1492,23 +1497,23 @@ export default function NamingGuruDashboard({
                       )}
                     </div>
 
-                    <div className="mt-2.5 text-[11px] text-stone-500">
+                    <div className="mt-2 text-[11px] text-stone-500 line-clamp-1">
                       {item.structuredReference?.citationScope ===
                       "exact-word-in-verse" ? (
                         <>
-                          📜 <strong>இலக்கியச் சான்று (Ancient Citation):</strong>{" "}
+                          📜 <strong>இலக்கியச் சான்று:</strong>{" "}
                           {item.literaryReference}
                         </>
                       ) : (
                         <>
-                          📘 <strong>அகராதி வேர்ச்சொல் (Lexicon Root Source):</strong>{" "}
+                          📘 <strong>அகராதி வேர்ச்சொல்:</strong>{" "}
                           {item.literaryReference}
                         </>
                       )}
                     </div>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between border-t border-stone-100 pt-3">
+                  <div className="mt-3 flex items-center justify-between border-t border-stone-100 pt-2.5">
                     <button
                       onClick={() => {
                         setSelectedNameForModal(item);
@@ -1522,7 +1527,7 @@ export default function NamingGuruDashboard({
                       href={`/name/${item.slug}`}
                       className="rounded-lg bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-700 hover:bg-stone-200"
                     >
-                      SEO Page ↗
+                      Full Profile ↗
                     </Link>
                   </div>
                 </div>
@@ -2634,7 +2639,7 @@ export default function NamingGuruDashboard({
                               href={`/name/${slug}`}
                               className="rounded-lg bg-amber-100 px-2.5 py-1 text-[11px] font-semibold text-amber-900"
                             >
-                              SEO Page ↗
+                              Full Profile ↗
                             </Link>
                           )}
                         </div>
@@ -3212,7 +3217,7 @@ export default function NamingGuruDashboard({
                 href={`/name/${selectedNameForModal.slug}`}
                 className="rounded-xl bg-amber-700 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-amber-800"
               >
-                Full 14-Dimension SEO Page ↗
+                Full 14-Dimension Profile ↗
               </Link>
             </div>
 
@@ -3360,7 +3365,11 @@ export default function NamingGuruDashboard({
                     </div>
                     {selectedNameForModal.structuredReference?.citationNote && (
                       <p className="mt-1 text-[11px] text-stone-700">
-                        ℹ️ {selectedNameForModal.structuredReference.citationNote}
+                        ℹ️{" "}
+                        {selectedNameForModal.structuredReference.citationNote.replace(
+                          /\s*\(https?:\/\/[^)]+\)/g,
+                          ""
+                        )}
                       </p>
                     )}
                     {selectedNameForModal.structuredReference?.sourceWebsite && (
