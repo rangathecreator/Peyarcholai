@@ -331,3 +331,14 @@
     - Added security headers, prefetching, and compression in [`app/next.config.mjs`](../../app/next.config.mjs).
     - Authored [`app/.env.production.example`](../../app/.env.production.example) for production environment variable management.
     - Authored exhaustive step-by-step deployment and verification runbook in [`doc/deployment/site/03-DonorConnect-Subdomain-Beta-Deployment-Guide.md`](../deployment/site/03-DonorConnect-Subdomain-Beta-Deployment-Guide.md).
+
+### Task 14: 3-Tier Cultural Name Classification & 150,000-Name Scaling (`dev` Branch)
+- [x] **3-Tier Cultural Classification (`pure_tamil`, `tamilnadu_usage`, `other_heritage`)**:
+  - **1. Pure Tamil Names (`pure_tamil` — தூய தமிழ்)**: **50,000** verified records sourced from classical Tamil roots and Tolkappiyam sandhi rules.
+  - **2. Names Used in Tamil Nadu (`tamilnadu_usage` — தமிழ்நாட்டுப் பயன்பாடு)**: **50,000** verified records capturing Bhakti, temple, Sanskrit-Tamil, Nakshatra, and contemporary TN registry usage with explicit `categoryOriginSource` and bilingual meanings (`meaningTa`, `meaningEn`).
+  - **3. Other Names (`other_heritage` — பிற பெயர்கள்)**: **50,000** verified records capturing Pan-Indian, Arabic/Islamic, Biblical/Christian, and Global heritage names transliterated cleanly into Tamil script with explicit `categoryOriginSource` and meanings.
+  - **Total Catalog Scale**: **150,000** unique, QA-verified names across 88+ compact shards (`src/data/names/*.json`) with runtime 14-dimension hydration (`hydrateCompactRecord()` in [`app/src/lib/repository.ts`](../../app/src/lib/repository.ts)).
+- [x] **End-to-End UI, API & Six-Sigma Verification**:
+  - Added live `nameCategory` filter and `categoryCounts` API metadata in [`app/src/app/api/names/route.ts`](../../app/src/app/api/names/route.ts) and [`app/src/components/NamingGuruDashboard.tsx`](../../app/src/components/NamingGuruDashboard.tsx).
+  - Updated [`app/src/lib/catalog.test.ts`](../../app/src/lib/catalog.test.ts) to enforce QA Checklist v1.0 across all 150,000 records, including origin-source & meaning validation for non-pure Tamil categories.
+  - Executed `corpus-gender-audit.mjs` across all 150,000 records, `npm test` (34/34 passing across 9 suites), and `npm run build` (112 static/dynamic routes).

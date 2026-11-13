@@ -35,7 +35,7 @@ const SWARM_ENDPOINTS = [
   { name: "HP-Z4-Qwen-Coder-7B", url: "http://100.105.146.7:11437/v1/chat/completions", model: "qwen2.5-coder-7b" },
 ];
 
-async function querySwarmForNames(category, count = 12) {
+async function querySwarmForNames(category, count = 6) {
   if (!USE_LLM) return [];
   const prompts = {
     pure_tamil: `Generate ${count} unique authentic Pure Tamil baby names (zero Sanskrit) as a JSON array of objects: [{"ta":"தமிழ்","en":"English","gender":"boy"|"girl","meaning":"Meaning in English","meaningTa":"தமிழ் பொருள்","root":"வேர்ச்சொல்"}]. Return ONLY valid JSON array.`,
@@ -53,7 +53,7 @@ async function querySwarmForNames(category, count = 12) {
           model: ep.model,
           messages: [{ role: "user", content: prompts[category] }],
           temperature: 0.75,
-          max_tokens: 900,
+          max_tokens: 450,
         }),
         signal: AbortSignal.timeout(45000),
       });
@@ -1039,6 +1039,28 @@ const OTHER_SECOND_PARTS = [
 ];
 
 // EXPANDED LEXICAL MATRICES TO GUARANTEE >50,000 CAPACITY PER CATEGORY
+const EXTRA_PURE_PREFIXES = [
+  ["அழகிய", "Azhagiya", "அழகு மிக்க", "exquisitely graceful"],
+  ["இனிய", "Iniya", "இனிமை நிறைந்த", "sweet and gentle"],
+  ["உயரிய", "Uyariya", "உயர்ந்த பண்பு", "elevated nobility"],
+  ["எழிலார்", "Ezhilar", "எழில் நிறைந்த", "full of beauty"],
+  ["கதிரார்", "Kathirar", "ஒளிக்கதிர்", "radiant beam"],
+  ["குளிர்", "Kulir", "குளிர்ச்சி தரும்", "soothing coolness"],
+  ["சங்க", "Sanga", "சங்க இலக்கிய", "classical Sangam"],
+  ["செந்தமிழ்", "Senthamil", "செம்மையான தமிழ்", "classical Tamil"],
+  ["தங்க", "Thanga", "தூய தங்கம்", "pure gold"],
+  ["நற்றமிழ்", "Natramil", "நல்ல தமிழ்", "noble Tamil"],
+  ["பசுமை", "Pasumai", "பசுமை வளம்", "evergreen vitality"],
+  ["புகழார்", "Pugazhar", "புகழ்மிக்க", "illustrious fame"],
+  ["மணியார்", "Maniyar", "மணி போன்ற", "gem-like"],
+  ["முத்தார", "Muthaara", "முத்து மாலை", "pearl garland"],
+  ["வளமிகு", "Valamigu", "வளம் நிறைந்த", "abundant prosperity"],
+  ["தென்றலார்", "Thendralar", "தென்றல் போன்ற", "gentle breeze-like"],
+];
+for (const [ta, en, mTa, mEn] of EXTRA_PURE_PREFIXES) {
+  PURE_TAMIL_PREFIXES.push({ ta, en, mTa, mEn });
+}
+
 const EXTRA_TN_PREFIXES = [
   ["அபி", "Abhi", "உயர்ந்த", "exalted", "Sanskrit / Pan-Indian Heritage in TN"],
   ["அமித்", "Amith", "அளவற்ற", "boundless", "Contemporary Tamil Nadu Registry"],
@@ -1162,6 +1184,10 @@ const EXTRA_TN_PREFIXES = [
   ["ராஜ்", "Raj", "அரசாட்சிப் பெருமை", "royal radiance", "Tamil Nadu Cultural Tradition"],
   ["ரஜத்", "Rajath", "வெள்ளி ஒளி", "silvery brilliance", "Contemporary Tamil Nadu Registry"],
   ["ரமேஷ்", "Ramesh", "திருமகள் நாயகன்", "lord of Rama", "Vaishnava Heritage (TN)"],
+  ["வள்ளி", "Valli", "முருகன் நாயகி வள்ளி", "sacred Valli", "Murugan Bhakti Tradition (TN)"],
+  ["தெய்வ", "Deiva", "தெய்வீக அருள்", "divine grace", "Bhakti & Temple Tradition (TN)"],
+  ["மங்கள", "Mangala", "மங்களகரமான", "auspicious blessing", "Temple Heritage (TN)"],
+  ["பக்தி", "Bhakthi", "இறைப் பக்தி", "devotion", "Bhakti Tradition (TN)"],
 ];
 for (const [ta, en, mTa, mEn, src] of EXTRA_TN_PREFIXES) {
   TN_USAGE_PREFIXES.push({ ta, en, mTa, mEn, src });
