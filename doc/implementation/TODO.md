@@ -350,3 +350,9 @@
     1. Added [`app/postcss.config.js`](../../app/postcss.config.js) (`tailwindcss` + `autoprefixer`) so Next.js compiles the full Tailwind CSS responsive utility suite from [`app/tailwind.config.js`](../../app/tailwind.config.js).
     2. Updated [`app/src/app/globals.css`](../../app/src/app/globals.css) with `@tailwind base/components/utilities`, `overflow-x: hidden`, `max-width: 100%`, and `touch-action: manipulation`.
     3. Added explicit `viewport` export (`width: "device-width", initialScale: 1, maximumScale: 5`) and mobile-compact header/main padding (`px-3 sm:px-4`, `min-w-0`, `truncate`) in [`app/src/app/layout.tsx`](../../app/src/app/layout.tsx).
+
+### Hourly Improvement Cycle Log (`dev` Branch)
+- **Cycle #1 (2026-11-13 08:55 IST)**:
+  - Added regression test in [`app/src/lib/catalog.test.ts`](../../app/src/lib/catalog.test.ts) enforcing `>= 50,000` active (`confidence >= 0.80`) names in each cultural category (`pure_tamil`, `tamilnadu_usage`, `other_heritage`; `>= 150,000` total) and validating `nameCategory` filtering + origin-source/meaning completeness.
+  - Caught that 626 legacy seed names had `confidence < 0.80` (leaving 49,374 active `pure_tamil`); topped up `pure_tamil` by +650 high-confidence records (total catalog: 150,650 raw / 150,024 active).
+  - Local validation passed **35 / 35 tests across 9 suites** (`npm test`) and compiled **112 routes** cleanly (`npm run build`).

@@ -245,7 +245,7 @@ describe("Repository filters", () => {
     assert.ok(counts.pure_tamil >= 50000, `Expected >= 50,000 pure_tamil, got ${counts.pure_tamil}`);
     assert.ok(counts.tamilnadu_usage >= 50000, `Expected >= 50,000 tamilnadu_usage, got ${counts.tamilnadu_usage}`);
     assert.ok(counts.other_heritage >= 50000, `Expected >= 50,000 other_heritage, got ${counts.other_heritage}`);
-    assert.ok(counts.all >= 150000, `Expected >= 150,000 total, got ${counts.all}`);
+    assert.ok(counts.total >= 150000, `Expected >= 150,000 total, got ${counts.total}`);
 
     const tn = filterTamilNames({ nameCategory: "tamilnadu_usage" });
     assert.equal(tn.length, counts.tamilnadu_usage);

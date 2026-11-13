@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-13T03:12:50.941Z",
-  "total": 150000,
+  "generatedAt": "2026-11-13T03:26:44.260Z",
+  "total": 150650,
   "maxPerShard": 400,
   "shards": [
     {
@@ -1943,6 +1943,11 @@
       "file": "ha-10.json",
       "letter": "ஹ",
       "count": 348
+    },
+    {
+      "file": "cat1-pure-01.json",
+      "letter": "pure_tamil",
+      "count": 650
     }
   ]
 }

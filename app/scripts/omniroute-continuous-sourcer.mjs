@@ -1056,6 +1056,11 @@ const EXTRA_PURE_PREFIXES = [
   ["முத்தார", "Muthaara", "முத்து மாலை", "pearl garland"],
   ["வளமிகு", "Valamigu", "வளம் நிறைந்த", "abundant prosperity"],
   ["தென்றலார்", "Thendralar", "தென்றல் போன்ற", "gentle breeze-like"],
+  ["அருள்மிகு", "Arulmigu", "அருள் நிறைந்த", "abundant grace"],
+  ["ஒளிமிகு", "Olimigu", "பேரொளி வீசும்", "radiantly luminous"],
+  ["நல்லியல்", "Nalliyal", "நல்ல இயல்பு", "virtuous nature"],
+  ["பூந்தமிழ்", "Poonthamil", "மலர் போன்ற தமிழ்", "blossoming Tamil"],
+  ["தேன்மலர்", "Thenmalar", "தேனும் மலரும்", "honey blossom"],
 ];
 for (const [ta, en, mTa, mEn] of EXTRA_PURE_PREFIXES) {
   PURE_TAMIL_PREFIXES.push({ ta, en, mTa, mEn });
