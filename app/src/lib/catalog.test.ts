@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import { calculateDualNumerology } from "../core/numerology";
-import { filterTamilNames, getAllTamilNames, getNameBySlug, getSeedNames } from "./repository";
+import { filterTamilNames, getAllTamilNames, getCategoryCounts, getNameBySlug, getSeedNames } from "./repository";
 
 describe("Dual numerology (D1)", () => {
   it("computes both methods with per-letter values for Yazhini", () => {
@@ -128,17 +128,29 @@ describe("Catalog data validation (D2)", () => {
       );
     }
 
-    // CIT-02: Every record must link to a specific DSAL headword query URL or TamilVU corpus URL
-    const invalidUrls = all.filter(
+    // CIT-02: Every Pure Tamil record must link to a specific DSAL headword query URL or TamilVU corpus URL
+    const pureTamil = all.filter((n) => (n.nameCategory || "pure_tamil") === "pure_tamil");
+    const invalidUrls = pureTamil.filter(
       (n) =>
         !n.structuredReference?.sourceWebsite?.includes("dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py") &&
         !n.structuredReference?.sourceWebsite?.includes("tamilvu.org")
     );
-    assert.equal(invalidUrls.length, 0, `${invalidUrls.length} records have generic/invalid URLs`);
+    assert.equal(invalidUrls.length, 0, `${invalidUrls.length} Pure Tamil records have generic/invalid URLs`);
 
-    // ETY-03: Every record must provide Literal Root Meaning vs Derived Meaning
-    const missingEty03 = all.filter((n) => !n.literalMeaningEn || !n.derivedMeaningEn);
-    assert.equal(missingEty03.length, 0, `${missingEty03.length} records missing literal/derived split`);
+    // ETY-03: Pure Tamil records must provide Literal Root Meaning vs Derived Meaning
+    const missingEty03 = pureTamil.filter((n) => !n.literalMeaningEn || !n.derivedMeaningEn);
+    assert.equal(missingEty03.length, 0, `${missingEty03.length} Pure Tamil records missing literal/derived split`);
+
+    // Non-Pure Tamil (tamilnadu_usage & other_heritage): must capture explicit source & available meaning, never claim Sangam/Classical Tamil
+    const nonPureTamil = all.filter(
+      (n) => n.nameCategory === "tamilnadu_usage" || n.nameCategory === "other_heritage"
+    );
+    const missingSource = nonPureTamil.filter(
+      (n) => !n.categoryOriginSource || !n.meaningEn || !n.meaningTa || !n.structuredReference?.sourceWebsite
+    );
+    assert.equal(missingSource.length, 0, `${missingSource.length} non-pure Tamil records missing source or meaning`);
+    const falseSangamClaim = nonPureTamil.filter((n) => /Sangam|Classical Tamil/i.test(n.originCategory));
+    assert.equal(falseSangamClaim.length, 0, `${falseSangamClaim.length} non-pure Tamil records falsely claim Sangam/Classical Tamil`);
 
     // Sample QA Assessment Matrix Row 1: Kalaevani / Kalaivani (கலைவாணி)
     const kalaivani = getNameBySlug("kalaevani") || getNameBySlug("kalaivani");
@@ -226,5 +238,21 @@ describe("Repository filters", () => {
     const t = performance.now();
     filterTamilNames({ q: "mathi", religion: "hindu" });
     assert.ok(performance.now() - t < 200);
+  });
+
+  it("enforces 50k+ names per cultural category and nameCategory filtering", () => {
+    const counts = getCategoryCounts();
+    assert.ok(counts.pure_tamil >= 50000, `Expected >= 50,000 pure_tamil, got ${counts.pure_tamil}`);
+    assert.ok(counts.tamilnadu_usage >= 50000, `Expected >= 50,000 tamilnadu_usage, got ${counts.tamilnadu_usage}`);
+    assert.ok(counts.other_heritage >= 50000, `Expected >= 50,000 other_heritage, got ${counts.other_heritage}`);
+    assert.ok(counts.total >= 150000, `Expected >= 150,000 total, got ${counts.total}`);
+
+    const tn = filterTamilNames({ nameCategory: "tamilnadu_usage" });
+    assert.equal(tn.length, counts.tamilnadu_usage);
+    assert.ok(tn.slice(0, 50).every((n) => Boolean(n.categoryOriginSource && n.meaningTa && n.meaningEn)));
+
+    const other = filterTamilNames({ nameCategory: "other_heritage" });
+    assert.equal(other.length, counts.other_heritage);
+    assert.ok(other.slice(0, 50).every((n) => Boolean(n.categoryOriginSource && n.meaningTa && n.meaningEn)));
   });
 });
