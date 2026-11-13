@@ -63,6 +63,13 @@ export default function NamingGuruDashboard({
     "pythagorean" | "chaldean"
   >("pythagorean");
   const [originFilter, setOriginFilter] = useState("all");
+  const [nameCategoryFilter, setNameCategoryFilter] = useState("all");
+  const [categoryCounts, setCategoryCounts] = useState<{
+    pure_tamil: number;
+    tamilnadu_usage: number;
+    other_heritage: number;
+    total: number;
+  } | null>(null);
   const [religionFilter, setReligionFilter] = useState("all");
   const [communityFilter, setCommunityFilter] = useState("all");
   const [trendFilter, setTrendFilter] = useState("all");
@@ -286,6 +293,7 @@ export default function NamingGuruDashboard({
       params.set("numerologyMethod", numerologyMethod);
       if (searchQ.trim()) params.set("q", searchQ.trim());
       if (genderFilter !== "all") params.set("gender", genderFilter);
+      if (nameCategoryFilter !== "all") params.set("nameCategory", nameCategoryFilter);
       if (nakshatraFilter !== "all") params.set("nakshatra", nakshatraFilter);
       if (numerologyFilter > 0) params.set("numerology", String(numerologyFilter));
       if (originFilter !== "all") params.set("origin", originFilter);
@@ -304,6 +312,7 @@ export default function NamingGuruDashboard({
       numerologyMethod,
       searchQ,
       genderFilter,
+      nameCategoryFilter,
       nakshatraFilter,
       numerologyFilter,
       originFilter,
@@ -324,6 +333,7 @@ export default function NamingGuruDashboard({
     pageSize,
     searchQ,
     genderFilter,
+    nameCategoryFilter,
     nakshatraFilter,
     numerologyFilter,
     originFilter,
@@ -359,6 +369,7 @@ export default function NamingGuruDashboard({
         setNames(json.names || []);
         setTotalCount(json.totalCount ?? 0);
         setTotalPages(json.totalPages ?? 1);
+        if (json.categoryCounts) setCategoryCounts(json.categoryCounts);
       } catch (err) {
         if ((err as Error).name !== "AbortError") {
           setNamesError("Could not load names. Please try again.");
@@ -1046,6 +1057,61 @@ export default function NamingGuruDashboard({
             ))}
           </div>
 
+          {/* 3-Tier Cultural Classification Filter Bar */}
+          <div className="rounded-2xl border border-amber-200 bg-amber-50/50 p-3.5 shadow-sm">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="mr-1 text-xs font-bold text-amber-950">
+                பெயர் வகைப்பாடு (Classification):
+              </span>
+              {[
+                {
+                  id: "all",
+                  label: "🌐 அனைத்தும் (All Categories)",
+                  count: categoryCounts?.total,
+                },
+                {
+                  id: "pure_tamil",
+                  label: "🌿 1. தூய தமிழ் (Pure Tamil)",
+                  count: categoryCounts?.pure_tamil,
+                },
+                {
+                  id: "tamilnadu_usage",
+                  label: "🏛️ 2. தமிழ்நாட்டுப் பயன்பாடு (Used in TN)",
+                  count: categoryCounts?.tamilnadu_usage,
+                },
+                {
+                  id: "other_heritage",
+                  label: "🌍 3. பிற பெயர்கள் (Other Names)",
+                  count: categoryCounts?.other_heritage,
+                },
+              ].map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setNameCategoryFilter(cat.id)}
+                  className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-bold transition ${
+                    nameCategoryFilter === cat.id
+                      ? "bg-amber-800 text-white shadow-sm"
+                      : "border border-amber-200 bg-white text-stone-800 hover:bg-amber-100/70"
+                  }`}
+                >
+                  <span>{cat.label}</span>
+                  {typeof cat.count === "number" && (
+                    <span
+                      className={`rounded-full px-1.5 py-0.5 text-[10px] ${
+                        nameCategoryFilter === cat.id
+                          ? "bg-amber-700 text-amber-100"
+                          : "bg-amber-100 text-amber-900"
+                      }`}
+                    >
+                      {cat.count.toLocaleString()}
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Starting Letter / Tamil Uyir-Mei Quick Filter Bar */}
           <div className="rounded-2xl border border-stone-200 bg-white p-3.5 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-2">
@@ -1355,6 +1421,19 @@ export default function NamingGuruDashboard({
                     </div>
 
                     <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                      {item.nameCategory === "tamilnadu_usage" ? (
+                        <span className="rounded-md border border-indigo-200 bg-indigo-50 px-2 py-0.5 font-semibold text-indigo-900">
+                          🏛️ தமிழ்நாட்டுப் பயன்பாடு ({item.categoryOriginSource || "TN Cultural Usage"})
+                        </span>
+                      ) : item.nameCategory === "other_heritage" ? (
+                        <span className="rounded-md border border-purple-200 bg-purple-50 px-2 py-0.5 font-semibold text-purple-900">
+                          🌍 பிற மரபுப் பெயர் ({item.categoryOriginSource || "Global Heritage"})
+                        </span>
+                      ) : (
+                        <span className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-semibold text-emerald-900">
+                          🌿 தூய தமிழ் (Pure Tamil)
+                        </span>
+                      )}
                       <span className="rounded-md bg-amber-50 px-2 py-0.5 font-semibold text-amber-900">
                         எண் {numerologyMethod === "chaldean" ? item.numerologyChaldean : item.numerologyPythagorean} (Total{" "}
                         {numerologyMethod === "chaldean" ? item.compoundChaldean : item.compoundPythagorean}){" "}

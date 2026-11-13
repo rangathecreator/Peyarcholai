@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { filterTamilNames, saveErrorReport } from "@/lib/repository";
+import { filterTamilNames, getCategoryCounts, saveErrorReport } from "@/lib/repository";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const q = searchParams.get("q") || undefined;
   const gender = searchParams.get("gender") || undefined;
+  const nameCategory = searchParams.get("nameCategory") || undefined;
   const nakshatra = searchParams.get("nakshatra") || undefined;
   const numerologyRaw = searchParams.get("numerology");
   const numerology = numerologyRaw ? parseInt(numerologyRaw, 10) : undefined;
@@ -39,6 +40,7 @@ export async function GET(req: NextRequest) {
   const matched = filterTamilNames({
     q,
     gender,
+    nameCategory,
     nakshatra,
     numerology,
     numerologyMethod,
@@ -66,6 +68,7 @@ export async function GET(req: NextRequest) {
     pageSize,
     totalPages,
     numerologyMethod,
+    categoryCounts: getCategoryCounts(),
     names: paginatedNames,
   });
 }

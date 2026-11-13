@@ -128,17 +128,29 @@ describe("Catalog data validation (D2)", () => {
       );
     }
 
-    // CIT-02: Every record must link to a specific DSAL headword query URL or TamilVU corpus URL
-    const invalidUrls = all.filter(
+    // CIT-02: Every Pure Tamil record must link to a specific DSAL headword query URL or TamilVU corpus URL
+    const pureTamil = all.filter((n) => (n.nameCategory || "pure_tamil") === "pure_tamil");
+    const invalidUrls = pureTamil.filter(
       (n) =>
         !n.structuredReference?.sourceWebsite?.includes("dsal.uchicago.edu/cgi-bin/app/tamil-lex_query.py") &&
         !n.structuredReference?.sourceWebsite?.includes("tamilvu.org")
     );
-    assert.equal(invalidUrls.length, 0, `${invalidUrls.length} records have generic/invalid URLs`);
+    assert.equal(invalidUrls.length, 0, `${invalidUrls.length} Pure Tamil records have generic/invalid URLs`);
 
-    // ETY-03: Every record must provide Literal Root Meaning vs Derived Meaning
-    const missingEty03 = all.filter((n) => !n.literalMeaningEn || !n.derivedMeaningEn);
-    assert.equal(missingEty03.length, 0, `${missingEty03.length} records missing literal/derived split`);
+    // ETY-03: Pure Tamil records must provide Literal Root Meaning vs Derived Meaning
+    const missingEty03 = pureTamil.filter((n) => !n.literalMeaningEn || !n.derivedMeaningEn);
+    assert.equal(missingEty03.length, 0, `${missingEty03.length} Pure Tamil records missing literal/derived split`);
+
+    // Non-Pure Tamil (tamilnadu_usage & other_heritage): must capture explicit source & available meaning, never claim Sangam/Classical Tamil
+    const nonPureTamil = all.filter(
+      (n) => n.nameCategory === "tamilnadu_usage" || n.nameCategory === "other_heritage"
+    );
+    const missingSource = nonPureTamil.filter(
+      (n) => !n.categoryOriginSource || !n.meaningEn || !n.meaningTa || !n.structuredReference?.sourceWebsite
+    );
+    assert.equal(missingSource.length, 0, `${missingSource.length} non-pure Tamil records missing source or meaning`);
+    const falseSangamClaim = nonPureTamil.filter((n) => /Sangam|Classical Tamil/i.test(n.originCategory));
+    assert.equal(falseSangamClaim.length, 0, `${falseSangamClaim.length} non-pure Tamil records falsely claim Sangam/Classical Tamil`);
 
     // Sample QA Assessment Matrix Row 1: Kalaevani / Kalaivani (கலைவாணி)
     const kalaivani = getNameBySlug("kalaevani") || getNameBySlug("kalaivani");
