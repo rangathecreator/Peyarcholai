@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import { calculateDualNumerology } from "../core/numerology";
-import { filterTamilNames, getAllTamilNames, getNameBySlug, getSeedNames } from "./repository";
+import { filterTamilNames, getAllTamilNames, getCategoryCounts, getNameBySlug, getSeedNames } from "./repository";
 
 describe("Dual numerology (D1)", () => {
   it("computes both methods with per-letter values for Yazhini", () => {
@@ -238,5 +238,21 @@ describe("Repository filters", () => {
     const t = performance.now();
     filterTamilNames({ q: "mathi", religion: "hindu" });
     assert.ok(performance.now() - t < 200);
+  });
+
+  it("enforces 50k+ names per cultural category and nameCategory filtering", () => {
+    const counts = getCategoryCounts();
+    assert.ok(counts.pure_tamil >= 50000, `Expected >= 50,000 pure_tamil, got ${counts.pure_tamil}`);
+    assert.ok(counts.tamilnadu_usage >= 50000, `Expected >= 50,000 tamilnadu_usage, got ${counts.tamilnadu_usage}`);
+    assert.ok(counts.other_heritage >= 50000, `Expected >= 50,000 other_heritage, got ${counts.other_heritage}`);
+    assert.ok(counts.all >= 150000, `Expected >= 150,000 total, got ${counts.all}`);
+
+    const tn = filterTamilNames({ nameCategory: "tamilnadu_usage" });
+    assert.equal(tn.length, counts.tamilnadu_usage);
+    assert.ok(tn.slice(0, 50).every((n) => Boolean(n.categoryOriginSource && n.meaningTa && n.meaningEn)));
+
+    const other = filterTamilNames({ nameCategory: "other_heritage" });
+    assert.equal(other.length, counts.other_heritage);
+    assert.ok(other.slice(0, 50).every((n) => Boolean(n.categoryOriginSource && n.meaningTa && n.meaningEn)));
   });
 });
