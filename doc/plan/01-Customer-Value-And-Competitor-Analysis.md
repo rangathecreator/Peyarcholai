@@ -48,3 +48,4 @@ Parents frequently try prompting ChatGPT or Gemini for *"pure Tamil baby girl na
 ## 3. Core Customer Positioning Statement
 
 > **For Tamil-heritage and global Indian parents**, **Peyarcholai** is not just a name list or an AI chatbox — it is a **verified linguistic, astrological, and family decision workspace** combining 150,000+ provenance-checked names, deterministic dual numerology, 27-Nakshatra Padam matching, 7-dimension global usability scoring, and collaborative family voting in one calm, mobile-ready experience.
+
