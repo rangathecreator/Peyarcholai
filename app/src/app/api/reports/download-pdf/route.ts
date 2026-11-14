@@ -344,7 +344,8 @@ export async function GET(request: NextRequest) {
       <div>
         <strong>ஆவண சரிபார்ப்பு முத்திரை:</strong> PEYAR-CERT-${nameRecord.slug.toUpperCase()}-2026<br>
         <strong>நிலை:</strong> ${isPaid ? 'அங்கீகரிக்கப்பட்ட தூய ஆவணம் (Official Paid Keepsake)' : 'மாதிரி முன்னோட்டம் (Sample Preview — Unlock via Suvadi Nilai ₹49)'}<br>
-        <strong>வழங்கிய தளம்:</strong> பெயர்ச்சோலை (Peyarcholai) · Classical Tamil Research Hub
+        <strong>வழங்கிய தளம்:</strong> பெயர்ச்சோலை (Peyarcholai) · Classical Tamil Research Hub<br>
+        <span style="font-size: 9px; color: #57534e;">குறிப்பு / Disclaimer: நட்சத்திரம், எண் கணிதம் மற்றும் வகுப்பறை அதிர்வெண் மதிப்பீடுகள் பண்பாட்டு மற்றும் தகவல் வழிகாட்டுதலுக்காக மட்டுமே; இறுதிப் பெயர் தேர்வு பெற்றோரின் விருப்பத்திற்கேற்பவே.</span>
       </div>
       <div class="seal-emblem">
         செம்மொழி<br>தமிழ்<br>முத்திரை

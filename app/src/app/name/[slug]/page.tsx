@@ -6,6 +6,7 @@ import { calculateNumerology } from "@/core/numerology";
 import { evaluateNameScorecard } from "@/core/scorecard";
 import { calculateEmpiricalRarity } from "@/lib/frequency-engine";
 import { AdBanner } from "@/components/MonetizationBanner";
+import { ContextualDisclaimer } from "@/components/ContextualDisclaimer";
 
 export const dynamicParams = true;
 
@@ -507,6 +508,11 @@ export default async function NameDetailPage({
             </div>
           )}
         </div>
+      </div>
+
+      <div className="mt-6 space-y-2">
+        <ContextualDisclaimer variant="astrology" />
+        <ContextualDisclaimer variant="lexicon" />
       </div>
 
       <AdBanner slotId={`DETAIL-${item.slug.toUpperCase()}`} />

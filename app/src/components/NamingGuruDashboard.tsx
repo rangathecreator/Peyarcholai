@@ -22,6 +22,7 @@ import {
   GeneratedQueryPayload,
 } from "@/lib/query-generator";
 import { calculateEmpiricalRarity } from "@/lib/frequency-engine";
+import { ContextualDisclaimer } from "@/components/ContextualDisclaimer";
 
 type ActiveTab =
   | "explore"
@@ -1566,6 +1567,7 @@ export default function NamingGuruDashboard({
             <p className="text-xs text-stone-600">
               Computes Sidereal Moon Longitude using <strong>Lahiri (Chitrapaksha) Ayanamsa</strong> offline right in your browser.
             </p>
+            <ContextualDisclaimer variant="astrology" />
 
             <div>
               <label className="block text-xs font-semibold text-stone-700">
@@ -1786,6 +1788,7 @@ export default function NamingGuruDashboard({
             <h2 className="text-lg font-bold text-stone-900">
               🔢 பெயர் எண் கணிதம் (Chaldean & Pythagorean)
             </h2>
+            <ContextualDisclaimer variant="astrology" />
             <div>
               <label className="block text-xs font-semibold text-stone-700">
                 Enter Baby Name (English or தமிழ்)
@@ -2456,6 +2459,7 @@ export default function NamingGuruDashboard({
             <p className="text-xs text-stone-600">
               உங்கள் விருப்பத்திற்கேற்ப தூய தமிழ் மரபில் இலக்கிய வேர்ச்சொற்களைக் கொண்டு நுண்ணறிவுப் பரிந்துரைகளை வழங்குகிறது.
             </p>
+            <ContextualDisclaimer variant="ai-advisor" />
 
             <div>
               <label className="block text-xs font-semibold text-stone-700">
@@ -3264,6 +3268,7 @@ export default function NamingGuruDashboard({
                 <p className="mt-2 text-[11px] text-indigo-900 leading-relaxed">
                   💡 <strong>பெற்றோர் வழிகாட்டல்:</strong> {modalEmpiricalRarity.parentAdviceTamil} ({modalEmpiricalRarity.parentAdviceEnglish})
                 </p>
+                <ContextualDisclaimer variant="frequency" className="mt-2.5" />
               </div>
             )}
 

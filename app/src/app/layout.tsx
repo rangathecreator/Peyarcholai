@@ -64,6 +64,14 @@ export default function RootLayout({
 
             <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
               <Link
+                href="/why-peyarcholai"
+                className="inline-flex items-center gap-1 rounded-xl border border-emerald-300 bg-emerald-50/90 px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-emerald-900 transition hover:bg-emerald-100 hover:shadow-xs"
+              >
+                <span>✨</span>
+                <span className="hidden md:inline">Why Peyarcholai</span>
+                <span className="md:hidden">ஏன்?</span>
+              </Link>
+              <Link
                 href="/docs"
                 className="inline-flex items-center gap-1 sm:gap-1.5 rounded-xl border border-amber-300 bg-amber-50/90 px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-amber-900 transition hover:bg-amber-100 hover:shadow-xs"
               >
@@ -90,7 +98,11 @@ export default function RootLayout({
               <p className="mt-1 text-stone-500">
                 Astrology (Natchathiram) and Numerology insights are cultural and informational aids; parents are always the final decision-makers.
               </p>
-              <div className="mt-2 flex gap-3 text-xs">
+              <div className="mt-2 flex flex-wrap gap-3 text-xs">
+                <Link href="/why-peyarcholai" className="text-emerald-800 font-semibold hover:underline">
+                  ✨ Why Peyarcholai vs AI &amp; Portals
+                </Link>
+                <span>·</span>
                 <Link href="/docs" className="text-amber-800 font-semibold hover:underline">
                   📖 Complete Feature Manual &amp; Documentation
                 </Link>

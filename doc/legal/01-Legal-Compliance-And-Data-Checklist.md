@@ -40,3 +40,4 @@ The following concise, non-intrusive disclaimers must be displayed on relevant p
    > *"AI-generated suggestions are assisted by language models and filtered through our provenance gate. Always verify final spelling, pronunciation, and family preferences before official birth registration."*
 4. **Literary & Lexicon Attribution Notice** *(Footer & Provenance Boxes)*:
    > *"Classical lexicon links reference the University of Madras Tamil Lexicon (DSAL) and Tamil Virtual Academy for educational research. Synthesized modern compounds (`🧪 Modern Synthesis`) are not ancient literary citations."*
+
