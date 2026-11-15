@@ -136,8 +136,8 @@ KidNamingApp/
 
 ## 🖥️ HP Workstation & OmniRoute AI Setup References
 
-- [Antigravity IDE & Dual-OmniRoute Setup QuickStart Guide](file:///E:/project/LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md) — Dell Laptop + HP Z4 Workstation (`100.105.146.7`) dual-OmniRoute connection, SSH/Tailscale routing, and Cloudflare Tunnel exposure.
-- [HP Workstation Daily Connection Manual](file:///E:/project/LLMDeployments/UbuntuRemoteConnNotes/DailyConnectionSteps_Manual.md) — Daily SSH, Tailscale VPN, and remote LLM service connection steps for the HP Z4 Workstation.
+- [Antigravity IDE & Dual-OmniRoute Setup QuickStart Guide](../../LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md) — Dell Laptop + HP Z4 Workstation (`100.105.146.7`) dual-OmniRoute connection, SSH/Tailscale routing, and Cloudflare Tunnel exposure.
+- [HP Workstation Daily Connection Manual](../../LLMDeployments/UbuntuRemoteConnNotes/DailyConnectionSteps_Manual.md) — Daily SSH, Tailscale VPN, and remote LLM service connection steps for the HP Z4 Workstation.
 - [OmniRoute Cloudflare Tunnel Deployment Guide](./doc/deployment/04-OmniRoute-Cloudflare-Tunnel-Guide.md) — Zero-Trust production tunnel setup for `peyar.donorconnect.in`.
 
 ---

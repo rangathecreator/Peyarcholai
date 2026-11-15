@@ -100,8 +100,8 @@
 | [Site Deployment: DonorConnect](./deployment/site/01-Production-Site-Deployment-DonorConnect.md) | Custom subdomain & Vercel production setup |
 | [Site Scaling Plan](./deployment/site/02-Scalable-Cloud-Resources-And-Traffic-Sizing-Plan.md) | Traffic sizing & cloud resource scaling tiers |
 | [Subdomain Beta Guide](./deployment/site/03-DonorConnect-Subdomain-Beta-Deployment-Guide.md) | `peyar.donorconnect.in` DNS + beta release guide |
-| **External:** [HP Z4 + Dual OmniRoute QuickStart](file:///E:/project/LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md) | Dell Laptop + HP Z4 Workstation (`100.105.146.7`) dual-OmniRoute & Cloudflare Tunnel setup |
-| **External:** [HP Workstation Daily Connection Manual](file:///E:/project/LLMDeployments/UbuntuRemoteConnNotes/DailyConnectionSteps_Manual.md) | Daily SSH, Tailscale, and remote LLM service connection steps for HP Z4 Workstation |
+| **External:** [HP Z4 + Dual OmniRoute QuickStart](../../../LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md) | Dell Laptop + HP Z4 Workstation (`100.105.146.7`) dual-OmniRoute & Cloudflare Tunnel setup |
+| **External:** [HP Workstation Daily Connection Manual](../../../LLMDeployments/UbuntuRemoteConnNotes/DailyConnectionSteps_Manual.md) | Daily SSH, Tailscale, and remote LLM service connection steps for HP Z4 Workstation |
 
 ---
 
