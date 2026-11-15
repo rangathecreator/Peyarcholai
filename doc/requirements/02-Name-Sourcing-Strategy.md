@@ -114,7 +114,7 @@ Adopt **S1+S2+S3+S4+S5 as the licensed-clean backbone**, **S8** for trust and co
 
 ## 9. Tamil MVP Revision: 10,000+ Names & 14 Parent-Centric Criteria (OmniRoute-Revised)
 
-Per Product Owner direction, the Tamil MVP sources **10,000+ distinct Tamil baby names** into [`app/src/data/tamil-names-seed.json`](../../app/src/data/tamil-names-seed.json) (and optional PostgreSQL `names` table) with **10 mandatory user-requested criteria + 4 extra parent-perspective dimensions**, reviewed via the local OmniRoute Free Gateway (`http://127.0.0.1:20128/v1`, `model=openai/gpt-oss-120b` via Groq, `$0.00` cost — see [`app/src/data/omniroute-revised-plan.json`](../../app/src/data/omniroute-revised-plan.json) and [`doc/implementation/TODO.md`](../implementation/TODO.md)).
+Per Product Owner direction, the Tamil MVP sources **10,000+ distinct Tamil baby names** into [`app/src/data/tamil-names-seed.json`](../../app/src/data/tamil-names-seed.json) (and optional PostgreSQL `names` table) with **10 mandatory user-requested criteria + 4 extra parent-perspective dimensions**, reviewed via the local OmniRoute Free Gateway (`http://127.0.0.1:20128/v1`, `model=openai/gpt-oss-120b` via Groq, `$0.00` cost — see [`app/src/data/omniroute-revised-plan.json`](../../app/src/data/omniroute-revised-plan.json) and [`doc/TODO/TODO.md`](../TODO/TODO.md)).
 
 | # | Dimension | Field Name | Requirement & Parent Value |
 | :--- | :--- | :--- | :--- |

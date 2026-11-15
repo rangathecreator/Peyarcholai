@@ -4,10 +4,10 @@
 **Target Defect Tolerance:** Six Sigma (`DPMO <= 3.4` — Zero Critical Defects in Production)  
 **Input Sources Synthesized:**  
 - [`doc/implementation/01-Web-MVP-Implementation.md`](../implementation/01-Web-MVP-Implementation.md)  
-- [`doc/implementation/TODO-2026-11-14.md`](../implementation/TODO-2026-11-14.md)  
-- [`doc/implementation/TODO-Iteration2026-11-14-01.md`](../implementation/TODO-Iteration2026-11-14-01.md)  
-- [`doc/implementation/TODO-Iteration2026-11-14-02.md`](../implementation/TODO-Iteration2026-11-14-02.md)  
-- [`doc/implementation/TODO.md`](../implementation/TODO.md)  
+- [`doc/TODO/TODO-2026-11-14.md`](../TODO/TODO-2026-11-14.md)  
+- [`doc/TODO/TODO-Iteration2026-11-14-01.md`](../TODO/TODO-Iteration2026-11-14-01.md)  
+- [`doc/TODO/TODO-Iteration2026-11-14-02.md`](../TODO/TODO-Iteration2026-11-14-02.md)  
+- [`doc/TODO/TODO.md`](../TODO/TODO.md)  
 - [`doc/testing/03-Name-Sourcing-Data-Quality-Acceptance-Criteria.md`](./03-Name-Sourcing-Data-Quality-Acceptance-Criteria.md) & [`04-Feature-Quality-Acceptance-Criteria.md`](./04-Feature-Quality-Acceptance-Criteria.md)
 
 ---
@@ -22,7 +22,7 @@ Every development iteration (`TODO-Iteration*.md`) **MUST** pass all five Six-Si
 
 ### `SG-01` — Entry Gate: Zero Ambiguity & Recorded Architecture
 Derived from `TODO.md` & `TODO-Iteration2026-11-14-01.md`:
-1. **Zero Open Questions:** A task may enter an iteration **only** when `Open Questions` in [`TODO.md`](../implementation/TODO.md) is `None` and architectural choices are recorded.
+1. **Zero Open Questions:** A task may enter an iteration **only** when `Open Questions` in [`TODO.md`](../TODO/TODO.md) is `None` and architectural choices are recorded.
 2. **Measurable Acceptance Criteria & Testing Methods:** Every task must define explicit Pass/Fail acceptance criteria and automated/manual verification steps before coding begins.
 3. **Micro-Design Before Complex Implementation:** Non-trivial algorithms or cross-cutting infra changes must have a micro-design / tradeoff record under `doc/design/micro_designs/`.
 
