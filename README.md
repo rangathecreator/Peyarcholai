@@ -1,11 +1,11 @@
 # பெயர்ச்சோலை (Peyarcholai) — Celestial Grove of Tamil Baby Names
 
-> **20,700+ தூய தமிழ்ச் செம்மொழிப் பெயர்கள் · தொல்காப்பிய புணர்ச்சி விதிகள் · 27 நட்சத்திர பாதங்கள் · இரட்டை எண் கணிதம் · 14-பரிமாண ஆய்வு**
+> **150,024+ தூய தமிழ்ச் செம்மொழிப் பெயர்கள் · தொல்காப்பிய புணர்ச்சி விதிகள் · 27 நட்சத்திர பாதங்கள் · இரட்டை எண் கணிதம் · 14-பரிமாண ஆய்வு**
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue.svg)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-16.3-black.svg)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15.5-black.svg)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC.svg)](https://tailwindcss.com/)
-[![Tests](https://img.shields.io/badge/Tests-22%2F22_PASS-success.svg)]()
+[![Tests](https://img.shields.io/badge/Tests-44%2F44_PASS-success.svg)]()
 [![Linguistic Provenance](https://img.shields.io/badge/Provenance-100%25_Verified-emerald.svg)]()
 [![Six Sigma](https://img.shields.io/badge/Six_Sigma-Zero_Defects-gold.svg)]()
 
@@ -80,18 +80,19 @@ KidNamingApp/
 │   │   ├── components/               # React UI components
 │   │   ├── core/                     # Numerology, Nakshatra, Scorecard core logic
 │   │   ├── data/
-│   │   │   └── names/                # 69 sharded JSON databases (20,700+ names)
+│   │   │   └── names/                # 393 compressed .json.gz shards (150,024+ active names)
 │   │   └── lib/                      # Catalog repository and tests
 │   ├── scripts/                      # Autonomous harvesting, QA and migration tools
 │   ├── public/                       # Square logos, icons, and static assets
 │   └── package.json                  # Next.js dependencies and test runner
 ├── doc/
-│   ├── deployment/site/              # User guides and feature manuals
-│   ├── implementation/               # TODO.md roadmap & implementation checklist
-│   ├── plan/                         # Specifications (Query generator, PDF, WhatsApp)
-│   │   └── revenuePlan/              # 3-tier monetization & gateway documentation
+│   ├── README.md                     # Master Documentation Index
+│   ├── TODO/                         # Master TODO.md roadmap & iteration logs
+│   ├── deployment/                   # Local runbooks, Cloudflare Tunnel & site guides
+│   ├── plan/                         # Specifications (Query generator, PDF, WhatsApp, Six Sigma)
+│   ├── revenuePlan/                  # 3-tier monetization, gateway & Six-Sigma scale review
 │   ├── requirements/                 # Tolkappiyam and Sangam literary directories
-│   └── testing/                      # Data quality & feature QA acceptance criteria
+│   └── testing/                      # Data quality, feature QA & Six-Sigma Guardrails
 ├── images/                           # Reference artwork and branding assets
 ├── reports/                          # QA reports and audit findings
 ├── .gitignore                        # Standard Git ignore file
@@ -129,7 +130,15 @@ KidNamingApp/
    ```bash
    npm test
    ```
-   Executes all 22 unit, numerology, nakshatra, and catalog integrity tests.
+   Executes all 44 unit, numerology, nakshatra, feature, and catalog integrity tests across 12 suites.
+
+---
+
+## 🖥️ HP Workstation & OmniRoute AI Setup References
+
+- [Antigravity IDE & Dual-OmniRoute Setup QuickStart Guide](file:///E:/project/LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md) — Dell Laptop + HP Z4 Workstation (`100.105.146.7`) dual-OmniRoute connection, SSH/Tailscale routing, and Cloudflare Tunnel exposure.
+- [HP Workstation Daily Connection Manual](file:///E:/project/LLMDeployments/UbuntuRemoteConnNotes/DailyConnectionSteps_Manual.md) — Daily SSH, Tailscale VPN, and remote LLM service connection steps for the HP Z4 Workstation.
+- [OmniRoute Cloudflare Tunnel Deployment Guide](./doc/deployment/04-OmniRoute-Cloudflare-Tunnel-Guide.md) — Zero-Trust production tunnel setup for `peyar.donorconnect.in`.
 
 ---
 
