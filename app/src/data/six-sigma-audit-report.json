@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-11-11T03:48:50.943Z",
-  "totalRecords": 10090,
+  "generatedAt": "2026-11-15T05:54:52.015Z",
+  "totalRecords": 150022,
   "quarantinedBelow80Count": 628,
   "structuralAudit": {
-    "opportunities": 70630,
+    "opportunities": 1050154,
     "defects": {
       "nonTamilScript": 0,
-      "missingDimension": 0,
+      "missingDimension": 128038,
       "directLabelOnCompound": 0,
       "falseVerifiedClaim": 0,
-      "missingEstimatedFlag": 0,
+      "missingEstimatedFlag": 128038,
       "compoundClaimingSangam": 0,
       "compoundWithAncientQuote": 0
     },
-    "totalDefects": 0,
-    "dpmo": 0
+    "totalDefects": 256076,
+    "dpmo": 243846
   },
   "gates": {
     "SS-03_Query_Speed": {
-      "avgMsPerFilterPass": 3.56,
-      "pass": true
+      "avgMsPerFilterPass": 30.84,
+      "pass": false
     },
     "SS-06_Parent_Transparency": {
-      "pass": true,
+      "pass": false,
       "note": "No false 'Direct'/'Verified' labels; estimated fields flagged on every record"
     }
   },
@@ -39,7 +39,7 @@
     },
     "plausibility": {
       "judged": 1030,
-      "ofRecords": 10090,
+      "ofRecords": 150022,
       "unnatural": 441,
       "genderMismatch": 41
     }
