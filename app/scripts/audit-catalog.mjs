@@ -60,7 +60,7 @@ const opportunities = records.length * Object.keys(defects).length;
 // SS-03: filter over the in-memory catalog, 200 runs
 const t0 = performance.now();
 for (let i = 0; i < 200; i++) {
-  records.filter((r) => r.gender !== "boy" && /hindu/i.test(r.culturalContext.religion.join(",")) && r.nameLatin.toLowerCase().includes("a"));
+  records.filter((r) => r.gender !== "boy" && /hindu/i.test((r.culturalContext?.religion ?? []).join(",")) && r.nameLatin.toLowerCase().includes("a"));
 }
 const avgMs = (performance.now() - t0) / 200;
 
