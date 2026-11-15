@@ -2,6 +2,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildQueryAndPrompt } from './query-generator';
 import { calculateEmpiricalRarity } from './frequency-engine';
+import { buildPronunciationGuide } from './pronunciation';
 import {
   canDownloadPristinePdf,
   canHostWhatsAppFamilyPoll,
@@ -168,6 +169,15 @@ describe('Subscription Entitlements & Cultural Tiers (Task 1 & Task 4)', () => {
       hasUnlimitedAiAdvisor: true,
     };
     assert.equal(canHostWhatsAppFamilyPoll(kudumbaSession), true);
+  });
+});
+
+describe('Pronunciation & Syllable Breakdown Guide (Task 33)', () => {
+  it('splits Tamil aksharas and Roman syllables deterministically', () => {
+    const guide = buildPronunciationGuide('யாழினி', 'Yazhini');
+    assert.deepEqual(guide.tamilSyllables, ['யா', 'ழி', 'னி']);
+    assert.equal(guide.formattedTamil, 'யா · ழி · னி');
+    assert.ok(guide.romanSyllables.length >= 2);
   });
 });
 

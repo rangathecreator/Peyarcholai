@@ -7,8 +7,14 @@ import {
   calculateBirthNumbers,
   evaluateCompatibility,
   suggestSpellingVariants,
+  calculateFullNameResonance,
   NumerologySystem,
 } from "@/core/numerology";
+import {
+  getNakshatraCanonicalMeta,
+  getNumerologyMethodCitation,
+} from "@/core/book-citations";
+import { PronunciationButton } from "@/components/PronunciationButton";
 import {
   TAMIL_NAKSHATRAS,
   calculateBirthStarFromDateTime,
@@ -101,6 +107,9 @@ export default function NamingGuruDashboard({
   const [numSystem, setNumSystem] = useState<NumerologySystem>("chaldean");
   const [numDob, setNumDob] = useState("2026-11-09");
   const [targetSpellingNumber, setTargetSpellingNumber] = useState(5);
+  const [parentInitial, setParentInitial] = useState("S");
+  const [familySurname, setFamilySurname] = useState("Senthilkumar");
+  const [showCompareModal, setShowCompareModal] = useState(false);
 
   // 3. Nakshatra Birth Star Finder state
   const [birthDate, setBirthDate] = useState("2026-11-09");
@@ -400,6 +409,19 @@ export default function NamingGuruDashboard({
         numSystem === "chaldean" ? "pythagorean" : "chaldean"
       ),
     [numInputName, numSystem]
+  );
+  const resonanceResult = useMemo(
+    () =>
+      calculateFullNameResonance(
+        numInputName || "Kavin",
+        parentInitial,
+        familySurname
+      ),
+    [numInputName, parentInitial, familySurname]
+  );
+  const numMethodCitation = useMemo(
+    () => getNumerologyMethodCitation(numSystem),
+    [numSystem]
   );
   const modalScorecard = useMemo(() => {
     if (!selectedNameForModal) return null;
@@ -1200,13 +1222,24 @@ export default function NamingGuruDashboard({
                 <div className="text-xs font-bold text-amber-950">
                   ♥ Your Family Shortlist ({shortlistRecords.length} saved across all pages):
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab("poll")}
-                  className="rounded-lg bg-amber-700 px-3 py-1 text-xs font-bold text-white hover:bg-amber-800"
-                >
-                  🗳️ Start Family Poll with Shortlist →
-                </button>
+                <div className="flex flex-wrap items-center gap-2">
+                  {shortlistRecords.length >= 2 && (
+                    <button
+                      type="button"
+                      onClick={() => setShowCompareModal(true)}
+                      className="rounded-lg border border-emerald-600 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-900 hover:bg-emerald-100"
+                    >
+                      📊 Compare &amp; Booklet ({Math.min(5, shortlistRecords.length)})
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("poll")}
+                    className="rounded-lg bg-amber-700 px-3 py-1 text-xs font-bold text-white hover:bg-amber-800"
+                  >
+                    🗳️ Start Family Poll with Shortlist →
+                  </button>
+                </div>
               </div>
               <div className="mt-2 flex flex-wrap gap-2">
                 {shortlistRecords.map((sr) => (
@@ -1691,6 +1724,25 @@ export default function NamingGuruDashboard({
                 })}
               </div>
             </div>
+            {(() => {
+              const nakMeta = getNakshatraCanonicalMeta(birthStarResult.nakshatra.slug);
+              if (!nakMeta) return null;
+              return (
+                <div className="rounded-xl border border-indigo-200 bg-indigo-50/70 p-3 text-xs text-indigo-950">
+                  <div className="font-bold">
+                    📚 Canonical Panchangam Profile (Task 22):
+                  </div>
+                  <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
+                    <span><strong>Gana:</strong> {nakMeta.ganaEn} ({nakMeta.ganaTa})</span>
+                    <span><strong>Element:</strong> {nakMeta.elementEn}</span>
+                    <span><strong>Planetary Lord:</strong> {nakMeta.lordEn}</span>
+                  </div>
+                  <div className="mt-1 text-[11px] text-indigo-800">
+                    <strong>Reference:</strong> {nakMeta.canonicalSource}
+                  </div>
+                </div>
+              );
+            })()}
 
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2">
@@ -1936,6 +1988,82 @@ export default function NamingGuruDashboard({
                   {compatResult.score}/100 Match
                 </div>
               </div>
+            </div>
+
+            {/* Book-Referenced Methodology Citation (Task 22) */}
+            <div className="rounded-xl border border-sky-200 bg-sky-50/70 p-3 text-xs text-sky-950">
+              <div className="font-bold">
+                📚 {numMethodCitation.titleEn} · {numMethodCitation.titleTa}
+              </div>
+              <p className="mt-1 text-[11px] text-sky-900">
+                <strong>Primary Reference:</strong> {numMethodCitation.primarySource}
+              </p>
+              <p className="mt-0.5 text-[11px] text-stone-700">
+                {numMethodCitation.methodologyNoteEn}
+              </p>
+            </div>
+
+            {/* Parent-Surname & Initial Resonance Numerology (Task 32 — ₹499) */}
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-4 space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-950">
+                    👨‍👩‍👧 Parent-Surname &amp; Initial Resonance (குடும்பப் பெயர் எண் இணக்கம்)
+                  </h4>
+                  <p className="text-[11px] text-stone-600">
+                    Test Chaldean &amp; Pythagorean harmony with Father/Mother initial and family surname.
+                  </p>
+                </div>
+                <span className="rounded-full bg-emerald-700 px-2.5 py-0.5 text-[10px] font-bold text-white">
+                  ₹499 Kudumba Nool
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <div>
+                  <label className="block text-[11px] font-semibold text-stone-700">
+                    Parent Initial (e.g. S, K)
+                  </label>
+                  <input
+                    type="text"
+                    maxLength={4}
+                    value={parentInitial}
+                    onChange={(e) => setParentInitial(e.target.value)}
+                    className="mt-1 w-full rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs font-semibold"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-semibold text-stone-700">
+                    Family / Father Surname (e.g. Senthilkumar)
+                  </label>
+                  <input
+                    type="text"
+                    value={familySurname}
+                    onChange={(e) => setFamilySurname(e.target.value)}
+                    className="mt-1 w-full rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs font-semibold"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {resonanceResult.variants.map((v) => (
+                  <div
+                    key={v.label}
+                    className="rounded-xl border border-emerald-200 bg-white p-2.5 text-xs"
+                  >
+                    <div className="text-[10px] font-bold text-stone-500">{v.label}</div>
+                    <div className="mt-0.5 font-bold text-stone-900">{v.formattedName}</div>
+                    <div className="mt-1 flex flex-wrap gap-2 text-[11px]">
+                      <span>Chaldean: <strong>{v.chaldeanCompound} → {v.chaldeanSingle}</strong></span>
+                      <span>Pythagorean: <strong>{v.pythagoreanCompound} → {v.pythagoreanSingle}</strong></span>
+                      <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-900">
+                        {v.harmonyWithFirstName}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[11px] text-emerald-950 font-medium">
+                💡 {resonanceResult.recommendationEn}
+              </p>
             </div>
 
             {/* Letter breakdown */}
@@ -3225,6 +3353,14 @@ export default function NamingGuruDashboard({
               </Link>
             </div>
 
+            <div className="mt-4">
+              <PronunciationButton
+                nameTamil={selectedNameForModal.nameTamil}
+                nameLatin={selectedNameForModal.nameLatin}
+                compact
+              />
+            </div>
+
             {/* Empirical Cohort Rarity & Classroom Frequency Gauge (Task 8) */}
             {modalEmpiricalRarity && (
               <div className="mt-4 rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 text-xs">
@@ -3558,6 +3694,124 @@ export default function NamingGuruDashboard({
                   ✕ Close
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Side-by-Side Name Comparison Matrix & Family Booklet Modal (Tasks 31 & 34) */}
+      {showCompareModal && shortlistRecords.length >= 2 && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs">
+          <div className="max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
+              <div>
+                <h3 className="text-lg font-extrabold text-stone-900">
+                  📊 Side-by-Side Name Comparison Matrix ({Math.min(5, shortlistRecords.length)} Names)
+                </h3>
+                <p className="text-xs text-stone-600">
+                  Compare shortlisted names across meaning, numerology, 7D fit, and classroom rarity, then export your Family Booklet.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowCompareModal(false)}
+                className="rounded-xl bg-stone-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-stone-800"
+              >
+                ✕ Close
+              </button>
+            </div>
+
+            <div className="mt-4 overflow-x-auto rounded-2xl border border-stone-200">
+              <table className="w-full min-w-[640px] border-collapse text-left text-xs">
+                <thead>
+                  <tr className="bg-amber-50 text-stone-900 border-b border-stone-200">
+                    <th className="p-3 font-bold">Dimension</th>
+                    {shortlistRecords.slice(0, 5).map((sr) => (
+                      <th key={sr.slug} className="p-3 font-extrabold text-amber-950">
+                        {sr.nameTamil} <span className="font-semibold text-stone-600">({sr.nameLatin})</span>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-stone-100">
+                  <tr>
+                    <td className="p-3 font-semibold text-stone-700">Meaning (En / Ta)</td>
+                    {shortlistRecords.slice(0, 5).map((sr) => (
+                      <td key={sr.slug} className="p-3 text-stone-700">
+                        <div className="font-medium text-stone-900">{sr.meaningTa}</div>
+                        <div className="text-[11px] text-stone-500 mt-0.5">{sr.meaningEn}</div>
+                      </td>
+                    ))}
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-stone-700">Origin &amp; Gender</td>
+                    {shortlistRecords.slice(0, 5).map((sr) => (
+                      <td key={sr.slug} className="p-3">{sr.gender} · {sr.originCategory}</td>
+                    ))}
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-stone-700">Chaldean / Pythagorean</td>
+                    {shortlistRecords.slice(0, 5).map((sr) => {
+                      const ch = calculateNumerology(sr.nameLatin, "chaldean");
+                      const py = calculateNumerology(sr.nameLatin, "pythagorean");
+                      return (
+                        <td key={sr.slug} className="p-3">
+                          Ch: <strong>{ch.compoundNumber}→{ch.nameNumber}</strong> · Py: <strong>{py.compoundNumber}→{py.nameNumber}</strong>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-stone-700">7D Scorecard &amp; Classroom (40)</td>
+                    {shortlistRecords.slice(0, 5).map((sr) => {
+                      const rar = calculateEmpiricalRarity(sr.nameTamil, sr.popularityRank, {
+                        nameLatin: sr.nameLatin,
+                        nameCategory: sr.nameCategory,
+                        originCategory: sr.originCategory,
+                      });
+                      const sc = evaluateNameScorecard({
+                        nameLatin: sr.nameLatin,
+                        nameTamil: sr.nameTamil,
+                        meaningEn: sr.meaningEn,
+                        meaningTa: sr.meaningTa,
+                        originCategory: sr.originCategory,
+                        literaryReference: sr.literaryReference,
+                        confidence: sr.confidence,
+                        popularityRank: sr.popularityRank,
+                      });
+                      return (
+                        <td key={sr.slug} className="p-3">
+                          <strong>{sc.overallScore}/100</strong> · ~{rar.classroomRepetitionIndex} peers
+                        </td>
+                      );
+                    })}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
+              <div className="text-xs text-emerald-950">
+                <strong>🪷 Bundled Family Booklet + Naming Ceremony &amp; Registration Checklist (Tasks 31 &amp; 34)</strong>
+                <p className="text-[11px] text-emerald-800">
+                  Includes side-by-side comparison, <em>Peyar Soottu Vizha</em> guide, and Birth Certificate / Aadhaar / Passport initial rules.
+                </p>
+              </div>
+              <a
+                href={`/api/reports/family-booklet?slugs=${shortlistRecords
+                  .slice(0, 5)
+                  .map((s) => s.slug)
+                  .join(",")}&tier=${
+                  typeof window !== "undefined"
+                    ? localStorage.getItem("namingguru_sub_tier") || "free"
+                    : "free"
+                }`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-emerald-700 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-800"
+              >
+                📄 Open Printable Family Booklet (₹499) ↗
+              </a>
             </div>
           </div>
         </div>

@@ -10,11 +10,11 @@
 
 | Task | Scope & Recorded Decision | Acceptance Criteria | Testing Methods | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Task 31** | **Side-by-Side Name Comparison Matrix & Multi-Name Family Booklet (`₹499`)** — Priority #1 | 1. Compare 2–5 shortlisted names across all 14 dimensions in a responsive comparison matrix.<br>2. Export a single multi-name A4 printable Family Booklet.<br>3. Entitlement-gated to `kudumba_499` with clean upgrade CTA for Free/₹49 users. | Unit test for comparison matrix payload + print-CSS check + `npm test` & `npm run build`. | 🔵 **Ready** |
-| **Task 32** | **Parent-Surname & Initial Resonance Numerology (`₹499`)** — Priority #2 | 1. Computes Chaldean, Pythagorean & Katapayadi harmony for `[Initial] + [Baby Name] + [Surname]`.<br>2. Displays `ContextualDisclaimer` (`astrology`). | Deterministic unit tests in `core.test.ts` verifying initial/surname combinations. | 🔵 **Ready** |
-| **Task 33** | **Pronunciation Audio & Syllable Breakdown Guide** — Priority #3 | 1. Zero-cost Web Speech API (`ta-IN` / `en-IN`) playback button + deterministic syllable breakdown (`யா-ழி-னி` / `Yaa-zhi-ni`).<br>2. Graceful text fallback when browser speech synthesis is unavailable. | Unit tests for syllable splitter + UI fallback check. | 🔵 **Ready** |
-| **Task 34** | **Baby Naming Ceremony & Official Registration Checklist (`₹499`)** — Priority #4 | 1. Printable *Peyar Soottu Vizha* keepsake card + TN/Indian Birth Certificate, Aadhaar & Passport initial-formatting checklist bundled in Task 31 Family Booklet. | Print-CSS A4 check + `npm run build`. | 🔵 **Ready** |
-| **Task 22** | **Book-Referenced Astrology & Numerology Predictions (Option A)** | 1. Structured original synthesis tables citing Cheiro's *Book of Numbers*, Sepharial, *Katapayadi Sankhya*, *Vakya/Thirukkanitha Panchangam*, and *Brihat Parashara Hora Shastra*.<br>2. Zero verbatim copyrighted text; explicit method citations + `ContextualDisclaimer`. | Unit tests in `core.test.ts` validating compound tables & Nakshatra/Pada metadata. | 🔵 **Ready** |
+| **Task 31** | **Side-by-Side Name Comparison Matrix & Multi-Name Family Booklet (`₹499`)** — Priority #1 | 1. Compare 2–5 shortlisted names across all 14 dimensions in a responsive comparison matrix.<br>2. Export a single multi-name A4 printable Family Booklet.<br>3. Entitlement-gated to `kudumba_499` with clean upgrade CTA for Free/₹49 users. | Unit test for comparison matrix payload + print-CSS check + `npm test` & `npm run build`. | ✅ **Completed** |
+| **Task 32** | **Parent-Surname & Initial Resonance Numerology (`₹499`)** — Priority #2 | 1. Computes Chaldean, Pythagorean & Katapayadi harmony for `[Initial] + [Baby Name] + [Surname]`.<br>2. Displays `ContextualDisclaimer` (`astrology`). | Deterministic unit tests in `core.test.ts` verifying initial/surname combinations. | ✅ **Completed** |
+| **Task 33** | **Pronunciation Audio & Syllable Breakdown Guide** — Priority #3 | 1. Zero-cost Web Speech API (`ta-IN` / `en-IN`) playback button + deterministic syllable breakdown (`யா-ழி-னி` / `Yaa-zhi-ni`).<br>2. Graceful text fallback when browser speech synthesis is unavailable. | Unit tests for syllable splitter + UI fallback check. | ✅ **Completed** |
+| **Task 34** | **Baby Naming Ceremony & Official Registration Checklist (`₹499`)** — Priority #4 | 1. Printable *Peyar Soottu Vizha* keepsake card + TN/Indian Birth Certificate, Aadhaar & Passport initial-formatting checklist bundled in Task 31 Family Booklet. | Print-CSS A4 check + `npm run build`. | ✅ **Completed** |
+| **Task 22** | **Book-Referenced Astrology & Numerology Predictions (Option A)** | 1. Structured original synthesis tables citing Cheiro's *Book of Numbers*, Sepharial, *Katapayadi Sankhya*, *Vakya/Thirukkanitha Panchangam*, and *Brihat Parashara Hora Shastra*.<br>2. Zero verbatim copyrighted text; explicit method citations + `ContextualDisclaimer`. | Unit tests in `core.test.ts` validating compound tables & Nakshatra/Pada metadata. | ✅ **Completed** |
 
 ---
 
@@ -30,7 +30,7 @@
 
 ## Six-Sigma Guardrail Sign-Off (`06-Six-Sigma-Quality-Guardrails.md`)
 - [x] **SG-01 (Entry):** All included tasks have `Open Questions: None` and clear Acceptance Criteria.
-- [ ] **SG-02 (Data/Provenance):** Zero broken citations, sandhi errors, or script impurities (`catalog.test.ts` pass).
-- [ ] **SG-03 (Security/Legal):** Server-side enforcement, contextual disclaimers, and zero leaked secrets verified.
-- [ ] **SG-04 (UI/Print):** Mobile (`390px`), desktop, and print-CSS checks clean; graceful fallbacks verified.
-- [ ] **SG-05 (Build/Git):** `npm test` (100% pass), `npm run build` (0 errors), pushed to `dev` branch only.
+- [x] **SG-02 (Data/Provenance):** Zero broken citations, sandhi errors, or script impurities (`catalog.test.ts` pass).
+- [x] **SG-03 (Security/Legal):** Server-side enforcement, contextual disclaimers, and zero leaked secrets verified.
+- [x] **SG-04 (UI/Print):** Mobile (`390px`), desktop, and print-CSS checks clean; graceful fallbacks verified.
+- [x] **SG-05 (Build/Git):** `npm test` (`39/39` pass across `11` suites), `npm run build` (`0` errors, `114` routes), pushed to `dev` branch only.

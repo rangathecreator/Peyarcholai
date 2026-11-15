@@ -1174,4 +1174,130 @@ export function calculateDualNumerology(rawName: string): DualNumerologySummary 
   };
 }
 
+export interface FullNameVariantScore {
+  label: string;
+  formattedName: string;
+  chaldeanCompound: number;
+  chaldeanSingle: number;
+  pythagoreanCompound: number;
+  pythagoreanSingle: number;
+  rulingPlanetEn: string;
+  harmonyWithFirstName: "Exact Resonance" | "Friendly" | "Neutral" | "Contrast";
+}
+
+export interface FullNameResonanceResult {
+  firstName: string;
+  parentInitial: string;
+  surname: string;
+  variants: FullNameVariantScore[];
+  recommendationEn: string;
+  recommendationTa: string;
+}
+
+/**
+ * Evaluates Chaldean & Pythagorean resonance across First Name, Initial + Name,
+ * and Name + Surname (Task 32 — Parent-Surname & Initial Resonance Numerology).
+ */
+export function calculateFullNameResonance(
+  firstName: string,
+  parentInitial = "",
+  surname = ""
+): FullNameResonanceResult {
+  const cleanFirst = firstName.trim();
+  const cleanInitial = parentInitial.trim().replace(/[^a-zA-Z]/g, "");
+  const cleanSurname = surname.trim();
+
+  const baseChald = calculateNumerology(cleanFirst, "chaldean");
+  const basePyth = calculateNumerology(cleanFirst, "pythagorean");
+  const friendlySet = FRIENDLY_NUMBERS[baseChald.nameNumber] || [];
+  const cautionSet = CAUTION_NUMBERS[baseChald.nameNumber] || [];
+
+  const classifyHarmony = (
+    targetDigit: number
+  ): "Exact Resonance" | "Friendly" | "Neutral" | "Contrast" => {
+    if (targetDigit === baseChald.nameNumber) return "Exact Resonance";
+    if (friendlySet.includes(targetDigit)) return "Friendly";
+    if (cautionSet.includes(targetDigit)) return "Contrast";
+    return "Neutral";
+  };
+
+  const scoreVariant = (
+    label: string,
+    formattedName: string
+  ): FullNameVariantScore => {
+    const ch = calculateNumerology(formattedName, "chaldean");
+    const py = calculateNumerology(formattedName, "pythagorean");
+    return {
+      label,
+      formattedName,
+      chaldeanCompound: ch.compoundNumber,
+      chaldeanSingle: ch.nameNumber,
+      pythagoreanCompound: py.compoundNumber,
+      pythagoreanSingle: py.nameNumber,
+      rulingPlanetEn: ch.planet.planetEn,
+      harmonyWithFirstName: classifyHarmony(ch.nameNumber),
+    };
+  };
+
+  const variants: FullNameVariantScore[] = [
+    {
+      label: "First Name Only (முதல் பெயர்)",
+      formattedName: cleanFirst,
+      chaldeanCompound: baseChald.compoundNumber,
+      chaldeanSingle: baseChald.nameNumber,
+      pythagoreanCompound: basePyth.compoundNumber,
+      pythagoreanSingle: basePyth.nameNumber,
+      rulingPlanetEn: baseChald.planet.planetEn,
+      harmonyWithFirstName: "Exact Resonance",
+    },
+  ];
+
+  if (cleanInitial) {
+    variants.push(
+      scoreVariant(
+        "With Parent Initial (தந்தை/தாய் தலைப்பெழுத்துடன்)",
+        `${cleanInitial}. ${cleanFirst}`
+      )
+    );
+  }
+  if (cleanSurname) {
+    variants.push(
+      scoreVariant(
+        "With Family Surname (குடும்பப் பெயருடன்)",
+        `${cleanFirst} ${cleanSurname}`
+      )
+    );
+  }
+  if (cleanInitial && cleanSurname) {
+    variants.push(
+      scoreVariant(
+        "Full Official Format (முழு அரசுப் பதிவு வடிவம்)",
+        `${cleanInitial}. ${cleanFirst} ${cleanSurname}`
+      )
+    );
+  }
+
+  const bestSecondary = variants.slice(1).find(
+    (v) =>
+      v.harmonyWithFirstName === "Exact Resonance" ||
+      v.harmonyWithFirstName === "Friendly"
+  );
+
+  return {
+    firstName: cleanFirst,
+    parentInitial: cleanInitial,
+    surname: cleanSurname,
+    variants,
+    recommendationEn: bestSecondary
+      ? `"${bestSecondary.formattedName}" achieves ${bestSecondary.harmonyWithFirstName} (${bestSecondary.chaldeanSingle}) with the core name vibration.`
+      : variants.length > 1
+        ? "Consider keeping the initial expanded or abbreviated consistently on Birth Certificate & Passport."
+        : "Add a parent initial or surname above to test official document resonance.",
+    recommendationTa: bestSecondary
+      ? `"${bestSecondary.formattedName}" வடிவம் முதல் பெயருடன் இணக்கமான எண் அதிர்வைத் தருகிறது.`
+      : "தந்தை/தாய் தலைப்பெழுத்து அல்லது குடும்பப் பெயரைச் சேர்த்து ஒலி இணக்கத்தைச் சோதிக்கவும்.",
+  };
+}
+
+
 

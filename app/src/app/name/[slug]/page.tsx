@@ -7,6 +7,7 @@ import { evaluateNameScorecard } from "@/core/scorecard";
 import { calculateEmpiricalRarity } from "@/lib/frequency-engine";
 import { AdBanner } from "@/components/MonetizationBanner";
 import { ContextualDisclaimer } from "@/components/ContextualDisclaimer";
+import { PronunciationButton } from "@/components/PronunciationButton";
 
 export const dynamicParams = true;
 
@@ -115,6 +116,12 @@ export default async function NameDetailPage({
                 {item.genderSuitabilityNote}
               </p>
             )}
+            <div className="mt-3 max-w-xl">
+              <PronunciationButton
+                nameTamil={item.nameTamil}
+                nameLatin={item.nameLatin}
+              />
+            </div>
           </div>
 
           <div className="flex flex-col items-end gap-2">

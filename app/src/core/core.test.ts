@@ -6,7 +6,12 @@ import {
   evaluateCompatibility,
   suggestSpellingVariants,
   transliterateTamilToLatin,
+  calculateFullNameResonance,
 } from "./numerology";
+import {
+  getNakshatraCanonicalMeta,
+  getNumerologyMethodCitation,
+} from "./book-citations";
 import {
   TAMIL_NAKSHATRAS,
   calculateBirthStarFromDateTime,
@@ -134,5 +139,23 @@ describe("7-Dimension Name Scorecard", () => {
     assert.equal(card.dimensions.length, 7);
     assert.ok(card.overallScore > 75);
     assert.equal(card.tamilAksharaCount, 3);
+  });
+});
+
+describe("Wave A: Book Citations (Task 22) & Parent-Surname Resonance (Task 32)", () => {
+  it("returns structured book citations for Chaldean, Pythagorean, Katapayadi, and Nakshatras", () => {
+    const chaldCite = getNumerologyMethodCitation("chaldean");
+    assert.ok(chaldCite.primarySource.includes("Cheiro"));
+    const rohiniMeta = getNakshatraCanonicalMeta("rohini");
+    assert.equal(rohiniMeta?.lordEn, "Moon (Chandra)");
+    assert.ok(rohiniMeta?.canonicalSource.includes("Panchangam"));
+  });
+
+  it("computes Chaldean & Pythagorean resonance for Initial + First Name + Surname", () => {
+    const res = calculateFullNameResonance("Yazhini", "S", "Senthilkumar");
+    assert.equal(res.variants.length, 4);
+    assert.equal(res.variants[1].formattedName, "S. Yazhini");
+    assert.equal(res.variants[3].formattedName, "S. Yazhini Senthilkumar");
+    assert.ok(res.recommendationEn.length > 10);
   });
 });
