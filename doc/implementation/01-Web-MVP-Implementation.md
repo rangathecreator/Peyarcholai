@@ -1,6 +1,8 @@
 # 13 – Web MVP Implementation & Technical Design Document
 
-**Version:** 1.0 | **Date:** 2026-11-09 | **Scope:** Tamil-First Web MVP (`app/`) | **AI Gateway:** OmniRoute (`http://localhost:20128/v1`)
+**Version:** 2.0 | **Date:** 2026-11-15 (Initial: 2026-11-09) | **Scope:** Tamil-First Web MVP (`app/`) | **Live Domain:** `https://peyar.donorconnect.in` | **AI Gateway:** OmniRoute (`http://127.0.0.1:20128/v1` / Cloudflare Tunnel `OMNIROUTE_BASE_URL`)
+
+> **2026-11-15 Production Baseline:** Scaled to **150,024 active / 150,650 raw Tamil names** across **393 `.json.gz` shards** (`22.94 MB`) in 3 cultural tiers (`pure_tamil`, `tamilnadu_usage`, `other_heritage`), with **44/44 unit & catalog tests** passing across 12 suites and **114 Next.js 15.5.29 build routes**. Implemented Wave A/B & Iteration `2026-11-15-02` features: Dual Numerology + Compound Meanings (`10–75`) + Birth-Date Harmony, Parent-Surname Resonance (`Task 32`), Empirical Classroom Uniqueness V2 (`Task 36`), Pronunciation Audio & Syllable Guide (`Task 33`), Side-by-Side Comparison Matrix & Family Booklet PDF (`Tasks 31, 34`), Auto-Synced Blind Family Poll (`MAX 10`, `Task 17A`), Contextual Disclaimers (`Task 30`), and `/why-peyarcholai` conversion page (`Task 28`).
 
 ---
 

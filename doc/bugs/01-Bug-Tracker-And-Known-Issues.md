@@ -1,6 +1,6 @@
 # Bug Tracker & Issue Log (`bugs/`)
 
-**Version:** 1.0 | **Date:** 2026-11-09 | **Project:** NamingGuru Tamil Web MVP
+**Version:** 2.0 | **Date:** 2026-11-15 | **Project:** பெயர்ச்சோலை (Peyarcholai) Tamil Web App (`https://peyar.donorconnect.in`)
 
 ---
 
@@ -11,6 +11,9 @@
 | **BUG-001** | High | Core Scorecard (`scorecard.ts`) | Standard JavaScript `.length` counts UTF-16 code units rather than Tamil orthographic syllables (`தமிழ்`.length === 5 instead of 3 aksharas). | Implemented `countTamilAksharas()` grouping Tamil vowel matras (`ா`..`ௌ`) and pulli (`்`) with their base consonant. Verified by unit tests. | ✅ Resolved |
 | **BUG-002** | Medium | OmniRoute Gateway (`localhost:20128`) | Gateway was stopped and can hit SQLite WASM OOM under heavy multi-agent load if started with default Node heap. | Started daemon with `$env:NODE_OPTIONS="--max-old-space-size=4096"` per runtime troubleshooting guide. | ✅ Resolved |
 | **BUG-003** | Medium | AI Enrichment Pipeline (`enrich-tamil-names.mjs`) | Free-tier LLM providers occasionally wrap JSON output in markdown fences or time out. | Added JSON fence stripping, `AbortSignal.timeout(25000)`, multi-model fallback in `src/lib/omniroute.ts`, and a deterministic baseline catalog. | ✅ Resolved |
+| **BUG-004** | High | Mobile Layout (`globals.css`, `layout.tsx`) | PostCSS / Tailwind directive omission and fixed padding caused mobile viewport overflow on `peyar.donorconnect.in`. | Added `postcss.config.js`, `@tailwind` directives, `viewport` export, responsive header/padding (`Task 15`), and responsive 8-tab navigation bar (`Task 35`). | ✅ Resolved |
+| **BUG-005** | High | Family Poll & WhatsApp Share (`NamingGuruDashboard.tsx`, `poll-security.ts`) | Poll tab defaulted to `"sample-tamil-poll"` instead of user shortlist, exposed consensus results to participants, and lacked `MAX 10` UI feedback. | Synced active `shortlist` (`MAX 10`) into Poll creation & WhatsApp `wa.me` share text, and enforced server + UI blind voting (`Task 17` & `Task 17A`). | ✅ Resolved |
+| **BUG-006** | Medium | Empirical Frequency Display (`frequency-engine.ts`) | Fractional outputs (`~0.1 peers`, `~2.5 students`) were unintuitive for parents. | Added `classroomCollisionPercent`, `classroomDisplayEn/Ta` (`1 in ~10 classrooms (9.5% chance)`), and whole-number `schoolDisplayCount` (`Task 36`). | ✅ Resolved |
 
 ---
 

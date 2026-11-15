@@ -1,32 +1,33 @@
-# NamingGuru – Planning & Feasibility Documentation
+# பெயர்ச்சோலை (Peyarcholai) – Planning & Feasibility Documentation
 
-**Version:** 1.0 | **Date:** 2026-11-09 | **Status:** Draft for review | **Owner:** Product/Architecture
+**Version:** 2.0 | **Date:** 2026-11-15 | **Status:** Active (`https://peyar.donorconnect.in`) | **Master Index:** [`doc/README.md`](../README.md)
 
-NamingGuru helps Indian parents pick a baby name that fits **tradition (horoscope / nakshatra), numerology, community & region, meaning, trend and ease of pronunciation**.
+Peyarcholai helps Indian parents pick a baby name that fits **tradition (horoscope / nakshatra), numerology, community & region, meaning, empirical cohort rarity, and ease of pronunciation**.
 
 ## Repo layout
 
 | Folder | Purpose |
 | :-- | :-- |
-| `doc/plan/` (this folder) | Planning, feasibility and quality documents produced in this study. |
-| `doc/00…07-*.md` | **Earlier study (input)** – numerology methods, data sources, evaluation engine, social poll, competitors, revenue/cost, value-add features. Left untouched; reconciled in [doc 12](12-Input-Reconciliation.md). |
-| `app/` | All application work: code, data pipelines, infra (see [`app/README.md`](../../app/README.md)). |
+| [`doc/README.md`](../README.md) | **Master Documentation Index** cataloging every folder & file in `doc/`. |
+| `doc/plan/` (this folder) | Strategic planning, value audits, feature specs, and Six Sigma (`six-sigma/`). |
+| `doc/00…07-*.md` | **Earlier study (input)** – left untouched; reconciled in [doc 12](12-Input-Reconciliation.md). |
+| `app/` | All application work: Next.js 15 TypeScript code, 393 `.json.gz` shards, tests (`44/44` PASS). |
 
 ## Document map
 
 | # | Document | Answers |
 | :-- | :-- | :-- |
-| 01 | [Vision, Scope & Requirements](01-Vision-Scope-Requirements.md) | What are we building, for whom, functional and non-functional requirements, use-case UML |
-| 02 | [Name Sourcing Strategy](02-Name-Sourcing-Strategy.md) | What options exist to source names that satisfy all kinds of Indian families |
-| 03 | [Numerology & Horoscope Engine Spec](03-Numerology-Horoscope-Engine-Spec.md) | How the calculator and horoscope matching work |
-| 04 | [Data Model & Taxonomy](04-Data-Model-Taxonomy.md) | Classification dimensions, ER diagram, scoring |
-| 05 | [Architecture & UML](05-Architecture-UML.md) | Component, sequence, class, deployment, state and activity diagrams |
+| 01 | [Vision, Scope & Requirements](../requirements/01-Vision-Scope-Requirements.md) | What are we building, for whom, functional and non-functional requirements, use-case UML |
+| 02 | [Name Sourcing Strategy](../requirements/02-Name-Sourcing-Strategy.md) | 150K+ name sourcing, 3-tier cultural classification, and 14 parent-centric dimensions |
+| 03 | [Numerology & Horoscope Engine Spec](../design/01-Numerology-Horoscope-Engine-Spec.md) | How the calculator and horoscope matching work |
+| 04 | [Data Model & Taxonomy](../design/02-Data-Model-Taxonomy.md) | Classification dimensions, ER diagram, scoring |
+| 05 | [Architecture & UML](../design/03-Architecture-UML.md) | Component, sequence, class, deployment, state and activity diagrams |
 | 06 | [Technical Feasibility Study](06-Technical-Feasibility-Study.md) | End-to-end feasibility with verdicts and risks |
-| 07 | [Deployment & DevOps](07-Deployment-DevOps.md) | Environments, CI/CD, release of web + mobile |
+| 07 | [Deployment & DevOps](../deployment/01-Deployment-DevOps-Overview.md) | Environments, CI/CD, release of web + mobile |
 | 08 | [Cost Model](08-Cost-Model.md) | Build and run cost for web and mobile at 3 scales |
 | 09 | [OmniRoute AI Usage Plan](09-OmniRoute-AI-Usage-Plan.md) | Where OmniRoute and reasoning models are used (dev + runtime) |
 | 10 | [Roadmap & WBS](10-Roadmap-WBS.md) | Phases, milestones, work breakdown |
-| 11 | [Legal, Privacy & Ethics](11-Legal-Privacy-Ethics.md) | DPDP Act, content licensing, astrology disclaimers, poll privacy |
+| 11 | [Legal, Privacy & Ethics](../legal/02-Legal-Privacy-Ethics.md) | DPDP Act, content licensing, astrology disclaimers, poll privacy |
 | 12 | [Input Reconciliation](12-Input-Reconciliation.md) | How the earlier study (`doc/00…07`) was integrated; conflicts and resolutions; open questions |
 | 13 | [Web MVP Implementation & Design](../implementation/01-Web-MVP-Implementation.md) | Implemented Tamil-first Next.js Web MVP architecture, OmniRoute AI integration, core engines, and API reference |
 
@@ -34,14 +35,15 @@ NamingGuru helps Indian parents pick a baby name that fits **tradition (horoscop
 
 | Folder | Contents |
 | :-- | :-- |
+| [`doc/TODO/`](../TODO/) | [Master TODO Tracker](../TODO/TODO.md) & Iteration Logs (`TODO-Iteration*.md`). |
 | [`doc/plan/`](./) | Master planning index, roadmap & WBS, cost model, OmniRoute AI usage plan, input reconciliation, and Six Sigma (`six-sigma/`). |
-| [`doc/requirements/`](../requirements/) | [01 Vision, Scope & Requirements](../requirements/01-Vision-Scope-Requirements.md), [02 Name Sourcing Strategy](../requirements/02-Name-Sourcing-Strategy.md), [03 Legal, Privacy & Ethics](../requirements/03-Legal-Privacy-Ethics.md), [04 Tamil MVP Requirements Summary](../requirements/04-Tamil-MVP-Requirements-Summary.md). |
-| [`doc/design/`](../design/) | [01 Numerology & Horoscope Engine Spec](../design/01-Numerology-Horoscope-Engine-Spec.md), [02 Data Model & Taxonomy](../design/02-Data-Model-Taxonomy.md), [03 Architecture & UML](../design/03-Architecture-UML.md), [04 Web MVP System Design](../design/04-Web-MVP-System-Design.md). |
+| [`doc/requirements/`](../requirements/) | [01 Vision, Scope & Requirements](../requirements/01-Vision-Scope-Requirements.md), [02 Name Sourcing Strategy](../requirements/02-Name-Sourcing-Strategy.md), [04 Tamil MVP Requirements Summary](../requirements/04-Tamil-MVP-Requirements-Summary.md), [05 Literary Sources](../requirements/05-Literary-Sources-Tolkappiyam-Ramayanam-Directory.md), [06 User Guide](../requirements/06-User-Guide-And-Feature-Manual.md). |
+| [`doc/design/`](../design/) | [01 Numerology & Horoscope Engine Spec](../design/01-Numerology-Horoscope-Engine-Spec.md), [02 Data Model & Taxonomy](../design/02-Data-Model-Taxonomy.md), [03 Architecture & UML](../design/03-Architecture-UML.md), [04 Web MVP System Design](../design/04-Web-MVP-System-Design.md), [05 Large Catalog Scaling](../design/05-Large-Catalog-Storage-And-Scaling-Architecture.md), and `micro_designs/`. |
 | [`doc/implementation/`](../implementation/) | [01 Web MVP Implementation & Technical Design](../implementation/01-Web-MVP-Implementation.md). |
-| [`doc/deployment/`](../deployment/) | [01 Deployment & DevOps Overview](../deployment/01-Deployment-DevOps-Overview.md). |
-| [`doc/deployment/local/`](../deployment/local/) | [01 Local Runbook (Windows/PowerShell + OmniRoute + Next.js)](../deployment/local/01-Local-Runbook.md). |
-| [`doc/deployment/site/`](../deployment/site/) | [01 Production Site Deployment (`names.donorconnect.in` + Vercel + Supabase/Neon)](../deployment/site/01-Production-Site-Deployment-DonorConnect.md). |
-| [`doc/testing/`](../testing/) | [01 Test Plan & Validation Report](../testing/01-Test-Plan-And-Validation-Report.md). |
+| [`doc/revenuePlan/`](../revenuePlan/) | [01 Six-Sigma Cost vs Profit Scale Review](../revenuePlan/01-Six-Sigma-Cost-Vs-Profit-Scale-Review.md), [02 Three-Tier Monetization](../revenuePlan/02-Three-Tier-Monetization-Architecture.md), [03 Payment Gateway](../revenuePlan/03-Payment-Gateway-Integration-Web-And-Mobile.md), [04 Beta Release Checklist](../revenuePlan/04-Beta-Release-Checklist-Free-Tier.md). |
+| [`doc/legal/`](../legal/) | [01 Legal Compliance & Data Checklist](../legal/01-Legal-Compliance-And-Data-Checklist.md), [02 Legal, Privacy & Ethics](../legal/02-Legal-Privacy-Ethics.md). |
+| [`doc/deployment/`](../deployment/) | [01 Deployment & DevOps Overview](../deployment/01-Deployment-DevOps-Overview.md), [04 OmniRoute Cloudflare Tunnel Guide](../deployment/04-OmniRoute-Cloudflare-Tunnel-Guide.md), `local/`, and `site/`. |
+| [`doc/testing/`](../testing/) | [01 Test Plan & Validation Report](../testing/01-Test-Plan-And-Validation-Report.md), [06 Six-Sigma Quality Guardrails](../testing/06-Six-Sigma-Quality-Guardrails.md), and QA Acceptance Criteria. |
 | [`doc/bugs/`](../bugs/) | [01 Bug Tracker & Known Issues](../bugs/01-Bug-Tracker-And-Known-Issues.md). |
 
 ### Six Sigma quality pack (`doc/six-sigma/`)
