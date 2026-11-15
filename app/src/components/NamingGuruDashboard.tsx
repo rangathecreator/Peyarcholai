@@ -185,7 +185,8 @@ export default function NamingGuruDashboard({
   const [pollNotes, setPollNotes] = useState(
     "Please mark your top favourites and flag any name that feels hard to pronounce."
   );
-  const [createdPollToken, setCreatedPollToken] = useState("sample-tamil-poll");
+  const [createdPollToken, setCreatedPollToken] = useState("");
+  const [pollViewerRole, setPollViewerRole] = useState<"creator" | "participant">("creator");
   const [activePollData, setActivePollData] = useState<{
     token: string;
     title: string;
@@ -248,6 +249,7 @@ export default function NamingGuruDashboard({
         if (sp.get("startingLetter")) setStartingLetter(sp.get("startingLetter")!);
         if (sp.get("poll")) {
           setCreatedPollToken(sp.get("poll")!);
+          setPollViewerRole("participant");
           setActiveTab("poll");
         }
         if (sp.get("tab")) {
@@ -598,7 +600,7 @@ export default function NamingGuruDashboard({
   // Load Poll data when switching to poll tab
   useEffect(() => {
     if (activeTab === "poll" && createdPollToken) {
-      fetch(`/api/polls?token=${encodeURIComponent(createdPollToken)}`)
+      fetch(`/api/polls?token=${encodeURIComponent(createdPollToken)}&viewer=${pollViewerRole}`)
         .then((r) => r.json())
         .then((d) => {
           if (d.poll) setActivePollData(d.poll);
@@ -614,7 +616,7 @@ export default function NamingGuruDashboard({
         })
         .catch(() => {});
     }
-  }, [activeTab, createdPollToken]);
+  }, [activeTab, createdPollToken, pollViewerRole]);
 
   async function handleRunAdvisor(e: React.FormEvent) {
     e.preventDefault();
@@ -639,18 +641,25 @@ export default function NamingGuruDashboard({
 
   async function handleCreatePoll(e: React.FormEvent) {
     e.preventDefault();
+    const candidateSlugs = shortlist.length > 0 ? shortlist.slice(0, 10) : ["yazhini", "kavin"];
+    const tier =
+      typeof window !== "undefined"
+        ? localStorage.getItem("namingguru_sub_tier") || "free"
+        : "free";
     const res = await fetch("/api/polls", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         title: pollTitle,
         parentName: pollParentName,
-        candidateSlugs: shortlist.length > 0 ? shortlist : ["yazhini", "kavin"],
+        candidateSlugs,
         notes: pollNotes,
+        tier,
       }),
     });
     const data = await res.json();
     if (data.poll) {
+      setPollViewerRole("creator");
       setCreatedPollToken(data.poll.token);
       setActivePollData(data.poll);
       if (Array.isArray(data.candidates)) setPollCandidates(data.candidates);
@@ -888,49 +897,60 @@ export default function NamingGuruDashboard({
         </div>
       </section>
 
-      {/* Navigation Tabs - Modern Pill Bar */}
-      <nav className="flex flex-wrap items-center gap-2 rounded-2xl border border-stone-200/80 bg-white p-2 shadow-sm">
+      {/* Navigation Tabs - Modern Pill Bar (Task 35) */}
+      <nav
+        aria-label="Primary sections"
+        className="flex items-center gap-2 overflow-x-auto rounded-2xl border border-stone-200/90 bg-white/95 p-2 shadow-sm backdrop-blur sm:flex-wrap"
+      >
         {[
           {
             id: "explore",
+            icon: "🔎",
             labelTa: "பெயர் தேடல்",
             labelEn: "Explore Names",
             badge: totalCount,
           },
           {
             id: "nakshatra",
+            icon: "🌟",
             labelTa: "நட்சத்திரக் கணிப்பு",
             labelEn: "Birth Star Finder",
           },
           {
             id: "numerology",
+            icon: "🔢",
             labelTa: "எண் கணிதம்",
             labelEn: "Numerology Engine",
           },
           {
             id: "scorecard",
+            icon: "📊",
             labelTa: "7-பரிமாண மதிப்பீடு",
             labelEn: "7D Scorecard",
           },
           {
             id: "querygen",
+            icon: "✨",
             labelTa: "AI வினவல் வடிவமைப்பு",
             labelEn: "Prompt Synthesizer",
             badge: `${generatedQuery.activeConstraintCount} Rules`,
           },
           {
             id: "advisor",
+            icon: "🤖",
             labelTa: "அறிவார்ந்த AI ஆலோசகர்",
             labelEn: "AI Name Advisor",
           },
           {
             id: "poll",
+            icon: "🗳️",
             labelTa: "குடும்ப வாக்கெடுப்பு",
             labelEn: "Family Poll",
             badge: shortlist.length > 0 ? shortlist.length : undefined,
           },
           {
             id: "community",
+            icon: "💡",
             labelTa: "புதிய பெயர் பரிந்துரை",
             labelEn: "Suggest a Name",
           },
@@ -939,18 +959,28 @@ export default function NamingGuruDashboard({
           return (
             <button
               key={tab.id}
+              type="button"
               onClick={() => setActiveTab(tab.id as ActiveTab)}
-              className={`tab-btn ${
-                active ? "tab-btn-active" : ""
+              className={`group flex shrink-0 items-center gap-2.5 rounded-xl px-3.5 py-2 text-left transition-all ${
+                active
+                  ? "bg-amber-900 text-white shadow-sm ring-1 ring-amber-800"
+                  : "bg-stone-50/80 text-stone-700 hover:bg-amber-50 hover:text-amber-950"
               }`}
             >
+              <span className="text-base leading-none" aria-hidden="true">
+                {tab.icon}
+              </span>
               <div>
-                <div className={active ? "tab-title-active" : "tab-title-inactive"}>
+                <div
+                  className={`text-xs font-bold leading-tight ${
+                    active ? "text-white" : "text-stone-900 group-hover:text-amber-950"
+                  }`}
+                >
                   {tab.labelEn}
                 </div>
                 <div
-                  className={`text-[10px] ${
-                    active ? "tab-sub-active" : "tab-sub-inactive"
+                  className={`text-[10px] leading-tight ${
+                    active ? "text-amber-200" : "text-stone-500"
                   }`}
                 >
                   {tab.labelTa}
@@ -958,8 +988,10 @@ export default function NamingGuruDashboard({
               </div>
               {tab.badge !== undefined && (
                 <span
-                  className={`rounded-full px-2 py-0.5 text-[11px] ${
-                    active ? "tab-badge-active" : "tab-badge-inactive"
+                  className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${
+                    active
+                      ? "bg-amber-700 text-amber-50"
+                      : "bg-stone-200/80 text-stone-700 group-hover:bg-amber-200/70"
                   }`}
                 >
                   {tab.badge}
@@ -2796,8 +2828,43 @@ export default function NamingGuruDashboard({
               🗳️ Create Family &ldquo;Vote-Out&rdquo; Poll
             </h2>
             <p className="text-xs text-stone-600">
-              Share your shortlisted names ({shortlist.join(", ")}) with relatives on WhatsApp. Relatives can love names or flag ones hard to pronounce — while parents stay the final decider.
+              Share your shortlisted names with relatives on WhatsApp. Relatives can love names or flag ones hard to pronounce — while parents stay the final decider.
             </p>
+            <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-3">
+              <div className="flex items-center justify-between text-xs font-bold text-amber-950">
+                <span>Selected Shortlist Candidates</span>
+                <span className="rounded-full bg-amber-200/80 px-2 py-0.5 text-[10px] text-amber-900">
+                  {Math.min(shortlist.length, 10)} / 10 MAX
+                </span>
+              </div>
+              {shortlist.length === 0 ? (
+                <p className="mt-1.5 text-[11px] text-stone-600">
+                  No names shortlisted yet. Defaults to <strong>yazhini, kavin</strong>, or shortlist names from Explore Names first.
+                </p>
+              ) : (
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {shortlist.slice(0, 10).map((slug) => {
+                    const rec = shortlistRecords.find((r) => r.slug === slug);
+                    return (
+                      <span
+                        key={slug}
+                        className="inline-flex items-center gap-1 rounded-full border border-amber-300 bg-white px-2.5 py-0.5 text-xs font-semibold text-amber-950"
+                      >
+                        {rec ? `${rec.nameTamil} (${rec.nameLatin})` : slug}
+                        <button
+                          type="button"
+                          onClick={() => toggleShortlist(slug)}
+                          aria-label={`Remove ${slug} from shortlist`}
+                          className="ml-0.5 text-stone-400 hover:text-rose-600"
+                        >
+                          ×
+                        </button>
+                      </span>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
             <div>
               <label className="block text-xs font-semibold text-stone-700">
                 Poll Title
@@ -2875,7 +2942,11 @@ export default function NamingGuruDashboard({
                     </button>
                     <a
                       href={`https://wa.me/?text=${encodeURIComponent(
-                        `🗳️ Vote on our Tamil Baby Name Shortlist (${activePollData.title}): ${
+                        `🗳️ Vote on our Tamil Baby Name Shortlist (${activePollData.title})\nNames: ${(
+                          activePollData.candidateSlugs?.length
+                            ? activePollData.candidateSlugs
+                            : shortlist.slice(0, 10)
+                        ).join(", ")}\nVote here: ${
                           typeof window !== "undefined"
                             ? `${window.location.origin}/?tab=poll&poll=${activePollData.token}`
                             : activePollData.token
@@ -2890,7 +2961,8 @@ export default function NamingGuruDashboard({
                   </div>
                 </div>
 
-                {/* Family Consensus Leaderboard */}
+                {/* Family Consensus Leaderboard (Server & Client Blind Poll Guard) */}
+                {pollViewerRole === "creator" ? (
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500">
                     🏆 Family Consensus Leaderboard
@@ -2947,6 +3019,11 @@ export default function NamingGuruDashboard({
                       ))}
                   </div>
                 </div>
+                ) : (
+                  <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-3 text-xs text-amber-950">
+                    🔒 <strong>Blind Voting Active</strong> — Results and other family members&apos; votes are visible only to the parents hosting this poll.
+                  </div>
+                )}
 
                 {/* Cast a vote form */}
                 <form
@@ -3381,15 +3458,18 @@ export default function NamingGuruDashboard({
                       Classroom (40 Kids)
                     </div>
                     <div className="mt-0.5 font-bold text-indigo-950">
-                      ~{modalEmpiricalRarity.classroomRepetitionIndex} peers
+                      {modalEmpiricalRarity.classroomDisplayEn}
+                    </div>
+                    <div className="text-[10px] text-indigo-700">
+                      {modalEmpiricalRarity.classroomDisplayTa}
                     </div>
                   </div>
                   <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
                     <div className="text-[10px] uppercase font-bold text-stone-500">
-                      Grade Cohort (1,000 Kids)
+                      School Cohort (1,000 Kids)
                     </div>
                     <div className="mt-0.5 font-bold text-indigo-950">
-                      ~{modalEmpiricalRarity.gradeCohortIndex} students
+                      ~{modalEmpiricalRarity.schoolDisplayCount} students
                     </div>
                   </div>
                   <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
@@ -3781,7 +3861,7 @@ export default function NamingGuruDashboard({
                       });
                       return (
                         <td key={sr.slug} className="p-3">
-                          <strong>{sc.overallScore}/100</strong> · ~{rar.classroomRepetitionIndex} peers
+                          <strong>{sc.overallScore}/100</strong> · {rar.classroomDisplayEn}
                         </td>
                       );
                     })}

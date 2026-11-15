@@ -334,8 +334,8 @@ export async function GET(request: NextRequest) {
       <div class="card">
         <div class="card-title">🌟 வகுப்பறைத் தனித்துவம் & உலகப் பயன்பாடு</div>
         <p><strong>பயன்பாட்டு விகிதம்:</strong> ${rarity.observedFrequencyPercent}% — ${rarity.icon} ${rarity.badgeTitleTamil} (${rarity.badgeTitleEn})</p>
-        <p><strong>வகுப்பறை (40 மாணவர்):</strong> ~${rarity.classroomRepetitionIndex} சக மாணவர்கள் (1 in ~${rarity.oneInClassrooms} வகுப்பறைகள்)</p>
-        <p><strong>பள்ளி (1,000 மாணவர்):</strong> ~${rarity.gradeSchoolRepetitionIndex} நபர்கள் · ${rarity.methodologyNoteEn}</p>
+        <p><strong>வகுப்பறை (40 மாணவர்):</strong> ${rarity.classroomDisplayEn} · ${rarity.classroomDisplayTa}</p>
+        <p><strong>பள்ளி (1,000 மாணவர்):</strong> ~${rarity.schoolDisplayCount} மாணவர்கள் · ${rarity.methodologyNoteEn}</p>
         <p><strong>உச்சரிப்பு & எழுத்துப்பிழை:</strong> Ease ${nameRecord.easeOfCalling?.overallScore || 85}/100 · Risk: ${nameRecord.spellingAssessment?.riskLevel || 'Low'}</p>
       </div>
     </div>

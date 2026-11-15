@@ -18,6 +18,10 @@ export interface EmpiricalRarityScore {
   gradeSchoolRepetitionIndex: number; // Expected peers in a 1,000-student school grade
   gradeCohortIndex: number; // Alias for gradeSchoolRepetitionIndex
   oneInClassrooms: number; // Approx. 1 peer per N classrooms of 40 students
+  classroomCollisionPercent: number; // % chance >= 1 peer shares the name in a 40-kid class
+  classroomDisplayEn: string; // Human-readable classroom metric (Task 36)
+  classroomDisplayTa: string;
+  schoolDisplayCount: number; // Rounded whole-number peers per 1,000 students
   rarityBand: 'ultra_rare' | 'distinctive' | 'balanced' | 'popular';
   badgeTitleEn: string;
   badgeTitleEnglish: string; // Alias
@@ -141,11 +145,30 @@ export function calculateEmpiricalRarity(
   const classroomRepetition = Number(((countPer10k / 10000) * 40).toFixed(3));
   const gradeRepetition = Number(((countPer10k / 10000) * 1000).toFixed(1));
   const oneInClassrooms = Math.max(1, Math.round(10000 / (countPer10k * 40)));
+  const pCohort = Math.min(1, countPer10k / 10000);
+  const classroomCollisionPercent = Number(((1 - Math.pow(1 - pCohort, 40)) * 100).toFixed(1));
+  const schoolDisplayCount = Math.max(1, Math.round(gradeRepetition));
+  const classroomDisplayEn =
+    classroomRepetition < 0.7
+      ? `1 in ~${oneInClassrooms} classrooms (${classroomCollisionPercent}% chance)`
+      : `~${Math.round(classroomRepetition)} peers per 40-kid class (${classroomCollisionPercent}% chance)`;
+  const classroomDisplayTa =
+    classroomRepetition < 0.7
+      ? `~${oneInClassrooms} வகுப்பறைகளில் 1-இல் வாய்ப்பு (${classroomCollisionPercent}%)`
+      : `40 மாணவர் வகுப்பில் ~${Math.round(classroomRepetition)} நபர்கள் (${classroomCollisionPercent}%)`;
+
+  const v2Fields = {
+    classroomCollisionPercent,
+    classroomDisplayEn,
+    classroomDisplayTa,
+    schoolDisplayCount,
+  };
 
   if (frequencyPercent < 0.02) {
-    const descEn = `~${gradeRepetition} peers per 1,000 students (1 in ~${oneInClassrooms} classrooms of 40; > 99th percentile uniqueness).`;
-    const descTa = `1,000 மாணவர்களில் ~${gradeRepetition} நபர்கள் (~${oneInClassrooms} வகுப்பறைகளில் 1 நபர்; 99% தனித்துவம்).`;
+    const descEn = `~${schoolDisplayCount} students per 1,000 (${classroomDisplayEn}; > 99th percentile uniqueness).`;
+    const descTa = `1,000 மாணவர்களில் ~${schoolDisplayCount} நபர்கள் (${classroomDisplayTa}; 99% தனித்துவம்).`;
     return {
+      ...v2Fields,
       observedFrequencyPercent: frequencyPercent,
       cohortCountPer10k: countPer10k,
       classroomRepetitionIndex: classroomRepetition,
@@ -167,9 +190,10 @@ export function calculateEmpiricalRarity(
   }
 
   if (frequencyPercent <= 0.10) {
-    const descEn = `~${gradeRepetition} peers per 1,000 students (1 in ~${oneInClassrooms} classrooms of 40). Stands out gracefully while remaining familiar.`;
-    const descTa = `1,000 மாணவர்களில் ~${gradeRepetition} நபர்கள் (~${oneInClassrooms} வகுப்பறைகளில் 1 நபர்). தனித்துவமும் செழுமையும் இணைந்தது.`;
+    const descEn = `~${schoolDisplayCount} students per 1,000 (${classroomDisplayEn}). Stands out gracefully while remaining familiar.`;
+    const descTa = `1,000 மாணவர்களில் ~${schoolDisplayCount} நபர்கள் (${classroomDisplayTa}). தனித்துவமும் செழுமையும் இணைந்தது.`;
     return {
+      ...v2Fields,
       observedFrequencyPercent: frequencyPercent,
       cohortCountPer10k: countPer10k,
       classroomRepetitionIndex: classroomRepetition,
@@ -191,9 +215,10 @@ export function calculateEmpiricalRarity(
   }
 
   if (frequencyPercent <= 0.50) {
-    const descEn = `~${gradeRepetition} peers per 1,000 students (1 in ~${oneInClassrooms} classrooms of 40). Timeless, well-recognized, and comfortable.`;
-    const descTa = `1,000 மாணவர்களில் ~${gradeRepetition} நபர்கள் (~${oneInClassrooms} வகுப்பறைகளில் 1 நபர்). காலத்தால் அழியாத நிதானமான பயன்பாடு.`;
+    const descEn = `~${schoolDisplayCount} students per 1,000 (${classroomDisplayEn}). Timeless, well-recognized, and comfortable.`;
+    const descTa = `1,000 மாணவர்களில் ~${schoolDisplayCount} நபர்கள் (${classroomDisplayTa}). காலத்தால் அழியாத நிதானமான பயன்பாடு.`;
     return {
+      ...v2Fields,
       observedFrequencyPercent: frequencyPercent,
       cohortCountPer10k: countPer10k,
       classroomRepetitionIndex: classroomRepetition,
@@ -214,9 +239,10 @@ export function calculateEmpiricalRarity(
     };
   }
 
-  const descEn = `~${gradeRepetition} peers per 1,000 students (~${classroomRepetition} per 40-student class). Highly celebrated and universally beloved.`;
-  const descTa = `1,000 மாணவர்களில் ~${gradeRepetition} நபர்கள் (40 பேர் வகுப்பில் ~${classroomRepetition}). தமிழகம் எங்கும் பரவலாக அறியப்பட்ட பெயர்.`;
+  const descEn = `~${schoolDisplayCount} students per 1,000 (${classroomDisplayEn}). Highly celebrated and universally beloved.`;
+  const descTa = `1,000 மாணவர்களில் ~${schoolDisplayCount} நபர்கள் (${classroomDisplayTa}). தமிழகம் எங்கும் பரவலாக அறியப்பட்ட பெயர்.`;
   return {
+    ...v2Fields,
     observedFrequencyPercent: frequencyPercent,
     cohortCountPer10k: countPer10k,
     classroomRepetitionIndex: classroomRepetition,

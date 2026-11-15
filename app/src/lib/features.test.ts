@@ -111,6 +111,18 @@ describe('Empirical Name Frequency & Cohort Rarity Scoring (Task 8)', () => {
     assert.ok(rareCompound.oneInClassrooms > tnShort.oneInClassrooms);
     assert.ok(rareCompound.methodologyNoteEn.length > 10);
   });
+
+  it('computes human-readable classroom collision probability and whole-number school counts (Task 36)', () => {
+    const balanced = calculateEmpiricalRarity('யாழினி', 25);
+    assert.ok(balanced.classroomCollisionPercent > 0 && balanced.classroomCollisionPercent < 100);
+    assert.match(balanced.classroomDisplayEn, /1 in ~\d+ classrooms \(\d+(\.\d+)?% chance\)/);
+    assert.ok(balanced.classroomDisplayTa.includes('வகுப்பறைகளில்'));
+    assert.equal(Number.isInteger(balanced.schoolDisplayCount), true);
+    assert.ok(balanced.schoolDisplayCount >= 1);
+
+    const popular = calculateEmpiricalRarity('முருகன்', 250);
+    assert.match(popular.classroomDisplayEn, /~\d+ peers per 40-kid class \(\d+(\.\d+)?% chance\)/);
+  });
 });
 
 describe('Subscription Entitlements & Cultural Tiers (Task 1 & Task 4)', () => {

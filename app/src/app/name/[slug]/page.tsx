@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllTamilNames, getNameBySlug } from "@/lib/repository";
-import { calculateNumerology } from "@/core/numerology";
+import { calculateNumerology, FRIENDLY_NUMBERS } from "@/core/numerology";
 import { evaluateNameScorecard } from "@/core/scorecard";
 import { calculateEmpiricalRarity } from "@/lib/frequency-engine";
 import { AdBanner } from "@/components/MonetizationBanner";
@@ -385,6 +385,16 @@ export default async function NameDetailPage({
               Ruling Planet: <strong>{numPythagorean.planet.planetTa}</strong> (
               {numPythagorean.planet.planetEn})
             </p>
+            {numPythagorean.compoundInfo && (
+              <div className="mt-2.5 rounded-xl border border-amber-200/80 bg-white/80 p-2.5 text-xs">
+                <div className="font-bold text-amber-950">
+                  Compound {numPythagorean.compoundNumber}: {numPythagorean.compoundInfo.titleEn} ({numPythagorean.compoundInfo.titleTa})
+                </div>
+                <p className="mt-0.5 text-[11px] text-stone-700">
+                  {numPythagorean.compoundInfo.summaryEn}
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="rounded-2xl border border-stone-200 p-4">
@@ -410,6 +420,25 @@ export default async function NameDetailPage({
             <p className="mt-2 text-xs text-stone-600">
               Planet: <strong>{numChaldean.planet.planetTa}</strong> (
               {numChaldean.planet.planetEn})
+            </p>
+            {numChaldean.compoundInfo && (
+              <div className="mt-2.5 rounded-xl border border-stone-200 bg-stone-50/80 p-2.5 text-xs">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-bold text-stone-900">
+                    Compound {numChaldean.compoundNumber}: {numChaldean.compoundInfo.titleEn}
+                  </span>
+                  <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold text-amber-900">
+                    {numChaldean.compoundInfo.auspiciousness}
+                  </span>
+                </div>
+                <p className="mt-0.5 text-[11px] text-stone-700">
+                  {numChaldean.compoundInfo.summaryEn} ({numChaldean.compoundInfo.summaryTa})
+                </p>
+              </div>
+            )}
+            <p className="mt-2 text-[11px] text-emerald-900 bg-emerald-50/70 rounded-lg px-2.5 py-1.5 border border-emerald-200/70">
+              🎂 <strong>Birth-Date Harmony:</strong> Best aligned with Birth / Destiny Numbers{" "}
+              <strong>{(FRIENDLY_NUMBERS[numChaldean.nameNumber] || []).join(", ")}</strong> (Cheiro &amp; Sepharial).
             </p>
           </div>
         </div>

@@ -772,7 +772,7 @@ export const COMPOUND_MEANINGS: Record<number, CompoundMeaning> = {
   },
 };
 
-const FRIENDLY_NUMBERS: Record<number, number[]> = {
+export const FRIENDLY_NUMBERS: Record<number, number[]> = {
   1: [1, 2, 3, 5, 9],
   2: [1, 2, 5, 6],
   3: [1, 2, 3, 5, 9],
