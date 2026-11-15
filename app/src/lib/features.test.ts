@@ -4,6 +4,11 @@ import { buildQueryAndPrompt } from './query-generator';
 import { calculateEmpiricalRarity } from './frequency-engine';
 import { buildPronunciationGuide } from './pronunciation';
 import {
+  sanitizePollForViewer,
+  validatePollCandidateSlugs,
+  MAX_POLL_CANDIDATES,
+} from './poll-security';
+import {
   canDownloadPristinePdf,
   canHostWhatsAppFamilyPoll,
   UserSubscriptionSession,
@@ -178,6 +183,51 @@ describe('Pronunciation & Syllable Breakdown Guide (Task 33)', () => {
     assert.deepEqual(guide.tamilSyllables, ['யா', 'ழி', 'னி']);
     assert.equal(guide.formattedTamil, 'யா · ழி · னி');
     assert.ok(guide.romanSyllables.length >= 2);
+  });
+});
+
+describe('Blind Family Vote-Out Poll Security (Task 17 — SG-03)', () => {
+  it('strips other voters choices and comments for non-creator participants', () => {
+    const samplePoll = {
+      id: 'p1',
+      token: 'tok-1',
+      title: 'Test Poll',
+      parentName: 'Parents',
+      candidateSlugs: ['yazhini', 'kavin'],
+      notes: '',
+      createdAt: '2026-11-15T00:00:00Z',
+      votes: [
+        {
+          id: 'v1',
+          voterName: 'Aunt',
+          removedSlugs: ['kavin'],
+          lovedSlugs: ['yazhini'],
+          reason: 'Meaning',
+          comment: 'Love Yazhini',
+          createdAt: '2026-11-15T00:01:00Z',
+        },
+      ],
+    };
+
+    const participantView = sanitizePollForViewer(samplePoll, 'participant');
+    assert.equal(participantView.blindVoting, true);
+    assert.equal(participantView.totalVotesCount, 1);
+    assert.equal(participantView.votes.length, 0);
+
+    const creatorView = sanitizePollForViewer(samplePoll, 'creator');
+    assert.equal(creatorView.votes.length, 1);
+  });
+
+  it('enforces MAX 10 shortlisted names per poll', () => {
+    const eleven = Array.from({ length: 11 }, (_, i) => `name-${i + 1}`);
+    const invalid = validatePollCandidateSlugs(eleven);
+    assert.equal(invalid.valid, false);
+    assert.ok(invalid.error?.includes(String(MAX_POLL_CANDIDATES)));
+
+    const ten = eleven.slice(0, 10);
+    const valid = validatePollCandidateSlugs(ten);
+    assert.equal(valid.valid, true);
+    assert.equal(valid.slugs.length, 10);
   });
 });
 

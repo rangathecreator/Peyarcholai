@@ -74,11 +74,20 @@ export async function callOmniRouteChat(params: {
         body.response_format = { type: "json_object" };
       }
 
+      const cfClientId = process.env.CF_ACCESS_CLIENT_ID || "";
+      const cfClientSecret = process.env.CF_ACCESS_CLIENT_SECRET || "";
+
       const res = await fetch(`${baseUrl}/chat/completions`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
+          ...(cfClientId && cfClientSecret
+            ? {
+                "CF-Access-Client-Id": cfClientId,
+                "CF-Access-Client-Secret": cfClientSecret,
+              }
+            : {}),
         },
         body: JSON.stringify(body),
         signal: AbortSignal.timeout(25000),
