@@ -229,5 +229,17 @@ describe('Blind Family Vote-Out Poll Security (Task 17 — SG-03)', () => {
     assert.equal(valid.valid, true);
     assert.equal(valid.slugs.length, 10);
   });
+
+  it('deduplicates repeated slugs and rejects empty or non-array poll candidates', () => {
+    const dupes = validatePollCandidateSlugs(['Yazhini', 'yazhini', 'Kavin', '  ']);
+    assert.equal(dupes.valid, true);
+    assert.deepEqual(dupes.slugs, ['yazhini', 'kavin']);
+
+    const empty = validatePollCandidateSlugs([]);
+    assert.equal(empty.valid, false);
+
+    const nonArray = validatePollCandidateSlugs('yazhini');
+    assert.equal(nonArray.valid, false);
+  });
 });
 

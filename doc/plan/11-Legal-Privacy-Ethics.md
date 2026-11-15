@@ -50,13 +50,13 @@
 
 ## 5. Compliance checklist (release gate G5)
 
-- [ ] Privacy policy + terms in EN + HI
-- [ ] Consent flows tested (grant/withdraw/delete)
-- [ ] Data-source licence register complete (no “unknown” sources in verified set)
-- [ ] Swiss Ephemeris decision recorded
-- [ ] Disclaimer on numerology/horoscope screens
-- [ ] Grievance officer and takedown email live
-- [ ] Penetration/ASVS checklist passed
+- [ ] Privacy policy + terms in EN + HI *(Tracked in `TODO.md` Task 29A)*
+- [ ] Consent flows tested (grant/withdraw/delete) *(Tracked in `TODO.md` Task 29B)*
+- [x] Data-source licence register complete (DSAL Madras Lexicon, TVA, Project Madurai — see `01-Legal-Compliance-And-Data-Checklist.md`)
+- [x] Swiss Ephemeris decision recorded *(Pure-JS Meeus + Lahiri Ayanamsa in `nakshatra-tamil.ts`; zero Swiss Ephemeris commercial license needed)*
+- [x] Disclaimer on numerology/horoscope screens *(Implemented via `ContextualDisclaimer.tsx` — Task 30)*
+- [ ] Grievance officer and takedown email live *(Tracked in `TODO.md` Task 29B)*
+- [ ] Penetration/ASVS checklist passed *(Tracked in `TODO.md` Task 29A/17B)*
 
 
 ## 6. Social poll – privacy and safety (added from input `doc/04`)

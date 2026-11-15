@@ -158,4 +158,16 @@ describe("Wave A: Book Citations (Task 22) & Parent-Surname Resonance (Task 32)"
     assert.equal(res.variants[3].formattedName, "S. Yazhini Senthilkumar");
     assert.ok(res.recommendationEn.length > 10);
   });
+
+  it("verifies compound 29 (Sengathir) prediction and birth-date compatibility", () => {
+    const chald = calculateNumerology("Sengathir", "chaldean");
+    assert.equal(chald.compoundNumber, 29);
+    assert.equal(chald.nameNumber, 2);
+    assert.ok(chald.compoundInfo);
+    assert.equal(chald.compoundInfo?.titleEn, "Grace Under Trial");
+    const birth = calculateBirthNumbers("2026-11-09");
+    const compat = evaluateCompatibility(chald.nameNumber, birth);
+    assert.ok(compat.score >= 50);
+    assert.ok(compat.reasonEn.length > 10);
+  });
 });

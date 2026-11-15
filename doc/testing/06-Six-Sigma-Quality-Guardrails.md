@@ -47,6 +47,7 @@ Derived from Tasks `15`, `18`, `19`, `26`, `27`, `31–34`:
 2. **Parent-Friendly Copy (`Task 26`):** Zero internal/technical labels (like `"SEO page"`) in user-facing UI.
 3. **Print-Ready Keepsakes (`Task 18`, `31`, `34`):** A4/Letter print stylesheets render without clipped text, overlapping badges, or unformatted JSON.
 4. **Deterministic Math & Browser Fallbacks (`Tasks 20, 22, 32, 33`):** All numerology, Nakshatra, and cohort calculations are 100% deterministic; Web Speech API (`ta-IN`) features provide graceful text syllable fallbacks when browser voices are unavailable.
+5. **Human-Readable Metrics & Complete Predictions (`Tasks 36, 37`):** Avoid confusing fractional child counts (`~0.1 peers`) in parent-facing UI (prefer collision `%` / `1 in N classrooms`), surface compound-number predictions (`10–75`) wherever compound sums are shown, and ensure WhatsApp/Poll flows always sync the user's active `shortlist` (`Task 17A`).
 
 ### `SG-05` — Build, Test & Git Branch Exit Gate
 Derived from `TODO-Iteration2026-11-14-01.md` & `01-Test-Plan-And-Validation-Report.md`:

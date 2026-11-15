@@ -1,6 +1,8 @@
-﻿# 00 – KidNamingApp Feasibility Study (Master)
+# 00 – KidNamingApp Feasibility Study (Master)
 
 **Vision:** Web + mobile app that helps Indian parents choose a child's name with numerology insight, a large categorised name dictionary, a multi-dimension name evaluation, and a social "vote-out" poll.
+
+> **Current Implementation Status (2026-11-15):** Live at `https://peyar.donorconnect.in` (`150,024` active names across 3 cultural tiers). Active implementation backlog, decisions, and Six-Sigma quality gates are tracked in [`doc/implementation/TODO.md`](./implementation/TODO.md) and [`doc/testing/06-Six-Sigma-Quality-Guardrails.md`](./testing/06-Six-Sigma-Quality-Guardrails.md).
 
 ## Document map
 | Doc | Topic |
