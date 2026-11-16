@@ -14,6 +14,7 @@ import {
   UserSubscriptionSession,
   TIER_DEFINITIONS,
 } from './auth-entitlements';
+import { filterTamilNames, getCategoryCounts } from './repository';
 
 describe('Visual Query & AI Prompt Generator (Task 7)', () => {
   it('builds deterministic filters and linguistic prompt with constraints', () => {
@@ -252,6 +253,33 @@ describe('Blind Family Vote-Out Poll Security (Task 17 — SG-03)', () => {
 
     const nonArray = validatePollCandidateSlugs('yazhini');
     assert.equal(nonArray.valid, false);
+  });
+});
+
+describe('Task 39: Single-Pass Repository Filter & O(1) Category Counts', () => {
+  it('returns cached category counts matching full catalog length', () => {
+    const counts = getCategoryCounts();
+    assert.equal(
+      counts.pure_tamil + counts.tamilnadu_usage + counts.other_heritage,
+      counts.total
+    );
+    assert.ok(counts.total >= 150000);
+  });
+
+  it('executes multi-criteria single-pass filter under SS-03 budget (< 30 ms)', () => {
+    // Warm up seed catalog
+    filterTamilNames({ slugs: ['yazhini', 'kavin'] });
+
+    const t0 = performance.now();
+    const res = filterTamilNames({
+      gender: 'girl',
+      nameCategory: 'pure_tamil',
+      minEaseScore: 80,
+      maxMisspellRisk: 'low',
+    });
+    const elapsed = performance.now() - t0;
+    assert.ok(res.length > 0);
+    assert.ok(elapsed < 30, `Expected < 30ms single-pass filter, got ${elapsed.toFixed(2)}ms`);
   });
 });
 

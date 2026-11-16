@@ -35,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ta">
-      <body className="min-h-screen bg-[#faf7f2] font-sans text-stone-900 antialiased">
+      <body className="min-h-screen overflow-x-hidden bg-[#faf7f2] font-sans text-stone-900 antialiased">
         <header className="sticky top-0 z-40 border-b border-amber-200/70 bg-white/95 backdrop-blur shadow-[0_2px_15px_-3px_rgba(0,0,0,0.04)]">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-4 py-2 sm:py-2.5">
             <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
@@ -52,7 +52,7 @@ export default function RootLayout({
                   <span className="text-base sm:text-xl font-extrabold tracking-tight text-stone-900 transition-colors group-hover:text-amber-800 truncate">
                     பெயர்ச்சோலை
                   </span>
-                  <span className="hidden xs:inline-block sm:inline-block rounded-full bg-amber-100/90 px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold text-amber-950 border border-amber-300/60 shadow-xs shrink-0">
+                  <span className="hidden sm:inline-block rounded-full bg-amber-100/90 px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold text-amber-950 border border-amber-300/60 shadow-xs shrink-0">
                     Peyarcholai
                   </span>
                 </div>

@@ -1,8 +1,8 @@
 # பெயர்ச்சோலை (Peyarcholai) — Master Implementation & QA Tracker
 
-**Date:** 2026-11-15 11:10 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
+**Date:** 2026-11-16 21:18 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
 **Live Production:** `https://peyar.donorconnect.in` (`150,024` active / `150,650` raw names across 393 `.json.gz` shards)  
-**Test Suite:** `44/44` Tests PASS across 12 Suites | **Production Build:** Next.js 15.5.29 Clean PASS (114 routes)  
+**Test Suite:** `46/46` Tests PASS across 13 Suites | **Production Build:** Next.js 15.5.29 Clean PASS (114 routes)  
 **Six-Sigma Guardrails:** [`06-Six-Sigma-Quality-Guardrails.md`](../testing/06-Six-Sigma-Quality-Guardrails.md) (`SG-01`–`SG-05` mandatory on every iteration)
 
 ---
@@ -43,6 +43,7 @@
 | **Task 36: Empirical Cohort Frequency & Classroom Uniqueness V2** | Implement [`03-Task36-Empirical-Cohort-Frequency-V2-Design.md`](../design/micro_designs/03-Task36-Empirical-Cohort-Frequency-V2-Design.md) replacing fractional `~0.1 peers` / `~2.5 students` with intuitive classroom sharing odds (`1 in ~10 classrooms · 9.5% chance`) and whole-number school counts. | ✅ **Completed** | None | Implemented in `frequency-engine.ts`, `NamingGuruDashboard.tsx`, `download-pdf/route.ts`, and `features.test.ts` (Iteration `2026-11-15-02`). |
 | **Task 37: Compound-Level Numerology Prediction & Birth-Date Match on Profile/PDF** | Surface `COMPOUND_MEANINGS[compoundNumber]` (e.g., Compound `29` — *Grace Under Trial / சோதனைகளை வெல்லும் பண்பு* per Cheiro's *Book of Numbers* & Sepharial) and optional Birth-Date (`Mulank`/`Bhagyank`) compatibility directly inside `4A/4B` on `/name/[slug]/page.tsx` and `/api/reports/download-pdf`. | ✅ **Completed** | None | Implemented in `name/[slug]/page.tsx` (Iteration `2026-11-15-02`). |
 | **Task 38: Doc-Scan Alignment (`Swiss Ephemeris` Note, `MON-001` & Data-Source Register)** | Record formal confirmation in [`02-Legal-Privacy-Ethics.md`](../legal/02-Legal-Privacy-Ethics.md) that pure-JS Meeus + Lahiri Ayanamsa (`nakshatra-tamil.ts`) requires **no** Swiss Ephemeris commercial license, and verify `MON-001` boundary warning & data-source attribution register. | ✅ **Completed** | None | Verified `nearBoundaryWarning` in `nakshatra-tamil.ts` & `NamingGuruDashboard.tsx` (Iteration `2026-11-15-02`). |
+| **Task 39: Browsing Latency & Full Mobile Compatibility (`peyar.donorconnect.in`)** | Eliminate browsing lag and mobile viewport issues across `www.peyar.donorconnect.in` / `peyar.donorconnect.in`:<br>**39A (SSR/ISR + Edge Caching):** Replaced `force-dynamic` on `/` (`page.tsx`) with ISR (`revalidate = 3600`) and added `Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400` on `GET /api/names`.<br>**39B (Repository Indexing & Single-Pass Filter):** Cached `getCategoryCounts()` in `repository.ts`, used `cachedSlugMap` `O(1)` lookup for `slugs` queries, and converted 15-pass `filterTamilNames()` to a single-pass filter (`< 30 ms` `SS-03` budget).<br>**39C (Mobile `375px` Layout & Overflow Audit):** Fixed invalid `xs:` class & added `overflow-x-hidden` in `layout.tsx`, and tightened modal header `min-w-0` spacing in `NamingGuruDashboard.tsx` for zero horizontal overflow.<br>**39D (Tests & Verification):** Added Task 39 `O(1)` count & single-pass performance tests in `features.test.ts` (`46/46` PASS). | ✅ **Completed** | None | OmniRoute (`llama-cpp/qwen2.5-coder-14b`) audited architecture & confirmed ISR + CDN `Cache-Control` + single-pass indexing + `375px` mobile viewport fixes (Iteration `2026-11-16-01`). |
 
 ---
 

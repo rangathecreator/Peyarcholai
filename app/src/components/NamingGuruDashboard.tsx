@@ -3312,8 +3312,8 @@ export default function NamingGuruDashboard({
             onClick={(e) => e.stopPropagation()}
           >
             {/* Sticky Modal Header */}
-            <div className="shrink-0 bg-white border-b border-stone-200 px-5 py-4 flex flex-wrap items-center justify-between gap-3 z-10">
-              <div className="flex-1 min-w-[200px]">
+            <div className="shrink-0 bg-white border-b border-stone-200 px-3.5 sm:px-5 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-2 sm:gap-3 z-10">
+              <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                   <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] sm:text-xs font-semibold text-amber-900">
                     {selectedNameForModal.originCategory} ·{" "}

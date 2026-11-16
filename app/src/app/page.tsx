@@ -2,7 +2,7 @@ import React from "react";
 import { filterTamilNames } from "@/lib/repository";
 import NamingGuruDashboard from "@/components/NamingGuruDashboard";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 const INITIAL_PAGE_SIZE = 48;
 

@@ -61,16 +61,23 @@ export async function GET(req: NextRequest) {
   const start = (page - 1) * pageSize;
   const paginatedNames = matched.slice(start, start + pageSize);
 
-  return NextResponse.json({
-    count: totalCount,
-    totalCount,
-    page,
-    pageSize,
-    totalPages,
-    numerologyMethod,
-    categoryCounts: getCategoryCounts(),
-    names: paginatedNames,
-  });
+  return NextResponse.json(
+    {
+      count: totalCount,
+      totalCount,
+      page,
+      pageSize,
+      totalPages,
+      numerologyMethod,
+      categoryCounts: getCategoryCounts(),
+      names: paginatedNames,
+    },
+    {
+      headers: {
+        "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+      },
+    }
+  );
 }
 
 export async function POST(req: NextRequest) {

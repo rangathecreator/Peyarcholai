@@ -264,6 +264,12 @@ function saveStore(store: RuntimeStoreData): void {
 
 let cachedSeedCatalog: TamilNameRecord[] | null = null;
 let cachedSlugMap: Map<string, TamilNameRecord> | null = null;
+let cachedSeedCategoryCounts: {
+  pure_tamil: number;
+  tamilnadu_usage: number;
+  other_heritage: number;
+  total: number;
+} | null = null;
 let cachedIndexMtimeMs = 0;
 
 /**
@@ -416,8 +422,15 @@ function hydrateCompactRecord(n: TamilNameRecord): TamilNameRecord {
       .map((n) => hydrateCompactRecord(n))
       .sort((a, b) => tierRank(a) - tierRank(b));
     cachedSlugMap = new Map();
+    let pure_tamil = 0;
+    let tamilnadu_usage = 0;
+    let other_heritage = 0;
     for (const n of cachedSeedCatalog) {
       cachedSlugMap.set(n.slug.toLowerCase(), n);
+      const cat = n.nameCategory || "pure_tamil";
+      if (cat === "pure_tamil") pure_tamil++;
+      else if (cat === "tamilnadu_usage") tamilnadu_usage++;
+      else other_heritage++;
       const norm = normalizeRomanTamilAlias(n.slug);
       if (norm && !cachedSlugMap.has(norm)) {
         cachedSlugMap.set(norm, n);
@@ -429,6 +442,12 @@ function hydrateCompactRecord(n: TamilNameRecord): TamilNameRecord {
         }
       }
     }
+    cachedSeedCategoryCounts = {
+      pure_tamil,
+      tamilnadu_usage,
+      other_heritage,
+      total: cachedSeedCatalog.length,
+    };
   }
   return cachedSeedCatalog;
 }
@@ -497,149 +516,148 @@ export function getCategoryCounts(): {
   other_heritage: number;
   total: number;
 } {
-  const all = getAllTamilNames();
-  let pure_tamil = 0;
-  let tamilnadu_usage = 0;
-  let other_heritage = 0;
-  for (const n of all) {
+  getSeedCatalog();
+  const base = cachedSeedCategoryCounts || {
+    pure_tamil: 0,
+    tamilnadu_usage: 0,
+    other_heritage: 0,
+    total: 0,
+  };
+  const extra = getStore().customNames || [];
+  if (extra.length === 0) return base;
+  let pure_tamil = base.pure_tamil;
+  let tamilnadu_usage = base.tamilnadu_usage;
+  let other_heritage = base.other_heritage;
+  for (const n of extra) {
     const cat = n.nameCategory || "pure_tamil";
     if (cat === "pure_tamil") pure_tamil++;
     else if (cat === "tamilnadu_usage") tamilnadu_usage++;
     else other_heritage++;
   }
-  return { pure_tamil, tamilnadu_usage, other_heritage, total: all.length };
+  return { pure_tamil, tamilnadu_usage, other_heritage, total: base.total + extra.length };
 }
 
 export function filterTamilNames(filters: NameFilterQuery): TamilNameRecord[] {
-  let list = getAllTamilNames();
+  const all = getAllTamilNames();
 
   if (filters.slugs && filters.slugs.length > 0) {
-    const wanted = new Set(filters.slugs.map((s) => s.trim().toLowerCase()).filter(Boolean));
-    return list.filter((n) => wanted.has(n.slug.toLowerCase()));
-  }
-
-  if (filters.nameCategory && filters.nameCategory !== "all") {
-    list = list.filter((n) => (n.nameCategory || "pure_tamil") === filters.nameCategory);
-  }
-
-  if (filters.gender && filters.gender !== "all") {
-    list = list.filter(
-      (n) => n.gender === filters.gender || n.gender === "unisex"
-    );
-  }
-
-  if (filters.nakshatra && filters.nakshatra !== "all") {
-    const slug = filters.nakshatra.toLowerCase();
-    list = list.filter((n) =>
-      n.nakshatraSlugs.some((s) => s.toLowerCase() === slug)
-    );
-  }
-
-  if (filters.numerology && filters.numerology >= 1 && filters.numerology <= 9) {
-    const method = filters.numerologyMethod || "pythagorean";
-    list = list.filter((n) =>
-      method === "chaldean"
-        ? n.numerologyChaldean === filters.numerology
-        : n.numerologyPythagorean === filters.numerology
-    );
-  }
-
-  if (filters.origin && filters.origin !== "all") {
-    const o = filters.origin.toLowerCase();
-    list = list.filter((n) => n.originCategory.toLowerCase().includes(o));
-  }
-
-  if (filters.religion && filters.religion !== "all") {
-    const rel = filters.religion.toLowerCase();
-    list = list.filter(
-      (n) =>
-        n.culturalContext?.religion.some((r) => r.toLowerCase().includes(rel)) ||
-        n.originCategory.toLowerCase().includes(rel)
-    );
-  }
-
-  if (filters.community && filters.community !== "all") {
-    const comm = filters.community.toLowerCase();
-    list = list.filter(
-      (n) =>
-        n.culturalContext?.communityTraditions.some((c) =>
-          c.toLowerCase().includes(comm)
-        ) ||
-        n.culturalContext?.geographicalSignificance.some((g) =>
-          g.toLowerCase().includes(comm)
-        )
-    );
-  }
-
-  if (filters.tinai && filters.tinai !== "all") {
-    const t = filters.tinai.toLowerCase();
-    list = list.filter(
-      (n) => n.culturalContext?.sangamLandscapeTinai?.toLowerCase() === t
-    );
-  }
-
-  if (filters.trend && filters.trend !== "all") {
-    const tr = filters.trend.toLowerCase();
-    list = list.filter((n) =>
-      tr === "trending"
-        ? Boolean(n.trendStatus?.isTrending)
-        : n.trendStatus?.category.toLowerCase().includes(tr)
-    );
-  }
-
-  if (filters.uniquenessBand && filters.uniquenessBand !== "all") {
-    const ub = filters.uniquenessBand.toLowerCase();
-    list = list.filter((n) =>
-      n.uniqueness?.band.toLowerCase().includes(ub)
-    );
-  }
-
-  if (filters.maxMisspellRisk && filters.maxMisspellRisk !== "all") {
-    const risk = filters.maxMisspellRisk.toLowerCase();
-    if (risk === "low") {
-      list = list.filter((n) => n.spellingAssessment?.riskLevel === "Low");
-    } else if (risk === "medium") {
-      list = list.filter(
-        (n) =>
-          n.spellingAssessment?.riskLevel === "Low" ||
-          n.spellingAssessment?.riskLevel === "Medium"
-      );
+    const out: TamilNameRecord[] = [];
+    const seen = new Set<string>();
+    for (const raw of filters.slugs) {
+      const s = raw.trim().toLowerCase();
+      if (!s || seen.has(s)) continue;
+      seen.add(s);
+      const found = cachedSlugMap?.get(s) || getNameBySlug(s);
+      if (found) out.push(found);
     }
+    return out;
   }
 
-  if (typeof filters.minEaseScore === "number" && filters.minEaseScore > 0) {
-    const min = filters.minEaseScore;
-    list = list.filter((n) => (n.easeOfCalling?.overallScore ?? 0) >= min);
+  const nameCategory = filters.nameCategory && filters.nameCategory !== "all" ? filters.nameCategory : null;
+  const gender = filters.gender && filters.gender !== "all" ? filters.gender : null;
+  const nakshatraSlug = filters.nakshatra && filters.nakshatra !== "all" ? filters.nakshatra.toLowerCase() : null;
+  const numerology = filters.numerology && filters.numerology >= 1 && filters.numerology <= 9 ? filters.numerology : null;
+  const numerologyMethod = filters.numerologyMethod || "pythagorean";
+  const origin = filters.origin && filters.origin !== "all" ? filters.origin.toLowerCase() : null;
+  const religion = filters.religion && filters.religion !== "all" ? filters.religion.toLowerCase() : null;
+  const community = filters.community && filters.community !== "all" ? filters.community.toLowerCase() : null;
+  const tinai = filters.tinai && filters.tinai !== "all" ? filters.tinai.toLowerCase() : null;
+  const trend = filters.trend && filters.trend !== "all" ? filters.trend.toLowerCase() : null;
+  const uniquenessBand = filters.uniquenessBand && filters.uniquenessBand !== "all" ? filters.uniquenessBand.toLowerCase() : null;
+  const risk = filters.maxMisspellRisk && filters.maxMisspellRisk !== "all" ? filters.maxMisspellRisk.toLowerCase() : null;
+  const minEase = typeof filters.minEaseScore === "number" && filters.minEaseScore > 0 ? filters.minEaseScore : null;
+  const startRaw = filters.startingLetter?.trim() || "";
+  const startLower = startRaw ? startRaw.toLowerCase() : null;
+  const qRaw = filters.q?.trim() || "";
+  const q = qRaw ? qRaw.toLowerCase() : null;
+  const qNorm = q ? normalizeRomanTamilAlias(q) : "";
+
+  if (
+    !nameCategory &&
+    !gender &&
+    !nakshatraSlug &&
+    !numerology &&
+    !origin &&
+    !religion &&
+    !community &&
+    !tinai &&
+    !trend &&
+    !uniquenessBand &&
+    !risk &&
+    !minEase &&
+    !startLower &&
+    !q
+  ) {
+    return all;
   }
 
-  if (filters.startingLetter && filters.startingLetter.trim() !== "") {
-    const prefix = filters.startingLetter.trim().toLowerCase();
-    list = list.filter(
-      (n) =>
-        n.nameLatin.toLowerCase().startsWith(prefix) ||
-        n.nameTamil.startsWith(filters.startingLetter!.trim()) ||
-        n.startingSyllableTa === filters.startingLetter!.trim()
-    );
-  }
-
-  if (filters.q && filters.q.trim() !== "") {
-    const q = filters.q.trim().toLowerCase();
-    const qNorm = normalizeRomanTamilAlias(q);
-    list = list.filter(
-      (n) =>
+  const out: TamilNameRecord[] = [];
+  for (let i = 0; i < all.length; i++) {
+    const n = all[i];
+    if (nameCategory && (n.nameCategory || "pure_tamil") !== nameCategory) continue;
+    if (gender && n.gender !== gender && n.gender !== "unisex") continue;
+    if (nakshatraSlug && !n.nakshatraSlugs.some((s) => s.toLowerCase() === nakshatraSlug)) continue;
+    if (numerology) {
+      const val = numerologyMethod === "chaldean" ? n.numerologyChaldean : n.numerologyPythagorean;
+      if (val !== numerology) continue;
+    }
+    if (origin && !n.originCategory.toLowerCase().includes(origin)) continue;
+    if (
+      religion &&
+      !(
+        n.culturalContext?.religion.some((r) => r.toLowerCase().includes(religion)) ||
+        n.originCategory.toLowerCase().includes(religion)
+      )
+    )
+      continue;
+    if (
+      community &&
+      !(
+        n.culturalContext?.communityTraditions.some((c) => c.toLowerCase().includes(community)) ||
+        n.culturalContext?.geographicalSignificance.some((g) => g.toLowerCase().includes(community))
+      )
+    )
+      continue;
+    if (tinai && n.culturalContext?.sangamLandscapeTinai?.toLowerCase() !== tinai) continue;
+    if (
+      trend &&
+      !(trend === "trending" ? Boolean(n.trendStatus?.isTrending) : n.trendStatus?.category.toLowerCase().includes(trend))
+    )
+      continue;
+    if (uniquenessBand && !n.uniqueness?.band.toLowerCase().includes(uniquenessBand)) continue;
+    if (risk === "low" && n.spellingAssessment?.riskLevel !== "Low") continue;
+    if (
+      risk === "medium" &&
+      n.spellingAssessment?.riskLevel !== "Low" &&
+      n.spellingAssessment?.riskLevel !== "Medium"
+    )
+      continue;
+    if (minEase && (n.easeOfCalling?.overallScore ?? 0) < minEase) continue;
+    if (
+      startLower &&
+      !(
+        n.nameLatin.toLowerCase().startsWith(startLower) ||
+        n.nameTamil.startsWith(startRaw) ||
+        n.startingSyllableTa === startRaw
+      )
+    )
+      continue;
+    if (q) {
+      const matchesQ =
         n.nameLatin.toLowerCase().includes(q) ||
         (qNorm.length >= 3 && normalizeRomanTamilAlias(n.nameLatin).includes(qNorm)) ||
         (n.spellingAssessment?.commonMisspellings || []).some((m) => m.toLowerCase().includes(q)) ||
-        n.nameTamil.includes(q) ||
+        n.nameTamil.includes(qRaw) ||
         n.meaningEn.toLowerCase().includes(q) ||
-        n.meaningTa.includes(q) ||
+        n.meaningTa.includes(qRaw) ||
         (n.etymologyRoot && n.etymologyRoot.toLowerCase().includes(q)) ||
         n.theme.some((t) => t.toLowerCase().includes(q)) ||
-        n.literaryReference.toLowerCase().includes(q)
-    );
+        n.literaryReference.toLowerCase().includes(q);
+      if (!matchesQ) continue;
+    }
+    out.push(n);
   }
-
-  return list;
+  return out;
 }
 
 export function getNameBySlug(slug: string): TamilNameRecord | undefined {
