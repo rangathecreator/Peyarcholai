@@ -393,6 +393,9 @@ export default async function NameDetailPage({
                 <p className="mt-0.5 text-[11px] text-stone-700">
                   {numPythagorean.compoundInfo.summaryEn}
                 </p>
+                <p className="mt-1 text-[10px] italic text-stone-500">
+                  Peyarcholai editorial summary of the tradition (Sepharial / Pythagorean canon).
+                </p>
               </div>
             )}
           </div>
@@ -433,6 +436,9 @@ export default async function NameDetailPage({
                 </div>
                 <p className="mt-0.5 text-[11px] text-stone-700">
                   {numChaldean.compoundInfo.summaryEn} ({numChaldean.compoundInfo.summaryTa})
+                </p>
+                <p className="mt-1 text-[10px] italic text-stone-500">
+                  Peyarcholai editorial summary of the tradition (Cheiro Chaldean canon).
                 </p>
               </div>
             )}

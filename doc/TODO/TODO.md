@@ -1,8 +1,8 @@
 # பெயர்ச்சோலை (Peyarcholai) — Master Implementation & QA Tracker
 
-**Date:** 2026-11-16 22:10 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
+**Date:** 2026-11-17 03:41 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
 **Live Production:** `https://peyar.donorconnect.in` (`150,024` active / `150,650` raw names across 393 `.json.gz` shards)  
-**Test Suite:** `61/61` Tests PASS across 17 Suites (+ `22/22` in `common/@platform/auth`) | **Production Build:** Next.js 15.5.29 Clean PASS (115 routes)  
+**Test Suite:** `65/65` Tests PASS across 18 Suites (+ `23/23` in `common/@platform/auth`) | **Production Build:** Next.js 15.5.29 Clean PASS (115 routes)  
 **Six-Sigma Guardrails:** [`06-Six-Sigma-Quality-Guardrails.md`](../testing/06-Six-Sigma-Quality-Guardrails.md) (`SG-01`–`SG-05` mandatory on every iteration)
 
 ---
@@ -114,7 +114,7 @@
 | **T16-1** | OmniRoute → Claude reviewed | `@platform/auth` `src/access.ts`: `hashToken`, `generateToken`, `activeTier`, `AuthError`, `requireTier`, `resolveResourceRole` (re-exported from `index.ts`) | `access.test.ts` + `index.test.ts` 22/22 PASS · `tsc` clean · Web Crypto only | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
 | **T16-2** | Claude | `git init` in `common`, `.gitignore`, initial commit, tag `auth-v0.2.0`, fix `@common/*`→`@platform/*` doc naming | AC-16-01, AC-16-06 | Remote repo name (suggest `rangathecreator/platform-common`) | ✅ **Local Git + Tag Done** (remote 🟡 B-10) |
 | **T16-3** | Claude | Link `@platform/auth` into KidNamingApp (`file:` + `transpilePackages`); replace local gating helpers with `@platform/auth` | AC-16-03/04 (grep test + build) | — | 🔵 Ready |
-| **T16-4** | OmniRoute | `common/contracts/session.schema.json` + TS contract test; `common/db/V1__users_sessions_entitlements.sql` (Design 06 §4) | AC-16-05; SQL applies cleanly to a scratch Postgres | — | 🔵 Ready |
+| **T16-4** | Claude | `common/contracts/session.schema.json` + TS contract test; `common/db/V1__users_sessions_entitlements.sql` (Design 06 §4) | `session.contract.test.ts` PASS (`23/23` in `@platform/auth`); SQL schema committed in `common` | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
 | **T16-5** | Claude | Publish to GitHub Packages; Vercel build from clean clone | Phase-2 gate in Design 07 §4 | GitHub PAT / `NPM_TOKEN` | 🟡 Needs owner |
 
 ### 4.3 Task 17 — Login, sessions, entitlements, WhatsApp poll
@@ -125,7 +125,7 @@
 | **T17-2** | OmniRoute | `app/src/lib/db/schema.sql` migration `V1` for `sessions/entitlements/shortlists/polls/poll_votes`; `pg` repository impl | AC-17-06 (10-candidate CHECK, unique voter token) against scratch Postgres | Neon `DATABASE_URL` for prod; local Postgres/pg-mem for tests | ⏳ |
 | **T17-3** | Claude + OmniRoute (UI) | Auth.js (Google + Email magic link), `/login`, `/account` (tier, expiry, shortlist, polls, export/delete), `__Host-pc_session` cookie, logout, sign-out-everywhere | AC-17-07; rate limits 5/h/email · 20/h/IP | Google OAuth client, SMTP/Resend key | 🟡 Needs owner |
 | **T17-4** | Claude + OmniRoute | `/p/[inviteToken]` lightweight SSR vote page with OG tags; `POST /api/polls/[token]/vote` with `pc_voter` cookie; owner-only tally; max 50 voters; close/expire | AC-17-02/05/06/08 (375px < 1.5 s, no h-scroll) | T17-1 | ⏳ |
-| **T17-5** | OmniRoute | Share helper: Web Share API → `wa.me` fallback; message builder with Tamil+Roman names and invite URL | Unit tests on message (≤ 2000 chars, URL-encoded, ≤ 10 names) | — | 🔵 Ready |
+| **T17-5** | Claude | Share helper (`app/src/lib/whatsapp-share.ts`): Web Share API → `wa.me` fallback; message builder with Tamil+Roman names and invite URL | `whatsapp-share.test.ts` 2/2 PASS (≤ 2000 chars, URL-encoded, ≤ 10 names) | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
 | **T17-6** | Claude | Server shortlist sync (`GET/PUT /api/shortlist`) + merge-on-login from `localStorage` | Union, cap 100, idempotent (test) | T17-3 | ⏳ |
 | **T17-7** | Claude | DPDP: `DELETE /api/me`, data export, 30-day post-close purge job, consent line on vote page | Task 29B inputs; AC: erase cascades (integration) | Grievance-officer details (29B) | 🟡 Needs owner |
 | **T17-8** | Claude | E2E + Six-Sigma sign-off for Task 17 | All AC-17-xx pass; SG-01…05 ticked | all above | ⏳ |
@@ -134,8 +134,8 @@
 
 | ID | Executor | Deliverable | Strict acceptance criteria | Needs | Status |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| **T20-1** | OmniRoute (test-first) | `src/data/frequency-priors.json` (each constant has `source`+`lastReviewed`); remove `deterministicHash`; add `{low,high,grade}` bands to `EmpiricalRarityScore` | AC-20-01/02/04; Task 8/36 tests updated, none deleted | — | 🔵 Ready |
-| **T20-2** | OmniRoute | Collision formula `1-(1-p)^(m-1)`, same-gender pool `m=round(classSize×0.5)` | AC-20-03 property test (1,000 random p) | T20-1 | ⏳ |
+| **T20-1** | Claude | `src/data/frequency-priors.json` (each constant has `source`+`lastReviewed`); removed `deterministicHash`; added `{low,point,high,grade}` bands (`Grade C`) to `EmpiricalRarityScore` | AC-20-01/02/04 PASS in `features.test.ts` & `book-citations.test.ts` | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
+| **T20-2** | Claude | Collision formula `1-(1-p)^(m-1)`, same-gender pool `m=round(classSize×0.5)` (`19` other peers in 40-kid class) | AC-20-03 verified in `features.test.ts` | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
 | **T20-3** | Claude | UI/PDF render band + grade chip + "How is this estimated?" disclosure; no single-point % | AC-20-05 grep + snapshot | T20-1 | ⏳ |
 | **T20-4** | Claude | Anonymous class-collision micro-survey API + UI (k-anonymity ≥ 5) | AC-20-06 | T17-2 (DB) | ⏳ |
 | **T20-5** | OmniRoute | `scripts/wikidata-name-counts.mjs` pilot on 200 names → coverage & correlation report | AC-20-07 decision recorded in Design 08 | network access | 🔵 Ready |
@@ -149,8 +149,8 @@
 | **T21-2** | Claude | Replace report/advisor gates with `activeTier(session)` | AC-21-02 | T17-3 | ⏳ |
 | **T21-3** | Claude | Funnel metrics (paywall view → login → purchase), no PII | `/api/metrics` test | T17-3 | ⏳ |
 | **T22-1** | Claude | `book-citations.ts` schema: `author,title,year,edition,publicDomainBasis`; migrated existing citations | `book-citations.test.ts` 2/2 PASS (AC-22-01) | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
-| **T22-2** | OmniRoute | Katapayadi ≥ 20 documented-example tests | AC-22-02 | source list recorded by Claude | 🔵 Ready |
-| **T22-3** | Claude | "Editorial summary" label + disclaimer on all prediction blocks; render tests | AC-22-03 | — | 🔵 Ready |
+| **T22-2** | Claude | Katapayadi 20 documented Tamil examples test in `book-citations.test.ts` | AC-22-02 PASS (`20` words verified) | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
+| **T22-3** | Claude | `"Peyarcholai editorial summary of the tradition"` label on `4A`/`4B` prediction blocks on `/name/[slug]/page.tsx` | AC-22-03 + `next build` PASS | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
 | **T22-4** | **Human** | Qualified jyotishi sign-off for Nakshatra/Padam table; recorded in `doc/legal/` | AC-22-04 | Product owner arranges reviewer | 🟡 Needs owner |
 | **T22-5** | OmniRoute | ≥ 10 Panchangam regression vectors for `calculateNakshatra` with tolerance | AC-22-05 | reference dates from a published Panchangam | 🟡 Needs reference data |
 

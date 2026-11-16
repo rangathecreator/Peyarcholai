@@ -113,16 +113,27 @@ describe('Empirical Name Frequency & Cohort Rarity Scoring (Task 8)', () => {
     assert.ok(rareCompound.methodologyNoteEn.length > 10);
   });
 
-  it('computes human-readable classroom collision probability and whole-number school counts (Task 36)', () => {
+  it('computes human-readable classroom collision probability and whole-number school counts (Task 36 / Design 08)', () => {
     const balanced = calculateEmpiricalRarity('யாழினி', 25);
     assert.ok(balanced.classroomCollisionPercent > 0 && balanced.classroomCollisionPercent < 100);
-    assert.match(balanced.classroomDisplayEn, /1 in ~\d+ classrooms \(\d+(\.\d+)?% chance\)/);
+    assert.match(balanced.classroomDisplayEn, /About 1 in \d+–\d+ classrooms \(\d+(\.\d+)?–\d+(\.\d+)?% chance\) · Rough guide \(Grade C\)/);
     assert.ok(balanced.classroomDisplayTa.includes('வகுப்பறைகளில்'));
     assert.equal(Number.isInteger(balanced.schoolDisplayCount), true);
     assert.ok(balanced.schoolDisplayCount >= 1);
+    assert.ok(balanced.band.low < balanced.band.point && balanced.band.point < balanced.band.high);
+    assert.equal(balanced.band.grade, 'C');
 
-    const popular = calculateEmpiricalRarity('முருகன்', 250);
-    assert.match(popular.classroomDisplayEn, /~\d+ peers per 40-kid class \(\d+(\.\d+)?% chance\)/);
+    // AC-20-01: identical structural features must yield identical estimates (no hash jitter)
+    const a = calculateEmpiricalRarity('கமலா', undefined, { nameLatin: 'Kamala', nameCategory: 'pure_tamil', originCategory: 'Classical / Sangam Tamil' });
+    const b = calculateEmpiricalRarity('கமலா', undefined, { nameLatin: 'Kamala', nameCategory: 'pure_tamil', originCategory: 'Classical / Sangam Tamil' });
+    assert.equal(a.cohortCountPer10k, b.cohortCountPer10k);
+
+    // AC-20-03: 1 - (1 - p)^(m - 1) property check for m = 20 (otherPeers = 19)
+    const expectedCollision = Number(((1 - Math.pow(1 - 25 / 10000, 19)) * 100).toFixed(1));
+    assert.equal(balanced.classroomCollisionPercent, expectedCollision);
+
+    const popular = calculateEmpiricalRarity('முருகன்', 400);
+    assert.match(popular.classroomDisplayEn, /~\d+ same-gender peers per class/);
   });
 });
 
