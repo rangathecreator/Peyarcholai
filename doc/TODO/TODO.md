@@ -19,7 +19,7 @@
 | **B-04** | Task 29A | Refund policy: non-refundable after PDF/poll generated, or 7-day refund for duplicate/technical failure? | 7-day refund for duplicate charge/technical failure only | | 🟡 Open |
 | **B-05** | Task 29B, T17-7 | DPDP Grievance Officer name + contact email (published in `/privacy`) | Owner themself is acceptable for a small data fiduciary | | 🟡 Open |
 | **B-06** | Task 29C | Google AdSense Publisher ID (`pub-…`) — or defer `ads.txt` until AdSense approval | Defer if not yet approved | | 🟡 Open |
-| **B-07** | Task 17B, T17-2/3/4, T20-4 | Neon PostgreSQL `DATABASE_URL` (pooled) | Create free Neon project (Mumbai/Singapore region); put in `.env.local` + Vercel | | 🟡 Open |
+| **B-07** | Task 17B, T17-2/3/4, T20-4 | Neon PostgreSQL `DATABASE_URL` (pooled) | Create free Neon project (Mumbai/Singapore region); put in `.env.local` + Vercel | Configured in Vercel (`peyarcholai-prod`) per [`04-Neon-PostgreSQL-Database-Setup-Guide.md`](../deployment/site/04-Neon-PostgreSQL-Database-Setup-Guide.md) §3.2 | ✅ Answered |
 | **B-08** | Task 17B, T17-3 | Google OAuth client ID + secret (redirect: `https://peyar.donorconnect.in/api/auth/callback/google` + `http://localhost:3020/...`) | Google Cloud Console → Credentials; I generate `AUTH_SECRET` myself | | 🟡 Open |
 | **B-09** | T17-3 (magic link) | SMTP / Resend API key + verified sender (e.g. `login@donorconnect.in`) | Resend free tier (3k mails/mo) | | 🟡 Open |
 | **B-10** | T16-2 / T16-5 | GitHub remote name for `common` + `NPM_TOKEN` (packages: write) | `rangathecreator/platform-common`; local `git init` proceeds without it | | 🟡 Open (T16-2 local part unblocked) |
@@ -30,7 +30,7 @@
 | **B-15** | T21-1/T21-2, Design 09 §1.4 | Decision: Task 32 parent-surname resonance — keep fully ₹499, or free teaser (number only) + paid breakdown? | Teaser (better conversion) | | 🟡 Open |
 | **B-16** | T20-6 (data-gated, not a question) | ≥ 100 names with measured class-collision survey data (accrues after B-07 + T20-4 ship) | Collect via in-app micro-survey; until then all names are Grade C | | ⏳ Waiting on traffic |
 
-**Unblocked right now (no input needed):** T17-0, T17-0b, T17-F4, T16-1 (running), T16-2 (local git), T16-4, T17-5, T20-1, T20-5, T21-1, T22-1, T22-2, T22-3.
+**Unblocked right now (no input needed):** `T16-3` (local link), `T17-1`, `T17-2` (`pg` repo + V1 SQL migration — `B-07` answered), `T17-4` (`/p/[inviteToken]` SSR + vote API), `T20-3`, `T20-4` (micro-survey API — `B-07` answered), `T20-5` (needs network). *(Completed: `T16-1`, `T16-2` local, `T16-4`, `T17-0`, `T17-0b`, `T17-F4`, `T17-5`, `T20-1`, `T20-2`, `T21-1`, `T22-1`, `T22-2`, `T22-3`.)*
 
 ---
 
@@ -122,7 +122,7 @@
 | ID | Executor | Deliverable | Strict acceptance criteria | Needs | Status |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | **T17-1** | Claude | Repository interface `PollStore`/`SessionStore`/`EntitlementStore` + in-memory impl used by tests | Same contract tests run against in-memory and Postgres impls | T16-3 | ⏳ |
-| **T17-2** | OmniRoute | `app/src/lib/db/schema.sql` migration `V1` for `sessions/entitlements/shortlists/polls/poll_votes`; `pg` repository impl | AC-17-06 (10-candidate CHECK, unique voter token) against scratch Postgres | Neon `DATABASE_URL` for prod; local Postgres/pg-mem for tests | ⏳ |
+| **T17-2** | OmniRoute | `app/src/lib/db/schema.sql` migration `V1` for `sessions/entitlements/shortlists/polls/poll_votes`; `pg` repository impl | AC-17-06 (10-candidate CHECK, unique voter token) against scratch Postgres | `T17-1` (`B-07` Vercel `DATABASE_URL` ready) | ⏳ After T17-1 |
 | **T17-3** | Claude + OmniRoute (UI) | Auth.js (Google + Email magic link), `/login`, `/account` (tier, expiry, shortlist, polls, export/delete), `__Host-pc_session` cookie, logout, sign-out-everywhere | AC-17-07; rate limits 5/h/email · 20/h/IP | Google OAuth client, SMTP/Resend key | 🟡 Needs owner |
 | **T17-4** | Claude + OmniRoute | `/p/[inviteToken]` lightweight SSR vote page with OG tags; `POST /api/polls/[token]/vote` with `pc_voter` cookie; owner-only tally; max 50 voters; close/expire | AC-17-02/05/06/08 (375px < 1.5 s, no h-scroll) | T17-1 | ⏳ |
 | **T17-5** | Claude | Share helper (`app/src/lib/whatsapp-share.ts`): Web Share API → `wa.me` fallback; message builder with Tamil+Roman names and invite URL | `whatsapp-share.test.ts` 2/2 PASS (≤ 2000 chars, URL-encoded, ≤ 10 names) | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
