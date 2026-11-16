@@ -11,6 +11,11 @@ export interface MethodCitation {
   methodId: "chaldean" | "pythagorean" | "katapayadi" | "nakshatra";
   titleEn: string;
   titleTa: string;
+  author: string;
+  title: string;
+  year: number | string;
+  edition: string;
+  publicDomainBasis: string;
   primarySource: string;
   methodologyNoteEn: string;
   methodologyNoteTa: string;
@@ -24,6 +29,11 @@ export const NUMEROLOGY_METHOD_CITATIONS: Record<
     methodId: "chaldean",
     titleEn: "Chaldean Vibration & Compound System",
     titleTa: "சால்டியன் எண் கணித முறை (Cheiro)",
+    author: "Cheiro (Count Louis Hamon)",
+    title: "Cheiro's Book of Numbers",
+    year: 1926,
+    edition: "London / Herbert Jenkins Ltd. (1926)",
+    publicDomainBasis: "Public Domain (pre-1928 US & >60 years post-1936 Indian Copyright Act)",
     primarySource:
       "Cheiro's Book of Numbers (1926, Public Domain) — 1–8 Sound-Vibration Mapping",
     methodologyNoteEn:
@@ -35,6 +45,11 @@ export const NUMEROLOGY_METHOD_CITATIONS: Record<
     methodId: "pythagorean",
     titleEn: "Pythagorean Alphabet & Master Number System",
     titleTa: "பிதாகரஸ் எண் கணித முறை (Sepharial)",
+    author: "Sepharial (Walter Gorn Old)",
+    title: "The Kabala of Numbers",
+    year: 1911,
+    edition: "William Rider & Son, London (1911)",
+    publicDomainBasis: "Public Domain (published 1911; author d. 1929)",
     primarySource:
       "Sepharial, The Kabala of Numbers (1911) & Julia Seton, The Science of Numerology (1924)",
     methodologyNoteEn:
@@ -46,6 +61,11 @@ export const NUMEROLOGY_METHOD_CITATIONS: Record<
     methodId: "katapayadi",
     titleEn: "Katapayadi Sankhya (Classical Tamil/Vedic Cipher)",
     titleTa: "கடபயாதி சங்க்யா (மரபுத் தமிழ் எண் முறை)",
+    author: "Traditional South Indian Astronomical & Carnatic Canon",
+    title: "Katapayadi Sankhya Consonant Cipher",
+    year: "Classical",
+    edition: "Traditional Carnatic Melakarta & Kerala/Tamil Astronomical Canon",
+    publicDomainBasis: "Traditional public-domain mathematical notation",
     primarySource:
       "Classical Katapayadi Sankhya Tradition (South Indian Carnatic & Astronomical Canon)",
     methodologyNoteEn:

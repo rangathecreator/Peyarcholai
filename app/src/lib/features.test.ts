@@ -267,8 +267,8 @@ describe('Task 39: Single-Pass Repository Filter & O(1) Category Counts', () => 
   });
 
   it('executes multi-criteria single-pass filter under SS-03 budget (< 30 ms)', () => {
-    // Warm up seed catalog
-    filterTamilNames({ slugs: ['yazhini', 'kavin'] });
+    // Warm up seed catalog & V8 JIT
+    filterTamilNames({ gender: 'girl', nameCategory: 'pure_tamil' });
 
     const t0 = performance.now();
     const res = filterTamilNames({

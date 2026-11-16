@@ -6,8 +6,9 @@ import { calculateKatapayadiNumber, calculateNumerology } from '@/core/numerolog
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const slug = searchParams.get('slug');
-  const tier = searchParams.get('tier') || 'free';
-  const isPaid = tier === 'suvadi_49' || tier === 'kudumba_499';
+  // T17-0b: Never trust ?tier= from query params; fail closed to free watermarked until session ships.
+  const isPaid =
+    process.env.ALLOW_UNGATED_DEV === 'true' && process.env.NODE_ENV !== 'production';
 
   if (!slug) {
     return NextResponse.json({ error: 'Missing slug parameter' }, { status: 400 });

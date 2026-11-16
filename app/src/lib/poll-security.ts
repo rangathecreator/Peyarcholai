@@ -2,7 +2,7 @@ import type { SocialPollRecord } from "@/lib/repository";
 
 export const MAX_POLL_CANDIDATES = 10;
 
-export interface SanitizedPollResponse extends Omit<SocialPollRecord, "votes"> {
+export interface SanitizedPollResponse extends Omit<SocialPollRecord, "votes" | "creatorSecretHash"> {
   blindVoting: boolean;
   totalVotesCount: number;
   votes: SocialPollRecord["votes"];
@@ -11,21 +11,23 @@ export interface SanitizedPollResponse extends Omit<SocialPollRecord, "votes"> {
 /**
  * Enforces server-side blind voting (Task 17 — SG-03):
  * Non-creator participants never receive other voters' selections, names, or comments.
+ * Never leaks creatorSecretHash in any response.
  */
 export function sanitizePollForViewer(
   poll: SocialPollRecord,
   viewerRole: "creator" | "participant" = "participant"
 ): SanitizedPollResponse {
+  const { creatorSecretHash: _omit, ...safePoll } = poll;
   if (viewerRole === "creator") {
     return {
-      ...poll,
+      ...safePoll,
       blindVoting: true,
       totalVotesCount: poll.votes.length,
     };
   }
 
   return {
-    ...poll,
+    ...safePoll,
     blindVoting: true,
     totalVotesCount: poll.votes.length,
     votes: [],

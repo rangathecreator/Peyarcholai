@@ -1,0 +1,53 @@
+{
+  "modelVersion": "2.0.0-heuristic",
+  "lastReviewed": "2026-11-16",
+  "genderSplitDefault": {
+    "boy": 0.5,
+    "girl": 0.5,
+    "source": "Census of India Sex Ratio Baseline (approx. 1:1 classroom cohort assumption)",
+    "lastReviewed": "2026-11-16"
+  },
+  "categoryPriorsPer10k": {
+    "pure_tamil_sangam": {
+      "value": 7.5,
+      "source": "Editorial Tamil Naming Cohort Baseline (Design 08 Grade C prior)",
+      "lastReviewed": "2026-11-16"
+    },
+    "pure_tamil_modern": {
+      "value": 2.6,
+      "source": "Editorial Tamil Naming Cohort Baseline (Design 08 Grade C prior)",
+      "lastReviewed": "2026-11-16"
+    },
+    "pure_tamil_default": {
+      "value": 4.5,
+      "source": "Editorial Tamil Naming Cohort Baseline (Design 08 Grade C prior)",
+      "lastReviewed": "2026-11-16"
+    },
+    "tamilnadu_usage": {
+      "value": 22.0,
+      "source": "Editorial Tamil Nadu Usage Cohort Baseline (Design 08 Grade C prior)",
+      "lastReviewed": "2026-11-16"
+    },
+    "other_heritage": {
+      "value": 14.0,
+      "source": "Editorial Pan-Indian/Diaspora Cohort Baseline (Design 08 Grade C prior)",
+      "lastReviewed": "2026-11-16"
+    }
+  },
+  "lengthFactors": {
+    "le5": { "value": 2.1, "source": "Zipfian short-name prevalence prior (<=5 Latin chars)", "lastReviewed": "2026-11-16" },
+    "le7": { "value": 1.45, "source": "Zipfian short-name prevalence prior (6-7 Latin chars)", "lastReviewed": "2026-11-16" },
+    "le9": { "value": 0.85, "source": "Zipfian mid-length prior (8-9 Latin chars)", "lastReviewed": "2026-11-16" },
+    "le11": { "value": 0.45, "source": "Zipfian compound-length prior (10-11 Latin chars)", "lastReviewed": "2026-11-16" },
+    "gt11": { "value": 0.22, "source": "Zipfian long-compound prior (>11 Latin chars)", "lastReviewed": "2026-11-16" }
+  },
+  "phoneticFactors": {
+    "popularStarter": { "value": 1.25, "source": "Common Tamil initial syllable prior (க, ச, த, ந, ம, அ, ஆ, வ)", "lastReviewed": "2026-11-16" },
+    "rareStarter": { "value": 0.48, "source": "Rare Tamil initial syllable prior (ஒ, ஓ, ஔ, ஞ, எ, ஏ)", "lastReviewed": "2026-11-16" },
+    "commonSuffix": { "value": 1.32, "source": "Common Tamil suffix prior (-இனி, -அன், -மதி, -வேல், -அரசு)", "lastReviewed": "2026-11-16" }
+  },
+  "bandWidthFactor": {
+    "gradeC": { "value": 2.5, "source": "Design 08 §4 uncertainty band multiplier for uncalibrated Grade C priors", "lastReviewed": "2026-11-16" },
+    "gradeB": { "value": 1.8, "source": "Design 08 §4 uncertainty band multiplier for calibrated Grade B priors", "lastReviewed": "2026-11-16" }
+  }
+}

@@ -163,6 +163,7 @@ export interface SocialPollRecord {
   createdAt: string;
   closesAt: string;
   votes: PollVoteItem[];
+  creatorSecretHash?: string;
 }
 
 export interface PublicSuggestionRecord {
@@ -331,90 +332,90 @@ function getSeedCatalog(): TamilNameRecord[] {
       return 2; // Natural compound names third
     };
 
-function hydrateCompactRecord(n: TamilNameRecord): TamilNameRecord {
-  const nameCategory = n.nameCategory || "pure_tamil";
-  const hasFull =
-    n.numerologyPythagorean &&
-    n.numerologyChaldean &&
-    n.numerology &&
-    n.multilingualMeanings?.length &&
-    n.culturalContext &&
-    n.easeOfCalling &&
-    n.spellingAssessment &&
-    n.uniqueness &&
-    n.trendStatus &&
-    n.documentFit &&
-    n.nicknames &&
-    n.siblingPairSuggestions;
+    function hydrateCompactRecord(n: TamilNameRecord): TamilNameRecord {
+      const nameCategory = n.nameCategory || "pure_tamil";
+      const hasFull =
+        n.numerologyPythagorean &&
+        n.numerologyChaldean &&
+        n.numerology &&
+        n.multilingualMeanings?.length &&
+        n.culturalContext &&
+        n.easeOfCalling &&
+        n.spellingAssessment &&
+        n.uniqueness &&
+        n.trendStatus &&
+        n.documentFit &&
+        n.nicknames &&
+        n.siblingPairSuggestions;
 
-  if (hasFull && n.nameCategory) {
-    return n;
-  }
+      if (hasFull && n.nameCategory) {
+        return n;
+      }
 
-  const dual = n.numerology || calculateDualNumerology(n.nameLatin);
-  const syllCount = Math.max(1, Math.min(5, Math.ceil(n.nameLatin.length / 3)));
+      const dual = n.numerology || calculateDualNumerology(n.nameLatin);
+      const syllCount = Math.max(1, Math.min(5, Math.ceil(n.nameLatin.length / 3)));
 
-  return {
-    ...n,
-    nameCategory,
-    numerology: dual,
-    numerologyPythagorean: n.numerologyPythagorean ?? dual.pythagorean.singleDigit,
-    compoundPythagorean: n.compoundPythagorean ?? dual.pythagorean.total,
-    numerologyChaldean: n.numerologyChaldean ?? dual.chaldean.singleDigit,
-    compoundChaldean: n.compoundChaldean ?? dual.chaldean.total,
-    dataConfidence: n.dataConfidence || {
-      estimatedFields: ["uniqueness", "trendStatus", "easeOfCalling", "spellingAssessment", "nicknames", "siblingPairSuggestions"],
-      estimateBasis: "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics.",
-      reviewStatus: n.verificationStatus || "Verified Entry",
-    },
-    multilingualMeanings: n.multilingualMeanings?.length
-      ? n.multilingualMeanings
-      : [
-          { language: "Tamil (தமிழ்)", script: n.nameTamil, meaning: n.meaningTa, isPositive: true },
-          { language: "Global English (International)", script: n.nameLatin, meaning: n.meaningEn, isPositive: true, falseFriendWarning: "None" },
-        ],
-    culturalContext: n.culturalContext || {
-      religion: [nameCategory === "pure_tamil" ? "Secular Tamil" : "Pan-Indian / Cultural"],
-      communityTraditions: [n.categoryOriginSource || "Tamil Nadu Heritage"],
-      geographicalSignificance: ["Tamil Nadu", "Global Diaspora"],
-      sangamLandscapeTinai: nameCategory === "pure_tamil" ? "Kurinji / Marutham" : "Not Applicable (Non-Sangam)",
-    },
-    easeOfCalling: n.easeOfCalling || {
-      overallScore: Math.max(70, 98 - n.nameLatin.length),
-      nativeTamilScore: Math.max(70, 98 - n.nameLatin.length),
-      panIndiaScore: Math.max(75, 96 - n.nameLatin.length),
-      globalScore: n.nameLatin.length <= 8 ? 90 : 78,
-      syllables: [n.nameLatin],
-      phoneticGuide: n.nameLatin,
-      callOutNote: "Clear and natural pronunciation",
-    },
-    spellingAssessment: n.spellingAssessment || {
-      riskLevel: n.nameLatin.length <= 8 ? "Low" : "Medium",
-      officialRecommendedSpelling: n.nameLatin,
-      commonMisspellings: [],
-      reason: "Phonetic Romanization",
-    },
-    uniqueness: n.uniqueness || {
-      score: n.popularityRank === "rare" ? 90 : n.popularityRank === "popular" ? 62 : 78,
-      band: n.popularityRank === "rare" ? "Very Rare Gem" : n.popularityRank === "popular" ? "Popular Classic" : "Moderately Popular",
-      tnEstimatePercentile: n.popularityRank === "rare" ? 92 : 65,
-      diasporaEstimatePercentile: n.popularityRank === "rare" ? 94 : 68,
-    },
-    trendStatus: n.trendStatus || {
-      category: n.popularityRank === "rare" ? "Timeless Heritage" : "Rising Contemporary",
-      isTrending: n.popularityRank === "popular",
-      trendDriver: n.categoryOriginSource || "Cultural Preference",
-    },
-    nicknames: n.nicknames || [n.nameLatin.slice(0, Math.min(4, n.nameLatin.length))],
-    documentFit: n.documentFit || {
-      tamilAksharaCount: n.nameTamil.length,
-      latinCharCount: n.nameLatin.length,
-      fitsStandardForms: n.nameLatin.length <= 18,
-      sampleWithInitial: `S. ${n.nameLatin}`,
-    },
-    siblingPairSuggestions: n.siblingPairSuggestions || ["Kavin", "Iniya", "Aarav"],
-  };
-}
+      return {
+        ...n,
+        nameCategory,
+        numerology: dual,
+        numerologyPythagorean: n.numerologyPythagorean ?? dual.pythagorean.singleDigit,
+        compoundPythagorean: n.compoundPythagorean ?? dual.pythagorean.total,
+        numerologyChaldean: n.numerologyChaldean ?? dual.chaldean.singleDigit,
+        compoundChaldean: n.compoundChaldean ?? dual.chaldean.total,
+        dataConfidence: n.dataConfidence || {
+          estimatedFields: ["uniqueness", "trendStatus", "easeOfCalling", "spellingAssessment", "nicknames", "siblingPairSuggestions"],
+          estimateBasis: "Uniqueness, trend, ease-of-calling and spelling scores are formula-based heuristics.",
+          reviewStatus: n.verificationStatus || "Verified Entry",
+        },
+        multilingualMeanings: n.multilingualMeanings?.length
+          ? n.multilingualMeanings
+          : [
+            { language: "Tamil (தமிழ்)", script: n.nameTamil, meaning: n.meaningTa, isPositive: true },
+            { language: "Global English (International)", script: n.nameLatin, meaning: n.meaningEn, isPositive: true, falseFriendWarning: "None" },
+          ],
+        culturalContext: n.culturalContext || {
+          religion: [nameCategory === "pure_tamil" ? "Secular Tamil" : "Pan-Indian / Cultural"],
+          communityTraditions: [n.categoryOriginSource || "Tamil Nadu Heritage"],
+          geographicalSignificance: ["Tamil Nadu", "Global Diaspora"],
+          sangamLandscapeTinai: nameCategory === "pure_tamil" ? "Kurinji / Marutham" : "Not Applicable (Non-Sangam)",
+        },
+        easeOfCalling: n.easeOfCalling || {
+          overallScore: Math.max(70, 98 - n.nameLatin.length),
+          nativeTamilScore: Math.max(70, 98 - n.nameLatin.length),
+          panIndiaScore: Math.max(75, 96 - n.nameLatin.length),
+          globalScore: n.nameLatin.length <= 8 ? 90 : 78,
+          syllables: [n.nameLatin],
+          phoneticGuide: n.nameLatin,
+          callOutNote: "Clear and natural pronunciation",
+        },
+        spellingAssessment: n.spellingAssessment || {
+          riskLevel: n.nameLatin.length <= 8 ? "Low" : "Medium",
+          officialRecommendedSpelling: n.nameLatin,
+          commonMisspellings: [],
+          reason: "Phonetic Romanization",
+        },
+        uniqueness: n.uniqueness || {
+          score: n.popularityRank === "rare" ? 90 : n.popularityRank === "popular" ? 62 : 78,
+          band: n.popularityRank === "rare" ? "Very Rare Gem" : n.popularityRank === "popular" ? "Popular Classic" : "Moderately Popular",
+          tnEstimatePercentile: n.popularityRank === "rare" ? 92 : 65,
+          diasporaEstimatePercentile: n.popularityRank === "rare" ? 94 : 68,
+        },
+        trendStatus: n.trendStatus || {
+          category: n.popularityRank === "rare" ? "Timeless Heritage" : "Rising Contemporary",
+          isTrending: n.popularityRank === "popular",
+          trendDriver: n.categoryOriginSource || "Cultural Preference",
+        },
+        nicknames: n.nicknames || [n.nameLatin.slice(0, Math.min(4, n.nameLatin.length))],
+        documentFit: n.documentFit || {
+          tamilAksharaCount: n.nameTamil.length,
+          latinCharCount: n.nameLatin.length,
+          fitsStandardForms: n.nameLatin.length <= 18,
+          sampleWithInitial: `S. ${n.nameLatin}`,
+        },
+        siblingPairSuggestions: n.siblingPairSuggestions || ["Kavin", "Iniya", "Aarav"],
+      };
+    }
 
     cachedSeedCatalog = raw
       // Enforce >= 80% confidence gate: only names with confidence >= 0.80 author valid citations
@@ -680,6 +681,7 @@ export function createSocialPoll(input: {
   parentName: string;
   candidateSlugs: string[];
   notes?: string;
+  creatorSecretHash?: string;
 }): SocialPollRecord {
   const store = getStore();
   const token =
@@ -696,6 +698,7 @@ export function createSocialPoll(input: {
     createdAt: new Date().toISOString(),
     closesAt: new Date(Date.now() + 7 * 86400000).toISOString(),
     votes: [],
+    ...(input.creatorSecretHash ? { creatorSecretHash: input.creatorSecretHash } : {}),
   };
   store.polls.unshift(poll);
   saveStore(store);

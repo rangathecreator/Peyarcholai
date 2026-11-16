@@ -1,0 +1,14 @@
+{
+  "id": "T21-1-entitlement-matrix",
+  "title": "Data-driven feature -> min-tier entitlement matrix (Design 09 §1.3)",
+  "targetFile": "app/src/lib/entitlement-matrix.ts",
+  "testFile": "app/src/lib/entitlement-matrix.test.ts",
+  "allowedWriteDirs": ["app/src/lib"],
+  "allowedImports": ["import type { PeyarcholaiTier } from './auth-entitlements';", "NO other imports."],
+  "spec": "Create `app/src/lib/entitlement-matrix.ts` exporting:\n\n1. `export type PaidFeatureKey = 'pronunciation_guide' | 'single_pdf_pristine' | 'family_booklet_pdf' | 'whatsapp_family_poll' | 'unlimited_ai_advisor' | 'parent_surname_resonance_full';`\n\n2. `export interface FeatureEntitlementRule { feature: PaidFeatureKey; minTier: PeyarcholaiTier; labelEn: string; labelTa: string; }`\n\n3. `export const FEATURE_ENTITLEMENT_MATRIX: Record<PaidFeatureKey, FeatureEntitlementRule>` with:\n   - `pronunciation_guide` -> `free`\n   - `single_pdf_pristine` -> `suvadi_49`\n   - `family_booklet_pdf` -> `kudumba_499`\n   - `whatsapp_family_poll` -> `kudumba_499`\n   - `unlimited_ai_advisor` -> `kudumba_499`\n   - `parent_surname_resonance_full` -> `kudumba_499`\n\n4. `export function getRequiredTierForFeature(feature: PaidFeatureKey): PeyarcholaiTier` — returns `FEATURE_ENTITLEMENT_MATRIX[feature].minTier`.\n\n5. `export function canTierAccessFeature(tier: PeyarcholaiTier, feature: PaidFeatureKey): boolean` — compares rank `free(0) < suvadi_49(1) < kudumba_499(2)` against `getRequiredTierForFeature(feature)`.\n\nNo default export. Pure TypeScript, no side effects.",
+  "gates": [
+    { "command": "node --import tsx --test src/lib/entitlement-matrix.test.ts", "cwd": "app", "timeoutSec": 120 }
+  ],
+  "maxAttempts": 4,
+  "timeoutSec": 900
+}

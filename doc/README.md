@@ -39,6 +39,11 @@
 | [03 Architecture & UML](./design/03-Architecture-UML.md) | Component, sequence, class, deployment, and state diagrams |
 | [04 Web MVP System Design](./design/04-Web-MVP-System-Design.md) | Next.js App Router + sharded `.json.gz` + OmniRoute system architecture |
 | [05 Large Catalog Storage & Scaling](./design/05-Large-Catalog-Storage-And-Scaling-Architecture.md) | 393-shard `.json.gz` compression and Vercel `<100k` → GCP `>100k` scaling architecture |
+| [06 Task 17 — Auth, Sessions, Entitlements & Secure WhatsApp Poll](./design/06-Task17-Auth-Session-And-Family-Poll-Design.md) | Threat findings F1–F6, session/DB/API design, `/p/[token]` WhatsApp flow, acceptance tests |
+| [07 Task 16 — Common Platform Adoption](./design/07-Task16-Common-Platform-Adoption-Design.md) | Measured state of `common`, TS/Java contract, first slice, packaging (local link → GitHub Packages) |
+| [08 Task 20 — Reliable Cohort Frequency Data](./design/08-Task20-Reliable-Cohort-Frequency-Data-Design.md) | Removes synthetic noise, evidence grades A/B/C, data sources, corrected collision math |
+| [09 Tasks 21/22 — Review & Hardening](./design/09-Tasks21-22-Review-And-Hardening-Design.md) | Server-side entitlement gating, citation integrity, jyotishi human gate |
+| [10 OmniRoute-Directed Implementation Protocol](./design/10-OmniRoute-Directed-Implementation-Protocol.md) | Claude designs/tests → OmniRoute implements; gates, runner, iteration plan |
 | [Micro-Design: Task 20 Cohort Frequency](./design/micro_designs/01-Task20-Cohort-Frequency-Micro-Design.md) | Multi-factor empirical cohort frequency model |
 | [Micro-Design: Tasks 16, 17, 21, 22, 23 Tradeoffs](./design/micro_designs/02-Tasks16-17-21-22-23-Design-Tradeoffs.md) | Architecture tradeoffs & selected options (JDK21, PostgreSQL, Blind Poll, Cloudflare Tunnel) |
 | [Micro-Design: Task 36 Cohort Frequency V2](./design/micro_designs/03-Task36-Empirical-Cohort-Frequency-V2-Design.md) | Classroom collision percentage (`1 in ~10 classrooms`) & whole-number school counts |

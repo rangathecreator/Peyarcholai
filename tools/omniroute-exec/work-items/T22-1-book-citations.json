@@ -1,0 +1,15 @@
+{
+  "id": "T22-1-book-citations",
+  "title": "Add author, title, year, edition, publicDomainBasis to NUMEROLOGY_METHOD_CITATIONS (AC-22-01)",
+  "targetFile": "app/src/core/book-citations.ts",
+  "testFile": "app/src/core/book-citations.test.ts",
+  "allowedWriteDirs": ["app/src/core"],
+  "allowedImports": ["NO external imports."],
+  "contextFiles": ["app/src/core/book-citations.ts"],
+  "spec": "Update `app/src/core/book-citations.ts`:\n1. Extend `MethodCitation` with:\n   - `author: string`\n   - `title: string`\n   - `year: number | string`\n   - `edition: string`\n   - `publicDomainBasis: string`\n2. Populate these 5 fields on `chaldean` (Cheiro / Count Louis Hamon, Book of Numbers, 1926, Public Domain pre-1928 / >60 yrs post-1936), `pythagorean` (Sepharial / Walter Gorn Old, The Kabala of Numbers, 1911, Public Domain), and `katapayadi` (Traditional South Indian Katapayadi Sankhya Canon, Classical, Public Domain traditional mathematical cipher).\n3. Preserve ALL existing exports, types, `NUMEROLOGY_METHOD_CITATIONS` fields, and all 27 entries of `NAKSHATRA_CANONICAL_ATTRIBUTES` verbatim without dropping any.",
+  "gates": [
+    { "command": "node --import tsx --test src/core/book-citations.test.ts src/core/core.test.ts", "cwd": "app", "timeoutSec": 120 }
+  ],
+  "maxAttempts": 3,
+  "timeoutSec": 900
+}

@@ -1,9 +1,36 @@
 # பெயர்ச்சோலை (Peyarcholai) — Master Implementation & QA Tracker
 
-**Date:** 2026-11-16 21:18 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
+**Date:** 2026-11-16 22:10 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
 **Live Production:** `https://peyar.donorconnect.in` (`150,024` active / `150,650` raw names across 393 `.json.gz` shards)  
-**Test Suite:** `46/46` Tests PASS across 13 Suites | **Production Build:** Next.js 15.5.29 Clean PASS (114 routes)  
+**Test Suite:** `61/61` Tests PASS across 17 Suites (+ `22/22` in `common/@platform/auth`) | **Production Build:** Next.js 15.5.29 Clean PASS (115 routes)  
 **Six-Sigma Guardrails:** [`06-Six-Sigma-Quality-Guardrails.md`](../testing/06-Six-Sigma-Quality-Guardrails.md) (`SG-01`–`SG-05` mandatory on every iteration)
+
+---
+
+## 0. 🟡 Blocked — Awaiting Owner Input (answer here; next iteration picks up unblocked items)
+
+> **How to use:** write your answer in the **Your Answer** column (or reply in chat). Secrets (keys/tokens/passwords) go in `.env.local` / Vercel env vars — **never in this file**; write `provided in .env.local` instead. Once answered, set Status to `✅ Answered` and the dependent items move to `🔵 Ready`.
+
+| ID | Blocks | Input needed | Suggested default / how to get it | Your Answer | Status |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| **B-01** | Task 29A (`LEG-07`), T17-3 receipts | Legal entity / owner name + registered city & address (merchant footer, invoices) | Sole-proprietor name + city is enough for launch | | 🟡 Open |
+| **B-02** | Task 29A, `/contact` | Official support email | e.g. `support@donorconnect.in` | | 🟡 Open |
+| **B-03** | Task 29A | GST status: are ₹49 / ₹499 GST-inclusive, or below the threshold? | Below threshold ⇒ state "no GST charged"; confirm with your CA | | 🟡 Open |
+| **B-04** | Task 29A | Refund policy: non-refundable after PDF/poll generated, or 7-day refund for duplicate/technical failure? | 7-day refund for duplicate charge/technical failure only | | 🟡 Open |
+| **B-05** | Task 29B, T17-7 | DPDP Grievance Officer name + contact email (published in `/privacy`) | Owner themself is acceptable for a small data fiduciary | | 🟡 Open |
+| **B-06** | Task 29C | Google AdSense Publisher ID (`pub-…`) — or defer `ads.txt` until AdSense approval | Defer if not yet approved | | 🟡 Open |
+| **B-07** | Task 17B, T17-2/3/4, T20-4 | Neon PostgreSQL `DATABASE_URL` (pooled) | Create free Neon project (Mumbai/Singapore region); put in `.env.local` + Vercel | | 🟡 Open |
+| **B-08** | Task 17B, T17-3 | Google OAuth client ID + secret (redirect: `https://peyar.donorconnect.in/api/auth/callback/google` + `http://localhost:3020/...`) | Google Cloud Console → Credentials; I generate `AUTH_SECRET` myself | | 🟡 Open |
+| **B-09** | T17-3 (magic link) | SMTP / Resend API key + verified sender (e.g. `login@donorconnect.in`) | Resend free tier (3k mails/mo) | | 🟡 Open |
+| **B-10** | T16-2 / T16-5 | GitHub remote name for `common` + `NPM_TOKEN` (packages: write) | `rangathecreator/platform-common`; local `git init` proceeds without it | | 🟡 Open (T16-2 local part unblocked) |
+| **B-11** | Task 23 | HP Z4: install OmniRoute + `cloudflared`; Cloudflare account/zone access for `omniroute.donorconnect.in`; create Access **service token** (ID/secret) | Follow [`QuickStart §7`](../../../LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md) + [`04-OmniRoute-Cloudflare-Tunnel-Guide.md`](../deployment/04-OmniRoute-Cloudflare-Tunnel-Guide.md); needs your Cloudflare login | | 🟡 Open |
+| **B-12** | Live paid checkout (writes `entitlements`; T17-3, T21-2) | Payment gateway account: Razorpay (or Stripe) key ID/secret + webhook secret; business KYC completed | Razorpay (INR/UPI); test-mode keys are enough to build | | 🟡 Open |
+| **B-13** | T22-4 (human gate) | Qualified jyotishi reviewer for the 27×4 Nakshatra/Padam table (name, credential, date of sign-off) | Required before any "Verified" claim on Nakshatra data (SS-07 C-08) | | 🟡 Open |
+| **B-14** | T22-5 | Reference Panchangam dates (≥ 10 birth date/time/place with published Nakshatra & Pada) | Any Vakya/Thirukkanitha Panchangam you trust; I can propose dates to verify | | 🟡 Open |
+| **B-15** | T21-1/T21-2, Design 09 §1.4 | Decision: Task 32 parent-surname resonance — keep fully ₹499, or free teaser (number only) + paid breakdown? | Teaser (better conversion) | | 🟡 Open |
+| **B-16** | T20-6 (data-gated, not a question) | ≥ 100 names with measured class-collision survey data (accrues after B-07 + T20-4 ship) | Collect via in-app micro-survey; until then all names are Grade C | | ⏳ Waiting on traffic |
+
+**Unblocked right now (no input needed):** T17-0, T17-0b, T17-F4, T16-1 (running), T16-2 (local git), T16-4, T17-5, T20-1, T20-5, T21-1, T22-1, T22-2, T22-3.
 
 ---
 
@@ -15,15 +42,15 @@
 | **Task 9–13: Scaling, Custom Domain & Deployment** | Scaled catalog, configured `peyar.donorconnect.in` custom domain via Cloudflare DNS + Vercel (`vercel.json`, `next.config.mjs`, `.env.production.example`), and authored `03-DonorConnect-Subdomain-Beta-Deployment-Guide.md`. | ✅ **Completed** | None | — |
 | **Task 14: 3-Tier Cultural Classification & 150K Catalog** | Scaled catalog to `150,650` raw / `150,024` active names across 3 categories (`pure_tamil`: 50,024; `tamilnadu_usage`: 50,000; `other_heritage`: 50,000) with `categoryOriginSource` + bilingual meanings; compressed 393 shards to `.json.gz` (`22.94 MB`). | ✅ **Completed** | None | — |
 | **Task 15: Mobile Responsiveness (`peyar.donorconnect.in`)** | Added `postcss.config.js`, `@tailwind` directives in `globals.css`, `viewport` export, and responsive header/padding in `layout.tsx`. | ✅ **Completed** | None | — |
-| **Task 16: Reusable Common Platform Modules (`E:\project\Apps\common\`)** | Design & build reusable **Spring Boot + Java + TypeScript** common modules (**A:** Auth/Account, **B:** Logging, **C:** Metrics & Dashboard, **D:** Contact Us, **E:** AdSense, **F:** Payment Gateway, **G:** Monitoring Dashboard, **H:** Admin Config & Controls, **I:** Vercel `<100k` → GCP `>100k` Auto-Scaling Router, **J:** Authorization/RBAC + Feature Gates, **K:** i18n/l10n/Translation, plus **L–R:** Feature Flags, Notifications, Audit/DPDP, Rate Limiting, Storage, SEO, Scaffolder CLI). Lift & shift reusable patterns from `E:\project\donorconnect\codebase` into `E:\project\Apps\common\code\` & `doc\`. | 🔵 **Ready for Iteration** | None | **16A:** JDK 21 LTS.<br>**16B:** Option A — PostgreSQL (Neon / Supabase / Cloud SQL).<br>**16C:** Hybrid Phased — Local Monorepo (`mvn install` / `npm link` or workspace) in Phase 1, then tagged releases to GitHub Packages for Vercel/GCP CI. |
-| **Task 17: WhatsApp Shortlist & Blind Family Vote-Out Poll (₹499 Paid Only)** | Restrict WhatsApp Poll sharing to ₹499 paid users: **(I)** Per-user persistent shortlist surviving logout/login; **(II)** Shortlist items auto-loaded in `"Create Family Vote-Out Poll"`; **(III)** Blind voting — participants cannot see other participants' selections or comments; **(IV)** Enforce max **10** shortlisted names per poll. Split into **17A** & **17B** below. | 🟡 **Server Blind-Poll & Max-10 Done — Split into 17A & 17B** | See **17A** & **17B** below. | **Option A:** PostgreSQL (`DATABASE_URL`) + NextAuth + Server-Side Blind Poll API (`poll-security.ts` & `/api/polls` enforce blind stripping & `MAX 10`). |
-| **Task 17A: Auto-Sync Shortlist → Family Poll, WhatsApp Share & Blind UI** | Fix Family Poll & WhatsApp share so it automatically uses the user's selected `shortlist` (instead of defaulting to `sample-tamil-poll`), lists shortlisted names in the `wa.me` share text, enforces `MAX 10` shortlist chips in UI, and hides the Consensus Leaderboard for non-creator participants. | ✅ **Completed** | None | Implemented in `NamingGuruDashboard.tsx` (Iteration `2026-11-15-02`). |
+| **Task 16: Reusable Common Platform Modules (`E:\project\Apps\common\`)** | Design & build reusable **Spring Boot + Java + TypeScript** common modules (**A:** Auth/Account, **B:** Logging, **C:** Metrics & Dashboard, **D:** Contact Us, **E:** AdSense, **F:** Payment Gateway, **G:** Monitoring Dashboard, **H:** Admin Config & Controls, **I:** Vercel `<100k` → GCP `>100k` Auto-Scaling Router, **J:** Authorization/RBAC + Feature Gates, **K:** i18n/l10n/Translation, plus **L–R:** Feature Flags, Notifications, Audit/DPDP, Rate Limiting, Storage, SEO, Scaffolder CLI). Lift & shift reusable patterns from `E:\project\donorconnect\codebase` into `E:\project\Apps\common\code\` & `doc\`. | 🔵 **Design Adopted — Iteration `2026-11-16-02` (T16-1…T16-5)** | None | **16A:** JDK 21 LTS.<br>**16B:** Option A — PostgreSQL (Neon / Supabase / Cloud SQL).<br>**16C:** Hybrid Phased — Local Monorepo (`mvn install` / `npm link` or workspace) in Phase 1, then tagged releases to GitHub Packages for Vercel/GCP CI. |
+| **Task 17: WhatsApp Shortlist & Blind Family Vote-Out Poll (₹499 Paid Only)** | Restrict WhatsApp Poll sharing to ₹499 paid users: **(I)** Per-user persistent shortlist surviving logout/login; **(II)** Shortlist items auto-loaded in `"Create Family Vote-Out Poll"`; **(III)** Blind voting — participants cannot see other participants' selections or comments; **(IV)** Enforce max **10** shortlisted names per poll. Split into **17A** & **17B** below. | 🟠 **Reopened — security gaps F1–F3 found; design adopted ([06](../design/06-Task17-Auth-Session-And-Family-Poll-Design.md)); work items T17-0…T17-8** | See **17A** & **17B** below. | **Option A:** PostgreSQL (`DATABASE_URL`) + NextAuth + Server-Side Blind Poll API (`poll-security.ts` & `/api/polls` enforce blind stripping & `MAX 10`). |
+| **Task 17A: Auto-Sync Shortlist → Family Poll, WhatsApp Share & Blind UI** | Fix Family Poll & WhatsApp share so it automatically uses the user's selected `shortlist` (instead of defaulting to `sample-tamil-poll`), lists shortlisted names in the `wa.me` share text, enforces `MAX 10` shortlist chips in UI, and hides the Consensus Leaderboard for non-creator participants. | 🟠 **UI done; reopened** — creator role is client-controlled (`?viewer=creator`); closed by T17-0 → T17-4 | None | UI implemented in `NamingGuruDashboard.tsx` (Iteration `2026-11-15-02`); server trust fix tracked in Design 06. |
 | **Task 17B: PostgreSQL + NextAuth Cross-Session Shortlist & Poll DB** | Wire `DATABASE_URL` (Neon PostgreSQL) + NextAuth (Google / Email Magic-Link) for persistent cross-session shortlists and polls. | 🟡 **Pending Env Setup (`DATABASE_URL` + NextAuth)** | None *(Requires `DATABASE_URL` & OAuth/SMTP secrets in `.env.local`/Vercel)* | **Option A** recorded. |
 | **Task 18: Printable Quality & Comprehensive Name Report** | Upgrade the printable / PDF name report so each selected name includes Pythagorean & Chaldean numerology values, detailed numerology prediction, Tamil & English meanings, etymology/roots, Nakshatra/Padam, cultural category, origin/lexicon source, and all available metadata in a clean print-ready layout. | ✅ **Completed** | None | — |
 | **Task 19: Lexicon Headword Source URL as Clickable Link** | Render Lexicon Headword Source URLs (`dsal.uchicago.edu/...`, `tamilvu.org/...`) as clean, human-readable clickable hyperlinks (`<a>` with `target="_blank" rel="noopener noreferrer"`) instead of printing raw long URLs in modals, detail pages, and print views. | ✅ **Completed** | None | — |
-| **Task 20: Meaningful Empirical Cohort Frequency & Classroom Peers (40 Students)** | Replace the generic cohort frequency / `"Classroom Peers (40 Students)"` calculation with a differentiated, multi-factor model (cultural category base rate, syllable count, phonetic/prefix popularity, classical vs modern coinage rarity, and regional era weighting) so every name produces distinct, realistic, explainable cohort metrics. Detailed micro-design: [`01-Task20-Cohort-Frequency-Micro-Design.md`](../design/micro_designs/01-Task20-Cohort-Frequency-Micro-Design.md). | ✅ **Completed** | None | — |
-| **Task 21: End-User ₹499 Paid Subscription Value Audit & Recommendations** | Audit all implemented features from the perspective of a parent paying ₹499; validate quality, polish, and value-for-money; propose feasible high-impact additions in [`02-Paid-499-Value-Audit.md`](../plan/02-Paid-499-Value-Audit.md) (Tasks 31–34 below). | ✅ **Audit Complete — All Recommendations Approved (Tasks 31–34)** | None | Proceed to implement all recommended features (**Tasks 31–34**) per priority order in [`02-Tasks16-17-21-22-23-Design-Tradeoffs.md`](../design/micro_designs/02-Tasks16-17-21-22-23-Design-Tradeoffs.md). |
-| **Task 22: Book-Referenced Astrology & Numerology Predictions** | Enhance astrology and numerology predictions with deeper number-combination analysis grounded in standard numerology & Tamil astrology books/methodologies (e.g., Cheiro's *Book of Numbers*, Sepharial, Chaldean/Pythagorean compound tables, *Katapayadi*, *Vakya Panchangam* Natchathiram), taking a feasible, verifiable approach. | ✅ **Completed** | None | **Option A:** Structured Original Synthesis Tables + Explicit Method Citations (`book-citations.ts` wired into Numerology & Nakshatra tabs). |
+| **Task 20: Meaningful Empirical Cohort Frequency & Classroom Peers (40 Students)** | Replace the generic cohort frequency / `"Classroom Peers (40 Students)"` calculation with a differentiated, multi-factor model (cultural category base rate, syllable count, phonetic/prefix popularity, classical vs modern coinage rarity, and regional era weighting) so every name produces distinct, realistic, explainable cohort metrics. Detailed micro-design: [`01-Task20-Cohort-Frequency-Micro-Design.md`](../design/micro_designs/01-Task20-Cohort-Frequency-Micro-Design.md). | 🟠 **Reopened — data reliability: synthetic hash noise to be removed, bands + evidence grades ([08](../design/08-Task20-Reliable-Cohort-Frequency-Data-Design.md)); T20-1…T20-6** | None | — |
+| **Task 21: End-User ₹499 Paid Subscription Value Audit & Recommendations** | Audit all implemented features from the perspective of a parent paying ₹499; validate quality, polish, and value-for-money; propose feasible high-impact additions in [`02-Paid-499-Value-Audit.md`](../plan/02-Paid-499-Value-Audit.md) (Tasks 31–34 below). | 🟠 **Features delivered; server-side entitlement gating reopened ([09](../design/09-Tasks21-22-Review-And-Hardening-Design.md)); T21-1…T21-3** | None | Proceed to implement all recommended features (**Tasks 31–34**) per priority order in [`02-Tasks16-17-21-22-23-Design-Tradeoffs.md`](../design/micro_designs/02-Tasks16-17-21-22-23-Design-Tradeoffs.md). |
+| **Task 22: Book-Referenced Astrology & Numerology Predictions** | Enhance astrology and numerology predictions with deeper number-combination analysis grounded in standard numerology & Tamil astrology books/methodologies (e.g., Cheiro's *Book of Numbers*, Sepharial, Chaldean/Pythagorean compound tables, *Katapayadi*, *Vakya Panchangam* Natchathiram), taking a feasible, verifiable approach. | 🟠 **Delivered; hardening — citation integrity, tests & human gate ([09](../design/09-Tasks21-22-Review-And-Hardening-Design.md)); T22-1…T22-5** | None | **Option A:** Structured Original Synthesis Tables + Explicit Method Citations (`book-citations.ts` wired into Numerology & Nakshatra tabs). |
 | **Task 23: Install & Expose OmniRoute Local Server on HP Workstation (`SetupNotes` + Cloudflare Tunnel)** | Install OmniRoute local server (`:20128`) directly on the **HP Z4 G4 Workstation** (`100.105.146.7` via Tailscale; `llama.cpp` ports `11434`–`11437`), update/document the HP Workstation installation & connect instructions at [`antigravity_custom_model_setup-QuickStartGuide.md`](../../../../LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md), and expose via Cloudflare Tunnel (`cloudflared`) + Zero-Trust & Bearer Auth (`OMNIROUTE_BASE_URL`) so live applications (**KidNamingApp** and **DonorConnect**) can call it for AI Service features. Ref: [`02-Tasks16-17-21-22-23-Design-Tradeoffs.md`](../design/micro_designs/02-Tasks16-17-21-22-23-Design-Tradeoffs.md) (Task 23, Option A). | 🟡 **Zero-Trust Client & Tunnel Guide Ready — Pending HP Z4 Setup & `SetupNotes` Update** | None *(Install OmniRoute on HP Z4, update `../../../../LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md`, and execute `04-OmniRoute-Cloudflare-Tunnel-Guide.md`)* | **Option A:** Cloudflare Tunnel (`cloudflared`) + Zero-Trust Service Tokens & Bearer Auth (`omniroute.ts` updated for `CF_ACCESS_CLIENT_ID`/`SECRET` + guide created). |
 | **Task 24: Customer Value Proposition & Competitor Analysis (`doc/plan/`)** | Document in `E:\project\Apps\KidNamingApp\doc\plan\` why parents choose Peyarcholai over direct AI search (ChatGPT/Gemini) and existing baby-name portals, including a structured competitor & existing-system matrix. | ✅ **Completed** | None | — |
 | **Task 25: Ecosystem / Framework Comparison for Common Modules** | Research and compare existing ecosystems/frameworks (Spring Modulith, JHipster, Turborepo SaaS kits, Refine, Backstage, Clerk/Supabase/Stripe stacks) against our `Spring Boot + Java + TypeScript` common platform, with build-vs-adopt recommendations. | ✅ **Completed** | None | — |
@@ -62,3 +89,74 @@
 
 - **Cycles #1–#14 (2026-11-13 08:55–21:55 IST):** Scaled catalog to `150,650` raw / `150,024` active records (`50,024` `pure_tamil`, `50,000` `tamilnadu_usage`, `50,000` `other_heritage`), verified `corpus-gender-audit.mjs` (`0` discrepancies), `npm test` (`35/35`), and `npm run build` (`112/112` routes).
 - **Release Optimization (`51056b6`, `0e45207`):** Compressed 393 shards to `.json.gz` (`535.48 MB` → `22.94 MB`), removed polluted `package-lock.json`, and deployed live to `https://peyar.donorconnect.in`.
+
+
+---
+
+## 4. Design-Driven Work Items — Tasks 16, 17, 20, 21, 22 (Iteration `2026-11-16-02`)
+
+**Designs:** [06 Task 17](../design/06-Task17-Auth-Session-And-Family-Poll-Design.md) · [07 Task 16](../design/07-Task16-Common-Platform-Adoption-Design.md) · [08 Task 20](../design/08-Task20-Reliable-Cohort-Frequency-Data-Design.md) · [09 Tasks 21/22](../design/09-Tasks21-22-Review-And-Hardening-Design.md) · [10 OmniRoute protocol](../design/10-OmniRoute-Directed-Implementation-Protocol.md)
+**Executor:** `Claude` = design/tests/review · `OmniRoute` = implements one target file per item against read-only tests (runner: `tools/omniroute-exec/run-work-item.mjs`). Items marked **Claude** are cross-file integration or human-gated and are not delegated.
+**All items:** `Open Questions: None` unless the *Needs* column says otherwise. Branch `dev` only; `npm test` 100% + `npm run build` 0 errors before push (SG-01…SG-05).
+
+### 4.1 Security-critical (do first)
+
+| ID | Executor | Deliverable | Strict acceptance criteria | Needs | Status |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| **T17-0** | OmniRoute → Claude reviewed & wired | `app/src/lib/poll-access.ts`: creator-secret issue/hash/verify (constant-time), `resolvePollViewer`, `sanitizeVoterInput`. **Wired:** `createSocialPoll` stores `creatorSecretHash`; `POST /api/polls` returns `creatorSecret` once; `GET /api/polls` uses header `x-creator-secret`, **ignores `?viewer=`**; vote route uses `sanitizeVoterInput`; dashboard stores secret in `localStorage` and sends header; `poll-security.ts` strips `creatorSecretHash`. | `poll-access.test.ts` 10/10 PASS (AC-17-01/02/06) · `creatorSecretHash` stripped · `npm test` 61/61 & `build` green | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
+| **T17-0b** | Claude | Remove client-trusted `tier` gate: `POST /api/polls` and `/api/reports/*` (`download-pdf`, `family-booklet`) **fail closed** for paid actions until sessions exist, unless `ALLOW_UNGATED_DEV=true` and `NODE_ENV!=='production'` | `?tier=` / `body.tier` removed from all API gates | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
+| **T17-F4** | Claude | `NODE_ENV=production` without `DATABASE_URL` ⇒ `/api/polls` returns `503` (no silent file-store) | `isProdMissingDb()` guard in `/api/polls` | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
+
+### 4.2 Task 16 — Common platform (`E:\project\Apps\common`)
+
+| ID | Executor | Deliverable | Strict acceptance criteria | Needs | Status |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| **T16-1** | OmniRoute → Claude reviewed | `@platform/auth` `src/access.ts`: `hashToken`, `generateToken`, `activeTier`, `AuthError`, `requireTier`, `resolveResourceRole` (re-exported from `index.ts`) | `access.test.ts` + `index.test.ts` 22/22 PASS · `tsc` clean · Web Crypto only | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
+| **T16-2** | Claude | `git init` in `common`, `.gitignore`, initial commit, tag `auth-v0.2.0`, fix `@common/*`→`@platform/*` doc naming | AC-16-01, AC-16-06 | Remote repo name (suggest `rangathecreator/platform-common`) | ✅ **Local Git + Tag Done** (remote 🟡 B-10) |
+| **T16-3** | Claude | Link `@platform/auth` into KidNamingApp (`file:` + `transpilePackages`); replace local gating helpers with `@platform/auth` | AC-16-03/04 (grep test + build) | — | 🔵 Ready |
+| **T16-4** | OmniRoute | `common/contracts/session.schema.json` + TS contract test; `common/db/V1__users_sessions_entitlements.sql` (Design 06 §4) | AC-16-05; SQL applies cleanly to a scratch Postgres | — | 🔵 Ready |
+| **T16-5** | Claude | Publish to GitHub Packages; Vercel build from clean clone | Phase-2 gate in Design 07 §4 | GitHub PAT / `NPM_TOKEN` | 🟡 Needs owner |
+
+### 4.3 Task 17 — Login, sessions, entitlements, WhatsApp poll
+
+| ID | Executor | Deliverable | Strict acceptance criteria | Needs | Status |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| **T17-1** | Claude | Repository interface `PollStore`/`SessionStore`/`EntitlementStore` + in-memory impl used by tests | Same contract tests run against in-memory and Postgres impls | T16-3 | ⏳ |
+| **T17-2** | OmniRoute | `app/src/lib/db/schema.sql` migration `V1` for `sessions/entitlements/shortlists/polls/poll_votes`; `pg` repository impl | AC-17-06 (10-candidate CHECK, unique voter token) against scratch Postgres | Neon `DATABASE_URL` for prod; local Postgres/pg-mem for tests | ⏳ |
+| **T17-3** | Claude + OmniRoute (UI) | Auth.js (Google + Email magic link), `/login`, `/account` (tier, expiry, shortlist, polls, export/delete), `__Host-pc_session` cookie, logout, sign-out-everywhere | AC-17-07; rate limits 5/h/email · 20/h/IP | Google OAuth client, SMTP/Resend key | 🟡 Needs owner |
+| **T17-4** | Claude + OmniRoute | `/p/[inviteToken]` lightweight SSR vote page with OG tags; `POST /api/polls/[token]/vote` with `pc_voter` cookie; owner-only tally; max 50 voters; close/expire | AC-17-02/05/06/08 (375px < 1.5 s, no h-scroll) | T17-1 | ⏳ |
+| **T17-5** | OmniRoute | Share helper: Web Share API → `wa.me` fallback; message builder with Tamil+Roman names and invite URL | Unit tests on message (≤ 2000 chars, URL-encoded, ≤ 10 names) | — | 🔵 Ready |
+| **T17-6** | Claude | Server shortlist sync (`GET/PUT /api/shortlist`) + merge-on-login from `localStorage` | Union, cap 100, idempotent (test) | T17-3 | ⏳ |
+| **T17-7** | Claude | DPDP: `DELETE /api/me`, data export, 30-day post-close purge job, consent line on vote page | Task 29B inputs; AC: erase cascades (integration) | Grievance-officer details (29B) | 🟡 Needs owner |
+| **T17-8** | Claude | E2E + Six-Sigma sign-off for Task 17 | All AC-17-xx pass; SG-01…05 ticked | all above | ⏳ |
+
+### 4.4 Task 20 — Reliable cohort frequency
+
+| ID | Executor | Deliverable | Strict acceptance criteria | Needs | Status |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| **T20-1** | OmniRoute (test-first) | `src/data/frequency-priors.json` (each constant has `source`+`lastReviewed`); remove `deterministicHash`; add `{low,high,grade}` bands to `EmpiricalRarityScore` | AC-20-01/02/04; Task 8/36 tests updated, none deleted | — | 🔵 Ready |
+| **T20-2** | OmniRoute | Collision formula `1-(1-p)^(m-1)`, same-gender pool `m=round(classSize×0.5)` | AC-20-03 property test (1,000 random p) | T20-1 | ⏳ |
+| **T20-3** | Claude | UI/PDF render band + grade chip + "How is this estimated?" disclosure; no single-point % | AC-20-05 grep + snapshot | T20-1 | ⏳ |
+| **T20-4** | Claude | Anonymous class-collision micro-survey API + UI (k-anonymity ≥ 5) | AC-20-06 | T17-2 (DB) | ⏳ |
+| **T20-5** | OmniRoute | `scripts/wikidata-name-counts.mjs` pilot on 200 names → coverage & correlation report | AC-20-07 decision recorded in Design 08 | network access | 🔵 Ready |
+| **T20-6** | Claude | Calibration job: fit factors on Grade-A names; ship only if CV ρ ≥ 0.5 | AC-20-01..02 re-verified | ≥ 100 Grade-A names | ⏳ Data-gated |
+
+### 4.5 Tasks 21 & 22 — Hardening
+
+| ID | Executor | Deliverable | Strict acceptance criteria | Needs | Status |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| **T21-1** | OmniRoute → Claude reviewed | `src/lib/entitlement-matrix.ts` feature→min-tier table + tests | `entitlement-matrix.test.ts` 3/3 PASS (AC-21-03) | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
+| **T21-2** | Claude | Replace report/advisor gates with `activeTier(session)` | AC-21-02 | T17-3 | ⏳ |
+| **T21-3** | Claude | Funnel metrics (paywall view → login → purchase), no PII | `/api/metrics` test | T17-3 | ⏳ |
+| **T22-1** | Claude | `book-citations.ts` schema: `author,title,year,edition,publicDomainBasis`; migrated existing citations | `book-citations.test.ts` 2/2 PASS (AC-22-01) | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
+| **T22-2** | OmniRoute | Katapayadi ≥ 20 documented-example tests | AC-22-02 | source list recorded by Claude | 🔵 Ready |
+| **T22-3** | Claude | "Editorial summary" label + disclaimer on all prediction blocks; render tests | AC-22-03 | — | 🔵 Ready |
+| **T22-4** | **Human** | Qualified jyotishi sign-off for Nakshatra/Padam table; recorded in `doc/legal/` | AC-22-04 | Product owner arranges reviewer | 🟡 Needs owner |
+| **T22-5** | OmniRoute | ≥ 10 Panchangam regression vectors for `calculateNakshatra` with tolerance | AC-22-05 | reference dates from a published Panchangam | 🟡 Needs reference data |
+
+### 4.6 Inputs needed from the product owner — **tracked in [§0 Blocked register](#0--blocked--awaiting-owner-input-answer-here-next-iteration-picks-up-unblocked-items) (B-07…B-15)**; non-blocking for 🔵 items
+
+1. **Neon `DATABASE_URL`**, **Google OAuth client ID/secret**, **SMTP/Resend API key** → unblock T17-2/T17-3/T17-4 in production.
+2. **GitHub remote name + `NPM_TOKEN`** for `common` → unblock T16-5.
+3. **Jyotishi reviewer** (T22-4) and **reference Panchangam dates** (T22-5).
+4. **Task 32 positioning:** keep resonance as ₹499, or show a free teaser (default proposed: teaser) — Design 09 §1.4.

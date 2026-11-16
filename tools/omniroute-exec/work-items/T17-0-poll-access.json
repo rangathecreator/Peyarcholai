@@ -1,0 +1,14 @@
+{
+  "id": "T17-0-poll-access",
+  "title": "Interim poll creator-secret access control + voter input sanitising (closes F1 before login ships)",
+  "targetFile": "app/src/lib/poll-access.ts",
+  "testFile": "app/src/lib/poll-access.test.ts",
+  "allowedWriteDirs": ["app/src/lib"],
+  "allowedImports": ["import { createHash, randomBytes, timingSafeEqual } from 'node:crypto';", "NO other imports. NO npm packages."],
+  "spec": "Create `app/src/lib/poll-access.ts` exporting EXACTLY these named functions (strict TypeScript, Node 20+):\n\n1. `issueCreatorSecret(): string` — `randomBytes(16).toString('hex')` (32 lowercase hex chars).\n\n2. `hashSecret(secret: string): string` — SHA-256 of the UTF-8 secret, lowercase hex (64 chars).\n\n3. `verifyCreatorSecret(storedHash: string | undefined, presented: string | null | undefined): boolean` — returns false unless BOTH are non-empty strings. Compute `hashSecret(presented)` and compare with `storedHash` in CONSTANT TIME: both are hex strings, convert to Buffers (`Buffer.from(x, 'hex')`), return false if lengths differ, else `timingSafeEqual`. Passing the stored hash itself as `presented` must return false (it is hashed again). Never throw (wrap in try/catch and return false).\n\n4. `resolvePollViewer(poll: { creatorSecretHash?: string }, presentedSecret: string | null | undefined): 'creator' | 'participant'` — 'creator' only if `verifyCreatorSecret(poll.creatorSecretHash, presentedSecret)` is true; otherwise 'participant'. A poll without `creatorSecretHash` is never 'creator'.\n\n5. `sanitizeVoterInput(input: { voterName?: unknown; comment?: unknown; lovedSlugs?: unknown; removedSlugs?: unknown }, allowedSlugs: readonly string[]): { voterName: string; comment: string; lovedSlugs: string[]; removedSlugs: string[] }`\n   - `voterName`: if not a string, or empty after trim => 'Family Member'. Otherwise trimmed, control characters removed, then truncated to 60 characters.\n   - `comment`: if not a string => ''. Remove control characters (regex `/[\\u0000-\\u0008\\u000B\\u000C\\u000E-\\u001F\\u007F]/g`, keep tab/newline), then truncate to 280 characters. (Do NOT trim away the length cap: the 280-char test input is 3 junk chars plus 500 'z'.)\n   - `lovedSlugs` / `removedSlugs`: if not an array => []. Keep only string entries, lowercase them, keep only those present in `allowedSlugs` (compare lowercase), deduplicate preserving first-seen order.\n   - A slug present in both lists is kept in `lovedSlugs` only (loved wins).\n\nNo default export. No other exports. No console output. No side effects at import time.",
+  "gates": [
+    { "command": "node --import tsx --test src/lib/poll-access.test.ts", "cwd": "app", "timeoutSec": 240 }
+  ],
+  "maxAttempts": 4,
+  "timeoutSec": 900
+}

@@ -597,12 +597,24 @@ export default function NamingGuruDashboard({
     ]
   );
 
-  // Load Poll data when switching to poll tab
+  // Load Poll data when switching to poll tab (T17-0: use x-creator-secret header, never ?viewer=)
   useEffect(() => {
     if (activeTab === "poll" && createdPollToken) {
-      fetch(`/api/polls?token=${encodeURIComponent(createdPollToken)}&viewer=${pollViewerRole}`)
+      let secret = "";
+      try {
+        const map = JSON.parse(localStorage.getItem("namingguru_poll_secrets") || "{}") as Record<string, string>;
+        secret = map[createdPollToken] || "";
+      } catch {
+        secret = "";
+      }
+      fetch(`/api/polls?token=${encodeURIComponent(createdPollToken)}`, {
+        headers: secret ? { "x-creator-secret": secret } : undefined,
+      })
         .then((r) => r.json())
         .then((d) => {
+          if (d.viewerRole === "creator" || d.viewerRole === "participant") {
+            setPollViewerRole(d.viewerRole);
+          }
           if (d.poll) setActivePollData(d.poll);
           if (Array.isArray(d.candidates)) setPollCandidates(d.candidates);
         })
@@ -616,7 +628,7 @@ export default function NamingGuruDashboard({
         })
         .catch(() => {});
     }
-  }, [activeTab, createdPollToken, pollViewerRole]);
+  }, [activeTab, createdPollToken]);
 
   async function handleRunAdvisor(e: React.FormEvent) {
     e.preventDefault();
@@ -642,10 +654,6 @@ export default function NamingGuruDashboard({
   async function handleCreatePoll(e: React.FormEvent) {
     e.preventDefault();
     const candidateSlugs = shortlist.length > 0 ? shortlist.slice(0, 10) : ["yazhini", "kavin"];
-    const tier =
-      typeof window !== "undefined"
-        ? localStorage.getItem("namingguru_sub_tier") || "free"
-        : "free";
     const res = await fetch("/api/polls", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -654,12 +662,20 @@ export default function NamingGuruDashboard({
         parentName: pollParentName,
         candidateSlugs,
         notes: pollNotes,
-        tier,
       }),
     });
     const data = await res.json();
     if (data.poll) {
-      setPollViewerRole("creator");
+      if (data.creatorSecret && typeof window !== "undefined") {
+        try {
+          const map = JSON.parse(localStorage.getItem("namingguru_poll_secrets") || "{}") as Record<string, string>;
+          map[data.poll.token] = data.creatorSecret;
+          localStorage.setItem("namingguru_poll_secrets", JSON.stringify(map));
+        } catch {
+          /* storage optional */
+        }
+      }
+      setPollViewerRole(data.viewerRole === "creator" ? "creator" : "participant");
       setCreatedPollToken(data.poll.token);
       setActivePollData(data.poll);
       if (Array.isArray(data.candidates)) setPollCandidates(data.candidates);
