@@ -186,6 +186,7 @@ export default function NamingGuruDashboard({
     "Please mark your top favourites and flag any name that feels hard to pronounce."
   );
   const [createdPollToken, setCreatedPollToken] = useState("");
+  const [pollError, setPollError] = useState("");
   const [pollViewerRole, setPollViewerRole] = useState<"creator" | "participant">("creator");
   const [activePollData, setActivePollData] = useState<{
     token: string;
@@ -653,32 +654,41 @@ export default function NamingGuruDashboard({
 
   async function handleCreatePoll(e: React.FormEvent) {
     e.preventDefault();
+    setPollError("");
     const candidateSlugs = shortlist.length > 0 ? shortlist.slice(0, 10) : ["yazhini", "kavin"];
-    const res = await fetch("/api/polls", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: pollTitle,
-        parentName: pollParentName,
-        candidateSlugs,
-        notes: pollNotes,
-      }),
-    });
-    const data = await res.json();
-    if (data.poll) {
-      if (data.creatorSecret && typeof window !== "undefined") {
-        try {
-          const map = JSON.parse(localStorage.getItem("namingguru_poll_secrets") || "{}") as Record<string, string>;
-          map[data.poll.token] = data.creatorSecret;
-          localStorage.setItem("namingguru_poll_secrets", JSON.stringify(map));
-        } catch {
-          /* storage optional */
-        }
+    try {
+      const res = await fetch("/api/polls", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: pollTitle,
+          parentName: pollParentName,
+          candidateSlugs,
+          notes: pollNotes,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setPollError(data?.error || `Could not create poll (HTTP ${res.status}).`);
+        return;
       }
-      setPollViewerRole(data.viewerRole === "creator" ? "creator" : "participant");
-      setCreatedPollToken(data.poll.token);
-      setActivePollData(data.poll);
-      if (Array.isArray(data.candidates)) setPollCandidates(data.candidates);
+      if (data.poll) {
+        if (data.creatorSecret && typeof window !== "undefined") {
+          try {
+            const map = JSON.parse(localStorage.getItem("namingguru_poll_secrets") || "{}") as Record<string, string>;
+            map[data.poll.token] = data.creatorSecret;
+            localStorage.setItem("namingguru_poll_secrets", JSON.stringify(map));
+          } catch {
+            /* storage optional */
+          }
+        }
+        setPollViewerRole(data.viewerRole === "creator" ? "creator" : "participant");
+        setCreatedPollToken(data.poll.token);
+        setActivePollData(data.poll);
+        if (Array.isArray(data.candidates)) setPollCandidates(data.candidates);
+      }
+    } catch {
+      setPollError("Network error while creating family poll.");
     }
   }
 
@@ -2914,6 +2924,11 @@ export default function NamingGuruDashboard({
                 className="mt-1 w-full rounded-xl border border-stone-300 p-2.5 text-sm"
               />
             </div>
+            {pollError && (
+              <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-xs font-semibold text-rose-800">
+                {pollError}
+              </div>
+            )}
             <button
               type="submit"
               className="w-full rounded-xl bg-amber-700 py-2.5 text-sm font-bold text-white hover:bg-amber-800"
