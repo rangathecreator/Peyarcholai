@@ -13,8 +13,8 @@ const DISCLAIMER_COPY: Record<
   },
   frequency: {
     icon: "📊",
-    title: "Illustrative Estimate",
-    body: "Cohort frequency, classroom peer counts (40-student class), and 7-dimension usability scores are heuristic estimates derived from catalog distribution, phonetic patterns, and syllable length—not official civil birth registry statistics.",
+    title: "Rough Guide (Grade C) — Not an Official Count",
+    body: "Cohort frequency bands and same-gender classroom sharing odds (40-student class, ~20 same-gender peers) are heuristic Grade C structural estimates from category priors, syllable length, and phonetic patterns—not official civil birth registry statistics.",
   },
   "ai-advisor": {
     icon: "🤖",

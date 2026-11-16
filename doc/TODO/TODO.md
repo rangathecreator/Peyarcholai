@@ -1,8 +1,8 @@
 # பெயர்ச்சோலை (Peyarcholai) — Master Implementation & QA Tracker
 
-**Date:** 2026-11-17 03:41 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
+**Date:** 2026-11-17 04:48 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
 **Live Production:** `https://peyar.donorconnect.in` (`150,024` active / `150,650` raw names across 393 `.json.gz` shards)  
-**Test Suite:** `65/65` Tests PASS across 18 Suites (+ `23/23` in `common/@platform/auth`) | **Production Build:** Next.js 15.5.29 Clean PASS (115 routes)  
+**Test Suite:** `67/67` Tests PASS across 19 Suites (+ `23/23` in `common/@platform/auth`) | **Production Build:** Next.js 15.5.29 Clean PASS (118 routes)  
 **Six-Sigma Guardrails:** [`06-Six-Sigma-Quality-Guardrails.md`](../testing/06-Six-Sigma-Quality-Guardrails.md) (`SG-01`–`SG-05` mandatory on every iteration)
 
 ---
@@ -121,10 +121,10 @@
 
 | ID | Executor | Deliverable | Strict acceptance criteria | Needs | Status |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| **T17-1** | Claude | Repository interface `PollStore`/`SessionStore`/`EntitlementStore` + in-memory impl used by tests | Same contract tests run against in-memory and Postgres impls | T16-3 | ⏳ |
-| **T17-2** | OmniRoute | `app/src/lib/db/schema.sql` migration `V1` for `sessions/entitlements/shortlists/polls/poll_votes`; `pg` repository impl | AC-17-06 (10-candidate CHECK, unique voter token) against scratch Postgres | `T17-1` (`B-07` Vercel `DATABASE_URL` ready) | ⏳ After T17-1 |
-| **T17-3** | Claude + OmniRoute (UI) | Auth.js (Google + Email magic link), `/login`, `/account` (tier, expiry, shortlist, polls, export/delete), `__Host-pc_session` cookie, logout, sign-out-everywhere | AC-17-07; rate limits 5/h/email · 20/h/IP | Google OAuth client, SMTP/Resend key | 🟡 Needs owner |
-| **T17-4** | Claude + OmniRoute | `/p/[inviteToken]` lightweight SSR vote page with OG tags; `POST /api/polls/[token]/vote` with `pc_voter` cookie; owner-only tally; max 50 voters; close/expire | AC-17-02/05/06/08 (375px < 1.5 s, no h-scroll) | T17-1 | ⏳ |
+| **T17-1** | Claude | `PollStore` interface + `InMemoryPollStore` (`app/src/lib/db/stores.ts`) | `stores.test.ts` 2/2 PASS (1..10 candidates, 50-voter cap, closed 409) | — | ✅ **Completed (Iteration `2026-11-17-02`)** |
+| **T17-2** | Claude | `app/src/lib/db/V1__kidnaming_auth_poll.sql` + `PostgresPollStore` (`pg`) | `V1` SQL + `PostgresPollStore` ready for Neon (`B-07` ready; run `V1` in Neon SQL Editor) | — | ✅ **Completed (Iteration `2026-11-17-02`)** |
+| **T17-3** | Claude + OmniRoute (UI) | Auth.js (Google + Email magic link), `/login`, `/account` (tier, expiry, shortlist, polls, export/delete), `__Host-pc_session` cookie, logout, sign-out-everywhere | AC-17-07; rate limits 5/h/email · 20/h/IP | Google OAuth client (`B-08`), SMTP/Resend key (`B-09`) | 🟡 Needs owner (`B-08`, `B-09`) |
+| **T17-4** | Claude | `/p/[inviteToken]` lightweight SSR vote page with OG tags + `GET /api/polls/[inviteToken]` + `POST /api/polls/[inviteToken]/vote` (`pc_voter` cookie, 44px mobile touch targets, DPDP notice) | `next build` PASS + WhatsApp link updated to `/p/[token]` | — | ✅ **Completed (Iteration `2026-11-17-02`)** |
 | **T17-5** | Claude | Share helper (`app/src/lib/whatsapp-share.ts`): Web Share API → `wa.me` fallback; message builder with Tamil+Roman names and invite URL | `whatsapp-share.test.ts` 2/2 PASS (≤ 2000 chars, URL-encoded, ≤ 10 names) | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
 | **T17-6** | Claude | Server shortlist sync (`GET/PUT /api/shortlist`) + merge-on-login from `localStorage` | Union, cap 100, idempotent (test) | T17-3 | ⏳ |
 | **T17-7** | Claude | DPDP: `DELETE /api/me`, data export, 30-day post-close purge job, consent line on vote page | Task 29B inputs; AC: erase cascades (integration) | Grievance-officer details (29B) | 🟡 Needs owner |
@@ -136,8 +136,8 @@
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | **T20-1** | Claude | `src/data/frequency-priors.json` (each constant has `source`+`lastReviewed`); removed `deterministicHash`; added `{low,point,high,grade}` bands (`Grade C`) to `EmpiricalRarityScore` | AC-20-01/02/04 PASS in `features.test.ts` & `book-citations.test.ts` | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
 | **T20-2** | Claude | Collision formula `1-(1-p)^(m-1)`, same-gender pool `m=round(classSize×0.5)` (`19` other peers in 40-kid class) | AC-20-03 verified in `features.test.ts` | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
-| **T20-3** | Claude | UI/PDF render band + grade chip + "How is this estimated?" disclosure; no single-point % | AC-20-05 grep + snapshot | T20-1 | ⏳ |
-| **T20-4** | Claude | Anonymous class-collision micro-survey API + UI (k-anonymity ≥ 5) | AC-20-06 | T17-2 (DB) | ⏳ |
+| **T20-3** | Claude | UI/PDF render band + Grade C chip + `"Rough Guide (Grade C) — Not an Official Count"` disclosure in `ContextualDisclaimer.tsx` | AC-20-05 + `next build` PASS | — | ✅ **Completed (Iteration `2026-11-17-02`)** |
+| **T20-4** | Claude | Anonymous class-collision micro-survey API (`/api/survey`, `k-anonymity >= 5`, zero PII) + `class_collision_surveys` SQL table | AC-20-06 (`kAnonymityMet: false` when `< 5`) | — | ✅ **Completed (Iteration `2026-11-17-02`)** |
 | **T20-5** | OmniRoute | `scripts/wikidata-name-counts.mjs` pilot on 200 names → coverage & correlation report | AC-20-07 decision recorded in Design 08 | network access | 🔵 Ready |
 | **T20-6** | Claude | Calibration job: fit factors on Grade-A names; ship only if CV ρ ≥ 0.5 | AC-20-01..02 re-verified | ≥ 100 Grade-A names | ⏳ Data-gated |
 

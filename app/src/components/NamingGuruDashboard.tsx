@@ -2964,7 +2964,7 @@ export default function NamingGuruDashboard({
                             : shortlist.slice(0, 10)
                         ).join(", ")}\nVote here: ${
                           typeof window !== "undefined"
-                            ? `${window.location.origin}/?tab=poll&poll=${activePollData.token}`
+                            ? `${window.location.origin}/p/${activePollData.token}`
                             : activePollData.token
                         }`
                       )}`}
