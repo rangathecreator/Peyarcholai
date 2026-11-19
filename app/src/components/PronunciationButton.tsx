@@ -50,18 +50,18 @@ export function PronunciationButton({
           <span className="font-semibold text-amber-950">{guide.formattedTamil}</span>{" "}
           <span className="text-stone-500">({guide.formattedRoman})</span>
         </div>
-        <div className="flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-1.5">
           <button
             type="button"
             onClick={() => speak(nameTamil, "ta-IN")}
-            className="rounded-lg border border-amber-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-amber-950 hover:bg-amber-100"
+            className="inline-flex min-h-[40px] sm:min-h-[36px] items-center rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-xs font-semibold text-amber-950 hover:bg-amber-100"
           >
             🔊 தமிழ் (ta-IN)
           </button>
           <button
             type="button"
             onClick={() => speak(nameLatin, "en-IN")}
-            className="rounded-lg border border-stone-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-stone-800 hover:bg-stone-100"
+            className="inline-flex min-h-[40px] sm:min-h-[36px] items-center rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs font-semibold text-stone-800 hover:bg-stone-100"
           >
             🔊 English
           </button>

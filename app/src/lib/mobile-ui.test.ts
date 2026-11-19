@@ -139,4 +139,13 @@ describe("Mobile View & Collapsible Menu Regression Suite (MOB-01..06)", () => {
     assert.match(metrics, /METRICS_TOKEN/);
     assert.match(metrics, /status:\s*401/);
   });
+
+  it("MOB-11: PronunciationButton & why-peyarcholai CTAs meet mobile touch targets and unused 1.94MB logo-master.png is removed", () => {
+    const pron = readSrc("components/PronunciationButton.tsx");
+    const why = readSrc("app/why-peyarcholai/page.tsx");
+
+    assert.match(pron, /min-h-\[40px\]/);
+    assert.match(why, /min-h-\[44px\] w-full sm:w-auto/);
+    assert.equal(fs.existsSync(path.join(process.cwd(), "public", "logo-master.png")), false);
+  });
 });

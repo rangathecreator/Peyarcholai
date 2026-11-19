@@ -131,13 +131,13 @@ export default function WhyPeyarcholaiPage() {
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
               href="/"
-              className="rounded-xl bg-amber-800 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-amber-900"
+              className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center rounded-xl bg-amber-800 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-amber-900"
             >
               🔍 Explore 150,000+ Names Free
             </Link>
             <Link
               href="/docs"
-              className="rounded-xl border border-amber-300 bg-white px-5 py-2.5 text-sm font-bold text-amber-900 transition hover:bg-amber-50"
+              className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center rounded-xl border border-amber-300 bg-white px-5 py-2.5 text-sm font-bold text-amber-900 transition hover:bg-amber-50"
             >
               📖 Read Complete User Guide
             </Link>
@@ -240,7 +240,7 @@ export default function WhyPeyarcholaiPage() {
             </p>
             <Link
               href="/"
-              className="mt-2 inline-block w-full rounded-xl border border-stone-300 py-2 text-center text-xs font-bold text-stone-800 hover:bg-stone-50"
+              className="mt-2 inline-flex min-h-[44px] w-full items-center justify-center rounded-xl border border-stone-300 py-2 text-center text-xs font-bold text-stone-800 hover:bg-stone-50"
             >
               Start Exploring Free
             </Link>
@@ -259,18 +259,18 @@ export default function WhyPeyarcholaiPage() {
             </p>
             <Link
               href="/"
-              className="mt-2 inline-block w-full rounded-xl bg-amber-800 py-2 text-center text-xs font-bold text-white hover:bg-amber-900"
+              className="mt-2 inline-flex min-h-[44px] w-full items-center justify-center rounded-xl bg-amber-800 py-2 text-center text-xs font-bold text-white hover:bg-amber-900"
             >
               Upgrade Inside Explorer
             </Link>
           </div>
 
           <div className="rounded-2xl border-2 border-emerald-500 bg-emerald-50/40 p-6 shadow-sm space-y-3">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
                 குடும்ப நூல் · Kudumba Nool
               </span>
-              <span className="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-bold text-white">
+              <span className="shrink-0 rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-bold text-white">
                 Best for Families
               </span>
             </div>
@@ -283,7 +283,7 @@ export default function WhyPeyarcholaiPage() {
             </p>
             <Link
               href="/"
-              className="mt-2 inline-block w-full rounded-xl bg-emerald-700 py-2 text-center text-xs font-bold text-white hover:bg-emerald-800"
+              className="mt-2 inline-flex min-h-[44px] w-full items-center justify-center rounded-xl bg-emerald-700 py-2 text-center text-xs font-bold text-white hover:bg-emerald-800"
             >
               Unlock Family Pass
             </Link>

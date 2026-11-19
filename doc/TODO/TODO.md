@@ -113,7 +113,7 @@
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | **T16-1** | OmniRoute → Claude reviewed | `@platform/auth` `src/access.ts`: `hashToken`, `generateToken`, `activeTier`, `AuthError`, `requireTier`, `resolveResourceRole` (re-exported from `index.ts`) | `access.test.ts` + `index.test.ts` 22/22 PASS · `tsc` clean · Web Crypto only | — | ✅ **Completed (Iteration `2026-11-16-02`)** |
 | **T16-2** | Claude | `git init` in `common`, `.gitignore`, initial commit, tag `auth-v0.2.0`, fix `@common/*`→`@platform/*` doc naming | AC-16-01, AC-16-06 | Remote repo name (suggest `rangathecreator/platform-common`) | ✅ **Local Git + Tag Done** (remote 🟡 B-10) |
-| **T16-3** | Claude | Link `@platform/auth` into KidNamingApp (`file:` + `transpilePackages`); replace local gating helpers with `@platform/auth` | AC-16-03/04 (grep test + build) | — | 🔵 Ready |
+| **T16-3** | Claude | Link `@platform/auth` into KidNamingApp (`file:` + `transpilePackages`); replace local gating helpers with `@platform/auth` | AC-16-03/04 (grep test + build). **Note (`2026-11-19`):** Deferred until `T16-5` / `B-10` publishes `@platform/auth` to GitHub Packages so Vercel cloud builds (which clone only `Peyarcholai`) never break on sibling `file:../../common` paths. | `B-10` / `T16-5` for Vercel-safe install | 🟡 **Gated on `B-10` (Vercel-safe)** |
 | **T16-4** | Claude | `common/contracts/session.schema.json` + TS contract test; `common/db/V1__users_sessions_entitlements.sql` (Design 06 §4) | `session.contract.test.ts` PASS (`23/23` in `@platform/auth`); SQL schema committed in `common` | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
 | **T16-5** | Claude | Publish to GitHub Packages; Vercel build from clean clone | Phase-2 gate in Design 07 §4 | GitHub PAT / `NPM_TOKEN` | 🟡 Needs owner |
 
