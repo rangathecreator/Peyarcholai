@@ -46,6 +46,9 @@ export default function RootLayout({
                 <img
                   src="/logo-transparent.png"
                   alt="பெயர்ச்சோலை விண்மீன் தொட்டில் சின்னம்"
+                  width={44}
+                  height={44}
+                  decoding="async"
                   className="h-full w-full object-contain filter drop-shadow-[0_1px_3px_rgba(120,53,15,0.2)]"
                 />
               </div>

@@ -112,9 +112,9 @@ Approve ("AI-Approved") if it is a genuine, respectful Tamil/Indian baby name wi
       ok: true,
       suggestion: saved,
     });
-  } catch (err) {
+  } catch {
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : "Failed to review suggestion" },
+      { error: "Unable to review name suggestion right now." },
       { status: 400 }
     );
   }

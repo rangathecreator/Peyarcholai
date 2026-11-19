@@ -1,0 +1,37 @@
+name: Vercel Deployment & Production Health Monitor
+
+on:
+  deployment_status:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Alert on Vercel Build Failure
+        if: >-
+          github.event_name == 'deployment_status' &&
+          (github.event.deployment_status.state == 'failure' ||
+           github.event.deployment_status.state == 'error')
+        run: |
+          echo "::error::Vercel deployment FAILED for commit ${{ github.sha }} — ${{ github.event.deployment_status.target_url }}"
+          exit 1
+
+      - name: Setup Node.js
+        if: >-
+          github.event_name != 'deployment_status' ||
+          github.event.deployment_status.state == 'success'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run Synthetic Production Health Check
+        if: >-
+          github.event_name != 'deployment_status' ||
+          github.event.deployment_status.state == 'success'
+        run: node app/scripts/check-prod-health.mjs

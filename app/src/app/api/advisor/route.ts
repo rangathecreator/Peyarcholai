@@ -159,9 +159,9 @@ Target Numerology Number: ${luckyNumber || "Any"}`;
         recommendations: catalog,
       });
     }
-  } catch (err) {
+  } catch {
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : "Advisor error" },
+      { error: "Unable to process AI advisor request right now." },
       { status: 400 }
     );
   }

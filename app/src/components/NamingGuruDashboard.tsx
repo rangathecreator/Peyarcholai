@@ -833,6 +833,9 @@ export default function NamingGuruDashboard({
                 <img
                   src="/logo-white-transparent.png"
                   alt="பெயர்ச்சோலை விண்மீன் தொட்டில் சின்னம்"
+                  width={64}
+                  height={64}
+                  decoding="async"
                   className="h-full w-full object-contain filter drop-shadow-[0_4px_16px_rgba(251,191,36,0.45)]"
                 />
               </div>
@@ -2163,7 +2166,7 @@ export default function NamingGuruDashboard({
                 setNumerologyFilter(targetSpellingNumber);
                 setActiveTab("explore");
               }}
-              className="w-full rounded-xl bg-amber-700 py-2.5 text-xs font-bold text-white shadow hover:bg-amber-800"
+              className="w-full min-h-[44px] rounded-xl bg-amber-700 px-3 py-2.5 text-xs font-bold text-white shadow hover:bg-amber-800"
             >
               🔍 Browse All Catalog Names with Number {targetSpellingNumber} ({numSystem === "chaldean" ? "Chaldean" : "Pythagorean"}) →
             </button>

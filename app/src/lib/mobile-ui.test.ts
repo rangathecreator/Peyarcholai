@@ -112,4 +112,18 @@ describe("Mobile View & Collapsible Menu Regression Suite (MOB-01..06)", () => {
     assert.doesNotMatch(voteApi, /err\.message/);
     assert.match(omni, /AbortSignal\.timeout\(8000\)/);
   });
+
+  it("SS-Q3: zero raw err.message leaks across public API routes & CLS=0 explicit dimensions on logos", () => {
+    for (const rel of [
+      "app/api/advisor/route.ts",
+      "app/api/suggestions/route.ts",
+      "app/api/polls/route.ts",
+      "app/api/polls/[inviteToken]/vote/route.ts",
+    ]) {
+      assert.doesNotMatch(readSrc(rel), /err\.message/, `${rel} must not leak raw err.message`);
+    }
+    assert.match(readSrc("app/layout.tsx"), /width=\{44\}/);
+    assert.match(readSrc("components/NamingGuruDashboard.tsx"), /width=\{64\}/);
+    assert.match(readSrc("app/docs/page.tsx"), /width=\{64\}/);
+  });
 });

@@ -120,9 +120,9 @@ export async function POST(req: NextRequest) {
       poll: sanitizePollForViewer(created, "creator"),
       candidates: resolveCandidates(created.candidateSlugs),
     });
-  } catch (err) {
+  } catch {
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : "Poll error" },
+      { error: "Unable to process family poll request." },
       { status: 400 }
     );
   }

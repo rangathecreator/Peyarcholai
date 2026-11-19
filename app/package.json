@@ -16,7 +16,6 @@
     "names:merge": "node scripts/merge-seed.mjs"
   },
   "dependencies": {
-    "lucide-react": "^0.460.0",
     "next": "^15.1.0",
     "pg": "^8.13.1",
     "react": "^19.0.0",
