@@ -126,4 +126,17 @@ describe("Mobile View & Collapsible Menu Regression Suite (MOB-01..06)", () => {
     assert.match(readSrc("components/NamingGuruDashboard.tsx"), /width=\{64\}/);
     assert.match(readSrc("app/docs/page.tsx"), /width=\{64\}/);
   });
+
+  it("MOB-10 & SS-Q4: /docs badges use shrink-0, Name Card/Pagination meet 44px touch targets, /api/metrics requires METRICS_TOKEN in prod", () => {
+    const docs = readSrc("app/docs/page.tsx");
+    const dashboard = readSrc("components/NamingGuruDashboard.tsx");
+    const metrics = readSrc("app/api/metrics/route.ts");
+
+    assert.match(docs, /h-8 w-8 shrink-0/);
+    assert.match(docs, /min-h-\[44px\] items-center gap-1\.5/);
+    assert.match(dashboard, /aria-label="Pagination"/);
+    assert.match(dashboard, /min-h-\[44px\] rounded-xl border border-stone-300/);
+    assert.match(metrics, /METRICS_TOKEN/);
+    assert.match(metrics, /status:\s*401/);
+  });
 });

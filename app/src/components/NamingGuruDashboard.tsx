@@ -1644,13 +1644,13 @@ export default function NamingGuruDashboard({
               return (
                 <div
                   key={item.slug}
-                  className="flex flex-col justify-between rounded-2xl border border-stone-200/90 bg-white p-5 shadow-sm transition hover:border-amber-400 hover:shadow-md"
+                  className="flex flex-col justify-between rounded-2xl border border-stone-200/90 bg-white p-4 sm:p-5 shadow-sm transition hover:border-amber-400 hover:shadow-md"
                 >
                   <div>
                     <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <h2 className="text-2xl font-bold text-stone-900">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 break-words">
                             {item.nameTamil}
                           </h2>
                           <span
@@ -1675,8 +1675,9 @@ export default function NamingGuruDashboard({
                       </div>
 
                       <button
+                        type="button"
                         onClick={() => toggleShortlist(item.slug)}
-                        className={`rounded-xl border px-3 py-1.5 text-xs font-semibold transition ${
+                        className={`shrink-0 min-h-[40px] rounded-xl border px-3 py-1.5 text-xs font-semibold transition ${
                           isShortlisted
                             ? "border-amber-600 bg-amber-600 text-white"
                             : "border-stone-300 bg-stone-50 text-stone-700 hover:bg-amber-50"
@@ -1781,19 +1782,20 @@ export default function NamingGuruDashboard({
                     </div>
                   </div>
 
-                  <div className="mt-3 flex items-center justify-between border-t border-stone-100 pt-2.5">
+                  <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-stone-100 pt-2.5">
                     <button
+                      type="button"
                       onClick={() => {
                         setSelectedNameForModal(item);
                         setReportSent(false);
                       }}
-                      className="text-xs font-semibold text-amber-700 hover:underline"
+                      className="inline-flex min-h-[44px] items-center text-xs font-semibold text-amber-700 hover:underline"
                     >
-                      7D Scorecard & Details →
+                      7D Scorecard &amp; Details →
                     </button>
                     <Link
                       href={`/name/${item.slug}`}
-                      className="rounded-lg bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-700 hover:bg-stone-200"
+                      className="inline-flex min-h-[44px] items-center rounded-lg bg-stone-100 px-3 py-1.5 text-xs font-medium text-stone-700 hover:bg-stone-200"
                     >
                       Full Profile ↗
                     </Link>
@@ -1803,21 +1805,23 @@ export default function NamingGuruDashboard({
             })}
           </div>
           {/* Pagination */}
-          <nav className="flex items-center justify-center gap-3" aria-label="Pagination">
+          <nav className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" aria-label="Pagination">
             <button
+              type="button"
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page <= 1 || namesLoading}
-              className="rounded-xl border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-stone-700 disabled:opacity-40"
+              className="min-h-[44px] rounded-xl border border-stone-300 bg-white px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-stone-700 disabled:opacity-40"
             >
               ← Previous
             </button>
-            <span className="text-sm text-stone-600">
+            <span className="whitespace-nowrap text-xs sm:text-sm text-stone-600">
               Page {page} of {totalPages}
             </span>
             <button
+              type="button"
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
               disabled={page >= totalPages || namesLoading}
-              className="rounded-xl border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-stone-700 disabled:opacity-40"
+              className="min-h-[44px] rounded-xl border border-stone-300 bg-white px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-stone-700 disabled:opacity-40"
             >
               Next →
             </button>

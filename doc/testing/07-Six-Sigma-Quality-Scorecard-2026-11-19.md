@@ -49,9 +49,9 @@
 | :--- | :---: | :---: | :---: | :---: |
 | **1. Reliability & Error Handling** | 9 | 7 (`loadPoll` try/catch + `React.cache`, `/api/polls/[token]`, `/api/survey`, `error.tsx`, `not-found.tsx`, `omniroute` 8s cap, vote `503`) | 2 (Neon `V1` SQL run in Neon Console; `/api/polls` PG migration when auth lands) | **0** |
 | **2. Performance & Payload** | 8 | 5 (`INITIAL_PAGE_SIZE=24` `-40%` `/` HTML, `/name/[slug]` `revalidate=86400`, immutable `.png` cache, `width`/`height` CLS=0, removed unused `lucide-react`) | 3 (Lazy shard hydration, Dashboard `next/dynamic` code-split, Google Fonts `@import` in print) | **0** |
-| **3. Security & Privacy** | 5 | 4 (`download-pdf` `escapeHtml`+`safeHttpUrl`, scrubbed all raw `err.message` leaks, HSTS + `Permissions-Policy`) | 1 (`/api/metrics` bearer gate when common monitoring lands) | **0** |
-| **4. Data Quality & SEO** | 3 | 3 (`family-booklet` Katapayadi object fix, `/name/[slug]` `generateMetadata`, `calculateEmpiricalRarity` options + `robots.ts` + `sitemap.ts`) | 0 | **0** |
-| **5. Accessibility & Mobile UX** | 13 | 13 (`MOB-01..08`, `MF-01..13`, collapsible header + section + filter drawers, `90dvh` + `role="dialog"`, `44px` touch targets, `htmlFor`/`id`, iOS `16px` input zoom guard) | 0 | **0** |
-| **TOTAL (Core 90 CTQs)** | **27** (300,000 DPMO / ~2.02σ) | **21 Core Defects Eliminated** | **6 Medium/Low Backlog** (66,667 DPMO / **~3.00σ**, **0 Critical/High**) | **0 Critical/High** |
+| **3. Security & Privacy** | 5 | 5 (`download-pdf` `escapeHtml`+`safeHttpUrl`, scrubbed all raw `err.message` leaks, HSTS + `Permissions-Policy`, gated `/api/metrics` with `METRICS_TOKEN` + real runtime counts) | 0 | **0** |
+| **4. Data Quality & SEO** | 3 | 3 (`family-booklet` Katapayadi object fix, `/name/[slug]` `generateMetadata`, `calculateEmpiricalRarity` options + `robots.ts` + `sitemap.ts` + `T20-5` empirical pilot) | 0 | **0** |
+| **5. Accessibility & Mobile UX** | 13 | 13 (`MOB-01..10`, `MF-01..14`, collapsible header + section + filter drawers, `90dvh` + `role="dialog"`, `44px` touch targets, `htmlFor`/`id`, iOS `16px` input zoom guard) | 0 | **0** |
+| **TOTAL (Core 90 CTQs)** | **27** (300,000 DPMO / ~2.02σ) | **22 Core Defects Eliminated** | **5 Medium/Low Backlog** (55,556 DPMO / **~3.09σ**, **0 Critical/High**) | **0 Critical/High** |
 
-**Automated Control Gates (`npm test`):** `78 / 78` PASS (`0` failed, `0` skipped) · `npm run build` `118 / 118` routes (`0` errors) · `.github/workflows/vercel-deploy-monitor.yml` + `app/scripts/check-prod-health.mjs` (`8 / 8` PASS).
+**Automated Control Gates (`npm test`):** `79 / 79` PASS (`0` failed, `0` skipped) · `npm run build` `118 / 118` routes (`0` errors) · `.github/workflows/vercel-deploy-monitor.yml` + `app/scripts/check-prod-health.mjs` (`8 / 8` PASS).

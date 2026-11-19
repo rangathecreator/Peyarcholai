@@ -1,47 +1,48 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
+import { getCategoryCounts } from "@/lib/repository";
 
-// Prometheus-formatted metrics counters
-let totalRequests = 1240;
-let totalSearches = 890;
-let totalDossierViews = 340;
-let totalPollVotes = 120;
-let totalPaidConversions = 42;
+const startedAtMs = Date.now();
+let metricsScrapesTotal = 0;
 
-export async function GET() {
-  totalRequests++;
+export async function GET(req: NextRequest) {
+  const expectedToken = process.env.METRICS_TOKEN || "";
+  if (process.env.NODE_ENV === "production") {
+    const authHeader = req.headers.get("authorization") || "";
+    const presented = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : "";
+    if (!expectedToken || presented !== expectedToken) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+  }
+
+  metricsScrapesTotal++;
+  const counts = getCategoryCounts();
+  const uptimeSeconds = Math.floor((Date.now() - startedAtMs) / 1000);
 
   const lines = [
-    '# HELP peyarcholai_http_requests_total Total HTTP requests served',
-    '# TYPE peyarcholai_http_requests_total counter',
-    `peyarcholai_http_requests_total{status="200"} ${totalRequests}`,
-    '',
-    '# HELP peyarcholai_name_searches_total Total catalog searches executed',
-    '# TYPE peyarcholai_name_searches_total counter',
-    `peyarcholai_name_searches_total ${totalSearches}`,
-    '',
-    '# HELP peyarcholai_dossier_views_total Total 14D Heritage Dossier views',
-    '# TYPE peyarcholai_dossier_views_total counter',
-    `peyarcholai_dossier_views_total ${totalDossierViews}`,
-    '',
-    '# HELP peyarcholai_whatsapp_poll_votes_total Total family poll votes cast',
-    '# TYPE peyarcholai_whatsapp_poll_votes_total counter',
-    `peyarcholai_whatsapp_poll_votes_total ${totalPollVotes}`,
-    '',
-    '# HELP peyarcholai_paid_conversions_total Total subscriptions across Suvadi and Kudumba tiers',
-    '# TYPE peyarcholai_paid_conversions_total counter',
-    `peyarcholai_paid_conversions_total{tier="suvadi_49"} ${Math.floor(totalPaidConversions * 0.7)}`,
-    `peyarcholai_paid_conversions_total{tier="kudumba_499"} ${Math.floor(totalPaidConversions * 0.3)}`,
-    '',
-    '# HELP peyarcholai_system_up Process uptime status',
-    '# TYPE peyarcholai_system_up gauge',
-    'peyarcholai_system_up 1',
+    "# HELP peyarcholai_metrics_scrapes_total Total metrics endpoint scrapes in this process",
+    "# TYPE peyarcholai_metrics_scrapes_total counter",
+    `peyarcholai_metrics_scrapes_total ${metricsScrapesTotal}`,
+    "",
+    "# HELP peyarcholai_catalog_names_total Active verified names in catalog by cultural category",
+    "# TYPE peyarcholai_catalog_names_total gauge",
+    `peyarcholai_catalog_names_total{category="pure_tamil"} ${counts.pure_tamil}`,
+    `peyarcholai_catalog_names_total{category="tamilnadu_usage"} ${counts.tamilnadu_usage}`,
+    `peyarcholai_catalog_names_total{category="other_heritage"} ${counts.other_heritage}`,
+    `peyarcholai_catalog_names_total{category="total"} ${counts.total}`,
+    "",
+    "# HELP peyarcholai_process_uptime_seconds Process uptime in seconds",
+    "# TYPE peyarcholai_process_uptime_seconds gauge",
+    `peyarcholai_process_uptime_seconds ${uptimeSeconds}`,
+    "",
+    "# HELP peyarcholai_system_up Process uptime status",
+    "# TYPE peyarcholai_system_up gauge",
+    "peyarcholai_system_up 1",
   ];
 
-  return new NextResponse(lines.join('\n') + '\n', {
+  return new NextResponse(lines.join("\n") + "\n", {
     headers: {
-      'Content-Type': 'text/plain; version=0.0.4; charset=utf-8',
-      'Cache-Control': 'no-store',
+      "Content-Type": "text/plain; version=0.0.4; charset=utf-8",
+      "Cache-Control": "no-store",
     },
   });
 }
-

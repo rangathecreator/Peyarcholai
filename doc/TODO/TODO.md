@@ -138,7 +138,7 @@
 | **T20-2** | Claude | Collision formula `1-(1-p)^(m-1)`, same-gender pool `m=round(classSize×0.5)` (`19` other peers in 40-kid class) | AC-20-03 verified in `features.test.ts` | — | ✅ **Completed (Iteration `2026-11-17-01`)** |
 | **T20-3** | Claude | UI/PDF render band + Grade C chip + `"Rough Guide (Grade C) — Not an Official Count"` disclosure in `ContextualDisclaimer.tsx` | AC-20-05 + `next build` PASS | — | ✅ **Completed (Iteration `2026-11-17-02`)** |
 | **T20-4** | Claude | Anonymous class-collision micro-survey API (`/api/survey`, `k-anonymity >= 5`, zero PII) + `class_collision_surveys` SQL table | AC-20-06 (`kAnonymityMet: false` when `< 5`) | — | ✅ **Completed (Iteration `2026-11-17-02`)** |
-| **T20-5** | OmniRoute | `scripts/wikidata-name-counts.mjs` pilot on 200 names → coverage & correlation report | AC-20-07 decision recorded in Design 08 | network access | 🔵 Ready |
+| **T20-5** | OmniRoute → Reviewed | `app/scripts/wikidata-name-counts.mjs` empirical pilot (`30` balanced names: `23.3%` overall Wikipedia coverage; `10%` `pure_tamil`, `40%` `tamilnadu_usage`, `20%` `other_heritage`) → confirms Wikipedia alone is insufficient for Grade-A frequency calibration; validates `/api/survey` primary path | AC-20-07 pilot executed & recorded (`dev19Nov2026`) | — | ✅ **Completed (Iteration `2026-11-19-05`, `dev19Nov2026`)** |
 | **T20-6** | Claude | Calibration job: fit factors on Grade-A names; ship only if CV ρ ≥ 0.5 | AC-20-01..02 re-verified | ≥ 100 Grade-A names | ⏳ Data-gated |
 
 ### 4.5 Tasks 21 & 22 — Hardening

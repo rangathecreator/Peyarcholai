@@ -64,40 +64,40 @@ export default function DocsPage() {
       </section>
 
       {/* Table of Contents */}
-      <nav className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+      <nav className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-6 shadow-sm">
         <h2 className="text-sm font-bold uppercase tracking-wider text-stone-500">
           Table of Contents (பொருளடக்கம்)
         </h2>
-        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 text-xs font-medium text-amber-900">
-          <a href="#overview" className="hover:underline flex items-center gap-1.5">
-            <span>1.</span> <span>Overview & Core Philosophy</span>
+        <div className="mt-3 grid grid-cols-1 gap-1 sm:grid-cols-2 md:grid-cols-3 text-xs font-medium text-amber-900">
+          <a href="#overview" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
+            <span>1.</span> <span>Overview &amp; Core Philosophy</span>
           </a>
-          <a href="#feature-explorer" className="hover:underline flex items-center gap-1.5">
-            <span>2.</span> <span>Name Explorer & Quick-Letter Bar</span>
+          <a href="#feature-explorer" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
+            <span>2.</span> <span>Name Explorer &amp; Quick-Letter Bar</span>
           </a>
-          <a href="#feature-nakshatra" className="hover:underline flex items-center gap-1.5">
-            <span>3.</span> <span>Birth Star & Nakshatra Finder</span>
+          <a href="#feature-nakshatra" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
+            <span>3.</span> <span>Birth Star &amp; Nakshatra Finder</span>
           </a>
-          <a href="#feature-numerology" className="hover:underline flex items-center gap-1.5">
+          <a href="#feature-numerology" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
             <span>4.</span> <span>Dual Numerology Engine</span>
           </a>
-          <a href="#feature-scorecard" className="hover:underline flex items-center gap-1.5">
-            <span>5.</span> <span>7-Dimension & 14-D Scorecard</span>
+          <a href="#feature-scorecard" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
+            <span>5.</span> <span>7-Dimension &amp; 14-D Scorecard</span>
           </a>
-          <a href="#feature-advisor" className="hover:underline flex items-center gap-1.5">
+          <a href="#feature-advisor" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
             <span>6.</span> <span>Linguistic AI Name Advisor</span>
           </a>
-          <a href="#feature-poll" className="hover:underline flex items-center gap-1.5">
-            <span>7.</span> <span>Family Poll & Consensus</span>
+          <a href="#feature-poll" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
+            <span>7.</span> <span>Family Poll &amp; Consensus</span>
           </a>
-          <a href="#feature-slug" className="hover:underline flex items-center gap-1.5">
-            <span>8.</span> <span>Name SEO Profiles & Lexicon Links</span>
+          <a href="#feature-slug" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
+            <span>8.</span> <span>Name SEO Profiles &amp; Lexicon Links</span>
           </a>
-          <a href="#linguistic-rules" className="hover:underline flex items-center gap-1.5">
-            <span>9.</span> <span>Tolkappiyam Sandhi & QA Rules</span>
+          <a href="#linguistic-rules" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
+            <span>9.</span> <span>Tolkappiyam Sandhi &amp; QA Rules</span>
           </a>
-          <a href="#sources" className="hover:underline flex items-center gap-1.5">
-            <span>10.</span> <span>Literary Sources & Epics</span>
+          <a href="#sources" className="hover:underline flex min-h-[44px] items-center gap-1.5 py-1.5">
+            <span>10.</span> <span>Literary Sources &amp; Epics</span>
           </a>
         </div>
       </nav>
@@ -105,7 +105,7 @@ export default function DocsPage() {
       {/* Section 1: Overview */}
       <section id="overview" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             1
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -140,7 +140,7 @@ export default function DocsPage() {
       {/* Section 2: Feature Explorer */}
       <section id="feature-explorer" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             2
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -168,7 +168,7 @@ export default function DocsPage() {
       {/* Section 3: Feature Nakshatra */}
       <section id="feature-nakshatra" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             3
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -192,7 +192,7 @@ export default function DocsPage() {
       {/* Section 4: Feature Numerology */}
       <section id="feature-numerology" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             4
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -215,7 +215,7 @@ export default function DocsPage() {
       {/* Section 5: Feature Scorecard */}
       <section id="feature-scorecard" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             5
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -244,7 +244,7 @@ export default function DocsPage() {
       {/* Section 6: Feature AI Advisor */}
       <section id="feature-advisor" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             6
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -267,7 +267,7 @@ export default function DocsPage() {
       {/* Section 7: Feature Poll */}
       <section id="feature-poll" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             7
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -291,7 +291,7 @@ export default function DocsPage() {
       {/* Section 8: Feature Slug Profile */}
       <section id="feature-slug" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             8
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -312,7 +312,7 @@ export default function DocsPage() {
       {/* Section 9: Tolkappiyam Sandhi & QA */}
       <section id="linguistic-rules" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             9
           </span>
           <h2 className="text-xl font-bold text-stone-900">
@@ -335,7 +335,7 @@ export default function DocsPage() {
       {/* Section 10: Literary Sources */}
       <section id="sources" className="space-y-4 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-900">
             10
           </span>
           <h2 className="text-xl font-bold text-stone-900">
