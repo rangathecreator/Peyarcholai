@@ -4,7 +4,7 @@ import NamingGuruDashboard from "@/components/NamingGuruDashboard";
 
 export const revalidate = 3600;
 
-const INITIAL_PAGE_SIZE = 48;
+const INITIAL_PAGE_SIZE = 24;
 
 export default function HomePage() {
   // Only the first page is sent to the browser; the rest is fetched from /api/names.

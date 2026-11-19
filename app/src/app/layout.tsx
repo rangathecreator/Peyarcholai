@@ -33,8 +33,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ta">
-      <body className="min-h-screen overflow-x-hidden bg-[#faf7f2] font-sans text-stone-900 antialiased">
-        <header className="sticky top-0 z-40 border-b border-amber-200/70 bg-white/95 backdrop-blur shadow-[0_2px_15px_-3px_rgba(0,0,0,0.04)]">
+      <body className="min-h-screen overflow-x-hidden bg-tamil-kolam font-sans text-stone-900 antialiased">
+        <div
+          className="h-1 w-full bg-gradient-to-r from-amber-400 via-rose-400 to-teal-500"
+          aria-hidden="true"
+        />
+        <header className="sticky top-0 z-40 border-b border-amber-200/80 bg-[#fffdf8]/95 backdrop-blur shadow-[0_2px_15px_-3px_rgba(120,53,15,0.06)]">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-4 py-2 sm:py-2.5">
             <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
               <div className="relative flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">

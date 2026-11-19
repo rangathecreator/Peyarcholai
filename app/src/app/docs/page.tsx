@@ -12,32 +12,32 @@ export default function DocsPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-10 py-4">
       {/* Breadcrumb & Navigation */}
-      <div className="flex items-center justify-between border-b border-amber-200/60 pb-4">
-        <div className="flex items-center gap-2 text-xs text-stone-500">
-          <Link href="/" className="hover:text-amber-800 font-medium">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-amber-200/60 pb-4">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500">
+          <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-amber-800 font-medium">
             ← Home (முகப்பு)
           </Link>
           <span>/</span>
-          <span className="text-stone-800 font-semibold">User Guide & Feature Documentation</span>
+          <span className="text-stone-800 font-semibold">User Guide &amp; Feature Documentation</span>
         </div>
         <Link
           href="/"
-          className="rounded-xl bg-amber-700 px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-amber-800"
+          className="inline-flex min-h-[44px] items-center rounded-xl bg-amber-700 px-3.5 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-amber-800"
         >
           Open App Explorer →
         </Link>
       </div>
 
       {/* Hero Header */}
-      <section className="relative overflow-hidden rounded-3xl bg-peyarcholai-hero px-6 py-10 text-white shadow-2xl sm:px-10 border border-amber-500/20">
+      <section className="relative overflow-hidden rounded-3xl bg-peyarcholai-hero px-4 py-7 text-white shadow-2xl sm:px-10 sm:py-10 border border-amber-500/20">
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/10 px-3.5 py-1 text-xs font-semibold text-amber-200 backdrop-blur shadow-xs">
+          <div className="inline-flex flex-wrap items-center gap-2 rounded-2xl sm:rounded-full border border-amber-400/40 bg-amber-500/10 px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-amber-200 backdrop-blur shadow-xs">
             <span>📖 பெயர்ச்சோலை (Peyarcholai) பயனர் வழிகாட்டி</span>
             <span>|</span>
             <span>Comprehensive Feature Manual v4.0</span>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="relative flex h-16 w-16 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-105">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+            <div className="relative flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-105">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo-white-transparent.png"
@@ -45,8 +45,8 @@ export default function DocsPage() {
                 className="h-full w-full object-contain filter drop-shadow-[0_4px_16px_rgba(251,191,36,0.45)]"
               />
             </div>
-            <div>
-              <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl text-white">
+            <div className="min-w-0 flex-1">
+              <h1 className="text-2xl font-extrabold tracking-tight sm:text-5xl text-white break-words">
                 பெயர்ச்சோலை வழிகாட்டி
               </h1>
               <p className="text-xs sm:text-sm font-semibold tracking-wider text-amber-300 uppercase mt-0.5">

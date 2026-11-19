@@ -81,7 +81,7 @@ export async function GET(request: NextRequest) {
           <td>
             Chaldean: <strong>${dual.chaldean.total} → ${dual.chaldean.singleDigit}</strong><br/>
             Pythagorean: <strong>${dual.pythagorean.total} → ${dual.pythagorean.singleDigit}</strong><br/>
-            Katapayadi: <strong>${kata}</strong>
+            Katapayadi: <strong>${kata.single} (கூட்டு: ${kata.compound})</strong>
           </td>
           <td>
             7D Score: <strong>${scorecard.overallScore}/100</strong><br/>

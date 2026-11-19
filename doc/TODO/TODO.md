@@ -1,8 +1,8 @@
 # பெயர்ச்சோலை (Peyarcholai) — Master Implementation & QA Tracker
 
-**Date:** 2026-11-17 04:48 IST | **Branch:** `dev` | **Location:** `doc/TODO/TODO.md`  
-**Live Production:** `https://peyar.donorconnect.in` (`150,024` active / `150,650` raw names across 393 `.json.gz` shards)  
-**Test Suite:** `67/67` Tests PASS across 19 Suites (+ `23/23` in `common/@platform/auth`) | **Production Build:** Next.js 15.5.29 Clean PASS (118 routes)  
+**Date:** 2026-11-19 09:10 IST | **Branch:** `dev19Nov2026` (cut from `main` @ `8e4b2f0`) | **Location:** `doc/TODO/TODO.md`  
+**Live Production:** `https://peyar.donorconnect.in` (`150,024` active / `150,650` raw names across 393 `.json.gz` shards; `8e4b2f0` deployed live)  
+**Test Suite:** `73/73` Tests PASS across 20 Suites (+ `23/23` in `common/@platform/auth`) | **Production Build:** Next.js 15.5.29 Clean PASS (116 routes)  
 **Six-Sigma Guardrails:** [`06-Six-Sigma-Quality-Guardrails.md`](../testing/06-Six-Sigma-Quality-Guardrails.md) (`SG-01`–`SG-05` mandatory on every iteration)
 
 ---
@@ -160,3 +160,22 @@
 2. **GitHub remote name + `NPM_TOKEN`** for `common` → unblock T16-5.
 3. **Jyotishi reviewer** (T22-4) and **reference Panchangam dates** (T22-5).
 4. **Task 32 positioning:** keep resonance as ₹499, or show a free teaser (default proposed: teaser) — Design 09 §1.4.
+
+---
+
+## 5. Continuous Improvement Program — `dev19Nov2026` (2026-11-19 09:10–11:10 IST)
+
+**Branch Policy:** All verified commits go to **`dev19Nov2026`** ONLY (created from latest `main` @ `8e4b2f0`).  
+**Execution Model:** **OmniRoute (`127.0.0.1:20128/v1` → HP Z4 `llama-cpp/qwen2.5-coder-14b` / `7b`)** as primary for simple/implementation tasks; **Claude/Gemini** for design, architecture, Six Sigma reviews, and cross-file integration.  
+**Timebox Rule:** Active discovery & task creation runs for 2 hours (`09:10–11:10 IST`); after `11:10 IST`, stop creating new tasks and finish all already-created tasks cleanly.
+
+### 5.1 Master Program Tasks (Tasks 40–44)
+
+| ID | Thread | Executor | Deliverable | Strict Acceptance Criteria | Status |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| **Task 40 (`T40-1..3`)** | Thread 2 (Theme Redesign) | Design (Claude/Gemini) → Impl (OmniRoute + Review) | **Parent-Friendly Tamil Baby Naming Theme:** Redefine visual theme with warm, joyful, kids-friendly & Tamil cultural backgrounds/colors (*Mangala Thottil* — Peacock Teal, Celestial Indigo, Turmeric Gold, Lotus Coral, subtle Kolam dot-grid `.bg-tamil-kolam`, festive top ribbon). | Design doc in `doc/design/11-Tamil-Baby-Naming-Theme-Redesign.md`; updated `globals.css`, `layout.tsx`, `mobile-ui.test.ts`; WCAG contrast >= 4.5:1; `npm test` + `npm run build` PASS. | ✅ **Completed (Iteration `2026-11-19-01`, `dev19Nov2026`)** |
+| **Task 41 (`T41-1..3`)** | Thread 2 (Perf & Quality) | Design + OmniRoute | **Website Performance, Feature & Quality Optimization:**<br>- **T41-1:** Fixed production `500`s on `/p/[inviteToken]`, `/api/polls/[inviteToken]`, `/api/survey` with graceful Neon fallback.<br>- **T41-2:** Reduced `INITIAL_PAGE_SIZE` (`48` → `24`, slashing `/` SSR HTML `-40%` from `455 KB` → `274 KB`), added `generateMetadata()` + `revalidate = 86400` on `/name/[slug]`, hardened `next.config.mjs` (HSTS, Permissions-Policy, immutable `.png` cache).<br>- **T41-3 (Next):** Harden `omniroute.ts` timeouts, scrub raw `err.message` leaks, add `Cache-Control` on `GET /api/survey`, and remove unused `lucide-react` / `public/logo-master.png`. | `/p/sample-tamil-poll` & `/api/survey` return `200`; `/` HTML `-40%`; `76/76` tests + `118/118` build PASS. | 🟠 **T41-1 & T41-2 Done; T41-3 Queued (Iteration `2026-11-19-03`)** |
+| **Task 42 (`T42-1..2`)** | Thread 4 (Vercel Monitoring) | Claude/Gemini + OmniRoute | **Vercel Deployment Verification & Build-Failure Monitoring Automation:**<br>- **T42-1:** Monitored & recorded live deployment status at `https://peyar.donorconnect.in` (`8e4b2f0` live; caught 3 Neon `500`s).<br>- **T42-2:** Authored `doc/deployment/site/05-Vercel-Deployment-Monitoring-Automation.md` + reusable zero-dep `app/scripts/check-prod-health.mjs` (`8/8 PASS` locally). | `05-Vercel-Deployment-Monitoring-Automation.md` complete; `scripts/check-prod-health.mjs` verified. | ✅ **Completed (Iteration `2026-11-19-01`, `dev19Nov2026`)** |
+| **Task 43 (`T43-1..3`)** | Thread 1 (Mobile Testing) | Research + OmniRoute | **Continuous Mobile View Audit & Fixes (`doc/testing/mobiletesting/`):**<br>- **T43-1:** Completed deep audit of all 12 TSX files (`MF-10..MF-13` logged).<br>- **T43-2:** Fixed collapsible mobile Explore filters (`mobileFiltersOpen`), `max-h-[90dvh]` + `role="dialog"` modals, sticky comparison columns, `/name/[slug]`, `/why-peyarcholai`, `/docs`, `/p/[inviteToken]`.<br>- **T43-3 (Next):** Fix `MF-13` (Family Poll `44px` vote cards, Modal Report Error `flex-col`, Numerology CTA padding, `/docs` badge `shrink-0`) + expand `mobile-ui.test.ts`. | `MOB-01..08` PASS; `MF-10..12` fixed; `MF-13` queued for Iteration `2026-11-19-03`. | 🟠 **T43-1 & T43-2 Done; T43-3 Queued (Iteration `2026-11-19-03`)** |
+| **Task 44 (`T44-1..2`)** | Thread 3 (Six Sigma) | Claude/Gemini | **Six Sigma Quality Standard Documentation & App Improvement:**<br>- **T44-1:** Authored `doc/testing/07-Six-Sigma-Quality-Scorecard-2026-11-19.md` (`27` baseline defects across 90 CTQs).<br>- **T44-2:** Fixed critical `download-pdf` XSS (`escapeHtml` + `safeHttpUrl`), fixed `family-booklet` `[object Object]` Katapayadi bug, created `error.tsx`, `not-found.tsx`, `robots.ts`, `sitemap.ts`, and added `SS-Q1` regression test. | `07-Six-Sigma-Quality-Scorecard-2026-11-19.md` complete; `SS-Q1` PASS (`76/76`). | ✅ **Completed (Iteration `2026-11-19-01`, `dev19Nov2026`)** |
+

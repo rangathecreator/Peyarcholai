@@ -64,4 +64,40 @@ describe("Mobile View & Collapsible Menu Regression Suite (MOB-01..06)", () => {
     assert.match(banner, /hidden md:inline/);
     assert.match(banner, /md:hidden/);
   });
+
+  it("MOB-07: dashboard collapses secondary filters on mobile (< md) and uses dvh + ARIA dialogs on modals", () => {
+    const dashboard = readSrc("components/NamingGuruDashboard.tsx");
+
+    assert.match(dashboard, /const \[mobileFiltersOpen, setMobileFiltersOpen\] = useState\(false\)/);
+    assert.match(dashboard, /aria-controls="mobile-extra-filters"/);
+    assert.match(dashboard, /max-h-\[90dvh\]/);
+    assert.match(dashboard, /role="dialog"/);
+    assert.match(dashboard, /aria-modal="true"/);
+  });
+
+  it("MOB-08: Mangala Thottil Tamil baby-naming theme classes and top ribbon are wired", () => {
+    const css = readSrc("app/globals.css");
+    const layout = readSrc("app/layout.tsx");
+
+    assert.match(css, /\.bg-tamil-kolam/);
+    assert.match(layout, /bg-tamil-kolam/);
+    assert.match(layout, /from-amber-400 via-rose-400 to-teal-500/);
+  });
+
+  it("SS-Q1: Six Sigma security & data integrity gates (download-pdf escapeHtml, family-booklet Katapayadi, error/not-found/SEO)", () => {
+    const pdf = readSrc("app/api/reports/download-pdf/route.ts");
+    const booklet = readSrc("app/api/reports/family-booklet/route.ts");
+    const namePage = readSrc("app/name/[slug]/page.tsx");
+
+    assert.match(pdf, /function escapeHtml\(/);
+    assert.match(pdf, /escapeHtml\(nameRecord\.nameTamil\)/);
+    assert.match(booklet, /kata\.single/);
+    assert.doesNotMatch(booklet, /Katapayadi:\s*<strong>\$\{kata\}<\/strong>/);
+    assert.match(namePage, /export async function generateMetadata\(/);
+    assert.match(namePage, /export const revalidate = 86400/);
+    assert.equal(fs.existsSync(path.join(SRC_DIR, "app/error.tsx")), true);
+    assert.equal(fs.existsSync(path.join(SRC_DIR, "app/not-found.tsx")), true);
+    assert.equal(fs.existsSync(path.join(SRC_DIR, "app/robots.ts")), true);
+    assert.equal(fs.existsSync(path.join(SRC_DIR, "app/sitemap.ts")), true);
+  });
 });

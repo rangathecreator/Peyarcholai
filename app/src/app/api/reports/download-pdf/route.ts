@@ -3,6 +3,28 @@ import { getNameBySlug } from '@/lib/repository';
 import { calculateEmpiricalRarity } from '@/lib/frequency-engine';
 import { calculateKatapayadiNumber, calculateNumerology } from '@/core/numerology';
 
+function escapeHtml(value: unknown): string {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function safeHttpUrl(url?: string): string | null {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol === 'https:' || parsed.protocol === 'http:') {
+      return escapeHtml(parsed.toString());
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const slug = searchParams.get('slug');
@@ -40,15 +62,15 @@ export async function GET(request: NextRequest) {
       ? `பிற மரபுப் பெயர் (${nameRecord.categoryOriginSource || 'Heritage'})`
       : 'தூய தமிழ் (Pure Tamil)';
 
-  const sourceUrl = nameRecord.structuredReference?.sourceWebsite;
-  const lexiconUrl = nameRecord.structuredReference?.lexiconWebsite;
+  const sourceUrl = safeHttpUrl(nameRecord.structuredReference?.sourceWebsite);
+  const lexiconUrl = safeHttpUrl(nameRecord.structuredReference?.lexiconWebsite);
 
   // High-Resolution A4 Printable HTML / Vector Certificate
   const html = `<!DOCTYPE html>
 <html lang="ta">
 <head>
   <meta charset="UTF-8">
-  <title>${nameRecord.nameTamil} (${nameRecord.nameLatin}) — பெயர்ச்சோலை சான்றிதழ் ஆவணம்</title>
+  <title>${escapeHtml(nameRecord.nameTamil)} (${escapeHtml(nameRecord.nameLatin)}) — பெயர்ச்சோலை சான்றிதழ் ஆவணம்</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700&family=Cinzel:wght@600;700&display=swap');
     
@@ -273,13 +295,13 @@ export async function GET(request: NextRequest) {
     </div>
 
     <div class="name-hero">
-      <h1 class="name-ta">${nameRecord.nameTamil}</h1>
-      <div class="name-en">${nameRecord.nameLatin}</div>
+      <h1 class="name-ta">${escapeHtml(nameRecord.nameTamil)}</h1>
+      <div class="name-en">${escapeHtml(nameRecord.nameLatin)}</div>
       <div class="badge-bar">
         <span class="badge">பால்: ${nameRecord.gender === 'boy' ? 'ஆண் (Boy)' : nameRecord.gender === 'girl' ? 'பெண் (Girl)' : 'இருபாலர் (Unisex)'}</span>
-        <span class="badge">பிரிவு: ${categoryLabel}</span>
+        <span class="badge">பிரிவு: ${escapeHtml(categoryLabel)}</span>
         <span class="badge">நம்பகத்தன்மை: ${Math.round(nameRecord.confidence * 100)}%</span>
-        <span class="badge">மரபு: ${nameRecord.originCategory}</span>
+        <span class="badge">மரபு: ${escapeHtml(nameRecord.originCategory)}</span>
       </div>
     </div>
 
@@ -287,18 +309,18 @@ export async function GET(request: NextRequest) {
       <!-- Etymology & Meanings -->
       <div class="card">
         <div class="card-title">📖 பொருள் & வேர்ச்சொல் விளக்கம் (Meaning & Etymology)</div>
-        <p><strong>தமிழ் பொருள்:</strong> ${nameRecord.meaningTa}</p>
-        <p><strong>ஆங்கிலப் பொருள்:</strong> ${nameRecord.meaningEn}</p>
-        <p><strong>வேர்ச்சொல் (Roots):</strong> ${nameRecord.etymologyRoot || nameRecord.nameTamil}</p>
-        <p><strong>நேரடி / தத்துவப் பொருள்:</strong> ${nameRecord.derivedMeaningEn || nameRecord.literalMeaningEn || nameRecord.meaningEn}</p>
+        <p><strong>தமிழ் பொருள்:</strong> ${escapeHtml(nameRecord.meaningTa)}</p>
+        <p><strong>ஆங்கிலப் பொருள்:</strong> ${escapeHtml(nameRecord.meaningEn)}</p>
+        <p><strong>வேர்ச்சொல் (Roots):</strong> ${escapeHtml(nameRecord.etymologyRoot || nameRecord.nameTamil)}</p>
+        <p><strong>நேரடி / தத்துவப் பொருள்:</strong> ${escapeHtml(nameRecord.derivedMeaningEn || nameRecord.literalMeaningEn || nameRecord.meaningEn)}</p>
       </div>
 
       <!-- Provenance & Clickable Source Links -->
       <div class="card">
         <div class="card-title">🏛️ ஆதாரம் & அகராதி இணைப்புகள் (Provenance & Sources)</div>
-        <p><strong>ஆதார வகை:</strong> ${nameRecord.sourceAttributionType || nameRecord.structuredReference?.verificationTier || 'Lexicon Attested'}</p>
-        <p><strong>இலக்கியக் குறிப்பு:</strong> ${nameRecord.literaryReference || nameRecord.categoryOriginSource || 'Tamil Lexicon Heritage'}</p>
-        ${nameRecord.structuredReference?.lineTitleOrQuote ? `<p><strong>மேற்கோள்:</strong> <em>"${nameRecord.structuredReference.lineTitleOrQuote}"</em></p>` : ''}
+        <p><strong>ஆதார வகை:</strong> ${escapeHtml(nameRecord.sourceAttributionType || nameRecord.structuredReference?.verificationTier || 'Lexicon Attested')}</p>
+        <p><strong>இலக்கியக் குறிப்பு:</strong> ${escapeHtml(nameRecord.literaryReference || nameRecord.categoryOriginSource || 'Tamil Lexicon Heritage')}</p>
+        ${nameRecord.structuredReference?.lineTitleOrQuote ? `<p><strong>மேற்கோள்:</strong> <em>"${escapeHtml(nameRecord.structuredReference.lineTitleOrQuote)}"</em></p>` : ''}
         <p><strong>இணைப்புகள்:</strong>
           ${sourceUrl ? `<a class="source-link" href="${sourceUrl}" target="_blank" rel="noopener noreferrer">Madras University Tamil Lexicon ↗</a>` : 'DSAL Lexicon Reference'}
           ${lexiconUrl && lexiconUrl !== sourceUrl ? ` · <a class="source-link" href="${lexiconUrl}" target="_blank" rel="noopener noreferrer">Tamil Virtual Academy ↗</a>` : ''}
@@ -310,40 +332,40 @@ export async function GET(request: NextRequest) {
         <div class="card-title">🔢 எண் கணித மதிப்புகள் & பலன்கள் (Numerology Values & Predictions)</div>
         <p>
           <strong>பைதகோரியன் (Pythagorean):</strong> விதி எண் <strong>${pythagorean.nameNumber}</strong> (கூட்டு எண் <strong>${pythagorean.compoundNumber}</strong>) · ஆன்ம எண்: ${pythagorean.soulUrgeNumber} · ஆளுமை எண்: ${pythagorean.personalityNumber}
-          ${pythagorean.isMasterNumber ? ` · <strong>Master Number (${pythagorean.masterNumberTitleEn})</strong>` : ''}
+          ${pythagorean.isMasterNumber ? ` · <strong>Master Number (${escapeHtml(pythagorean.masterNumberTitleEn)})</strong>` : ''}
         </p>
         <p>
           <strong>கல்தேயன் (Chaldean):</strong> விதி எண் <strong>${chaldean.nameNumber}</strong> (கூட்டு எண் <strong>${chaldean.compoundNumber}</strong>) ·
           <strong>கடபயாதி (Katapayadi):</strong> ${katapayadi.single} (கூட்டு: ${katapayadi.compound})
         </p>
-        <p><strong>ஆட்சி கிரகம் (Ruling Planet):</strong> ${pythagorean.planet.planetTa} (${pythagorean.planet.planetEn}) — ${pythagorean.planet.traitsTa}</p>
-        ${pythagorean.compoundInfo ? `<p><strong>கூட்டு எண் பலன் (${pythagorean.compoundNumber} — ${pythagorean.compoundInfo.auspiciousness}):</strong> ${pythagorean.compoundInfo.titleTa} (${pythagorean.compoundInfo.titleEn}) — ${pythagorean.compoundInfo.summaryTa} / ${pythagorean.compoundInfo.summaryEn}</p>` : ''}
-        ${chaldean.compoundInfo && chaldean.compoundNumber !== pythagorean.compoundNumber ? `<p><strong>கல்தேய கூட்டு பலன் (${chaldean.compoundNumber} — ${chaldean.compoundInfo.auspiciousness}):</strong> ${chaldean.compoundInfo.titleEn} — ${chaldean.compoundInfo.summaryEn}</p>` : ''}
-        <p><strong>நல்ல நிறம் & நாள்:</strong> ${pythagorean.planet.luckyColors.join(', ')} · ${pythagorean.planet.luckyDays.join(', ')} · ரத்தினம்: ${pythagorean.planet.gemEn}</p>
+        <p><strong>ஆட்சி கிரகம் (Ruling Planet):</strong> ${escapeHtml(pythagorean.planet.planetTa)} (${escapeHtml(pythagorean.planet.planetEn)}) — ${escapeHtml(pythagorean.planet.traitsTa)}</p>
+        ${pythagorean.compoundInfo ? `<p><strong>கூட்டு எண் பலன் (${pythagorean.compoundNumber} — ${escapeHtml(pythagorean.compoundInfo.auspiciousness)}):</strong> ${escapeHtml(pythagorean.compoundInfo.titleTa)} (${escapeHtml(pythagorean.compoundInfo.titleEn)}) — ${escapeHtml(pythagorean.compoundInfo.summaryTa)} / ${escapeHtml(pythagorean.compoundInfo.summaryEn)}</p>` : ''}
+        ${chaldean.compoundInfo && chaldean.compoundNumber !== pythagorean.compoundNumber ? `<p><strong>கல்தேய கூட்டு பலன் (${chaldean.compoundNumber} — ${escapeHtml(chaldean.compoundInfo.auspiciousness)}):</strong> ${escapeHtml(chaldean.compoundInfo.titleEn)} — ${escapeHtml(chaldean.compoundInfo.summaryEn)}</p>` : ''}
+        <p><strong>நல்ல நிறம் & நாள்:</strong> ${escapeHtml(pythagorean.planet.luckyColors.join(', '))} · ${escapeHtml(pythagorean.planet.luckyDays.join(', '))} · ரத்தினம்: ${escapeHtml(pythagorean.planet.gemEn)}</p>
       </div>
 
       <!-- Astrology & Nakshatra -->
       <div class="card">
         <div class="card-title">✨ நட்சத்திரம் & ஒலி அமைப்பு (Astrology & Phonetics)</div>
-        <p><strong>தொடக்க எழுத்து:</strong> ${nameRecord.startingSyllableTa} (${nameRecord.startingSyllableEn})</p>
-        <p><strong>பொருந்திய நட்சத்திரம்:</strong> ${nameRecord.nakshatraSlugs?.join(', ') || 'அனைத்தும்'}</p>
-        <p><strong>செல்லப் பெயர்கள்:</strong> ${nameRecord.nicknames?.join(', ') || nameRecord.nameLatin}</p>
-        <p><strong>சகோதர இணைப் பெயர்கள்:</strong> ${nameRecord.siblingPairSuggestions?.join(', ') || '—'}</p>
+        <p><strong>தொடக்க எழுத்து:</strong> ${escapeHtml(nameRecord.startingSyllableTa)} (${escapeHtml(nameRecord.startingSyllableEn)})</p>
+        <p><strong>பொருந்திய நட்சத்திரம்:</strong> ${escapeHtml(nameRecord.nakshatraSlugs?.join(', ') || 'அனைத்தும்')}</p>
+        <p><strong>செல்லப் பெயர்கள்:</strong> ${escapeHtml(nameRecord.nicknames?.join(', ') || nameRecord.nameLatin)}</p>
+        <p><strong>சகோதர இணைப் பெயர்கள்:</strong> ${escapeHtml(nameRecord.siblingPairSuggestions?.join(', ') || '—')}</p>
       </div>
 
       <!-- Empirical Frequency & Global Fit -->
       <div class="card">
         <div class="card-title">🌟 வகுப்பறைத் தனித்துவம் & உலகப் பயன்பாடு</div>
-        <p><strong>பயன்பாட்டு விகிதம்:</strong> ${rarity.observedFrequencyPercent}% — ${rarity.icon} ${rarity.badgeTitleTamil} (${rarity.badgeTitleEn})</p>
-        <p><strong>வகுப்பறை (40 மாணவர்):</strong> ${rarity.classroomDisplayEn} · ${rarity.classroomDisplayTa}</p>
-        <p><strong>பள்ளி (1,000 மாணவர்):</strong> ~${rarity.schoolDisplayCount} மாணவர்கள் · ${rarity.methodologyNoteEn}</p>
-        <p><strong>உச்சரிப்பு & எழுத்துப்பிழை:</strong> Ease ${nameRecord.easeOfCalling?.overallScore || 85}/100 · Risk: ${nameRecord.spellingAssessment?.riskLevel || 'Low'}</p>
+        <p><strong>பயன்பாட்டு விகிதம்:</strong> ${rarity.observedFrequencyPercent}% — ${escapeHtml(rarity.icon)} ${escapeHtml(rarity.badgeTitleTamil)} (${escapeHtml(rarity.badgeTitleEn)})</p>
+        <p><strong>வகுப்பறை (40 மாணவர்):</strong> ${escapeHtml(rarity.classroomDisplayEn)} · ${escapeHtml(rarity.classroomDisplayTa)}</p>
+        <p><strong>பள்ளி (1,000 மாணவர்):</strong> ~${rarity.schoolDisplayCount} மாணவர்கள் · ${escapeHtml(rarity.methodologyNoteEn)}</p>
+        <p><strong>உச்சரிப்பு & எழுத்துப்பிழை:</strong> Ease ${nameRecord.easeOfCalling?.overallScore || 85}/100 · Risk: ${escapeHtml(nameRecord.spellingAssessment?.riskLevel || 'Low')}</p>
       </div>
     </div>
 
     <div class="seal-box">
       <div>
-        <strong>ஆவண சரிபார்ப்பு முத்திரை:</strong> PEYAR-CERT-${nameRecord.slug.toUpperCase()}-2026<br>
+        <strong>ஆவண சரிபார்ப்பு முத்திரை:</strong> PEYAR-CERT-${escapeHtml(nameRecord.slug.toUpperCase())}-2026<br>
         <strong>நிலை:</strong> ${isPaid ? 'அங்கீகரிக்கப்பட்ட தூய ஆவணம் (Official Paid Keepsake)' : 'மாதிரி முன்னோட்டம் (Sample Preview — Unlock via Suvadi Nilai ₹49)'}<br>
         <strong>வழங்கிய தளம்:</strong> பெயர்ச்சோலை (Peyarcholai) · Classical Tamil Research Hub<br>
         <span style="font-size: 9px; color: #57534e;">குறிப்பு / Disclaimer: நட்சத்திரம், எண் கணிதம் மற்றும் வகுப்பறை அதிர்வெண் மதிப்பீடுகள் பண்பாட்டு மற்றும் தகவல் வழிகாட்டுதலுக்காக மட்டுமே; இறுதிப் பெயர் தேர்வு பெற்றோரின் விருப்பத்திற்கேற்பவே.</span>

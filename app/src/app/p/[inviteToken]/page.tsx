@@ -9,17 +9,25 @@ export const dynamic = "force-dynamic";
 
 async function loadPoll(inviteToken: string) {
   if (process.env.DATABASE_URL) {
-    const store = new PostgresPollStore();
-    const p = await store.getPollByToken(inviteToken);
-    if (!p) return null;
-    return {
-      title: p.title,
-      parentName: p.parentName,
-      notes: p.notes,
-      candidateSlugs: p.candidateSlugs,
-      closesAt: p.closesAt,
-      closedAt: p.closedAt ?? null,
-    };
+    try {
+      const store = new PostgresPollStore();
+      const p = await store.getPollByToken(inviteToken);
+      if (p) {
+        return {
+          title: p.title,
+          parentName: p.parentName,
+          notes: p.notes,
+          candidateSlugs: p.candidateSlugs,
+          closesAt: p.closesAt,
+          closedAt: p.closedAt ?? null,
+        };
+      }
+    } catch {
+      // Fall through only for bundled demo poll; non-demo tokens fail safely to 404
+    }
+    if (inviteToken !== "sample-tamil-poll") {
+      return null;
+    }
   }
   const local = getSocialPollByToken(inviteToken);
   if (!local) return null;

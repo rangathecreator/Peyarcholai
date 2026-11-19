@@ -20,32 +20,45 @@ export async function GET(
   const voterTokenHash = voterCookie ? hashSecret(voterCookie) : "";
 
   if (process.env.DATABASE_URL) {
-    const store = new PostgresPollStore();
-    const poll = await store.getPollByToken(inviteToken);
-    if (!poll) return NextResponse.json({ error: "Poll not found" }, { status: 404 });
-    const viewer = resolvePollViewer(poll, presentedSecret);
-    const candidates = poll.candidateSlugs.map((s) => getNameBySlug(s)).filter(Boolean);
-    const ownVote = voterTokenHash
-      ? poll.votes.find((v) => v.voterTokenHash === voterTokenHash) || null
-      : null;
+    try {
+      const store = new PostgresPollStore();
+      const poll = await store.getPollByToken(inviteToken);
+      if (poll) {
+        const viewer = resolvePollViewer(poll, presentedSecret);
+        const candidates = poll.candidateSlugs.map((s) => getNameBySlug(s)).filter(Boolean);
+        const ownVote = voterTokenHash
+          ? poll.votes.find((v) => v.voterTokenHash === voterTokenHash) || null
+          : null;
 
-    return NextResponse.json({
-      viewerRole: viewer,
-      poll: {
-        token: poll.inviteToken,
-        title: poll.title,
-        parentName: poll.parentName,
-        notes: poll.notes,
-        candidateSlugs: poll.candidateSlugs,
-        createdAt: poll.createdAt,
-        closesAt: poll.closesAt,
-        closedAt: poll.closedAt,
-        blindVoting: true,
-        totalVotesCount: poll.votes.length,
-        votes: viewer === "creator" ? poll.votes : ownVote ? [ownVote] : [],
-      },
-      candidates,
-    });
+        return NextResponse.json({
+          viewerRole: viewer,
+          poll: {
+            token: poll.inviteToken,
+            title: poll.title,
+            parentName: poll.parentName,
+            notes: poll.notes,
+            candidateSlugs: poll.candidateSlugs,
+            createdAt: poll.createdAt,
+            closesAt: poll.closesAt,
+            closedAt: poll.closedAt,
+            blindVoting: true,
+            totalVotesCount: poll.votes.length,
+            votes: viewer === "creator" ? poll.votes : ownVote ? [ownVote] : [],
+          },
+          candidates,
+        });
+      }
+      if (inviteToken !== "sample-tamil-poll") {
+        return NextResponse.json({ error: "Poll not found" }, { status: 404 });
+      }
+    } catch {
+      if (inviteToken !== "sample-tamil-poll") {
+        return NextResponse.json(
+          { error: "Poll storage is initializing (run V1 SQL migration in Neon)." },
+          { status: 503 }
+        );
+      }
+    }
   }
 
   // Local dev fallback

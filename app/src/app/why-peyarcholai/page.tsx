@@ -180,14 +180,19 @@ export default function WhyPeyarcholaiPage() {
 
       {/* Competitor Matrix */}
       <section className="space-y-4">
-        <h2 className="text-xl sm:text-2xl font-extrabold text-stone-900">
-          Side-by-Side Comparison Matrix
-        </h2>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="text-xl sm:text-2xl font-extrabold text-stone-900">
+            Side-by-Side Comparison Matrix
+          </h2>
+          <p className="text-[11px] font-medium text-amber-800 sm:hidden">
+            ← Swipe horizontally to compare →
+          </p>
+        </div>
         <div className="overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-xs">
           <table className="w-full min-w-[680px] border-collapse text-left text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-stone-200 bg-amber-50/70 text-stone-900">
-                <th className="p-3.5 font-bold">Capability</th>
+                <th className="sticky left-0 z-10 bg-amber-50 p-3.5 font-bold">Capability</th>
                 <th className="p-3.5 font-extrabold text-amber-950">
                   Peyarcholai (பெயர்ச்சோலை)
                 </th>
@@ -198,7 +203,7 @@ export default function WhyPeyarcholaiPage() {
             <tbody className="divide-y divide-stone-100">
               {COMPARISON_ROWS.map((row) => (
                 <tr key={row.capability} className="hover:bg-stone-50/60">
-                  <td className="p-3.5 font-semibold text-stone-800">{row.capability}</td>
+                  <td className="sticky left-0 z-10 bg-white p-3.5 font-semibold text-stone-800">{row.capability}</td>
                   <td className="p-3.5 font-medium text-emerald-900 bg-emerald-50/30">
                     {row.peyarcholai}
                   </td>

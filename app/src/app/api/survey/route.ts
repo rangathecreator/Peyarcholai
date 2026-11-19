@@ -60,14 +60,20 @@ export async function GET(req: NextRequest) {
   let matches = 0;
 
   if (process.env.DATABASE_URL) {
-    const res = await getPool().query(
-      `SELECT COUNT(*)::int AS total,
-              SUM(CASE WHEN had_same_name_in_class THEN 1 ELSE 0 END)::int AS matches
-       FROM class_collision_surveys WHERE name_slug = $1`,
-      [nameSlug]
-    );
-    total = res.rows[0]?.total || 0;
-    matches = res.rows[0]?.matches || 0;
+    try {
+      const res = await getPool().query(
+        `SELECT COUNT(*)::int AS total,
+                SUM(CASE WHEN had_same_name_in_class THEN 1 ELSE 0 END)::int AS matches
+         FROM class_collision_surveys WHERE name_slug = $1`,
+        [nameSlug]
+      );
+      total = res.rows[0]?.total || 0;
+      matches = res.rows[0]?.matches || 0;
+    } catch {
+      // Graceful degradation if Neon schema V1 is not yet migrated or DB is temporarily unreachable
+      total = 0;
+      matches = 0;
+    }
   } else {
     const cur = memorySurveys.get(nameSlug);
     if (cur) {

@@ -99,7 +99,7 @@ export default function PublicPollVoteClient({
                     {c.meaningTa} — {c.meaningEn}
                   </p>
                 </div>
-                <div className="flex shrink-0 items-center gap-2">
+                <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:shrink-0 sm:items-center">
                   <button
                     type="button"
                     disabled={isClosed}
@@ -133,31 +133,33 @@ export default function PublicPollVoteClient({
 
       <div className="rounded-2xl border border-stone-200 bg-white p-4 space-y-3">
         <div>
-          <label className="block text-xs font-semibold text-stone-700">
+          <label htmlFor="poll-voter-name" className="block text-xs font-semibold text-stone-700">
             Your Name / Relationship (e.g., Ammamma, Uncle Kumar)
           </label>
           <input
+            id="poll-voter-name"
             type="text"
             maxLength={60}
             value={voterName}
             onChange={(e) => setVoterName(e.target.value)}
             placeholder="Family Member"
             disabled={isClosed}
-            className="mt-1 min-h-[44px] w-full rounded-xl border border-stone-300 px-3 text-sm"
+            className="mt-1 min-h-[44px] w-full rounded-xl border border-stone-300 px-3 text-base sm:text-sm"
           />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-stone-700">
+          <label htmlFor="poll-voter-note" className="block text-xs font-semibold text-stone-700">
             Optional Note to Parents
           </label>
           <textarea
+            id="poll-voter-note"
             rows={2}
             maxLength={280}
             value={comment}
             onChange={(e) => setComment(e.target.value)}
             placeholder="Pronunciation thoughts or blessing..."
             disabled={isClosed}
-            className="mt-1 w-full rounded-xl border border-stone-300 p-2.5 text-sm"
+            className="mt-1 w-full rounded-xl border border-stone-300 p-2.5 text-base sm:text-sm"
           />
         </div>
 

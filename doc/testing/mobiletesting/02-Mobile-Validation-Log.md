@@ -28,5 +28,28 @@
 
 ---
 
-## Run #2 — Live Production Deployment Verification (`https://peyar.donorconnect.in`)
-*(Updated immediately after `dev` → `main` promotion and Vercel deployment completion.)*
+## Run #2 — Live Production Deployment Verification (`https://peyar.donorconnect.in` @ `8e4b2f0`, `2026-11-19 09:09–09:11 IST`)
+
+- **Vercel Deployment:** Commit `8e4b2f0` built cleanly and deployed live on `bom1` (Mumbai edge).
+- **Live Route & Mobile Marker Results:**
+  - `GET /` → `200` (`PRERENDER`, `454,501 B`) — **`headerDrawer=True`, `sectionMenu=True`, `mobileH1=True`, `noWrapCta=True`**
+  - `GET /name/yazhini` → `200` (`PRERENDER`, `61,219 B`)
+  - `GET /why-peyarcholai` → `200` (`PRERENDER`, `49,283 B`)
+  - `GET /docs` → `200` (`PRERENDER`, `63,176 B`)
+  - `GET /guide` → `200` (`PRERENDER`, `63,182 B`)
+  - `GET /api/names?gender=girl&nameCategory=pure_tamil&page=1` → `200` (`HIT`, `329,617 B`, `Cache-Control: public`)
+  - `GET /p/sample-tamil-poll` → **`500`** (Neon DB table `family_polls` not yet migrated; fix tracked as `T41-1` on `dev19Nov2026`)
+  - `GET /api/polls/sample-tamil-poll` → **`500`** (same Neon DB root cause; fix tracked as `T41-1` on `dev19Nov2026`)
+  - `GET /api/survey?slug=yazhini` → **`500`** (Neon DB table `class_collision_surveys` not yet migrated; fix tracked as `T41-1` on `dev19Nov2026`)
+
+---
+
+## Run #3 — Iteration `2026-11-19-01` & `02` Verification on `dev19Nov2026` (`2026-11-19 09:21–09:23 IST`)
+
+- **Branch:** `dev19Nov2026`
+- **Unit & Mobile/Six-Sigma Suite (`npm test`):** **76 / 76 PASSED** (`0` failed, `0` skipped, `7.5s`) — includes `MOB-01..08` + `SS-Q1`.
+- **Production Build (`npm run build`):** **PASSED** (`118/118` routes in `14.5s`, `0` errors; includes `/robots.txt`, `/sitemap.xml`, `/_not-found`, `1d` ISR on `/name/[slug]`).
+- **Synthetic Health Monitor (`node scripts/check-prod-health.mjs` against `http://127.0.0.1:3020`):**
+  - **8 / 8 PASS** (`/` `274,457 B` — **-40% SSR HTML payload reduction** from `455,461 B`!)
+  - `/robots.txt` → `200` (`105 B`) | `/sitemap.xml` → `200` (`86,975 B`)
+  - `/p/sample-tamil-poll` → `200` | `/api/survey?slug=yazhini` → `200`

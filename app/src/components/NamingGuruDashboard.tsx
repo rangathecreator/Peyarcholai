@@ -51,6 +51,7 @@ export default function NamingGuruDashboard({
 }) {
   const [activeTab, setActiveTab] = useState<ActiveTab>("explore");
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   // 1. Explorer & Shortlist state (server-side filtering + pagination)
   const [names, setNames] = useState<TamilNameRecord[]>(initialNames);
@@ -1247,6 +1248,47 @@ export default function NamingGuruDashboard({
             </div>
           </div>
 
+          {/* Mobile Collapsible Secondary Filters Toggle (< md) so Name Cards appear immediately */}
+          {(() => {
+            const activeExtraFilterCount = [
+              originFilter !== "all",
+              nameCategoryFilter !== "all",
+              Boolean(startingLetter),
+              religionFilter !== "all",
+              communityFilter !== "all",
+              trendFilter !== "all",
+              uniquenessFilter !== "all",
+              misspellFilter !== "all",
+              minEaseScore > 0,
+            ].filter(Boolean).length;
+            return (
+              <div className="md:hidden">
+                <button
+                  type="button"
+                  aria-expanded={mobileFiltersOpen}
+                  aria-controls="mobile-extra-filters"
+                  onClick={() => setMobileFiltersOpen((prev) => !prev)}
+                  className="flex w-full min-h-[44px] items-center justify-between gap-2 rounded-2xl border border-amber-300/90 bg-amber-50/90 px-4 py-2.5 text-left text-xs font-bold text-amber-950 shadow-xs transition hover:bg-amber-100"
+                >
+                  <span className="flex items-center gap-2">
+                    <span aria-hidden="true">⚙️</span>
+                    <span>
+                      கூடுதல் வடிகட்டிகள் · More Filters
+                      {activeExtraFilterCount > 0 ? ` (${activeExtraFilterCount} active)` : ""}
+                    </span>
+                  </span>
+                  <span className="shrink-0 rounded-lg bg-amber-200/80 px-2 py-0.5 text-[11px] font-bold text-amber-950">
+                    {mobileFiltersOpen ? "மூடு ▲" : "திற ▼"}
+                  </span>
+                </button>
+              </div>
+            );
+          })()}
+
+          <div
+            id="mobile-extra-filters"
+            className={`${mobileFiltersOpen ? "space-y-4" : "hidden"} md:block md:space-y-6`}
+          >
           {/* Origin Pill Filters */}
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-semibold text-stone-500">
@@ -1577,6 +1619,7 @@ export default function NamingGuruDashboard({
                 </select>
               </div>
             ))}
+          </div>
           </div>
 
           <p className="text-xs text-stone-600" aria-live="polite">
@@ -3465,11 +3508,14 @@ export default function NamingGuruDashboard({
       {/* DETAIL, 7D SCORECARD & REPORT ERROR MODAL */}
       {selectedNameForModal && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${selectedNameForModal.nameTamil} (${selectedNameForModal.nameLatin}) details`}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-2 sm:p-4 backdrop-blur-xs overflow-hidden"
           onClick={() => setSelectedNameForModal(null)}
         >
           <div
-            className="relative flex flex-col w-full max-w-3xl max-h-[85vh] sm:max-h-[88vh] rounded-2xl sm:rounded-3xl bg-white shadow-2xl border border-stone-200 overflow-hidden"
+            className="relative flex flex-col w-full max-w-3xl max-h-[90dvh] sm:max-h-[88dvh] rounded-2xl sm:rounded-3xl bg-white shadow-2xl border border-stone-200 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Sticky Modal Header */}
@@ -3942,11 +3988,20 @@ export default function NamingGuruDashboard({
 
       {/* Side-by-Side Name Comparison Matrix & Family Booklet Modal (Tasks 31 & 34) */}
       {showCompareModal && shortlistRecords.length >= 2 && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs">
-          <div className="max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
-              <div>
-                <h3 className="text-lg font-extrabold text-stone-900">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Side-by-Side Name Comparison Matrix"
+          onClick={() => setShowCompareModal(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-2 sm:p-4 backdrop-blur-xs"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="flex max-h-[90dvh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl sm:rounded-3xl bg-white shadow-2xl"
+          >
+            <div className="shrink-0 flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 p-4 sm:p-6 pb-3">
+              <div className="min-w-0 flex-1">
+                <h3 className="text-base sm:text-lg font-extrabold text-stone-900">
                   📊 Side-by-Side Name Comparison Matrix ({Math.min(5, shortlistRecords.length)} Names)
                 </h3>
                 <p className="text-xs text-stone-600">
@@ -3956,17 +4011,21 @@ export default function NamingGuruDashboard({
               <button
                 type="button"
                 onClick={() => setShowCompareModal(false)}
-                className="rounded-xl bg-stone-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-stone-800"
+                className="min-h-[44px] shrink-0 rounded-xl bg-stone-900 px-3.5 py-2 text-xs font-semibold text-white hover:bg-stone-800"
               >
                 ✕ Close
               </button>
             </div>
 
-            <div className="mt-4 overflow-x-auto rounded-2xl border border-stone-200">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 pt-3">
+            <p className="mb-2 text-[11px] font-medium text-amber-800 sm:hidden">
+              ← Swipe horizontally to compare all shortlisted names →
+            </p>
+            <div className="overflow-x-auto rounded-2xl border border-stone-200">
               <table className="w-full min-w-[640px] border-collapse text-left text-xs">
                 <thead>
                   <tr className="bg-amber-50 text-stone-900 border-b border-stone-200">
-                    <th className="p-3 font-bold">Dimension</th>
+                    <th className="sticky left-0 z-10 bg-amber-50 p-3 font-bold">Dimension</th>
                     {shortlistRecords.slice(0, 5).map((sr) => (
                       <th key={sr.slug} className="p-3 font-extrabold text-amber-950">
                         {sr.nameTamil} <span className="font-semibold text-stone-600">({sr.nameLatin})</span>
@@ -4049,10 +4108,11 @@ export default function NamingGuruDashboard({
                 }`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl bg-emerald-700 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-800"
+                className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center rounded-xl bg-emerald-700 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-800"
               >
                 📄 Open Printable Family Booklet (₹499) ↗
               </a>
+            </div>
             </div>
           </div>
         </div>
