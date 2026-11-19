@@ -82,21 +82,31 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  const cacheHeaders = {
+    "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+  };
+
   // AC-20-06: Enforce k-anonymity >= 5 before exposing aggregate rate
   if (total < K_ANONYMITY_THRESHOLD) {
-    return NextResponse.json({
-      slug: nameSlug,
-      kAnonymityMet: false,
-      minimumRequired: K_ANONYMITY_THRESHOLD,
-      grade: "C",
-    });
+    return NextResponse.json(
+      {
+        slug: nameSlug,
+        kAnonymityMet: false,
+        minimumRequired: K_ANONYMITY_THRESHOLD,
+        grade: "C",
+      },
+      { headers: cacheHeaders }
+    );
   }
 
-  return NextResponse.json({
-    slug: nameSlug,
-    kAnonymityMet: true,
-    sampleSize: total,
-    collisionRatePercent: Number(((matches / total) * 100).toFixed(1)),
-    grade: total >= 30 ? "A" : "C",
-  });
+  return NextResponse.json(
+    {
+      slug: nameSlug,
+      kAnonymityMet: true,
+      sampleSize: total,
+      collisionRatePercent: Number(((matches / total) * 100).toFixed(1)),
+      grade: total >= 30 ? "A" : "C",
+    },
+    { headers: cacheHeaders }
+  );
 }

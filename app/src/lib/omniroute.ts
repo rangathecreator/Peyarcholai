@@ -45,17 +45,20 @@ export async function callOmniRouteChat(params: {
   } = params;
 
   const start = Date.now();
-  // Multi-tier cascade across OmniRoute auto-router pools:
-  // auto/best-free -> auto/chat -> auto/best-fast -> auto/fast -> auto/cheap
-  const modelsToTry = [
-    model,
-    "auto/best-free",
-    "auto/chat",
-    "auto/best-fast",
-    "auto/fast",
-    "auto/cheap",
-  ];
   const baseUrl = getBaseUrl();
+  // In production, never stall trying 127.0.0.1 if OMNIROUTE_BASE_URL is unset
+  if (
+    process.env.NODE_ENV === "production" &&
+    !process.env.OMNIROUTE_BASE_URL &&
+    baseUrl.includes("127.0.0.1")
+  ) {
+    throw new Error("OmniRoute gateway not configured for production");
+  }
+
+  // Deduplicated multi-tier cascade across OmniRoute auto-router pools (capped to 3 attempts)
+  const modelsToTry = Array.from(
+    new Set([model, "auto/best-free", "auto/best-fast"])
+  );
   const apiKey = getApiKey();
 
   let lastError = "";
@@ -90,7 +93,7 @@ export async function callOmniRouteChat(params: {
             : {}),
         },
         body: JSON.stringify(body),
-        signal: AbortSignal.timeout(25000),
+        signal: AbortSignal.timeout(8000),
       });
 
       if (!res.ok) {

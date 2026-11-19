@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cache } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getNameBySlug, getSocialPollByToken } from "@/lib/repository";
@@ -7,7 +8,7 @@ import PublicPollVoteClient, { type PublicPollCandidate } from "./PublicPollVote
 
 export const dynamic = "force-dynamic";
 
-async function loadPoll(inviteToken: string) {
+const loadPoll = cache(async (inviteToken: string) => {
   if (process.env.DATABASE_URL) {
     try {
       const store = new PostgresPollStore();
@@ -39,7 +40,7 @@ async function loadPoll(inviteToken: string) {
     closesAt: local.closesAt,
     closedAt: null,
   };
-}
+});
 
 export async function generateMetadata({
   params,

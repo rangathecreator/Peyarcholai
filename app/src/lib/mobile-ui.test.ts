@@ -100,4 +100,16 @@ describe("Mobile View & Collapsible Menu Regression Suite (MOB-01..06)", () => {
     assert.equal(fs.existsSync(path.join(SRC_DIR, "app/robots.ts")), true);
     assert.equal(fs.existsSync(path.join(SRC_DIR, "app/sitemap.ts")), true);
   });
+
+  it("SS-Q2: API resilience, caching & timeout guardrails (React.cache on poll SSR, survey Cache-Control, omniroute 8s cap, no raw vote err.message)", () => {
+    const pollPage = readSrc("app/p/[inviteToken]/page.tsx");
+    const surveyApi = readSrc("app/api/survey/route.ts");
+    const voteApi = readSrc("app/api/polls/[inviteToken]/vote/route.ts");
+    const omni = readSrc("lib/omniroute.ts");
+
+    assert.match(pollPage, /const loadPoll = cache\(/);
+    assert.match(surveyApi, /s-maxage=60/);
+    assert.doesNotMatch(voteApi, /err\.message/);
+    assert.match(omni, /AbortSignal\.timeout\(8000\)/);
+  });
 });

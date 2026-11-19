@@ -74,10 +74,10 @@ export async function POST(
       viewerRole: "participant",
       totalVotesCount: updated.votes.length,
     });
-  } catch (err) {
+  } catch {
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : "Vote error" },
-      { status: 400 }
+      { error: "Unable to record vote right now. Please try again." },
+      { status: 503 }
     );
   }
 }

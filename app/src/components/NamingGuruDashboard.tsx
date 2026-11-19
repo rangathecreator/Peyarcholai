@@ -3237,7 +3237,7 @@ export default function NamingGuruDashboard({
                   <div className="text-xs font-bold text-stone-800">
                     Cast a Family Vote (குடும்ப உறுப்பினர் வாக்கு):
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {activePollData.candidateSlugs.map((slug) => {
                       const rec =
                         pollCandidates.find((c) => c.slug === slug) ||
@@ -3247,45 +3247,47 @@ export default function NamingGuruDashboard({
                       return (
                         <div
                           key={slug}
-                          className="flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3 py-1.5 text-xs"
+                          className="flex flex-col gap-2 rounded-xl border border-stone-200 bg-white p-3 text-xs sm:flex-row sm:items-center sm:justify-between"
                         >
-                          <span className="font-bold text-stone-900">
+                          <span className="min-w-0 font-bold text-stone-900 break-words">
                             {rec ? `${rec.nameTamil} (${rec.nameLatin})` : slug}
                           </span>
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setVoterLoved((p) =>
-                                p.includes(slug)
-                                  ? p.filter((x) => x !== slug)
-                                  : [...p, slug]
-                              )
-                            }
-                            className={`rounded px-1.5 py-0.5 ${
-                              loved
-                                ? "bg-emerald-600 text-white"
-                                : "bg-stone-100 text-stone-600"
-                            }`}
-                          >
-                            ♥ Love
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setVoterRemoved((p) =>
-                                p.includes(slug)
-                                  ? p.filter((x) => x !== slug)
-                                  : [...p, slug]
-                              )
-                            }
-                            className={`rounded px-1.5 py-0.5 ${
-                              removed
-                                ? "bg-rose-600 text-white"
-                                : "bg-stone-100 text-stone-600"
-                            }`}
-                          >
-                            ✕ Vote-Out
-                          </button>
+                          <div className="grid grid-cols-2 gap-1.5 sm:flex sm:shrink-0">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setVoterLoved((p) =>
+                                  p.includes(slug)
+                                    ? p.filter((x) => x !== slug)
+                                    : [...p, slug]
+                                )
+                              }
+                              className={`min-h-[44px] sm:min-h-[36px] rounded-lg px-2.5 py-1.5 font-semibold transition ${
+                                loved
+                                  ? "bg-emerald-600 text-white"
+                                  : "bg-stone-100 text-stone-700 hover:bg-emerald-50"
+                              }`}
+                            >
+                              ♥ Love
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setVoterRemoved((p) =>
+                                  p.includes(slug)
+                                    ? p.filter((x) => x !== slug)
+                                    : [...p, slug]
+                                )
+                              }
+                              className={`min-h-[44px] sm:min-h-[36px] rounded-lg px-2.5 py-1.5 font-semibold transition ${
+                                removed
+                                  ? "bg-rose-600 text-white"
+                                  : "bg-stone-100 text-stone-700 hover:bg-rose-50"
+                              }`}
+                            >
+                              ✕ Vote-Out
+                            </button>
+                          </div>
                         </div>
                       );
                     })}
@@ -3932,17 +3934,18 @@ export default function NamingGuruDashboard({
                   ✓ Thank you! Your correction note has been logged for AI & scholar review.
                 </p>
               ) : (
-                <div className="mt-2 flex gap-2">
+                <div className="mt-2 flex flex-col gap-2 sm:flex-row">
                   <input
                     type="text"
                     placeholder="Suggest a better Sangam citation or meaning refinement..."
                     value={reportNote}
                     onChange={(e) => setReportNote(e.target.value)}
-                    className="flex-1 rounded-xl border border-stone-300 px-3 py-2 text-xs"
+                    className="min-w-0 flex-1 min-h-[44px] rounded-xl border border-stone-300 px-3 py-2 text-base sm:text-xs"
                   />
                   <button
+                    type="button"
                     onClick={() => handleReportError(selectedNameForModal.slug)}
-                    className="rounded-xl bg-stone-900 px-4 py-2 text-xs font-semibold text-white"
+                    className="min-h-[44px] shrink-0 rounded-xl bg-stone-900 px-4 py-2 text-xs font-semibold text-white"
                   >
                     Submit Report
                   </button>
@@ -3952,8 +3955,8 @@ export default function NamingGuruDashboard({
             </div>
 
             {/* Sticky Modal Footer */}
-            <div className="shrink-0 bg-stone-50 border-t border-stone-200 px-5 py-3 flex items-center justify-between gap-3 z-10">
-              <span className="text-xs text-stone-500 font-medium truncate">
+            <div className="shrink-0 bg-stone-50 border-t border-stone-200 px-3.5 sm:px-5 py-3 flex items-center justify-between gap-2 sm:gap-3 z-10">
+              <span className="hidden sm:inline text-xs text-stone-500 font-medium truncate">
                 {selectedNameForModal.originCategory} ·{" "}
                 {selectedNameForModal.confidence >= 0.8
                   ? "100% Provenance Verified"
