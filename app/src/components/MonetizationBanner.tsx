@@ -25,7 +25,7 @@ export function AdBanner({
       data-ad-slot={slotId}
       className="my-4 rounded-xl border border-amber-200/80 bg-gradient-to-r from-amber-50/90 via-orange-50/60 to-amber-50/90 px-4 py-3 text-center shadow-sm"
     >
-      <div className="flex items-center justify-between text-[11px] font-medium uppercase tracking-wider text-amber-800/70">
+      <div className="flex flex-wrap items-center justify-between gap-1 text-[11px] font-medium uppercase tracking-wider text-amber-800/70">
         <span>{label}</span>
         <span className="rounded bg-amber-200/60 px-1.5 py-0.5 text-[10px]">
           AdSlot #{slotId}
@@ -100,10 +100,15 @@ export function SubscriptionStatusPill() {
           ? "பெயர்ச்சோலை (Peyarcholai) Pro Subscription Active"
           : "All Pro features are unlocked free during the early community growth phase!"
       }
-      className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800"
+      className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold text-emerald-800 whitespace-nowrap"
     >
-      <span className="h-2 w-2 rounded-full bg-emerald-500" />
-      {paywallEnabled ? "Pro Tier Enabled" : "Free Community Access (Ads Supported)"}
+      <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500 shrink-0" />
+      <span className="hidden md:inline">
+        {paywallEnabled ? "Pro Tier Enabled" : "Free Community Access (Ads Supported)"}
+      </span>
+      <span className="md:hidden">
+        {paywallEnabled ? "Pro" : "Free"}
+      </span>
     </span>
   );
 }

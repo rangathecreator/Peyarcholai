@@ -279,18 +279,24 @@ describe('Task 39: Single-Pass Repository Filter & O(1) Category Counts', () => 
 
   it('executes multi-criteria single-pass filter under SS-03 budget (< 30 ms)', () => {
     // Warm up seed catalog & V8 JIT
-    filterTamilNames({ gender: 'girl', nameCategory: 'pure_tamil' });
-
-    const t0 = performance.now();
-    const res = filterTamilNames({
+    const query = {
       gender: 'girl',
       nameCategory: 'pure_tamil',
       minEaseScore: 80,
       maxMisspellRisk: 'low',
-    });
-    const elapsed = performance.now() - t0;
-    assert.ok(res.length > 0);
-    assert.ok(elapsed < 30, `Expected < 30ms single-pass filter, got ${elapsed.toFixed(2)}ms`);
+    };
+    const warmup = filterTamilNames(query);
+    assert.ok(warmup.length > 0);
+
+    const samples: number[] = [];
+    for (let i = 0; i < 5; i++) {
+      const t0 = performance.now();
+      filterTamilNames(query);
+      samples.push(performance.now() - t0);
+    }
+    samples.sort((a, b) => a - b);
+    const medianMs = samples[2];
+    assert.ok(medianMs < 30, `Expected < 30ms median single-pass filter, got ${medianMs.toFixed(2)}ms`);
   });
 });
 

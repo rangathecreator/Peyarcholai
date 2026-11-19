@@ -50,6 +50,7 @@ export default function NamingGuruDashboard({
   pageSize?: number;
 }) {
   const [activeTab, setActiveTab] = useState<ActiveTab>("explore");
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   // 1. Explorer & Shortlist state (server-side filtering + pagination)
   const [names, setNames] = useState<TamilNameRecord[]>(initialNames);
@@ -812,11 +813,11 @@ export default function NamingGuruDashboard({
   return (
     <div className="space-y-6">
       {/* Hero Banner - பெயர்ச்சோலை Trendy Celestial Garden Theme */}
-      <section className="relative overflow-hidden rounded-3xl bg-peyarcholai-hero px-6 py-8 text-white shadow-2xl sm:px-10 border border-amber-500/20">
-        <div className="relative z-10 flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
+      <section className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-peyarcholai-hero px-4 py-6 text-white shadow-2xl sm:px-10 sm:py-8 border border-amber-500/20">
+        <div className="relative z-10 flex flex-col justify-between gap-6 sm:gap-8 lg:flex-row lg:items-center">
           {/* Left Column: Brand Lockup & Description */}
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/10 px-3.5 py-1 text-xs font-semibold text-amber-200 backdrop-blur-md shadow-xs">
+          <div className="min-w-0 max-w-2xl space-y-4">
+            <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl sm:rounded-full border border-amber-400/40 bg-amber-500/10 px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-amber-200 backdrop-blur-md shadow-xs">
               <span className="text-amber-300">🌟</span>
               <span>விண்மீன் தொட்டில்</span>
               <span className="text-amber-400/50">·</span>
@@ -825,8 +826,8 @@ export default function NamingGuruDashboard({
               <span className="text-emerald-300 font-bold">100% Provenance</span>
             </div>
 
-            <div className="flex items-center gap-4 pt-1">
-              <div className="relative flex h-16 w-16 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-105">
+            <div className="flex items-center gap-3 sm:gap-4 pt-1">
+              <div className="relative flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-105">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/logo-white-transparent.png"
@@ -834,11 +835,11 @@ export default function NamingGuruDashboard({
                   className="h-full w-full object-contain filter drop-shadow-[0_4px_16px_rgba(251,191,36,0.45)]"
                 />
               </div>
-              <div>
-                <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl text-white">
+              <div className="min-w-0 flex-1">
+                <h1 className="text-2xl font-extrabold tracking-tight sm:text-5xl text-white leading-tight break-words">
                   பெயர்ச்சோலை
                 </h1>
-                <div className="flex items-center gap-2 mt-1">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-1">
                   <span className="text-xs sm:text-sm font-bold tracking-widest text-amber-300 uppercase">
                     Peyarcholai
                   </span>
@@ -875,22 +876,22 @@ export default function NamingGuruDashboard({
 
           {/* Right Column: Sleek Glass Stat Cards */}
           <div className="flex flex-col gap-3 sm:w-auto lg:min-w-[320px]">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-2">
-              <div className="glass-card rounded-2xl p-4 text-center">
-                <div className="text-2xl font-black text-amber-300 tracking-tight">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3 sm:grid-cols-2">
+              <div className="glass-card rounded-2xl p-3 sm:p-4 text-center">
+                <div className="text-xl sm:text-2xl font-black text-amber-300 tracking-tight">
                   {initialTotal.toLocaleString("en-IN")}+
                 </div>
-                <div className="text-xs text-stone-200 font-medium mt-0.5">
+                <div className="text-[11px] sm:text-xs text-stone-200 font-medium mt-0.5">
                   சரிபார்க்கப்பட்ட பெயர்கள்
                 </div>
                 <div className="text-[10px] text-amber-200/70">Verified Catalog</div>
               </div>
 
-              <div className="glass-card rounded-2xl p-4 text-center">
-                <div className="text-2xl font-black text-amber-300 tracking-tight">
+              <div className="glass-card rounded-2xl p-3 sm:p-4 text-center">
+                <div className="text-xl sm:text-2xl font-black text-amber-300 tracking-tight">
                   27 · 108
                 </div>
-                <div className="text-xs text-stone-200 font-medium mt-0.5">
+                <div className="text-[11px] sm:text-xs text-stone-200 font-medium mt-0.5">
                   நட்சத்திரப் பாதங்கள்
                 </div>
                 <div className="text-[10px] text-amber-200/70">Padam Syllables</div>
@@ -913,8 +914,12 @@ export default function NamingGuruDashboard({
                 </div>
               </div>
               <button
-                onClick={() => setActiveTab("poll")}
-                className="rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 px-3 py-1.5 text-xs font-bold text-white shadow-sm hover:from-emerald-500 hover:to-teal-600 transition"
+                type="button"
+                onClick={() => {
+                  setActiveTab("poll");
+                  setMobileNavOpen(false);
+                }}
+                className="whitespace-nowrap shrink-0 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 px-3 py-2 text-xs font-bold text-white shadow-sm hover:from-emerald-500 hover:to-teal-600 transition"
               >
                 வாக்கெடுப்பு →
               </button>
@@ -923,12 +928,15 @@ export default function NamingGuruDashboard({
         </div>
       </section>
 
-      {/* Navigation Tabs - Modern Pill Bar (Task 35) */}
-      <nav
-        aria-label="Primary sections"
-        className="flex items-center gap-2 overflow-x-auto rounded-2xl border border-stone-200/90 bg-white/95 p-2 shadow-sm backdrop-blur sm:flex-wrap"
-      >
-        {[
+      {/* Navigation Tabs - Collapsible Drawer on Mobile (< md), Modern Pill Bar on Desktop (md+) */}
+      {(() => {
+        const navTabs: Array<{
+          id: ActiveTab;
+          icon: string;
+          labelTa: string;
+          labelEn: string;
+          badge?: string | number;
+        }> = [
           {
             id: "explore",
             icon: "🔎",
@@ -980,65 +988,187 @@ export default function NamingGuruDashboard({
             labelTa: "புதிய பெயர் பரிந்துரை",
             labelEn: "Suggest a Name",
           },
-        ].map((tab) => {
-          const active = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => setActiveTab(tab.id as ActiveTab)}
-              className={`group flex shrink-0 items-center gap-2.5 rounded-xl px-3.5 py-2 text-left transition-all ${
-                active
-                  ? "bg-amber-900 text-white shadow-sm ring-1 ring-amber-800"
-                  : "bg-stone-50/80 text-stone-700 hover:bg-amber-50 hover:text-amber-950"
-              }`}
-            >
-              <span className="text-base leading-none" aria-hidden="true">
-                {tab.icon}
-              </span>
-              <div>
-                <div
-                  className={`text-xs font-bold leading-tight ${
-                    active ? "text-white" : "text-stone-900 group-hover:text-amber-950"
-                  }`}
-                >
-                  {tab.labelEn}
-                </div>
-                <div
-                  className={`text-[10px] leading-tight ${
-                    active ? "text-amber-200" : "text-stone-500"
-                  }`}
-                >
-                  {tab.labelTa}
-                </div>
-              </div>
-              {tab.badge !== undefined && (
-                <span
-                  className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${
-                    active
-                      ? "bg-amber-700 text-amber-50"
-                      : "bg-stone-200/80 text-stone-700 group-hover:bg-amber-200/70"
-                  }`}
-                >
-                  {tab.badge}
-                </span>
-              )}
-            </button>
-          );
-        })}
+        ];
+        const currentTab = navTabs.find((t) => t.id === activeTab) || navTabs[0];
 
-        {/* User Guide Pill on the right */}
-        <Link
-          href="/docs"
-          className="tab-btn border-amber-300/80 bg-amber-50/80 text-amber-950 hover:bg-amber-100/80 sm:ml-auto"
-        >
-          <span className="text-base">📖</span>
-          <div>
-            <div className="font-extrabold text-stone-900">User Guide</div>
-            <div className="text-[10px] font-semibold text-amber-800">பயனர் வழிகாட்டி</div>
-          </div>
-        </Link>
-      </nav>
+        return (
+          <nav
+            aria-label="Primary sections"
+            className="rounded-2xl border border-stone-200/90 bg-white/95 p-2 shadow-sm backdrop-blur"
+          >
+            {/* Mobile Collapsible Accordion Trigger (< md) */}
+            <div className="md:hidden">
+              <button
+                type="button"
+                aria-expanded={mobileNavOpen}
+                aria-controls="mobile-section-menu"
+                onClick={() => setMobileNavOpen((prev) => !prev)}
+                className="flex w-full min-h-[48px] items-center justify-between gap-2 rounded-xl bg-amber-900 px-3.5 py-2.5 text-left text-white shadow-sm ring-1 ring-amber-800 transition active:scale-[0.99]"
+              >
+                <div className="flex min-w-0 items-center gap-2.5">
+                  <span className="text-lg leading-none shrink-0" aria-hidden="true">
+                    {currentTab.icon}
+                  </span>
+                  <div className="min-w-0">
+                    <div className="truncate text-sm font-bold leading-tight text-white">
+                      {currentTab.labelEn}
+                    </div>
+                    <div className="truncate text-[11px] leading-tight text-amber-200">
+                      {currentTab.labelTa}
+                    </div>
+                  </div>
+                  {currentTab.badge !== undefined && (
+                    <span className="shrink-0 rounded-full bg-amber-700 px-2 py-0.5 text-[11px] font-bold text-amber-50">
+                      {currentTab.badge}
+                    </span>
+                  )}
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-white/15 px-2.5 py-1 text-[11px] font-semibold text-amber-100">
+                  <span>{mobileNavOpen ? "மூடு" : "பிரிவுகள்"}</span>
+                  <svg
+                    className={`h-4 w-4 transition-transform duration-200 ${mobileNavOpen ? "rotate-180" : ""}`}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </button>
+
+              {mobileNavOpen && (
+                <div
+                  id="mobile-section-menu"
+                  className="mt-2 grid grid-cols-1 gap-1.5 border-t border-stone-200/80 pt-2"
+                >
+                  {navTabs.map((tab) => {
+                    const active = activeTab === tab.id;
+                    return (
+                      <button
+                        key={tab.id}
+                        type="button"
+                        onClick={() => {
+                          setActiveTab(tab.id);
+                          setMobileNavOpen(false);
+                        }}
+                        className={`flex w-full min-h-[44px] items-center justify-between gap-2.5 rounded-xl px-3.5 py-2.5 text-left transition ${
+                          active
+                            ? "bg-amber-100/90 text-amber-950 ring-1 ring-amber-400"
+                            : "bg-stone-50 text-stone-800 hover:bg-amber-50"
+                        }`}
+                      >
+                        <div className="flex min-w-0 items-center gap-2.5">
+                          <span className="text-base leading-none shrink-0" aria-hidden="true">
+                            {tab.icon}
+                          </span>
+                          <div className="min-w-0">
+                            <div className="truncate text-xs font-bold leading-tight text-stone-900">
+                              {tab.labelEn}
+                            </div>
+                            <div className="truncate text-[11px] leading-tight text-stone-500">
+                              {tab.labelTa}
+                            </div>
+                          </div>
+                        </div>
+                        {tab.badge !== undefined && (
+                          <span
+                            className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold ${
+                              active
+                                ? "bg-amber-900 text-amber-50"
+                                : "bg-stone-200/80 text-stone-700"
+                            }`}
+                          >
+                            {tab.badge}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                  <Link
+                    href="/docs"
+                    onClick={() => setMobileNavOpen(false)}
+                    className="flex w-full min-h-[44px] items-center gap-2.5 rounded-xl border border-amber-300/80 bg-amber-50/90 px-3.5 py-2.5 text-left text-amber-950 hover:bg-amber-100/80"
+                  >
+                    <span className="text-base leading-none shrink-0" aria-hidden="true">
+                      📖
+                    </span>
+                    <div className="min-w-0">
+                      <div className="text-xs font-extrabold text-stone-900">User Guide</div>
+                      <div className="text-[11px] font-semibold text-amber-800">பயனர் வழிகாட்டி</div>
+                    </div>
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Desktop Wrapping Pill Bar (md+) */}
+            <div className="hidden md:flex md:flex-wrap md:items-center md:gap-2">
+              {navTabs.map((tab) => {
+                const active = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`group flex shrink-0 items-center gap-2.5 rounded-xl px-3.5 py-2 text-left transition-all ${
+                      active
+                        ? "bg-amber-900 text-white shadow-sm ring-1 ring-amber-800"
+                        : "bg-stone-50/80 text-stone-700 hover:bg-amber-50 hover:text-amber-950"
+                    }`}
+                  >
+                    <span className="text-base leading-none" aria-hidden="true">
+                      {tab.icon}
+                    </span>
+                    <div>
+                      <div
+                        className={`text-xs font-bold leading-tight ${
+                          active ? "text-white" : "text-stone-900 group-hover:text-amber-950"
+                        }`}
+                      >
+                        {tab.labelEn}
+                      </div>
+                      <div
+                        className={`text-[10px] leading-tight ${
+                          active ? "text-amber-200" : "text-stone-500"
+                        }`}
+                      >
+                        {tab.labelTa}
+                      </div>
+                    </div>
+                    {tab.badge !== undefined && (
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${
+                          active
+                            ? "bg-amber-700 text-amber-50"
+                            : "bg-stone-200/80 text-stone-700 group-hover:bg-amber-200/70"
+                        }`}
+                      >
+                        {tab.badge}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+
+              {/* User Guide Pill on the right */}
+              <Link
+                href="/docs"
+                className="tab-btn border-amber-300/80 bg-amber-50/80 text-amber-950 hover:bg-amber-100/80 md:ml-auto"
+              >
+                <span className="text-base">📖</span>
+                <div>
+                  <div className="font-extrabold text-stone-900">User Guide</div>
+                  <div className="text-[10px] font-semibold text-amber-800">பயனர் வழிகாட்டி</div>
+                </div>
+              </Link>
+            </div>
+          </nav>
+        );
+      })()}
 
       {/* Top Ad Slot */}
       <AdBanner slotId="TOP-DIRECTORY-01" />
@@ -1056,7 +1186,7 @@ export default function NamingGuruDashboard({
                 type="text"
                 value={searchQ}
                 onChange={(e) => setSearchQ(e.target.value)}
-                placeholder="e.g., யாழினி, Kavin, संगम, Moon, Purananuru..."
+                placeholder="e.g., யாழினி, Kavin, சங்கம், Moon, Purananuru..."
                 className="mt-1 w-full rounded-xl border border-stone-300 px-3.5 py-2 text-sm focus:border-amber-600 focus:outline-none"
               />
             </div>

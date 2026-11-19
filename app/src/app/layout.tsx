@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import {
-  DpdpConsentBanner,
-  SubscriptionStatusPill,
-} from "@/components/MonetizationBanner";
+import { DpdpConsentBanner } from "@/components/MonetizationBanner";
+import { MobileHeaderNav } from "@/components/MobileHeaderNav";
 import Link from "next/link";
 
 export const viewport: Viewport = {
@@ -62,28 +60,7 @@ export default function RootLayout({
               </div>
             </Link>
 
-            <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-              <Link
-                href="/why-peyarcholai"
-                className="inline-flex items-center gap-1 rounded-xl border border-emerald-300 bg-emerald-50/90 px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-emerald-900 transition hover:bg-emerald-100 hover:shadow-xs"
-              >
-                <span>✨</span>
-                <span className="hidden md:inline">Why Peyarcholai</span>
-                <span className="md:hidden">ஏன்?</span>
-              </Link>
-              <Link
-                href="/docs"
-                className="inline-flex items-center gap-1 sm:gap-1.5 rounded-xl border border-amber-300 bg-amber-50/90 px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-amber-900 transition hover:bg-amber-100 hover:shadow-xs"
-              >
-                <span>📖</span>
-                <span className="hidden md:inline">User Guide &amp; Docs</span>
-                <span className="md:hidden">வழிகாட்டி</span>
-              </Link>
-              <SubscriptionStatusPill />
-              <span className="hidden lg:inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-800">
-                🛡️ 100% Provenance
-              </span>
-            </div>
+            <MobileHeaderNav />
           </div>
         </header>
 

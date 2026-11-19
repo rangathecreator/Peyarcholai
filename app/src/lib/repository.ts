@@ -255,6 +255,8 @@ function getStore(): RuntimeStoreData {
 
 function saveStore(store: RuntimeStoreData): void {
   memoryStore = store;
+  cachedAllNames = null;
+  cachedAllCategoryBuckets = null;
   try {
     fs.mkdirSync(path.dirname(RUNTIME_FILE), { recursive: true });
     fs.writeFileSync(RUNTIME_FILE, JSON.stringify(store, null, 2), "utf8");
@@ -264,7 +266,10 @@ function saveStore(store: RuntimeStoreData): void {
 }
 
 let cachedSeedCatalog: TamilNameRecord[] | null = null;
+let cachedAllNames: TamilNameRecord[] | null = null;
 let cachedSlugMap: Map<string, TamilNameRecord> | null = null;
+let cachedCategoryBuckets: Record<string, TamilNameRecord[]> | null = null;
+let cachedAllCategoryBuckets: Record<string, TamilNameRecord[]> | null = null;
 let cachedSeedCategoryCounts: {
   pure_tamil: number;
   tamilnadu_usage: number;
@@ -272,6 +277,7 @@ let cachedSeedCategoryCounts: {
   total: number;
 } | null = null;
 let cachedIndexMtimeMs = 0;
+let lastIndexStatCheckMs = 0;
 
 /**
  * FMT-02: Normalize Roman/English Tamil transliteration variants
@@ -296,6 +302,11 @@ export function getSeedNames(): TamilNameRecord[] {
 }
 
 function getSeedCatalog(): TamilNameRecord[] {
+  const now = Date.now();
+  if (cachedSeedCatalog && now - lastIndexStatCheckMs < 5000) {
+    return cachedSeedCatalog;
+  }
+  lastIndexStatCheckMs = now;
   let currentMtimeMs = 0;
   try {
     currentMtimeMs = fs.statSync(path.join(NAMES_DIR, "index.json")).mtimeMs;
@@ -305,6 +316,8 @@ function getSeedCatalog(): TamilNameRecord[] {
 
   if (!cachedSeedCatalog || (currentMtimeMs > 0 && currentMtimeMs !== cachedIndexMtimeMs)) {
     cachedIndexMtimeMs = currentMtimeMs;
+    cachedAllNames = null;
+    cachedAllCategoryBuckets = null;
     const raw = readNameShards();
     // Load AI plausibility flags (if available) so awkward compounds are demoted below attested names (A5)
     const unnaturalSlugs = new Set<string>();
@@ -423,15 +436,27 @@ function getSeedCatalog(): TamilNameRecord[] {
       .map((n) => hydrateCompactRecord(n))
       .sort((a, b) => tierRank(a) - tierRank(b));
     cachedSlugMap = new Map();
+    cachedCategoryBuckets = {
+      pure_tamil: [],
+      tamilnadu_usage: [],
+      other_heritage: [],
+    };
     let pure_tamil = 0;
     let tamilnadu_usage = 0;
     let other_heritage = 0;
     for (const n of cachedSeedCatalog) {
       cachedSlugMap.set(n.slug.toLowerCase(), n);
       const cat = n.nameCategory || "pure_tamil";
-      if (cat === "pure_tamil") pure_tamil++;
-      else if (cat === "tamilnadu_usage") tamilnadu_usage++;
-      else other_heritage++;
+      if (cat === "pure_tamil") {
+        pure_tamil++;
+        cachedCategoryBuckets.pure_tamil.push(n);
+      } else if (cat === "tamilnadu_usage") {
+        tamilnadu_usage++;
+        cachedCategoryBuckets.tamilnadu_usage.push(n);
+      } else {
+        other_heritage++;
+        cachedCategoryBuckets.other_heritage.push(n);
+      }
       const norm = normalizeRomanTamilAlias(n.slug);
       if (norm && !cachedSlugMap.has(norm)) {
         cachedSlugMap.set(norm, n);
@@ -454,9 +479,14 @@ function getSeedCatalog(): TamilNameRecord[] {
 }
 
 export function getAllTamilNames(): TamilNameRecord[] {
-  const store = getStore();
   const base = getSeedCatalog();
+  if (cachedAllNames) {
+    return cachedAllNames;
+  }
+  const store = getStore();
   if (store.customNames.length === 0) {
+    cachedAllNames = base;
+    cachedAllCategoryBuckets = cachedCategoryBuckets;
     return base;
   }
   const customEnriched = store.customNames
@@ -489,7 +519,25 @@ export function getAllTamilNames(): TamilNameRecord[] {
         compoundChaldean: n.compoundChaldean || dual.chaldean.total,
       };
     });
-  return [...customEnriched, ...base];
+  cachedAllNames = [...customEnriched, ...base];
+  if (cachedCategoryBuckets) {
+    const customBuckets: Record<string, TamilNameRecord[]> = {
+      pure_tamil: [],
+      tamilnadu_usage: [],
+      other_heritage: [],
+    };
+    for (const n of customEnriched) {
+      const cat = n.nameCategory || "pure_tamil";
+      if (customBuckets[cat]) customBuckets[cat].push(n);
+      else customBuckets.other_heritage.push(n);
+    }
+    cachedAllCategoryBuckets = {
+      pure_tamil: customBuckets.pure_tamil.length > 0 ? [...customBuckets.pure_tamil, ...cachedCategoryBuckets.pure_tamil] : cachedCategoryBuckets.pure_tamil,
+      tamilnadu_usage: customBuckets.tamilnadu_usage.length > 0 ? [...customBuckets.tamilnadu_usage, ...cachedCategoryBuckets.tamilnadu_usage] : cachedCategoryBuckets.tamilnadu_usage,
+      other_heritage: customBuckets.other_heritage.length > 0 ? [...customBuckets.other_heritage, ...cachedCategoryBuckets.other_heritage] : cachedCategoryBuckets.other_heritage,
+    };
+  }
+  return cachedAllNames;
 }
 
 export interface NameFilterQuery {
@@ -592,10 +640,15 @@ export function filterTamilNames(filters: NameFilterQuery): TamilNameRecord[] {
     return all;
   }
 
+  const source =
+    nameCategory && cachedAllCategoryBuckets && cachedAllCategoryBuckets[nameCategory]
+      ? cachedAllCategoryBuckets[nameCategory]
+      : all;
+
   const out: TamilNameRecord[] = [];
-  for (let i = 0; i < all.length; i++) {
-    const n = all[i];
-    if (nameCategory && (n.nameCategory || "pure_tamil") !== nameCategory) continue;
+  for (let i = 0; i < source.length; i++) {
+    const n = source[i];
+    if (nameCategory && source === all && (n.nameCategory || "pure_tamil") !== nameCategory) continue;
     if (gender && n.gender !== gender && n.gender !== "unisex") continue;
     if (nakshatraSlug && !n.nakshatraSlugs.some((s) => s.toLowerCase() === nakshatraSlug)) continue;
     if (numerology) {
