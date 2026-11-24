@@ -281,7 +281,7 @@ export default function NamingGuruDashboard({
       .then((j) => {
         if (Array.isArray(j.names)) setShortlistRecords(j.names);
       })
-      .catch(() => {});
+      .catch(() => { });
     return () => controller.abort();
   }, [shortlist]);
 
@@ -566,7 +566,7 @@ export default function NamingGuruDashboard({
     fetch(`/api/names?${qs.toString()}`, { signal: controller.signal })
       .then((r) => (r.ok ? r.json() : { names: [] }))
       .then((j) => setBirthStarNames(j.names || []))
-      .catch(() => {});
+      .catch(() => { });
     return () => controller.abort();
   }, [birthStarResult.nakshatra.slug, birthStarGender, birthStarSyllable]);
   const namesMatchingBirthStar = birthStarNames;
@@ -621,7 +621,7 @@ export default function NamingGuruDashboard({
           if (d.poll) setActivePollData(d.poll);
           if (Array.isArray(d.candidates)) setPollCandidates(d.candidates);
         })
-        .catch(() => {});
+        .catch(() => { });
     }
     if (activeTab === "community") {
       fetch("/api/suggestions")
@@ -629,7 +629,7 @@ export default function NamingGuruDashboard({
         .then((d) => {
           if (Array.isArray(d.suggestions)) setRecentSuggestions(d.suggestions);
         })
-        .catch(() => {});
+        .catch(() => { });
     }
   }, [activeTab, createdPollToken]);
 
@@ -941,58 +941,58 @@ export default function NamingGuruDashboard({
           labelEn: string;
           badge?: string | number;
         }> = [
-          {
-            id: "explore",
-            icon: "🔎",
-            labelTa: "பெயர் தேடல்",
-            labelEn: "Explore Names",
-            badge: totalCount,
-          },
-          {
-            id: "nakshatra",
-            icon: "🌟",
-            labelTa: "நட்சத்திரக் கணிப்பு",
-            labelEn: "Birth Star Finder",
-          },
-          {
-            id: "numerology",
-            icon: "🔢",
-            labelTa: "எண் கணிதம்",
-            labelEn: "Numerology Engine",
-          },
-          {
-            id: "scorecard",
-            icon: "📊",
-            labelTa: "7-பரிமாண மதிப்பீடு",
-            labelEn: "7D Scorecard",
-          },
-          {
-            id: "querygen",
-            icon: "✨",
-            labelTa: "AI வினவல் வடிவமைப்பு",
-            labelEn: "Prompt Synthesizer",
-            badge: `${generatedQuery.activeConstraintCount} Rules`,
-          },
-          {
-            id: "advisor",
-            icon: "🤖",
-            labelTa: "அறிவார்ந்த AI ஆலோசகர்",
-            labelEn: "AI Name Advisor",
-          },
-          {
-            id: "poll",
-            icon: "🗳️",
-            labelTa: "குடும்ப வாக்கெடுப்பு",
-            labelEn: "Family Poll",
-            badge: shortlist.length > 0 ? shortlist.length : undefined,
-          },
-          {
-            id: "community",
-            icon: "💡",
-            labelTa: "புதிய பெயர் பரிந்துரை",
-            labelEn: "Suggest a Name",
-          },
-        ];
+            {
+              id: "explore",
+              icon: "🔎",
+              labelTa: "பெயர் தேடல்",
+              labelEn: "Explore Names",
+              badge: totalCount,
+            },
+            {
+              id: "nakshatra",
+              icon: "🌟",
+              labelTa: "நட்சத்திரக் கணிப்பு",
+              labelEn: "Birth Star Finder",
+            },
+            {
+              id: "numerology",
+              icon: "🔢",
+              labelTa: "எண் கணிதம்",
+              labelEn: "Numerology Engine",
+            },
+            {
+              id: "scorecard",
+              icon: "📊",
+              labelTa: "7-பரிமாண மதிப்பீடு",
+              labelEn: "7D Scorecard",
+            },
+            {
+              id: "querygen",
+              icon: "✨",
+              labelTa: "AI வினவல் வடிவமைப்பு",
+              labelEn: "Prompt Synthesizer",
+              badge: `${generatedQuery.activeConstraintCount} Rules`,
+            },
+            {
+              id: "advisor",
+              icon: "🤖",
+              labelTa: "அறிவார்ந்த AI ஆலோசகர்",
+              labelEn: "AI Name Advisor",
+            },
+            {
+              id: "poll",
+              icon: "🗳️",
+              labelTa: "குடும்ப வாக்கெடுப்பு",
+              labelEn: "Family Poll",
+              badge: shortlist.length > 0 ? shortlist.length : undefined,
+            },
+            {
+              id: "community",
+              icon: "💡",
+              labelTa: "புதிய பெயர் பரிந்துரை",
+              labelEn: "Suggest a Name",
+            },
+          ];
         const currentTab = navTabs.find((t) => t.id === activeTab) || navTabs[0];
 
         return (
@@ -1059,11 +1059,10 @@ export default function NamingGuruDashboard({
                           setActiveTab(tab.id);
                           setMobileNavOpen(false);
                         }}
-                        className={`flex w-full min-h-[44px] items-center justify-between gap-2.5 rounded-xl px-3.5 py-2.5 text-left transition ${
-                          active
-                            ? "bg-amber-100/90 text-amber-950 ring-1 ring-amber-400"
-                            : "bg-stone-50 text-stone-800 hover:bg-amber-50"
-                        }`}
+                        className={`flex w-full min-h-[44px] items-center justify-between gap-2.5 rounded-xl px-3.5 py-2.5 text-left transition ${active
+                          ? "bg-amber-100/90 text-amber-950 ring-1 ring-amber-400"
+                          : "bg-stone-50 text-stone-800 hover:bg-amber-50"
+                          }`}
                       >
                         <div className="flex min-w-0 items-center gap-2.5">
                           <span className="text-base leading-none shrink-0" aria-hidden="true">
@@ -1080,11 +1079,10 @@ export default function NamingGuruDashboard({
                         </div>
                         {tab.badge !== undefined && (
                           <span
-                            className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold ${
-                              active
-                                ? "bg-amber-900 text-amber-50"
-                                : "bg-stone-200/80 text-stone-700"
-                            }`}
+                            className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold ${active
+                              ? "bg-amber-900 text-amber-50"
+                              : "bg-stone-200/80 text-stone-700"
+                              }`}
                           >
                             {tab.badge}
                           </span>
@@ -1118,38 +1116,34 @@ export default function NamingGuruDashboard({
                     key={tab.id}
                     type="button"
                     onClick={() => setActiveTab(tab.id)}
-                    className={`group flex shrink-0 items-center gap-2.5 rounded-xl px-3.5 py-2 text-left transition-all ${
-                      active
-                        ? "bg-amber-900 text-white shadow-sm ring-1 ring-amber-800"
-                        : "bg-stone-50/80 text-stone-700 hover:bg-amber-50 hover:text-amber-950"
-                    }`}
+                    className={`group flex shrink-0 items-center gap-2.5 rounded-xl px-3.5 py-2 text-left transition-all ${active
+                      ? "bg-amber-900 text-white shadow-sm ring-1 ring-amber-800"
+                      : "bg-stone-50/80 text-stone-700 hover:bg-amber-50 hover:text-amber-950"
+                      }`}
                   >
                     <span className="text-base leading-none" aria-hidden="true">
                       {tab.icon}
                     </span>
                     <div>
                       <div
-                        className={`text-xs font-bold leading-tight ${
-                          active ? "text-white" : "text-stone-900 group-hover:text-amber-950"
-                        }`}
+                        className={`text-xs font-bold leading-tight ${active ? "text-white" : "text-stone-900 group-hover:text-amber-950"
+                          }`}
                       >
                         {tab.labelEn}
                       </div>
                       <div
-                        className={`text-[10px] leading-tight ${
-                          active ? "text-amber-200" : "text-stone-500"
-                        }`}
+                        className={`text-[10px] leading-tight ${active ? "text-amber-200" : "text-stone-500"
+                          }`}
                       >
                         {tab.labelTa}
                       </div>
                     </div>
                     {tab.badge !== undefined && (
                       <span
-                        className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${
-                          active
-                            ? "bg-amber-700 text-amber-50"
-                            : "bg-stone-200/80 text-stone-700 group-hover:bg-amber-200/70"
-                        }`}
+                        className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${active
+                          ? "bg-amber-700 text-amber-50"
+                          : "bg-stone-200/80 text-stone-700 group-hover:bg-amber-200/70"
+                          }`}
                       >
                         {tab.badge}
                       </span>
@@ -1292,345 +1286,340 @@ export default function NamingGuruDashboard({
             id="mobile-extra-filters"
             className={`${mobileFiltersOpen ? "space-y-4" : "hidden"} md:block md:space-y-6`}
           >
-          {/* Origin Pill Filters */}
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold text-stone-500">
-              Origin Tradition:
-            </span>
-            {[
-              { id: "all", label: "All Traditions" },
-              { id: "Sangam", label: "சங்கத் தமிழ் (Sangam Tamil)" },
-              { id: "Literary", label: "இலக்கியம் (Literary / Tirukkural)" },
-              { id: "Historical", label: "வரலாறு (Chola / Pandya / Velir)" },
-              { id: "Traditional", label: "மரபு (Traditional)" },
-            ].map((o) => (
-              <button
-                key={o.id}
-                onClick={() => setOriginFilter(o.id)}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition ${
-                  originFilter === o.id
-                    ? "bg-stone-900 text-white"
-                    : "border border-stone-300 bg-white text-stone-700 hover:bg-stone-100"
-                }`}
-              >
-                {o.label}
-              </button>
-            ))}
-          </div>
-
-          {/* 3-Tier Cultural Classification Filter Bar */}
-          <div className="rounded-2xl border border-amber-200 bg-amber-50/50 p-3.5 shadow-sm">
+            {/* Origin Pill Filters */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="mr-1 text-xs font-bold text-amber-950">
-                பெயர் வகைப்பாடு (Classification):
+              <span className="text-xs font-semibold text-stone-500">
+                Origin Tradition:
               </span>
               {[
-                {
-                  id: "all",
-                  label: "🌐 அனைத்தும் (All Categories)",
-                  count: categoryCounts?.total,
-                },
-                {
-                  id: "pure_tamil",
-                  label: "🌿 1. தூய தமிழ் (Pure Tamil)",
-                  count: categoryCounts?.pure_tamil,
-                },
-                {
-                  id: "tamilnadu_usage",
-                  label: "🏛️ 2. தமிழ்நாட்டுப் பயன்பாடு (Used in TN)",
-                  count: categoryCounts?.tamilnadu_usage,
-                },
-                {
-                  id: "other_heritage",
-                  label: "🌍 3. பிற பெயர்கள் (Other Names)",
-                  count: categoryCounts?.other_heritage,
-                },
-              ].map((cat) => (
+                { id: "all", label: "All Traditions" },
+                { id: "Sangam", label: "சங்கத் தமிழ் (Sangam Tamil)" },
+                { id: "Literary", label: "இலக்கியம் (Literary / Tirukkural)" },
+                { id: "Historical", label: "வரலாறு (Chola / Pandya / Velir)" },
+                { id: "Traditional", label: "மரபு (Traditional)" },
+              ].map((o) => (
                 <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => setNameCategoryFilter(cat.id)}
-                  className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-bold transition ${
-                    nameCategoryFilter === cat.id
-                      ? "bg-amber-800 text-white shadow-sm"
-                      : "border border-amber-200 bg-white text-stone-800 hover:bg-amber-100/70"
-                  }`}
+                  key={o.id}
+                  onClick={() => setOriginFilter(o.id)}
+                  className={`rounded-full px-3 py-1 text-xs font-medium transition ${originFilter === o.id
+                    ? "bg-stone-900 text-white"
+                    : "border border-stone-300 bg-white text-stone-700 hover:bg-stone-100"
+                    }`}
                 >
-                  <span>{cat.label}</span>
-                  {typeof cat.count === "number" && (
-                    <span
-                      className={`rounded-full px-1.5 py-0.5 text-[10px] ${
-                        nameCategoryFilter === cat.id
-                          ? "bg-amber-700 text-amber-100"
-                          : "bg-amber-100 text-amber-900"
-                      }`}
-                    >
-                      {cat.count.toLocaleString()}
-                    </span>
-                  )}
+                  {o.label}
                 </button>
               ))}
             </div>
-          </div>
 
-          {/* Starting Letter / Tamil Uyir-Mei Quick Filter Bar */}
-          <div className="rounded-2xl border border-stone-200 bg-white p-3.5 shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex flex-wrap items-center gap-1.5">
-                <span className="mr-1 text-xs font-semibold text-stone-600">
-                  முதல் எழுத்து (Starting Letter):
+            {/* 3-Tier Cultural Classification Filter Bar */}
+            <div className="rounded-2xl border border-amber-200 bg-amber-50/50 p-3.5 shadow-sm">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="mr-1 text-xs font-bold text-amber-950">
+                  பெயர் வகைப்பாடு (Classification):
                 </span>
-                <button
-                  type="button"
-                  onClick={() => setStartingLetter("")}
-                  className={`rounded-lg px-2.5 py-1 text-xs font-bold transition ${
-                    startingLetter === ""
+                {[
+                  {
+                    id: "all",
+                    label: "🌐 அனைத்தும் (All Categories)",
+                    count: categoryCounts?.total,
+                  },
+                  {
+                    id: "pure_tamil",
+                    label: "🌿 1. தூய தமிழ் (Pure Tamil)",
+                    count: categoryCounts?.pure_tamil,
+                  },
+                  {
+                    id: "tamilnadu_usage",
+                    label: "🏛️ 2. தமிழ்நாட்டுப் பயன்பாடு (Used in TN)",
+                    count: categoryCounts?.tamilnadu_usage,
+                  },
+                  {
+                    id: "other_heritage",
+                    label: "🌍 3. பிற பெயர்கள் (Other Names)",
+                    count: categoryCounts?.other_heritage,
+                  },
+                ].map((cat) => (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => setNameCategoryFilter(cat.id)}
+                    className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-bold transition ${nameCategoryFilter === cat.id
+                      ? "bg-amber-800 text-white shadow-sm"
+                      : "border border-amber-200 bg-white text-stone-800 hover:bg-amber-100/70"
+                      }`}
+                  >
+                    <span>{cat.label}</span>
+                    {typeof cat.count === "number" && (
+                      <span
+                        className={`rounded-full px-1.5 py-0.5 text-[10px] ${nameCategoryFilter === cat.id
+                          ? "bg-amber-700 text-amber-100"
+                          : "bg-amber-100 text-amber-900"
+                          }`}
+                      >
+                        {cat.count.toLocaleString()}
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Starting Letter / Tamil Uyir-Mei Quick Filter Bar */}
+            <div className="rounded-2xl border border-stone-200 bg-white p-3.5 shadow-sm">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="mr-1 text-xs font-semibold text-stone-600">
+                    முதல் எழுத்து (Starting Letter):
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setStartingLetter("")}
+                    className={`rounded-lg px-2.5 py-1 text-xs font-bold transition ${startingLetter === ""
                       ? "bg-amber-700 text-white"
                       : "bg-stone-100 text-stone-700 hover:bg-amber-50"
-                  }`}
-                >
-                  All
-                </button>
-                {[
-                  "அ",
-                  "ஆ",
-                  "இ",
-                  "ஈ",
-                  "உ",
-                  "ஊ",
-                  "எ",
-                  "ஏ",
-                  "ஐ",
-                  "ஒ",
-                  "ஓ",
-                  "க",
-                  "ச",
-                  "த",
-                  "ந",
-                  "ப",
-                  "ம",
-                  "ய",
-                  "வ",
-                  "செ",
-                  "வெ",
-                  "பூ",
-                ].map((letTa) => (
-                  <button
-                    key={letTa}
-                    type="button"
-                    onClick={() =>
-                      setStartingLetter((prev) => (prev === letTa ? "" : letTa))
-                    }
-                    className={`rounded-lg px-2.5 py-1 text-xs font-bold transition ${
-                      startingLetter === letTa
+                      }`}
+                  >
+                    All
+                  </button>
+                  {[
+                    "அ",
+                    "ஆ",
+                    "இ",
+                    "ஈ",
+                    "உ",
+                    "ஊ",
+                    "எ",
+                    "ஏ",
+                    "ஐ",
+                    "ஒ",
+                    "ஓ",
+                    "க",
+                    "ச",
+                    "த",
+                    "ந",
+                    "ப",
+                    "ம",
+                    "ய",
+                    "வ",
+                    "செ",
+                    "வெ",
+                    "பூ",
+                  ].map((letTa) => (
+                    <button
+                      key={letTa}
+                      type="button"
+                      onClick={() =>
+                        setStartingLetter((prev) => (prev === letTa ? "" : letTa))
+                      }
+                      className={`rounded-lg px-2.5 py-1 text-xs font-bold transition ${startingLetter === letTa
                         ? "bg-amber-700 text-white shadow-sm"
                         : "border border-stone-200 bg-stone-50 text-stone-800 hover:bg-amber-50"
-                    }`}
-                  >
-                    {letTa}
-                  </button>
-                ))}
-                <input
-                  type="text"
-                  value={startingLetter}
-                  onChange={(e) => setStartingLetter(e.target.value)}
-                  placeholder="Custom (e.g. யா / Ya)"
-                  className="ml-1 w-32 rounded-lg border border-stone-300 px-2.5 py-1 text-xs focus:border-amber-600 focus:outline-none"
-                />
+                        }`}
+                    >
+                      {letTa}
+                    </button>
+                  ))}
+                  <input
+                    type="text"
+                    value={startingLetter}
+                    onChange={(e) => setStartingLetter(e.target.value)}
+                    placeholder="Custom (e.g. யா / Ya)"
+                    className="ml-1 w-32 rounded-lg border border-stone-300 px-2.5 py-1 text-xs focus:border-amber-600 focus:outline-none"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onClick={resetAllFilters}
+                  className="rounded-lg border border-stone-300 bg-stone-50 px-3 py-1 text-xs font-semibold text-stone-700 hover:bg-stone-100"
+                >
+                  ↺ Reset Filters
+                </button>
               </div>
-              <button
-                type="button"
-                onClick={resetAllFilters}
-                className="rounded-lg border border-stone-300 bg-stone-50 px-3 py-1 text-xs font-semibold text-stone-700 hover:bg-stone-100"
-              >
-                ↺ Reset Filters
-              </button>
             </div>
-          </div>
 
-          {/* Family Shortlist Quick-Tray (persists across pagination pages) */}
-          {shortlistRecords.length > 0 && (
-            <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-3.5 shadow-sm">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <div className="text-xs font-bold text-amber-950">
-                  ♥ Your Family Shortlist ({shortlistRecords.length} saved across all pages):
-                </div>
-                <div className="flex flex-wrap items-center gap-2">
-                  {shortlistRecords.length >= 2 && (
+            {/* Family Shortlist Quick-Tray (persists across pagination pages) */}
+            {shortlistRecords.length > 0 && (
+              <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-3.5 shadow-sm">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="text-xs font-bold text-amber-950">
+                    ♥ Your Family Shortlist ({shortlistRecords.length} saved across all pages):
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {shortlistRecords.length >= 2 && (
+                      <button
+                        type="button"
+                        onClick={() => setShowCompareModal(true)}
+                        className="rounded-lg border border-emerald-600 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-900 hover:bg-emerald-100"
+                      >
+                        📊 Compare &amp; Booklet ({Math.min(5, shortlistRecords.length)})
+                      </button>
+                    )}
                     <button
                       type="button"
-                      onClick={() => setShowCompareModal(true)}
-                      className="rounded-lg border border-emerald-600 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-900 hover:bg-emerald-100"
+                      onClick={() => setActiveTab("poll")}
+                      className="rounded-lg bg-amber-700 px-3 py-1 text-xs font-bold text-white hover:bg-amber-800"
                     >
-                      📊 Compare &amp; Booklet ({Math.min(5, shortlistRecords.length)})
-                    </button>
-                  )}
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab("poll")}
-                    className="rounded-lg bg-amber-700 px-3 py-1 text-xs font-bold text-white hover:bg-amber-800"
-                  >
-                    🗳️ Start Family Poll with Shortlist →
-                  </button>
-                </div>
-              </div>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {shortlistRecords.map((sr) => (
-                  <div
-                    key={sr.slug}
-                    className="inline-flex items-center gap-2 rounded-xl border border-amber-300 bg-white px-3 py-1.5 text-xs shadow-sm"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setSelectedNameForModal(sr);
-                        setReportSent(false);
-                      }}
-                      className="font-bold text-stone-900 hover:text-amber-800"
-                    >
-                      {sr.nameTamil}{" "}
-                      <span className="font-medium text-amber-800">
-                        ({sr.nameLatin})
-                      </span>
-                    </button>
-                    <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold text-amber-900">
-                      #{sr.numerologyChaldean}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => toggleShortlist(sr.slug)}
-                      title="Remove from shortlist"
-                      className="text-stone-400 hover:text-rose-600"
-                    >
-                      ✕
+                      🗳️ Start Family Poll with Shortlist →
                     </button>
                   </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Advanced Parent Filters (server-side) */}
-          <div className="grid grid-cols-1 gap-3 rounded-2xl border border-stone-200 bg-white p-4 shadow-sm sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                label: "Numerology Method",
-                value: numerologyMethod,
-                set: (v: string) =>
-                  setNumerologyMethod(v === "chaldean" ? "chaldean" : "pythagorean"),
-                options: [
-                  ["pythagorean", "Standard Letter Method (Pythagorean A–Z)"],
-                  ["chaldean", "Chaldean (Cheiro)"],
-                ],
-              },
-              {
-                label: "Religion / Tradition",
-                value: religionFilter,
-                set: setReligionFilter,
-                options: [
-                  ["all", "All"],
-                  ["Pure Tamil", "Pure Tamil (தனித்தமிழ்)"],
-                  ["Hindu", "Hindu (Saiva / Vaishnava / Murugan)"],
-                  ["Christian", "Tamil Christian"],
-                  ["Muslim", "Tamil Muslim"],
-                  ["Universal", "Universal Tamil"],
-                ],
-              },
-              {
-                label: "Region / Community",
-                value: communityFilter,
-                set: setCommunityFilter,
-                options: [
-                  ["all", "All"],
-                  ["Pan-Tamil", "Pan-Tamil"],
-                  ["Chola", "Chola / Cauvery"],
-                  ["Pandya", "Pandya / Madurai"],
-                  ["Kongu", "Kongu"],
-                  ["Chera", "Chera / Nanjil"],
-                  ["Diaspora", "Eelam / Diaspora"],
-                ],
-              },
-              {
-                label: "Trend (illustrative)",
-                value: trendFilter,
-                set: setTrendFilter,
-                options: [
-                  ["all", "All"],
-                  ["Trending Now", "Trending Now 🔥"],
-                  ["Rising Fast", "Rising Fast 📈"],
-                  ["Evergreen", "Evergreen Classic 🏛️"],
-                  ["Rare Sangam", "Rare Sangam Revival 💎"],
-                ],
-              },
-              {
-                label: "Uniqueness (illustrative)",
-                value: uniquenessFilter,
-                set: setUniquenessFilter,
-                options: [
-                  ["all", "Any"],
-                  ["Very Rare", "Very Rare Gems only"],
-                  ["Rare", "Rare and rarer"],
-                  ["Moderately", "Moderately Popular"],
-                ],
-              },
-              {
-                label: "Misspell Risk",
-                value: misspellFilter,
-                set: setMisspellFilter,
-                options: [
-                  ["all", "Any"],
-                  ["low", "Low risk only"],
-                  ["medium", "Low or Medium"],
-                ],
-              },
-              {
-                label: "Ease of Calling (min, illustrative)",
-                value: String(minEaseScore),
-                set: (v: string) => setMinEaseScore(parseInt(v, 10) || 0),
-                options: [
-                  ["0", "Any"],
-                  ["60", "60+"],
-                  ["75", "75+"],
-                  ["90", "90+"],
-                ],
-              },
-              {
-                label: "Names per page",
-                value: String(pageSize),
-                set: (v: string) => setPageSize(parseInt(v, 10) || 48),
-                options: [
-                  ["24", "24"],
-                  ["48", "48"],
-                  ["96", "96"],
-                ],
-              },
-            ].map((f) => (
-              <div key={f.label}>
-                <label className="block text-xs font-semibold text-stone-600">
-                  {f.label}
-                </label>
-                <select
-                  value={f.value}
-                  onChange={(e) => f.set(e.target.value)}
-                  className="mt-1 w-full rounded-xl border border-stone-300 px-3 py-2 text-sm focus:border-amber-600 focus:outline-none"
-                >
-                  {f.options.map(([v, l]) => (
-                    <option key={v} value={v}>
-                      {l}
-                    </option>
+                </div>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {shortlistRecords.map((sr) => (
+                    <div
+                      key={sr.slug}
+                      className="inline-flex items-center gap-2 rounded-xl border border-amber-300 bg-white px-3 py-1.5 text-xs shadow-sm"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedNameForModal(sr);
+                          setReportSent(false);
+                        }}
+                        className="font-bold text-stone-900 hover:text-amber-800"
+                      >
+                        {sr.nameTamil}{" "}
+                        <span className="font-medium text-amber-800">
+                          ({sr.nameLatin})
+                        </span>
+                      </button>
+                      <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold text-amber-900">
+                        #{sr.numerologyChaldean}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => toggleShortlist(sr.slug)}
+                        title="Remove from shortlist"
+                        className="text-stone-400 hover:text-rose-600"
+                      >
+                        ✕
+                      </button>
+                    </div>
                   ))}
-                </select>
+                </div>
               </div>
-            ))}
-          </div>
+            )}
+
+            {/* Advanced Parent Filters (server-side) */}
+            <div className="grid grid-cols-1 gap-3 rounded-2xl border border-stone-200 bg-white p-4 shadow-sm sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  label: "Numerology Method",
+                  value: numerologyMethod,
+                  set: (v: string) =>
+                    setNumerologyMethod(v === "chaldean" ? "chaldean" : "pythagorean"),
+                  options: [
+                    ["pythagorean", "Standard Letter Method (Pythagorean A–Z)"],
+                    ["chaldean", "Chaldean (Cheiro)"],
+                  ],
+                },
+                {
+                  label: "Religion / Tradition",
+                  value: religionFilter,
+                  set: setReligionFilter,
+                  options: [
+                    ["all", "All"],
+                    ["Pure Tamil", "Pure Tamil (தனித்தமிழ்)"],
+                    ["Hindu", "Hindu (Saiva / Vaishnava / Murugan)"],
+                    ["Christian", "Tamil Christian"],
+                    ["Muslim", "Tamil Muslim"],
+                    ["Universal", "Universal Tamil"],
+                  ],
+                },
+                {
+                  label: "Region / Community",
+                  value: communityFilter,
+                  set: setCommunityFilter,
+                  options: [
+                    ["all", "All"],
+                    ["Pan-Tamil", "Pan-Tamil"],
+                    ["Chola", "Chola / Cauvery"],
+                    ["Pandya", "Pandya / Madurai"],
+                    ["Kongu", "Kongu"],
+                    ["Chera", "Chera / Nanjil"],
+                    ["Diaspora", "Eelam / Diaspora"],
+                  ],
+                },
+                {
+                  label: "Trend (illustrative)",
+                  value: trendFilter,
+                  set: setTrendFilter,
+                  options: [
+                    ["all", "All"],
+                    ["Trending Now", "Trending Now 🔥"],
+                    ["Rising Fast", "Rising Fast 📈"],
+                    ["Evergreen", "Evergreen Classic 🏛️"],
+                    ["Rare Sangam", "Rare Sangam Revival 💎"],
+                  ],
+                },
+                {
+                  label: "Uniqueness (illustrative)",
+                  value: uniquenessFilter,
+                  set: setUniquenessFilter,
+                  options: [
+                    ["all", "Any"],
+                    ["Very Rare", "Very Rare Gems only"],
+                    ["Rare", "Rare and rarer"],
+                    ["Moderately", "Moderately Popular"],
+                  ],
+                },
+                {
+                  label: "Misspell Risk",
+                  value: misspellFilter,
+                  set: setMisspellFilter,
+                  options: [
+                    ["all", "Any"],
+                    ["low", "Low risk only"],
+                    ["medium", "Low or Medium"],
+                  ],
+                },
+                {
+                  label: "Ease of Calling (min, illustrative)",
+                  value: String(minEaseScore),
+                  set: (v: string) => setMinEaseScore(parseInt(v, 10) || 0),
+                  options: [
+                    ["0", "Any"],
+                    ["60", "60+"],
+                    ["75", "75+"],
+                    ["90", "90+"],
+                  ],
+                },
+                {
+                  label: "Names per page",
+                  value: String(pageSize),
+                  set: (v: string) => setPageSize(parseInt(v, 10) || 48),
+                  options: [
+                    ["24", "24"],
+                    ["48", "48"],
+                    ["96", "96"],
+                  ],
+                },
+              ].map((f) => (
+                <div key={f.label}>
+                  <label className="block text-xs font-semibold text-stone-600">
+                    {f.label}
+                  </label>
+                  <select
+                    value={f.value}
+                    onChange={(e) => f.set(e.target.value)}
+                    className="mt-1 w-full rounded-xl border border-stone-300 px-3 py-2 text-sm focus:border-amber-600 focus:outline-none"
+                  >
+                    {f.options.map(([v, l]) => (
+                      <option key={v} value={v}>
+                        {l}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              ))}
+            </div>
           </div>
 
           <p className="text-xs text-stone-600" aria-live="polite">
             {namesLoading
               ? "Loading…"
               : totalCount === 0
-              ? "No names match these filters."
-              : `Showing ${((page - 1) * pageSize + 1).toLocaleString("en-IN")}–${Math.min(
+                ? "No names match these filters."
+                : `Showing ${((page - 1) * pageSize + 1).toLocaleString("en-IN")}–${Math.min(
                   page * pageSize,
                   totalCount
                 ).toLocaleString("en-IN")} of ${totalCount.toLocaleString("en-IN")} Tamil names`}
@@ -1644,29 +1633,28 @@ export default function NamingGuruDashboard({
               return (
                 <div
                   key={item.slug}
-                  className="flex flex-col justify-between rounded-2xl border border-stone-200/90 bg-white p-4 sm:p-5 shadow-sm transition hover:border-amber-400 hover:shadow-md"
+                  className="flex flex-col justify-between rounded-2xl border border-stone-200/90 bg-white p-5 shadow-sm transition hover:border-amber-400 hover:shadow-md"
                 >
                   <div>
                     <div className="flex items-start justify-between gap-2">
-                      <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 break-words">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h2 className="text-2xl font-bold text-stone-900">
                             {item.nameTamil}
                           </h2>
                           <span
-                            className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
-                              item.gender === "girl"
-                                ? "bg-rose-100 text-rose-800"
-                                : item.gender === "boy"
+                            className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${item.gender === "girl"
+                              ? "bg-rose-100 text-rose-800"
+                              : item.gender === "boy"
                                 ? "bg-sky-100 text-sky-800"
                                 : "bg-purple-100 text-purple-800"
-                            }`}
+                              }`}
                           >
                             {item.gender === "girl"
                               ? "பெண் · Girl"
                               : item.gender === "boy"
-                              ? "ஆண் · Boy"
-                              : "பொது · Unisex"}
+                                ? "ஆண் · Boy"
+                                : "பொது · Unisex"}
                           </span>
                         </div>
                         <p className="text-base font-semibold text-amber-800">
@@ -1675,13 +1663,11 @@ export default function NamingGuruDashboard({
                       </div>
 
                       <button
-                        type="button"
                         onClick={() => toggleShortlist(item.slug)}
-                        className={`shrink-0 min-h-[40px] rounded-xl border px-3 py-1.5 text-xs font-semibold transition ${
-                          isShortlisted
-                            ? "border-amber-600 bg-amber-600 text-white"
-                            : "border-stone-300 bg-stone-50 text-stone-700 hover:bg-amber-50"
-                        }`}
+                        className={`rounded-xl border px-3 py-1.5 text-xs font-semibold transition ${isShortlisted
+                          ? "border-amber-600 bg-amber-600 text-white"
+                          : "border-stone-300 bg-stone-50 text-stone-700 hover:bg-amber-50"
+                          }`}
                       >
                         {isShortlisted ? "♥ Shortlisted" : "♡ Shortlist"}
                       </button>
@@ -1717,7 +1703,7 @@ export default function NamingGuruDashboard({
                         எழுத்து: {item.startingSyllableTa} ({item.startingSyllableEn})
                       </span>
                       {item.structuredReference?.citationScope ===
-                      "etymological-compound" ? (
+                        "etymological-compound" ? (
                         <span
                           className="rounded-md border border-teal-300 bg-teal-50 px-2 py-0.5 font-semibold text-teal-900"
                           title="FMT-01: Post-classical coinage synthesized from authentic Tamil roots"
@@ -1768,7 +1754,7 @@ export default function NamingGuruDashboard({
 
                     <div className="mt-2 text-[11px] text-stone-500 line-clamp-1">
                       {item.structuredReference?.citationScope ===
-                      "exact-word-in-verse" ? (
+                        "exact-word-in-verse" ? (
                         <>
                           📜 <strong>இலக்கியச் சான்று:</strong>{" "}
                           {item.literaryReference}
@@ -1782,20 +1768,19 @@ export default function NamingGuruDashboard({
                     </div>
                   </div>
 
-                  <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-stone-100 pt-2.5">
+                  <div className="mt-3 flex items-center justify-between border-t border-stone-100 pt-2.5">
                     <button
-                      type="button"
                       onClick={() => {
                         setSelectedNameForModal(item);
                         setReportSent(false);
                       }}
-                      className="inline-flex min-h-[44px] items-center text-xs font-semibold text-amber-700 hover:underline"
+                      className="text-xs font-semibold text-amber-700 hover:underline"
                     >
-                      7D Scorecard &amp; Details →
+                      7D Scorecard & Details →
                     </button>
                     <Link
                       href={`/name/${item.slug}`}
-                      className="inline-flex min-h-[44px] items-center rounded-lg bg-stone-100 px-3 py-1.5 text-xs font-medium text-stone-700 hover:bg-stone-200"
+                      className="rounded-lg bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-700 hover:bg-stone-200"
                     >
                       Full Profile ↗
                     </Link>
@@ -1805,23 +1790,21 @@ export default function NamingGuruDashboard({
             })}
           </div>
           {/* Pagination */}
-          <nav className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" aria-label="Pagination">
+          <nav className="flex items-center justify-center gap-3" aria-label="Pagination">
             <button
-              type="button"
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page <= 1 || namesLoading}
-              className="min-h-[44px] rounded-xl border border-stone-300 bg-white px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-stone-700 disabled:opacity-40"
+              className="rounded-xl border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-stone-700 disabled:opacity-40"
             >
               ← Previous
             </button>
-            <span className="whitespace-nowrap text-xs sm:text-sm text-stone-600">
+            <span className="text-sm text-stone-600">
               Page {page} of {totalPages}
             </span>
             <button
-              type="button"
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
               disabled={page >= totalPages || namesLoading}
-              className="min-h-[44px] rounded-xl border border-stone-300 bg-white px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-stone-700 disabled:opacity-40"
+              className="rounded-xl border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-stone-700 disabled:opacity-40"
             >
               Next →
             </button>
@@ -1939,18 +1922,16 @@ export default function NamingGuruDashboard({
                           prev === sylTa ? "" : sylTa
                         )
                       }
-                      className={`rounded-xl border p-3 text-center transition ${
-                        isSelected
-                          ? "border-amber-700 bg-amber-700 font-bold text-white shadow-sm"
-                          : isRecommended
+                      className={`rounded-xl border p-3 text-center transition ${isSelected
+                        ? "border-amber-700 bg-amber-700 font-bold text-white shadow-sm"
+                        : isRecommended
                           ? "border-amber-600 bg-amber-50 font-bold text-stone-900 hover:bg-amber-100"
                           : "border-stone-200 bg-stone-50 text-stone-900 hover:bg-amber-50/50"
-                      }`}
+                        }`}
                     >
                       <div
-                        className={`text-[11px] ${
-                          isSelected ? "text-amber-100" : "text-stone-500"
-                        }`}
+                        className={`text-[11px] ${isSelected ? "text-amber-100" : "text-stone-500"
+                          }`}
                       >
                         பாதம் {idx + 1} {isRecommended ? "★" : ""}
                       </div>
@@ -1998,11 +1979,10 @@ export default function NamingGuruDashboard({
                       key={g.id}
                       type="button"
                       onClick={() => setBirthStarGender(g.id)}
-                      className={`rounded-lg px-2.5 py-1 text-xs font-semibold ${
-                        birthStarGender === g.id
-                          ? "bg-stone-900 text-white"
-                          : "border border-stone-200 bg-stone-50 text-stone-700"
-                      }`}
+                      className={`rounded-lg px-2.5 py-1 text-xs font-semibold ${birthStarGender === g.id
+                        ? "bg-stone-900 text-white"
+                        : "border border-stone-200 bg-stone-50 text-stone-700"
+                        }`}
                     >
                       {g.label}
                     </button>
@@ -2043,11 +2023,10 @@ export default function NamingGuruDashboard({
                         <button
                           type="button"
                           onClick={() => toggleShortlist(n.slug)}
-                          className={`rounded-lg px-2 py-1 text-xs font-semibold ${
-                            isShortlisted
-                              ? "bg-amber-600 text-white"
-                              : "border border-stone-200 bg-stone-50 text-stone-700"
-                          }`}
+                          className={`rounded-lg px-2 py-1 text-xs font-semibold ${isShortlisted
+                            ? "bg-amber-600 text-white"
+                            : "border border-stone-200 bg-stone-50 text-stone-700"
+                            }`}
                         >
                           {isShortlisted ? "♥" : "♡"}
                         </button>
@@ -2241,68 +2220,101 @@ export default function NamingGuruDashboard({
               </p>
             </div>
 
-            {/* Parent-Surname & Initial Resonance Numerology (Task 32 — ₹499) */}
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-4 space-y-3">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-950">
-                    👨‍👩‍👧 Parent-Surname &amp; Initial Resonance (குடும்பப் பெயர் எண் இணக்கம்)
-                  </h4>
-                  <p className="text-[11px] text-stone-600">
-                    Test Chaldean &amp; Pythagorean harmony with Father/Mother initial and family surname.
-                  </p>
-                </div>
-                <span className="rounded-full bg-emerald-700 px-2.5 py-0.5 text-[10px] font-bold text-white">
-                  ₹499 Kudumba Nool
-                </span>
-              </div>
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                <div>
-                  <label className="block text-[11px] font-semibold text-stone-700">
-                    Parent Initial (e.g. S, K)
-                  </label>
-                  <input
-                    type="text"
-                    maxLength={4}
-                    value={parentInitial}
-                    onChange={(e) => setParentInitial(e.target.value)}
-                    className="mt-1 w-full rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs font-semibold"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[11px] font-semibold text-stone-700">
-                    Family / Father Surname (e.g. Senthilkumar)
-                  </label>
-                  <input
-                    type="text"
-                    value={familySurname}
-                    onChange={(e) => setFamilySurname(e.target.value)}
-                    className="mt-1 w-full rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-xs font-semibold"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                {resonanceResult.variants.map((v) => (
-                  <div
-                    key={v.label}
-                    className="rounded-xl border border-emerald-200 bg-white p-2.5 text-xs"
-                  >
-                    <div className="text-[10px] font-bold text-stone-500">{v.label}</div>
-                    <div className="mt-0.5 font-bold text-stone-900">{v.formattedName}</div>
-                    <div className="mt-1 flex flex-wrap gap-2 text-[11px]">
-                      <span>Chaldean: <strong>{v.chaldeanCompound} → {v.chaldeanSingle}</strong></span>
-                      <span>Pythagorean: <strong>{v.pythagoreanCompound} → {v.pythagoreanSingle}</strong></span>
-                      <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-900">
-                        {v.harmonyWithFirstName}
-                      </span>
+            {/* Parent-Surname & Initial Resonance Numerology (Task 32 — B-15 Free Teaser + ₹499 Full Breakdown) */}
+            {(() => {
+              const hasFullResonance =
+                typeof window !== "undefined" &&
+                localStorage.getItem("namingguru_sub_tier") === "kudumba_499";
+              return (
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-4 space-y-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-950">
+                        👨‍👩‍👧 Parent-Surname &amp; Initial Resonance (குடும்பப் பெயர் எண் இணக்கம்)
+                      </h4>
+                      <p className="text-[11px] text-stone-600">
+                        Free teaser shows single-digit resonance; unlock compound &amp; harmony breakdown in Kudumba Nool.
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-emerald-700 px-2.5 py-0.5 text-[10px] font-bold text-white">
+                      {hasFullResonance ? "✓ Kudumba Nool Unlocked" : "Free Teaser · ₹499 Full"}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    <div>
+                      <label className="block text-[11px] font-semibold text-stone-700">
+                        Parent Initial (e.g. S, K)
+                      </label>
+                      <input
+                        type="text"
+                        maxLength={4}
+                        value={parentInitial}
+                        onChange={(e) => setParentInitial(e.target.value)}
+                        className="mt-1 min-h-[44px] w-full rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-base sm:text-xs font-semibold"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-semibold text-stone-700">
+                        Family / Father Surname (e.g. Senthilkumar)
+                      </label>
+                      <input
+                        type="text"
+                        value={familySurname}
+                        onChange={(e) => setFamilySurname(e.target.value)}
+                        className="mt-1 min-h-[44px] w-full rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-base sm:text-xs font-semibold"
+                      />
                     </div>
                   </div>
-                ))}
-              </div>
-              <p className="text-[11px] text-emerald-950 font-medium">
-                💡 {resonanceResult.recommendationEn}
-              </p>
-            </div>
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    {resonanceResult.variants.map((v) => (
+                      <div
+                        key={v.label}
+                        className="rounded-xl border border-emerald-200 bg-white p-2.5 text-xs"
+                      >
+                        <div className="text-[10px] font-bold text-stone-500">{v.label}</div>
+                        <div className="mt-0.5 font-bold text-stone-900">{v.formattedName}</div>
+                        <div className="mt-1 flex flex-wrap gap-2 text-[11px]">
+                          {hasFullResonance ? (
+                            <>
+                              <span>Chaldean: <strong>{v.chaldeanCompound} → {v.chaldeanSingle}</strong></span>
+                              <span>Pythagorean: <strong>{v.pythagoreanCompound} → {v.pythagoreanSingle}</strong></span>
+                              <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-900">
+                                {v.harmonyWithFirstName}
+                              </span>
+                            </>
+                          ) : (
+                            <>
+                              <span>Chaldean #: <strong>{v.chaldeanSingle}</strong></span>
+                              <span>Pythagorean #: <strong>{v.pythagoreanSingle}</strong></span>
+                              <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold text-amber-900">
+                                🔒 Compound &amp; Harmony (₹499)
+                              </span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {hasFullResonance ? (
+                    <p className="text-[11px] text-emerald-950 font-medium">
+                      💡 {resonanceResult.recommendationEn}
+                    </p>
+                  ) : (
+                    <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-amber-200 bg-amber-50/80 px-3 py-2 text-[11px] text-amber-950">
+                      <span>
+                        🔓 <strong>Full Compound &amp; Harmony Verdict:</strong> Upgrade to Kudumba Nool (₹499) to see compound numbers, friendly-number alignment &amp; personalized recommendation.
+                      </span>
+                      <Link
+                        href="/why-peyarcholai"
+                        className="inline-flex min-h-[36px] shrink-0 items-center rounded-lg bg-emerald-700 px-3 py-1 font-bold text-white hover:bg-emerald-800"
+                      >
+                        See ₹499 Pass →
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
 
             {/* Letter breakdown */}
             <div>
@@ -2564,19 +2576,18 @@ export default function NamingGuruDashboard({
                       key={g}
                       type="button"
                       onClick={() => setQgGender(g)}
-                      className={`flex-1 rounded-xl py-2 font-semibold capitalize transition ${
-                        qgGender === g
-                          ? "bg-amber-600 text-white shadow-xs"
-                          : "border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100"
-                      }`}
+                      className={`flex-1 rounded-xl py-2 font-semibold capitalize transition ${qgGender === g
+                        ? "bg-amber-600 text-white shadow-xs"
+                        : "border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100"
+                        }`}
                     >
                       {g === "girl"
                         ? "பெண்"
                         : g === "boy"
-                        ? "ஆண்"
-                        : g === "unisex"
-                        ? "இருபாலர்"
-                        : "அனைத்தும்"}
+                          ? "ஆண்"
+                          : g === "unisex"
+                            ? "இருபாலர்"
+                            : "அனைத்தும்"}
                     </button>
                   ))}
                 </div>
@@ -2982,11 +2993,10 @@ export default function NamingGuruDashboard({
                           <button
                             type="button"
                             onClick={() => toggleShortlist(slug)}
-                            className={`rounded-lg px-2.5 py-1 text-[11px] font-semibold ${
-                              isShortlisted
-                                ? "bg-amber-600 text-white"
-                                : "border border-stone-200 bg-stone-50 text-stone-700 hover:bg-amber-50"
-                            }`}
+                            className={`rounded-lg px-2.5 py-1 text-[11px] font-semibold ${isShortlisted
+                              ? "bg-amber-600 text-white"
+                              : "border border-stone-200 bg-stone-50 text-stone-700 hover:bg-amber-50"
+                              }`}
                           >
                             {isShortlisted ? "♥ Shortlisted" : "♡ Shortlist"}
                           </button>
@@ -3157,10 +3167,9 @@ export default function NamingGuruDashboard({
                           activePollData.candidateSlugs?.length
                             ? activePollData.candidateSlugs
                             : shortlist.slice(0, 10)
-                        ).join(", ")}\nVote here: ${
-                          typeof window !== "undefined"
-                            ? `${window.location.origin}/p/${activePollData.token}`
-                            : activePollData.token
+                        ).join(", ")}\nVote here: ${typeof window !== "undefined"
+                          ? `${window.location.origin}/p/${activePollData.token}`
+                          : activePollData.token
                         }`
                       )}`}
                       target="_blank"
@@ -3174,62 +3183,61 @@ export default function NamingGuruDashboard({
 
                 {/* Family Consensus Leaderboard (Server & Client Blind Poll Guard) */}
                 {pollViewerRole === "creator" ? (
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500">
-                    🏆 Family Consensus Leaderboard
-                  </h4>
-                  <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
-                    {activePollData.candidateSlugs
-                      .map((slug) => {
-                        const rec =
-                          pollCandidates.find((c) => c.slug === slug) ||
-                          shortlistRecords.find((c) => c.slug === slug);
-                        const loves = activePollData.votes.filter((v) =>
-                          v.lovedSlugs.includes(slug)
-                        ).length;
-                        const outs = activePollData.votes.filter((v) =>
-                          v.removedSlugs.includes(slug)
-                        ).length;
-                        return { slug, rec, loves, outs, net: loves - outs };
-                      })
-                      .sort((a, b) => b.net - a.net || b.loves - a.loves)
-                      .map((item, idx) => (
-                        <div
-                          key={item.slug}
-                          className={`rounded-xl border p-3 text-xs ${
-                            idx === 0 && item.loves > 0
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500">
+                      🏆 Family Consensus Leaderboard
+                    </h4>
+                    <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                      {activePollData.candidateSlugs
+                        .map((slug) => {
+                          const rec =
+                            pollCandidates.find((c) => c.slug === slug) ||
+                            shortlistRecords.find((c) => c.slug === slug);
+                          const loves = activePollData.votes.filter((v) =>
+                            v.lovedSlugs.includes(slug)
+                          ).length;
+                          const outs = activePollData.votes.filter((v) =>
+                            v.removedSlugs.includes(slug)
+                          ).length;
+                          return { slug, rec, loves, outs, net: loves - outs };
+                        })
+                        .sort((a, b) => b.net - a.net || b.loves - a.loves)
+                        .map((item, idx) => (
+                          <div
+                            key={item.slug}
+                            className={`rounded-xl border p-3 text-xs ${idx === 0 && item.loves > 0
                               ? "border-amber-400 bg-amber-50/70"
                               : "border-stone-200 bg-stone-50"
-                          }`}
-                        >
-                          <div className="flex items-center justify-between">
-                            <span className="font-bold text-stone-900">
-                              {idx === 0 && item.loves > 0 ? "👑 " : ""}
-                              {item.rec
-                                ? `${item.rec.nameTamil} (${item.rec.nameLatin})`
-                                : item.slug}
-                            </span>
-                            <span className="rounded bg-white px-2 py-0.5 font-bold text-stone-800 shadow-sm">
-                              Net {item.net >= 0 ? `+${item.net}` : item.net}
-                            </span>
-                          </div>
-                          {item.rec && (
-                            <div className="mt-1 line-clamp-1 text-[11px] text-stone-600">
-                              {item.rec.meaningTa}
+                              }`}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="font-bold text-stone-900">
+                                {idx === 0 && item.loves > 0 ? "👑 " : ""}
+                                {item.rec
+                                  ? `${item.rec.nameTamil} (${item.rec.nameLatin})`
+                                  : item.slug}
+                              </span>
+                              <span className="rounded bg-white px-2 py-0.5 font-bold text-stone-800 shadow-sm">
+                                Net {item.net >= 0 ? `+${item.net}` : item.net}
+                              </span>
                             </div>
-                          )}
-                          <div className="mt-1.5 flex gap-3 text-[11px]">
-                            <span className="font-semibold text-emerald-700">
-                              ♥ {item.loves} Loved
-                            </span>
-                            <span className="font-semibold text-rose-700">
-                              ✕ {item.outs} Voted Out
-                            </span>
+                            {item.rec && (
+                              <div className="mt-1 line-clamp-1 text-[11px] text-stone-600">
+                                {item.rec.meaningTa}
+                              </div>
+                            )}
+                            <div className="mt-1.5 flex gap-3 text-[11px]">
+                              <span className="font-semibold text-emerald-700">
+                                ♥ {item.loves} Loved
+                              </span>
+                              <span className="font-semibold text-rose-700">
+                                ✕ {item.outs} Voted Out
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                    </div>
                   </div>
-                </div>
                 ) : (
                   <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-3 text-xs text-amber-950">
                     🔒 <strong>Blind Voting Active</strong> — Results and other family members&apos; votes are visible only to the parents hosting this poll.
@@ -3269,11 +3277,10 @@ export default function NamingGuruDashboard({
                                     : [...p, slug]
                                 )
                               }
-                              className={`min-h-[44px] sm:min-h-[36px] rounded-lg px-2.5 py-1.5 font-semibold transition ${
-                                loved
-                                  ? "bg-emerald-600 text-white"
-                                  : "bg-stone-100 text-stone-700 hover:bg-emerald-50"
-                              }`}
+                              className={`min-h-[44px] sm:min-h-[36px] rounded-lg px-2.5 py-1.5 font-semibold transition ${loved
+                                ? "bg-emerald-600 text-white"
+                                : "bg-stone-100 text-stone-700 hover:bg-emerald-50"
+                                }`}
                             >
                               ♥ Love
                             </button>
@@ -3286,11 +3293,10 @@ export default function NamingGuruDashboard({
                                     : [...p, slug]
                                 )
                               }
-                              className={`min-h-[44px] sm:min-h-[36px] rounded-lg px-2.5 py-1.5 font-semibold transition ${
-                                removed
-                                  ? "bg-rose-600 text-white"
-                                  : "bg-stone-100 text-stone-700 hover:bg-rose-50"
-                              }`}
+                              className={`min-h-[44px] sm:min-h-[36px] rounded-lg px-2.5 py-1.5 font-semibold transition ${removed
+                                ? "bg-rose-600 text-white"
+                                : "bg-stone-100 text-stone-700 hover:bg-rose-50"
+                                }`}
                             >
                               ✕ Vote-Out
                             </button>
@@ -3536,7 +3542,7 @@ export default function NamingGuruDashboard({
                     {Math.round(selectedNameForModal.confidence * 100)}% Verified
                   </span>
                   {selectedNameForModal.structuredReference?.citationScope ===
-                  "etymological-compound" ? (
+                    "etymological-compound" ? (
                     <span className="rounded-full border border-teal-300 bg-teal-50 px-2.5 py-0.5 text-[11px] sm:text-xs font-bold text-teal-900">
                       🧪 Modern Synthesis (வேர்ச்சொல் புணர்ச்சி)
                     </span>
@@ -3600,365 +3606,364 @@ export default function NamingGuruDashboard({
             {/* Scrollable Modal Content */}
             <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 overscroll-contain">
 
-            {/* Quick Action Bar */}
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => toggleShortlist(selectedNameForModal.slug)}
-                className={`rounded-xl px-3.5 py-1.5 text-xs font-bold transition ${
-                  shortlist.includes(selectedNameForModal.slug)
+              {/* Quick Action Bar */}
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => toggleShortlist(selectedNameForModal.slug)}
+                  className={`rounded-xl px-3.5 py-1.5 text-xs font-bold transition ${shortlist.includes(selectedNameForModal.slug)
                     ? "bg-amber-600 text-white"
                     : "border border-stone-300 bg-stone-50 text-stone-800 hover:bg-amber-50"
-                }`}
-              >
-                {shortlist.includes(selectedNameForModal.slug)
-                  ? "♥ In Family Shortlist"
-                  : "♡ Add to Shortlist"}
-              </button>
-              <a
-                href={`/api/reports/download-pdf?slug=${selectedNameForModal.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-xl bg-amber-900 px-3.5 py-1.5 text-xs font-bold text-white shadow-xs hover:bg-black transition flex items-center gap-1.5"
-              >
-                <span>📜</span>
-                <span>Download Official PDF Dossier (சுவடி அறிக்கை)</span>
-              </a>
-              <button
-                type="button"
-                onClick={() => loadIntoNumerology(selectedNameForModal.nameLatin)}
-                className="rounded-xl border border-stone-300 bg-stone-50 px-3 py-1.5 text-xs font-semibold text-stone-800 hover:bg-amber-50"
-              >
-                🔢 Open in Numerology Engine
-              </button>
-              <button
-                type="button"
-                onClick={() => loadIntoScorecard(selectedNameForModal)}
-                className="rounded-xl border border-stone-300 bg-stone-50 px-3 py-1.5 text-xs font-semibold text-stone-800 hover:bg-amber-50"
-              >
-                🛡️ Customize in 7D Scorecard
-              </button>
-              <Link
-                href={`/name/${selectedNameForModal.slug}`}
-                className="rounded-xl bg-amber-700 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-amber-800"
-              >
-                Full 14-Dimension Profile ↗
-              </Link>
-            </div>
-
-            <div className="mt-4">
-              <PronunciationButton
-                nameTamil={selectedNameForModal.nameTamil}
-                nameLatin={selectedNameForModal.nameLatin}
-                compact
-              />
-            </div>
-
-            {/* Empirical Cohort Rarity & Classroom Frequency Gauge (Task 8) */}
-            {modalEmpiricalRarity && (
-              <div className="mt-4 rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 text-xs">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-indigo-200/60 pb-2">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-base">{modalEmpiricalRarity.icon}</span>
-                    <span className="font-bold uppercase tracking-wider text-indigo-950">
-                      வகுப்பறை அதிர்வெண் & தனித்துவம் (Cohort Frequency Index)
-                    </span>
-                  </div>
-                  <span className="rounded-full bg-indigo-600 px-2.5 py-0.5 text-[11px] font-bold text-white">
-                    {modalEmpiricalRarity.observedFrequencyPercent}% Frequency
-                  </span>
-                </div>
-                <div className="mt-2.5 grid grid-cols-1 gap-2.5 sm:grid-cols-3">
-                  <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
-                    <div className="text-[10px] uppercase font-bold text-stone-500">
-                      Classroom (40 Kids)
-                    </div>
-                    <div className="mt-0.5 font-bold text-indigo-950">
-                      {modalEmpiricalRarity.classroomDisplayEn}
-                    </div>
-                    <div className="text-[10px] text-indigo-700">
-                      {modalEmpiricalRarity.classroomDisplayTa}
-                    </div>
-                  </div>
-                  <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
-                    <div className="text-[10px] uppercase font-bold text-stone-500">
-                      School Cohort (1,000 Kids)
-                    </div>
-                    <div className="mt-0.5 font-bold text-indigo-950">
-                      ~{modalEmpiricalRarity.schoolDisplayCount} students
-                    </div>
-                  </div>
-                  <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
-                    <div className="text-[10px] uppercase font-bold text-stone-500">
-                      Rarity Band
-                    </div>
-                    <div className="mt-0.5 font-bold text-indigo-950">
-                      {modalEmpiricalRarity.badgeTitleTamil}
-                    </div>
-                  </div>
-                </div>
-                <p className="mt-2 text-[11px] text-indigo-900 leading-relaxed">
-                  💡 <strong>பெற்றோர் வழிகாட்டல்:</strong> {modalEmpiricalRarity.parentAdviceTamil} ({modalEmpiricalRarity.parentAdviceEnglish})
-                </p>
-                <ContextualDisclaimer variant="frequency" className="mt-2.5" />
+                    }`}
+                >
+                  {shortlist.includes(selectedNameForModal.slug)
+                    ? "♥ In Family Shortlist"
+                    : "♡ Add to Shortlist"}
+                </button>
+                <a
+                  href={`/api/reports/download-pdf?slug=${selectedNameForModal.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl bg-amber-900 px-3.5 py-1.5 text-xs font-bold text-white shadow-xs hover:bg-black transition flex items-center gap-1.5"
+                >
+                  <span>📜</span>
+                  <span>Download Official PDF Dossier (சுவடி அறிக்கை)</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => loadIntoNumerology(selectedNameForModal.nameLatin)}
+                  className="rounded-xl border border-stone-300 bg-stone-50 px-3 py-1.5 text-xs font-semibold text-stone-800 hover:bg-amber-50"
+                >
+                  🔢 Open in Numerology Engine
+                </button>
+                <button
+                  type="button"
+                  onClick={() => loadIntoScorecard(selectedNameForModal)}
+                  className="rounded-xl border border-stone-300 bg-stone-50 px-3 py-1.5 text-xs font-semibold text-stone-800 hover:bg-amber-50"
+                >
+                  🛡️ Customize in 7D Scorecard
+                </button>
+                <Link
+                  href={`/name/${selectedNameForModal.slug}`}
+                  className="rounded-xl bg-amber-700 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-amber-800"
+                >
+                  Full 14-Dimension Profile ↗
+                </Link>
               </div>
-            )}
 
-            {/* Meaning, Etymology & Verified Citation (>= 80% Confidence Gate) */}
-            <div className="mt-4 space-y-2.5 rounded-2xl bg-amber-50 p-4 text-sm">
-              <p className="font-semibold text-stone-900">
-                {selectedNameForModal.meaningTa}
-              </p>
-              <p className="text-xs text-stone-700">
-                {selectedNameForModal.meaningEn}
-              </p>
-              {(selectedNameForModal.literalMeaningEn ||
-                selectedNameForModal.derivedMeaningEn) && (
-                <div className="grid grid-cols-1 gap-2 rounded-xl border border-amber-200 bg-white/80 p-2.5 text-xs sm:grid-cols-2">
-                  <div>
-                    <span className="font-bold text-stone-800">
-                      📖 Literal Root Meaning (நேரடி வேர்ச்சொல் பொருள்):
+              <div className="mt-4">
+                <PronunciationButton
+                  nameTamil={selectedNameForModal.nameTamil}
+                  nameLatin={selectedNameForModal.nameLatin}
+                  compact
+                />
+              </div>
+
+              {/* Empirical Cohort Rarity & Classroom Frequency Gauge (Task 8) */}
+              {modalEmpiricalRarity && (
+                <div className="mt-4 rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 text-xs">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-indigo-200/60 pb-2">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-base">{modalEmpiricalRarity.icon}</span>
+                      <span className="font-bold uppercase tracking-wider text-indigo-950">
+                        வகுப்பறை அதிர்வெண் & தனித்துவம் (Cohort Frequency Index)
+                      </span>
+                    </div>
+                    <span className="rounded-full bg-indigo-600 px-2.5 py-0.5 text-[11px] font-bold text-white">
+                      {modalEmpiricalRarity.observedFrequencyPercent}% Frequency
                     </span>
-                    <div className="mt-0.5 text-stone-700">
-                      {selectedNameForModal.literalMeaningEn ||
-                        selectedNameForModal.meaningEn}
+                  </div>
+                  <div className="mt-2.5 grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+                    <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
+                      <div className="text-[10px] uppercase font-bold text-stone-500">
+                        Classroom (40 Kids)
+                      </div>
+                      <div className="mt-0.5 font-bold text-indigo-950">
+                        {modalEmpiricalRarity.classroomDisplayEn}
+                      </div>
+                      <div className="text-[10px] text-indigo-700">
+                        {modalEmpiricalRarity.classroomDisplayTa}
+                      </div>
+                    </div>
+                    <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
+                      <div className="text-[10px] uppercase font-bold text-stone-500">
+                        School Cohort (1,000 Kids)
+                      </div>
+                      <div className="mt-0.5 font-bold text-indigo-950">
+                        ~{modalEmpiricalRarity.schoolDisplayCount} students
+                      </div>
+                    </div>
+                    <div className="rounded-xl bg-white/90 p-2.5 border border-indigo-100">
+                      <div className="text-[10px] uppercase font-bold text-stone-500">
+                        Rarity Band
+                      </div>
+                      <div className="mt-0.5 font-bold text-indigo-950">
+                        {modalEmpiricalRarity.badgeTitleTamil}
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <span className="font-bold text-amber-900">
-                      ✨ Derived / Poetic Meaning (வழிப்பொருள்):
-                    </span>
-                    <div className="mt-0.5 text-stone-700">
-                      {selectedNameForModal.derivedMeaningEn ||
-                        selectedNameForModal.meaningEn}
-                    </div>
-                  </div>
+                  <p className="mt-2 text-[11px] text-indigo-900 leading-relaxed">
+                    💡 <strong>பெற்றோர் வழிகாட்டல்:</strong> {modalEmpiricalRarity.parentAdviceTamil} ({modalEmpiricalRarity.parentAdviceEnglish})
+                  </p>
+                  <ContextualDisclaimer variant="frequency" className="mt-2.5" />
                 </div>
               )}
-              {selectedNameForModal.etymologyRoot && (
-                <p className="text-xs font-semibold text-amber-900">
-                  🌱 <strong>வேர்ச்சொல் (Etymology):</strong>{" "}
-                  {selectedNameForModal.etymologyRoot}
+
+              {/* Meaning, Etymology & Verified Citation (>= 80% Confidence Gate) */}
+              <div className="mt-4 space-y-2.5 rounded-2xl bg-amber-50 p-4 text-sm">
+                <p className="font-semibold text-stone-900">
+                  {selectedNameForModal.meaningTa}
                 </p>
-              )}
-              {selectedNameForModal.confidence >= 0.8 ? (
-                <div className="space-y-2 border-t border-amber-200/80 pt-2.5 text-xs text-amber-950">
-                  {/* FMT-03: Separate Ancient Textual Citations from Lexicon Source URLs */}
-                  <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-2.5">
-                    <div className="font-bold text-emerald-950">
-                      📜 Ancient Textual Citation (பண்டைய இலக்கியச் சான்று):
-                    </div>
-                    {selectedNameForModal.structuredReference?.citationScope ===
-                    "exact-word-in-verse" ? (
-                      <div className="mt-1 space-y-1 text-emerald-900">
-                        <div>
-                          <strong>Attested Work:</strong>{" "}
-                          {selectedNameForModal.structuredReference.workTa} (
-                          {selectedNameForModal.structuredReference.workEn}) ·{" "}
-                          {
-                            selectedNameForModal.structuredReference
-                              .sectionOrKandam
-                          }{" "}
-                          ·{" "}
-                          {
-                            selectedNameForModal.structuredReference
-                              .verseOrSongNumber
-                          }
+                <p className="text-xs text-stone-700">
+                  {selectedNameForModal.meaningEn}
+                </p>
+                {(selectedNameForModal.literalMeaningEn ||
+                  selectedNameForModal.derivedMeaningEn) && (
+                    <div className="grid grid-cols-1 gap-2 rounded-xl border border-amber-200 bg-white/80 p-2.5 text-xs sm:grid-cols-2">
+                      <div>
+                        <span className="font-bold text-stone-800">
+                          📖 Literal Root Meaning (நேரடி வேர்ச்சொல் பொருள்):
+                        </span>
+                        <div className="mt-0.5 text-stone-700">
+                          {selectedNameForModal.literalMeaningEn ||
+                            selectedNameForModal.meaningEn}
                         </div>
-                        {selectedNameForModal.structuredReference
-                          .lineTitleOrQuote && (
-                          <blockquote className="border-l-2 border-emerald-600 pl-2 italic">
-                            &ldquo;
+                      </div>
+                      <div>
+                        <span className="font-bold text-amber-900">
+                          ✨ Derived / Poetic Meaning (வழிப்பொருள்):
+                        </span>
+                        <div className="mt-0.5 text-stone-700">
+                          {selectedNameForModal.derivedMeaningEn ||
+                            selectedNameForModal.meaningEn}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                {selectedNameForModal.etymologyRoot && (
+                  <p className="text-xs font-semibold text-amber-900">
+                    🌱 <strong>வேர்ச்சொல் (Etymology):</strong>{" "}
+                    {selectedNameForModal.etymologyRoot}
+                  </p>
+                )}
+                {selectedNameForModal.confidence >= 0.8 ? (
+                  <div className="space-y-2 border-t border-amber-200/80 pt-2.5 text-xs text-amber-950">
+                    {/* FMT-03: Separate Ancient Textual Citations from Lexicon Source URLs */}
+                    <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-2.5">
+                      <div className="font-bold text-emerald-950">
+                        📜 Ancient Textual Citation (பண்டைய இலக்கியச் சான்று):
+                      </div>
+                      {selectedNameForModal.structuredReference?.citationScope ===
+                        "exact-word-in-verse" ? (
+                        <div className="mt-1 space-y-1 text-emerald-900">
+                          <div>
+                            <strong>Attested Work:</strong>{" "}
+                            {selectedNameForModal.structuredReference.workTa} (
+                            {selectedNameForModal.structuredReference.workEn}) ·{" "}
                             {
                               selectedNameForModal.structuredReference
-                                .lineTitleOrQuote
+                                .sectionOrKandam
+                            }{" "}
+                            ·{" "}
+                            {
+                              selectedNameForModal.structuredReference
+                                .verseOrSongNumber
                             }
-                            &rdquo;
-                          </blockquote>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="mt-1 text-[11px] text-stone-700">
-                        {selectedNameForModal.structuredReference
-                          ?.citationScope === "etymological-compound"
-                          ? "None — Synthesized modern compound name from authentic Tamil roots (FMT-01: Modern Synthesis; no ancient poem verse claims)."
-                          : "Standalone root attested in the Madras University Tamil Lexicon (no specific Sangam verse quote claimed)."}
-                      </div>
-                    )}
-                  </div>
+                          </div>
+                          {selectedNameForModal.structuredReference
+                            .lineTitleOrQuote && (
+                              <blockquote className="border-l-2 border-emerald-600 pl-2 italic">
+                                &ldquo;
+                                {
+                                  selectedNameForModal.structuredReference
+                                    .lineTitleOrQuote
+                                }
+                                &rdquo;
+                              </blockquote>
+                            )}
+                        </div>
+                      ) : (
+                        <div className="mt-1 text-[11px] text-stone-700">
+                          {selectedNameForModal.structuredReference
+                            ?.citationScope === "etymological-compound"
+                            ? "None — Synthesized modern compound name from authentic Tamil roots (FMT-01: Modern Synthesis; no ancient poem verse claims)."
+                            : "Standalone root attested in the Madras University Tamil Lexicon (no specific Sangam verse quote claimed)."}
+                        </div>
+                      )}
+                    </div>
 
-                  {/* Lexicon Source URLs Box */}
-                  <div className="rounded-xl border border-sky-200 bg-sky-50/70 p-2.5">
-                    <div className="font-bold text-sky-950">
-                      📘 Lexicon Headword Source URLs (சென்னைப் பல்கலைக்கழகத் தமிழ் அகராதி):
-                    </div>
-                    <div className="mt-1 text-[11px] text-sky-900">
-                      <strong>Attribution Type:</strong>{" "}
-                      {selectedNameForModal.sourceAttributionType ||
-                        selectedNameForModal.structuredReference
-                          ?.verificationTier}{" "}
-                      ({Math.round(selectedNameForModal.confidence * 100)}%
-                      Confidence)
-                    </div>
-                    {selectedNameForModal.structuredReference?.citationNote && (
-                      <p className="mt-1 text-[11px] text-stone-700">
-                        ℹ️{" "}
-                        {selectedNameForModal.structuredReference.citationNote.replace(
-                          /\s*\(https?:\/\/[^)]+\)/g,
-                          ""
-                        )}
-                      </p>
-                    )}
-                    {selectedNameForModal.structuredReference?.sourceWebsite && (
-                      <div className="mt-1.5 flex flex-wrap gap-2 text-[11px]">
-                        <a
-                          href={
-                            selectedNameForModal.structuredReference
-                              .sourceWebsite
-                          }
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="rounded-lg border border-sky-300 bg-white px-2.5 py-1 font-semibold text-sky-900 hover:bg-sky-100"
-                        >
-                          🔗 Primary Root Lexicon Entry ↗
-                        </a>
-                        {selectedNameForModal.structuredReference
-                          .lexiconWebsite &&
+                    {/* Lexicon Source URLs Box */}
+                    <div className="rounded-xl border border-sky-200 bg-sky-50/70 p-2.5">
+                      <div className="font-bold text-sky-950">
+                        📘 Lexicon Headword Source URLs (சென்னைப் பல்கலைக்கழகத் தமிழ் அகராதி):
+                      </div>
+                      <div className="mt-1 text-[11px] text-sky-900">
+                        <strong>Attribution Type:</strong>{" "}
+                        {selectedNameForModal.sourceAttributionType ||
                           selectedNameForModal.structuredReference
-                            .lexiconWebsite !==
+                            ?.verificationTier}{" "}
+                        ({Math.round(selectedNameForModal.confidence * 100)}%
+                        Confidence)
+                      </div>
+                      {selectedNameForModal.structuredReference?.citationNote && (
+                        <p className="mt-1 text-[11px] text-stone-700">
+                          ℹ️{" "}
+                          {selectedNameForModal.structuredReference.citationNote.replace(
+                            /\s*\(https?:\/\/[^)]+\)/g,
+                            ""
+                          )}
+                        </p>
+                      )}
+                      {selectedNameForModal.structuredReference?.sourceWebsite && (
+                        <div className="mt-1.5 flex flex-wrap gap-2 text-[11px]">
+                          <a
+                            href={
+                              selectedNameForModal.structuredReference
+                                .sourceWebsite
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-lg border border-sky-300 bg-white px-2.5 py-1 font-semibold text-sky-900 hover:bg-sky-100"
+                          >
+                            🔗 Primary Root Lexicon Entry ↗
+                          </a>
+                          {selectedNameForModal.structuredReference
+                            .lexiconWebsite &&
+                            selectedNameForModal.structuredReference
+                              .lexiconWebsite !==
                             selectedNameForModal.structuredReference
                               .sourceWebsite && (
-                            <a
-                              href={
-                                selectedNameForModal.structuredReference
-                                  .lexiconWebsite
-                              }
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="rounded-lg border border-sky-300 bg-white px-2.5 py-1 font-semibold text-sky-900 hover:bg-sky-100"
-                            >
-                              🔗 Secondary Root / Corpus Link ↗
-                            </a>
-                          )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ) : (
-                <p className="text-xs italic text-stone-500">
-                  Citation withheld (requires ≥ 80% verification confidence).
-                </p>
-              )}
-            </div>
-
-            {/* Dual Numerology + Parent Practical Details */}
-            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-stone-200 p-3.5 text-xs">
-                <div className="font-bold text-stone-900">
-                  🔢 Dual Numerology Breakdown
-                </div>
-                <div className="mt-1">
-                  <strong>Pythagorean (Standard 1–9):</strong> Number{" "}
-                  {selectedNameForModal.numerologyPythagorean} (Total{" "}
-                  {selectedNameForModal.compoundPythagorean})
-                </div>
-                <div className="mt-0.5">
-                  <strong>Chaldean (Cheiro 1–8):</strong> Number{" "}
-                  {selectedNameForModal.numerologyChaldean} (Compound{" "}
-                  {selectedNameForModal.compoundChaldean})
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-stone-200 p-3.5 text-xs">
-                <div className="font-bold text-stone-900">
-                  🗣️ Practical Parent Checklist
-                </div>
-                {selectedNameForModal.easeOfCalling && (
-                  <div className="mt-1">
-                    <strong>Ease of Calling:</strong>{" "}
-                    {selectedNameForModal.easeOfCalling.overallScore}/100 (
-                    {selectedNameForModal.easeOfCalling.phoneticGuide})
-                  </div>
-                )}
-                {selectedNameForModal.documentFit && (
-                  <div className="mt-0.5">
-                    <strong>Passport / Aadhaar Fit:</strong>{" "}
-                    {selectedNameForModal.documentFit.sampleWithInitial} (
-                    {selectedNameForModal.documentFit.tamilAksharaCount} தமிழ்
-                    எழுத்துக்கள்)
-                  </div>
-                )}
-                {selectedNameForModal.nicknames && (
-                  <div className="mt-0.5">
-                    <strong>Nicknames:</strong>{" "}
-                    {selectedNameForModal.nicknames.join(", ")} ·{" "}
-                    <strong>Siblings:</strong>{" "}
-                    {selectedNameForModal.siblingPairSuggestions?.join(", ")}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* 7-Dimension Scorecard Grid */}
-            {modalScorecard && (
-              <div className="mt-4">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500">
-                  🛡️ 7-Dimension Evaluation Scorecard ({modalScorecard.overallScore}/100)
-                </h4>
-                <div className="mt-2 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                  {modalScorecard.dimensions.map((d) => (
-                    <div
-                      key={d.key}
-                      className="rounded-xl border border-stone-200 p-3 text-xs"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-stone-800">
-                          {d.labelEn} ({d.labelTa})
-                        </span>
-                        <span className="rounded-full bg-amber-100 px-2 py-0.5 font-bold text-amber-900">
-                          {d.score}/100
-                        </span>
-                      </div>
-                      <div className="mt-0.5 text-[11px] font-semibold text-amber-800">
-                        {d.badge}
-                      </div>
-                      <p className="mt-0.5 text-[11px] text-stone-600">
-                        {d.detailTa}
-                      </p>
+                              <a
+                                href={
+                                  selectedNameForModal.structuredReference
+                                    .lexiconWebsite
+                                }
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rounded-lg border border-sky-300 bg-white px-2.5 py-1 font-semibold text-sky-900 hover:bg-sky-100"
+                              >
+                                🔗 Secondary Root / Corpus Link ↗
+                              </a>
+                            )}
+                        </div>
+                      )}
                     </div>
-                  ))}
+                  </div>
+                ) : (
+                  <p className="text-xs italic text-stone-500">
+                    Citation withheld (requires ≥ 80% verification confidence).
+                  </p>
+                )}
+              </div>
+
+              {/* Dual Numerology + Parent Practical Details */}
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="rounded-xl border border-stone-200 p-3.5 text-xs">
+                  <div className="font-bold text-stone-900">
+                    🔢 Dual Numerology Breakdown
+                  </div>
+                  <div className="mt-1">
+                    <strong>Pythagorean (Standard 1–9):</strong> Number{" "}
+                    {selectedNameForModal.numerologyPythagorean} (Total{" "}
+                    {selectedNameForModal.compoundPythagorean})
+                  </div>
+                  <div className="mt-0.5">
+                    <strong>Chaldean (Cheiro 1–8):</strong> Number{" "}
+                    {selectedNameForModal.numerologyChaldean} (Compound{" "}
+                    {selectedNameForModal.compoundChaldean})
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-stone-200 p-3.5 text-xs">
+                  <div className="font-bold text-stone-900">
+                    🗣️ Practical Parent Checklist
+                  </div>
+                  {selectedNameForModal.easeOfCalling && (
+                    <div className="mt-1">
+                      <strong>Ease of Calling:</strong>{" "}
+                      {selectedNameForModal.easeOfCalling.overallScore}/100 (
+                      {selectedNameForModal.easeOfCalling.phoneticGuide})
+                    </div>
+                  )}
+                  {selectedNameForModal.documentFit && (
+                    <div className="mt-0.5">
+                      <strong>Passport / Aadhaar Fit:</strong>{" "}
+                      {selectedNameForModal.documentFit.sampleWithInitial} (
+                      {selectedNameForModal.documentFit.tamilAksharaCount} தமிழ்
+                      எழுத்துக்கள்)
+                    </div>
+                  )}
+                  {selectedNameForModal.nicknames && (
+                    <div className="mt-0.5">
+                      <strong>Nicknames:</strong>{" "}
+                      {selectedNameForModal.nicknames.join(", ")} ·{" "}
+                      <strong>Siblings:</strong>{" "}
+                      {selectedNameForModal.siblingPairSuggestions?.join(", ")}
+                    </div>
+                  )}
                 </div>
               </div>
-            )}
 
-            {/* Report Error Flow (Mitigation for Q4 AI Curation) */}
-            <div className="mt-5 border-t border-stone-200 pt-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-stone-600">
-                🚩 Report a Meaning or Citation Correction
-              </h4>
-              {reportSent ? (
-                <p className="mt-2 rounded-lg bg-emerald-50 p-2.5 text-xs font-semibold text-emerald-800">
-                  ✓ Thank you! Your correction note has been logged for AI & scholar review.
-                </p>
-              ) : (
-                <div className="mt-2 flex flex-col gap-2 sm:flex-row">
-                  <input
-                    type="text"
-                    placeholder="Suggest a better Sangam citation or meaning refinement..."
-                    value={reportNote}
-                    onChange={(e) => setReportNote(e.target.value)}
-                    className="min-w-0 flex-1 min-h-[44px] rounded-xl border border-stone-300 px-3 py-2 text-base sm:text-xs"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => handleReportError(selectedNameForModal.slug)}
-                    className="min-h-[44px] shrink-0 rounded-xl bg-stone-900 px-4 py-2 text-xs font-semibold text-white"
-                  >
-                    Submit Report
-                  </button>
+              {/* 7-Dimension Scorecard Grid */}
+              {modalScorecard && (
+                <div className="mt-4">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500">
+                    🛡️ 7-Dimension Evaluation Scorecard ({modalScorecard.overallScore}/100)
+                  </h4>
+                  <div className="mt-2 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                    {modalScorecard.dimensions.map((d) => (
+                      <div
+                        key={d.key}
+                        className="rounded-xl border border-stone-200 p-3 text-xs"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-stone-800">
+                            {d.labelEn} ({d.labelTa})
+                          </span>
+                          <span className="rounded-full bg-amber-100 px-2 py-0.5 font-bold text-amber-900">
+                            {d.score}/100
+                          </span>
+                        </div>
+                        <div className="mt-0.5 text-[11px] font-semibold text-amber-800">
+                          {d.badge}
+                        </div>
+                        <p className="mt-0.5 text-[11px] text-stone-600">
+                          {d.detailTa}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
-            </div>
+
+              {/* Report Error Flow (Mitigation for Q4 AI Curation) */}
+              <div className="mt-5 border-t border-stone-200 pt-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-stone-600">
+                  🚩 Report a Meaning or Citation Correction
+                </h4>
+                {reportSent ? (
+                  <p className="mt-2 rounded-lg bg-emerald-50 p-2.5 text-xs font-semibold text-emerald-800">
+                    ✓ Thank you! Your correction note has been logged for AI & scholar review.
+                  </p>
+                ) : (
+                  <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+                    <input
+                      type="text"
+                      placeholder="Suggest a better Sangam citation or meaning refinement..."
+                      value={reportNote}
+                      onChange={(e) => setReportNote(e.target.value)}
+                      className="min-w-0 flex-1 min-h-[44px] rounded-xl border border-stone-300 px-3 py-2 text-base sm:text-xs"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => handleReportError(selectedNameForModal.slug)}
+                      className="min-h-[44px] shrink-0 rounded-xl bg-stone-900 px-4 py-2 text-xs font-semibold text-white"
+                    >
+                      Submit Report
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Sticky Modal Footer */}
@@ -3973,11 +3978,10 @@ export default function NamingGuruDashboard({
                 <button
                   type="button"
                   onClick={() => toggleShortlist(selectedNameForModal.slug)}
-                  className={`rounded-xl px-3 py-1.5 text-xs font-bold transition ${
-                    shortlist.includes(selectedNameForModal.slug)
-                      ? "bg-amber-600 text-white"
-                      : "border border-stone-300 bg-white text-stone-700 hover:bg-stone-100"
-                  }`}
+                  className={`rounded-xl px-3 py-1.5 text-xs font-bold transition ${shortlist.includes(selectedNameForModal.slug)
+                    ? "bg-amber-600 text-white"
+                    : "border border-stone-300 bg-white text-stone-700 hover:bg-stone-100"
+                    }`}
                 >
                   {shortlist.includes(selectedNameForModal.slug)
                     ? "♥ Shortlisted"
@@ -4028,101 +4032,100 @@ export default function NamingGuruDashboard({
             </div>
 
             <div className="flex-1 overflow-y-auto p-4 sm:p-6 pt-3">
-            <p className="mb-2 text-[11px] font-medium text-amber-800 sm:hidden">
-              ← Swipe horizontally to compare all shortlisted names →
-            </p>
-            <div className="overflow-x-auto rounded-2xl border border-stone-200">
-              <table className="w-full min-w-[640px] border-collapse text-left text-xs">
-                <thead>
-                  <tr className="bg-amber-50 text-stone-900 border-b border-stone-200">
-                    <th className="sticky left-0 z-10 bg-amber-50 p-3 font-bold">Dimension</th>
-                    {shortlistRecords.slice(0, 5).map((sr) => (
-                      <th key={sr.slug} className="p-3 font-extrabold text-amber-950">
-                        {sr.nameTamil} <span className="font-semibold text-stone-600">({sr.nameLatin})</span>
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-stone-100">
-                  <tr>
-                    <td className="p-3 font-semibold text-stone-700">Meaning (En / Ta)</td>
-                    {shortlistRecords.slice(0, 5).map((sr) => (
-                      <td key={sr.slug} className="p-3 text-stone-700">
-                        <div className="font-medium text-stone-900">{sr.meaningTa}</div>
-                        <div className="text-[11px] text-stone-500 mt-0.5">{sr.meaningEn}</div>
-                      </td>
-                    ))}
-                  </tr>
-                  <tr>
-                    <td className="p-3 font-semibold text-stone-700">Origin &amp; Gender</td>
-                    {shortlistRecords.slice(0, 5).map((sr) => (
-                      <td key={sr.slug} className="p-3">{sr.gender} · {sr.originCategory}</td>
-                    ))}
-                  </tr>
-                  <tr>
-                    <td className="p-3 font-semibold text-stone-700">Chaldean / Pythagorean</td>
-                    {shortlistRecords.slice(0, 5).map((sr) => {
-                      const ch = calculateNumerology(sr.nameLatin, "chaldean");
-                      const py = calculateNumerology(sr.nameLatin, "pythagorean");
-                      return (
-                        <td key={sr.slug} className="p-3">
-                          Ch: <strong>{ch.compoundNumber}→{ch.nameNumber}</strong> · Py: <strong>{py.compoundNumber}→{py.nameNumber}</strong>
+              <p className="mb-2 text-[11px] font-medium text-amber-800 sm:hidden">
+                ← Swipe horizontally to compare all shortlisted names →
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-stone-200">
+                <table className="w-full min-w-[640px] border-collapse text-left text-xs">
+                  <thead>
+                    <tr className="bg-amber-50 text-stone-900 border-b border-stone-200">
+                      <th className="sticky left-0 z-10 bg-amber-50 p-3 font-bold">Dimension</th>
+                      {shortlistRecords.slice(0, 5).map((sr) => (
+                        <th key={sr.slug} className="p-3 font-extrabold text-amber-950">
+                          {sr.nameTamil} <span className="font-semibold text-stone-600">({sr.nameLatin})</span>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-stone-100">
+                    <tr>
+                      <td className="p-3 font-semibold text-stone-700">Meaning (En / Ta)</td>
+                      {shortlistRecords.slice(0, 5).map((sr) => (
+                        <td key={sr.slug} className="p-3 text-stone-700">
+                          <div className="font-medium text-stone-900">{sr.meaningTa}</div>
+                          <div className="text-[11px] text-stone-500 mt-0.5">{sr.meaningEn}</div>
                         </td>
-                      );
-                    })}
-                  </tr>
-                  <tr>
-                    <td className="p-3 font-semibold text-stone-700">7D Scorecard &amp; Classroom (40)</td>
-                    {shortlistRecords.slice(0, 5).map((sr) => {
-                      const rar = calculateEmpiricalRarity(sr.nameTamil, sr.popularityRank, {
-                        nameLatin: sr.nameLatin,
-                        nameCategory: sr.nameCategory,
-                        originCategory: sr.originCategory,
-                      });
-                      const sc = evaluateNameScorecard({
-                        nameLatin: sr.nameLatin,
-                        nameTamil: sr.nameTamil,
-                        meaningEn: sr.meaningEn,
-                        meaningTa: sr.meaningTa,
-                        originCategory: sr.originCategory,
-                        literaryReference: sr.literaryReference,
-                        confidence: sr.confidence,
-                        popularityRank: sr.popularityRank,
-                      });
-                      return (
-                        <td key={sr.slug} className="p-3">
-                          <strong>{sc.overallScore}/100</strong> · {rar.classroomDisplayEn}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
-              <div className="text-xs text-emerald-950">
-                <strong>🪷 Bundled Family Booklet + Naming Ceremony &amp; Registration Checklist (Tasks 31 &amp; 34)</strong>
-                <p className="text-[11px] text-emerald-800">
-                  Includes side-by-side comparison, <em>Peyar Soottu Vizha</em> guide, and Birth Certificate / Aadhaar / Passport initial rules.
-                </p>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold text-stone-700">Origin &amp; Gender</td>
+                      {shortlistRecords.slice(0, 5).map((sr) => (
+                        <td key={sr.slug} className="p-3">{sr.gender} · {sr.originCategory}</td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold text-stone-700">Chaldean / Pythagorean</td>
+                      {shortlistRecords.slice(0, 5).map((sr) => {
+                        const ch = calculateNumerology(sr.nameLatin, "chaldean");
+                        const py = calculateNumerology(sr.nameLatin, "pythagorean");
+                        return (
+                          <td key={sr.slug} className="p-3">
+                            Ch: <strong>{ch.compoundNumber}→{ch.nameNumber}</strong> · Py: <strong>{py.compoundNumber}→{py.nameNumber}</strong>
+                          </td>
+                        );
+                      })}
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold text-stone-700">7D Scorecard &amp; Classroom (40)</td>
+                      {shortlistRecords.slice(0, 5).map((sr) => {
+                        const rar = calculateEmpiricalRarity(sr.nameTamil, sr.popularityRank, {
+                          nameLatin: sr.nameLatin,
+                          nameCategory: sr.nameCategory,
+                          originCategory: sr.originCategory,
+                        });
+                        const sc = evaluateNameScorecard({
+                          nameLatin: sr.nameLatin,
+                          nameTamil: sr.nameTamil,
+                          meaningEn: sr.meaningEn,
+                          meaningTa: sr.meaningTa,
+                          originCategory: sr.originCategory,
+                          literaryReference: sr.literaryReference,
+                          confidence: sr.confidence,
+                          popularityRank: sr.popularityRank,
+                        });
+                        return (
+                          <td key={sr.slug} className="p-3">
+                            <strong>{sc.overallScore}/100</strong> · {rar.classroomDisplayEn}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <a
-                href={`/api/reports/family-booklet?slugs=${shortlistRecords
-                  .slice(0, 5)
-                  .map((s) => s.slug)
-                  .join(",")}&tier=${
-                  typeof window !== "undefined"
-                    ? localStorage.getItem("namingguru_sub_tier") || "free"
-                    : "free"
-                }`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center rounded-xl bg-emerald-700 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-800"
-              >
-                📄 Open Printable Family Booklet (₹499) ↗
-              </a>
-            </div>
+
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
+                <div className="text-xs text-emerald-950">
+                  <strong>🪷 Bundled Family Booklet + Naming Ceremony &amp; Registration Checklist (Tasks 31 &amp; 34)</strong>
+                  <p className="text-[11px] text-emerald-800">
+                    Includes side-by-side comparison, <em>Peyar Soottu Vizha</em> guide, and Birth Certificate / Aadhaar / Passport initial rules.
+                  </p>
+                </div>
+                <a
+                  href={`/api/reports/family-booklet?slugs=${shortlistRecords
+                    .slice(0, 5)
+                    .map((s) => s.slug)
+                    .join(",")}&tier=${typeof window !== "undefined"
+                      ? localStorage.getItem("namingguru_sub_tier") || "free"
+                      : "free"
+                    }`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center rounded-xl bg-emerald-700 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-800"
+                >
+                  📄 Open Printable Family Booklet (₹499) ↗
+                </a>
+              </div>
             </div>
           </div>
         </div>

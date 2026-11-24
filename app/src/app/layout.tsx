@@ -95,9 +95,32 @@ export default function RootLayout({
                   Name Explorer
                 </Link>
               </div>
+              <div className="mt-2 flex flex-wrap gap-3 text-[11px] text-stone-500">
+                <Link href="/terms" className="hover:text-amber-800 hover:underline">
+                  Terms of Service
+                </Link>
+                <span>·</span>
+                <Link href="/privacy" className="hover:text-amber-800 hover:underline">
+                  Privacy Policy (DPDP 2023)
+                </Link>
+                <span>·</span>
+                <Link href="/refund-policy" className="hover:text-amber-800 hover:underline">
+                  Refund Policy
+                </Link>
+                <span>·</span>
+                <Link href="/contact" className="hover:text-amber-800 hover:underline">
+                  Contact Us
+                </Link>
+              </div>
             </div>
             <div className="text-left sm:text-right">
               <p className="font-semibold text-stone-700">செம்மொழித் தமிழ் மரபு · தூய வேர்ச்சொல் ஆய்வுக் களஞ்சியம்</p>
+              <p className="mt-1 text-stone-500">
+                Operated by Saranya Mohan · Namakkal, Tamil Nadu ·{" "}
+                <a href="mailto:support@names.iniya.in" className="text-amber-800 hover:underline">
+                  support@names.iniya.in
+                </a>
+              </p>
               <p className="mt-1 text-stone-400">
                 அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை © 2026 பெயர்ச்சோலை (Peyarcholai)
               </p>

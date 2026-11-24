@@ -148,4 +148,27 @@ describe("Mobile View & Collapsible Menu Regression Suite (MOB-01..06)", () => {
     assert.match(why, /min-h-\[44px\] w-full sm:w-auto/);
     assert.equal(fs.existsSync(path.join(process.cwd(), "public", "logo-master.png")), false);
   });
+
+  it("LEG-01 & B-15: legal pages (/terms, /privacy, /refund-policy, /contact) & Task 32 free teaser mode are wired cleanly", () => {
+    const terms = readSrc("app/terms/page.tsx");
+    const privacy = readSrc("app/privacy/page.tsx");
+    const refund = readSrc("app/refund-policy/page.tsx");
+    const contact = readSrc("app/contact/page.tsx");
+    const layout = readSrc("app/layout.tsx");
+    const dashboard = readSrc("components/NamingGuruDashboard.tsx");
+
+    for (const doc of [terms, privacy, refund, contact]) {
+      assert.match(doc, /Saranya Mohan/);
+      assert.match(doc, /Namakkal/);
+      assert.match(doc, /support@names\.iniya\.in/);
+    }
+    assert.doesNotMatch(terms, /\bGST\b/, "B-03: Do not mention GST unnecessarily in terms copy");
+    assert.match(terms, /Applicable taxes/);
+    assert.match(refund, /7 calendar days/);
+    assert.match(layout, /href="\/terms"/);
+    assert.match(layout, /href="\/privacy"/);
+    assert.match(layout, /href="\/refund-policy"/);
+    assert.match(layout, /href="\/contact"/);
+    assert.match(dashboard, /Free Teaser · ₹499 Full/);
+  });
 });
