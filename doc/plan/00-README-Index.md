@@ -1,8 +1,8 @@
 # பெயர்ச்சோலை (Peyarcholai) – Planning & Feasibility Documentation
 
-**Version:** 2.0 | **Date:** 2026-11-15 | **Status:** Active (`https://peyar.donorconnect.in`) | **Master Index:** [`doc/README.md`](../README.md)
+**Version:** 3.0 | **Date:** 2026-11-26 | **Status:** Active (`https://peyar.donorconnect.in` · Branch `dev19Nov2026`) | **Master Index:** [`doc/README.md`](../README.md)
 
-Peyarcholai helps Indian parents pick a baby name that fits **tradition (horoscope / nakshatra), numerology, community & region, meaning, empirical cohort rarity, and ease of pronunciation**.
+Peyarcholai helps Indian parents pick a baby name that fits **tradition (horoscope / nakshatra), numerology, community & region, meaning, empirical cohort rarity (Grade B + Grade A hybrid), and ease of pronunciation**.
 
 ## Repo layout
 
@@ -11,7 +11,7 @@ Peyarcholai helps Indian parents pick a baby name that fits **tradition (horosco
 | [`doc/README.md`](../README.md) | **Master Documentation Index** cataloging every folder & file in `doc/`. |
 | `doc/plan/` (this folder) | Strategic planning, value audits, feature specs, and Six Sigma (`six-sigma/`). |
 | `doc/00…07-*.md` | **Earlier study (input)** – left untouched; reconciled in [doc 12](12-Input-Reconciliation.md). |
-| `app/` | All application work: Next.js 15 TypeScript code, 393 `.json.gz` shards, tests (`44/44` PASS). |
+| `app/` | Next.js 15 TypeScript web app (`122` routes), 393 `.json.gz` shards (`150,024` active names), `82/82` tests PASS, `graphify-out/` AST index (`1,754` nodes, gitignored). |
 
 ## Document map
 
@@ -77,5 +77,6 @@ Peyarcholai helps Indian parents pick a baby name that fits **tradition (horosco
 ## Method notes
 
 * Costs, store fees and API prices were cross-checked by web research on 2026-11-09. Treat them as **±30% estimates** and re-verify before committing.
-* The reasoning-model analysis through OmniRoute is **prepared but pending a gateway API key**. See [doc 09 §6](09-OmniRoute-AI-Usage-Plan.md#6-status-of-ai-assisted-analysis-for-this-plan).
-* Astrological tables in this plan (e.g. nakshatra syllables) are reference seeds and **must be validated by a qualified jyotishi** before release (control SS-07 C-08).
+* **OmniRoute AI Gateway (`v3.8.53` on `127.0.0.1:20128/v1` → HP Z4 Workstation `100.105.146.7:11434..11437`):** Live and active as primary executor for scripts, components, and doc refreshes (`llama-cpp/qwen2.5-coder-7b` / `14b`). See [Design 10](../design/10-OmniRoute-Directed-Implementation-Protocol.md).
+* **Merchant & Legal Baseline (`2026-11-24`):** Operated by **Saranya Mohan** (Sole Proprietor, Namakkal, Tamil Nadu; `support@names.iniya.in`); `/terms`, `/privacy`, `/refund-policy`, `/contact` live on `dev19Nov2026`.
+* Astrological tables in this plan (e.g. nakshatra syllables) are reference seeds and **must be validated by a qualified jyotishi** before any "Verified" astrology claim (control SS-07 C-08, `B-13`).

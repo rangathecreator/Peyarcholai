@@ -78,3 +78,14 @@ band           = [p / k , p × k]      with k = 2.5 (Grade C) → 1.8 (Grade B) 
 
 ## 7. Work-split
 `T20-1` priors JSON + remove hash + bands (OmniRoute, test-first) → `T20-2` collision formula fix → `T20-3` UI/PDF band + grade → `T20-4` survey API + UI → `T20-5` Wikidata pilot script → `T20-6` calibration job. Items T20-4/T20-6 need Neon DB (Design 06) and traffic; T20-1/2/3/5 are unblocked now.
+
+---
+
+## 8. Empirical Pilot Result (`T20-5`) & `B-16` Option 4 Hybrid Adoption (`2026-11-24`)
+
+1. **`T20-5` Wikipedia/Wikidata Pilot (`app/scripts/wikidata-name-counts.mjs`):**
+   - Balanced 30-name pilot (`10` each from `pure_tamil`, `tamilnadu_usage`, `other_heritage`) returned **`23.3%`** overall Wikipedia coverage (`10%` `pure_tamil`, `40%` `tamilnadu_usage`, `20%` `other_heritage`; median hits = `0` across all 3 categories).
+   - **Decision (`AC-20-07`):** Wikipedia alone is insufficient as a Grade-A frequency oracle, confirming `/api/survey` as the primary Grade-A path.
+2. **`B-16` Option 4 Hybrid Implemented (`dev19Nov2026` @ `58a2d1c`):**
+   - **Immediate Grade B:** Seeded **110 audited Tamil / South Indian cohort priors** in `app/src/data/grade-b-tamil-cohort-priors.json` (using `bandWidthFactor.gradeB = 1.8` in `frequency-engine.ts`), immediately upgrading high-traffic Tamil names (`Yazhini`, `Iniya`, `Venba`, `Kavin`, `Aarav`, etc.) from Grade C to **Grade B**.
+   - **Automatic Grade A Upgrade:** Mounted 1-tap zero-PII `ClassroomSurveyWidget.tsx` on `/name/[slug]` feeding `POST /api/survey` (k-anonymity ≥ 5; automatically upgrades to **Grade A** once ≥ 30 anonymous parent responses accrue).

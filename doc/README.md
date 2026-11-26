@@ -1,6 +1,6 @@
 # பெயர்ச்சோலை (Peyarcholai) — Master Documentation Index
 
-**Last Updated:** 2026-11-15 | **Live Production:** `https://peyar.donorconnect.in` | **Catalog:** `150,024` active / `150,650` raw Tamil names (`393` `.json.gz` shards) | **Verification:** `44/44` tests PASS (12 suites), `next build` PASS (`114` routes)
+**Last Updated:** 2026-11-26 | **Branch:** `dev19Nov2026` | **Live Production:** `https://peyar.donorconnect.in` | **Catalog:** `150,024` active / `150,650` raw Tamil names (`393` `.json.gz` shards) | **Verification:** `82/82` tests PASS (20 suites), `next build` PASS (`122` routes) | **Graphify Index:** `1,754` nodes · `2,563` edges · `139` communities (`graphify-out/`, gitignored)
 
 ---
 
@@ -8,12 +8,16 @@
 
 | Document | Purpose |
 | :--- | :--- |
-| [Master TODO Tracker](./TODO/TODO.md) | Authoritative task backlog (`Tasks 1–38`), Open Questions, QA Checklist v1.0 Matrix, and Cycle Log |
+| [Master TODO Tracker](./TODO/TODO.md) | Authoritative task backlog (`Tasks 1–44`), Blocked Register (`B-01`–`B-16`), QA Checklist v1.0 Matrix, and Cycle Log |
 | [TODO Archive (2026-11-14)](./TODO/TODO-2026-11-14.md) | Initial detailed QA & implementation log |
 | [Iteration 2026-11-14-01](./TODO/TODO-Iteration2026-11-14-01.md) | Wave A execution log (Tasks 19, 22, 24, 25, 32, 33) |
 | [Iteration 2026-11-14-02](./TODO/TODO-Iteration2026-11-14-02.md) | Wave B execution log (Tasks 26, 27, 28, 30, 31, 34) |
 | [Iteration 2026-11-15-01](./TODO/TODO-Iteration2026-11-15-01.md) | Revenue Plan & Six-Sigma Guardrails (`06-Six-Sigma-Quality-Guardrails.md`) |
 | [Iteration 2026-11-15-02](./TODO/TODO-Iteration2026-11-15-02.md) | Tasks 17A, 35, 36, 37, 38 (Shortlist Poll Sync, Menu Bar Polish, Cohort V2, Compound Predictions) |
+| [Iteration 2026-11-16-01](./TODO/TODO-Iteration2026-11-16-01.md) | Task 39 (ISR + CDN caching, single-pass filter, `375px` mobile audit) |
+| [Iteration 2026-11-16-02](./TODO/TODO-Iteration2026-11-16-02.md) | Security-critical T17-0/0b/F4, T16-1, T21-1, T22-1 |
+| [Iteration 2026-11-17-01](./TODO/TODO-Iteration2026-11-17-01.md) | T16-4, T17-5 WhatsApp share, T20-1/2, T22-2/3 |
+| [Iteration 2026-11-17-02](./TODO/TODO-Iteration2026-11-17-02.md) | T17-1/2/4 (`PostgresPollStore`, `V1` SQL, `/p/[inviteToken]`), T20-3/4 (`/api/survey`) |
 
 ---
 
@@ -27,6 +31,7 @@
 | [04 Tamil MVP Requirements Summary](./requirements/04-Tamil-MVP-Requirements-Summary.md) | Concise Tamil-first MVP requirements summary |
 | [05 Literary Sources Directory](./requirements/05-Literary-Sources-Tolkappiyam-Ramayanam-Directory.md) | Sangam, Tolkappiyam, Kamba Ramayanam, and Madras Tamil Lexicon source directory |
 | [06 User Guide & Feature Manual](./requirements/06-User-Guide-And-Feature-Manual.md) | Parent user guide for search, Nakshatra, numerology, scorecard, and family polls |
+| [07 Master Requirements From TODO](./requirements/07-Master-Requirements-From-TODO.md) | Consolidated requirements specification extracted from `TODO.md` |
 
 ---
 
@@ -44,6 +49,7 @@
 | [08 Task 20 — Reliable Cohort Frequency Data](./design/08-Task20-Reliable-Cohort-Frequency-Data-Design.md) | Removes synthetic noise, evidence grades A/B/C, data sources, corrected collision math |
 | [09 Tasks 21/22 — Review & Hardening](./design/09-Tasks21-22-Review-And-Hardening-Design.md) | Server-side entitlement gating, citation integrity, jyotishi human gate |
 | [10 OmniRoute-Directed Implementation Protocol](./design/10-OmniRoute-Directed-Implementation-Protocol.md) | Claude designs/tests → OmniRoute implements; gates, runner, iteration plan |
+| [11 Tamil Baby-Naming Theme Redesign](./design/11-Tamil-Baby-Naming-Theme-Redesign.md) | *Mangala Thottil* warm Tamil cultural palette (`.bg-tamil-kolam`, Peacock Teal/Indigo/Gold hero, festive ribbon) |
 | [Micro-Design: Task 20 Cohort Frequency](./design/micro_designs/01-Task20-Cohort-Frequency-Micro-Design.md) | Multi-factor empirical cohort frequency model |
 | [Micro-Design: Tasks 16, 17, 21, 22, 23 Tradeoffs](./design/micro_designs/02-Tasks16-17-21-22-23-Design-Tradeoffs.md) | Architecture tradeoffs & selected options (JDK21, PostgreSQL, Blind Poll, Cloudflare Tunnel) |
 | [Micro-Design: Task 36 Cohort Frequency V2](./design/micro_designs/03-Task36-Empirical-Cohort-Frequency-V2-Design.md) | Classroom collision percentage (`1 in ~10 classrooms`) & whole-number school counts |
@@ -105,6 +111,8 @@
 | [Site Deployment: DonorConnect](./deployment/site/01-Production-Site-Deployment-DonorConnect.md) | Custom subdomain & Vercel production setup |
 | [Site Scaling Plan](./deployment/site/02-Scalable-Cloud-Resources-And-Traffic-Sizing-Plan.md) | Traffic sizing & cloud resource scaling tiers |
 | [Subdomain Beta Guide](./deployment/site/03-DonorConnect-Subdomain-Beta-Deployment-Guide.md) | `peyar.donorconnect.in` DNS + beta release guide |
+| [04 Neon PostgreSQL Setup Guide](./deployment/site/04-Neon-PostgreSQL-Database-Setup-Guide.md) | Free-tier Neon PostgreSQL (`DATABASE_URL` pooled) setup & V1 SQL migration (`B-07`) |
+| [05 Vercel Deployment Monitoring Automation](./deployment/site/05-Vercel-Deployment-Monitoring-Automation.md) | Live Vercel verification, build-failure alerting options, `check-prod-health.mjs` & GitHub Actions workflow |
 | **External:** [HP Z4 + Dual OmniRoute QuickStart](../../../LLMDeployments/SetupNotes/antigravity_custom_model_setup-QuickStartGuide.md) | Dell Laptop + HP Z4 Workstation (`100.105.146.7`) dual-OmniRoute & Cloudflare Tunnel setup |
 | **External:** [HP Workstation Daily Connection Manual](../../../LLMDeployments/UbuntuRemoteConnNotes/DailyConnectionSteps_Manual.md) | Daily SSH, Tailscale, and remote LLM service connection steps for HP Z4 Workstation |
 
@@ -129,6 +137,8 @@
 | [04 Feature Quality Acceptance Criteria](./testing/04-Feature-Quality-Acceptance-Criteria.md) | Feature-level Six-Sigma acceptance gates |
 | [05 OmniRoute Automated QA Report](./testing/05-OmniRoute-Automated-QA-Execution-Report.md) | Automated AI QA audit report |
 | [06 Six-Sigma Quality Guardrails](./testing/06-Six-Sigma-Quality-Guardrails.md) | Mandatory `SG-01`–`SG-05` iteration release gates |
+| [07 Six-Sigma Quality Scorecard (2026-11-19)](./testing/07-Six-Sigma-Quality-Scorecard-2026-11-19.md) | DMAIC CTQ scorecard (`23/27` core defects eliminated, `0` Critical/High, `~3.20σ`) |
+| **Mobile Testing (`doc/testing/mobiletesting/`)** | [00 Master Plan](./testing/mobiletesting/00-Mobile-Testing-Master-Plan.md) · [01 Findings & Fixes (`MF-01..15`)](./testing/mobiletesting/01-Mobile-Audit-Findings-and-Fixes.md) · [02 Validation Log](./testing/mobiletesting/02-Mobile-Validation-Log.md) |
 | [01 Plan Review](./reviews/01-Plan-Review.md) | Architectural & product plan review notes |
 
 ---
