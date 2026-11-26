@@ -206,7 +206,15 @@ describe('Pronunciation & Syllable Breakdown Guide (Task 33)', () => {
     const guide = buildPronunciationGuide('யாழினி', 'Yazhini');
     assert.deepEqual(guide.tamilSyllables, ['யா', 'ழி', 'னி']);
     assert.equal(guide.formattedTamil, 'யா · ழி · னி');
-    assert.ok(guide.romanSyllables.length >= 2);
+    assert.equal(guide.formattedRoman, 'Ya-zhi-ni');
+  });
+
+  it('keeps Tamil mei codas attached and preserves Roman digraphs for compound names like Rameshabhishek', () => {
+    const guide = buildPronunciationGuide('ரமேஷ்அபிஷேக்', 'Rameshabhishek');
+    assert.deepEqual(guide.tamilSyllables, ['ர', 'மேஷ்', 'அ', 'பி', 'ஷேக்']);
+    assert.equal(guide.formattedTamil, 'ர · மேஷ் · அ · பி · ஷேக்');
+    assert.equal(guide.formattedRoman, 'Ra-me-sha-bhi-shek');
+    assert.equal(guide.tamilSpeechText, 'ரமேஷ் அபிஷேக்');
   });
 });
 
@@ -220,6 +228,7 @@ describe('Blind Family Vote-Out Poll Security (Task 17 — SG-03)', () => {
       candidateSlugs: ['yazhini', 'kavin'],
       notes: '',
       createdAt: '2026-11-15T00:00:00Z',
+      closesAt: '2026-11-22T00:00:00Z',
       votes: [
         {
           id: 'v1',
