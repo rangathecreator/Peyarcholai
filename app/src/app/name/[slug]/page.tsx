@@ -9,6 +9,7 @@ import { calculateEmpiricalRarity } from "@/lib/frequency-engine";
 import { AdBanner } from "@/components/MonetizationBanner";
 import { ContextualDisclaimer } from "@/components/ContextualDisclaimer";
 import { PronunciationButton } from "@/components/PronunciationButton";
+import { ClassroomSurveyWidget } from "@/components/ClassroomSurveyWidget";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -212,6 +213,15 @@ export default async function NameDetailPage({
           <p className="mt-2.5 text-xs text-indigo-900 leading-relaxed">
             💡 <strong>பெற்றோர் வழிகாட்டல்:</strong> {empiricalRarity.parentAdviceTamil} ({empiricalRarity.parentAdviceEnglish})
           </p>
+          <p className="mt-1 text-[11px] text-indigo-800/80">
+            {empiricalRarity.methodologyNoteEn}
+          </p>
+          <ClassroomSurveyWidget
+            slug={item.slug}
+            nameTamil={item.nameTamil}
+            nameLatin={item.nameLatin}
+            initialGrade={empiricalRarity.band.grade}
+          />
         </div>
 
         {/* 1 & 3: Meaning, Root Breakdown & Granular Literary Reference */}

@@ -5,6 +5,29 @@
  */
 
 import priors from "../data/frequency-priors.json";
+import gradeBCorpus from "../data/grade-b-tamil-cohort-priors.json";
+
+export interface GradeBPriorEntry {
+  countPer10k: number;
+  cohortEra: string;
+  source: string;
+}
+
+const GRADE_B_MAP = gradeBCorpus.names as Record<string, GradeBPriorEntry>;
+
+/**
+ * Look up an audited Grade B external corpus prior by Roman name or slug (Design 08 Option 4 Hybrid).
+ */
+export function getGradeBPrior(nameLatinOrSlug?: string): GradeBPriorEntry | null {
+  if (!nameLatinOrSlug) return null;
+  const key = nameLatinOrSlug.trim().toLowerCase().replace(/[^a-z]/g, "");
+  if (!key) return null;
+  return GRADE_B_MAP[key] || null;
+}
+
+export function getGradeBCorpusCount(): number {
+  return Object.keys(GRADE_B_MAP).length;
+}
 
 export interface EmpiricalRarityContext {
   nameLatin?: string;
@@ -123,11 +146,19 @@ export function calculateEmpiricalRarity(
   context?: EmpiricalRarityContext
 ): EmpiricalRarityScore {
   let countPer10k: number;
+  let grade: "A" | "B" | "C" = "C";
   let noteEn = "Derived from observed cohort frequency ranking.";
   let noteTa = "வகுப்பறை மற்றும் கல்விப் பதிவு அதிர்வெண் அடிப்படையில் கணக்கிடப்பட்டது.";
 
+  const gradeBMatch = getGradeBPrior(context?.nameLatin);
+
   if (typeof observedFrequencyPer10kOrRank === "number" && observedFrequencyPer10kOrRank > 0) {
     countPer10k = Math.max(0.1, observedFrequencyPer10kOrRank);
+  } else if (gradeBMatch) {
+    countPer10k = gradeBMatch.countPer10k;
+    grade = "B";
+    noteEn = `Grade B public corpus prior (${gradeBMatch.source}, cohort ${gradeBMatch.cohortEra}; upgrades to Grade A at >= 30 live parent responses).`;
+    noteTa = `தரம் B பொதுத் தரவு மதிப்பீடு (${gradeBMatch.cohortEra} மாணவர் தொகுப்பு; 30+ பெற்றோர் பதிவுகளில் தரம் A ஆக உயரும்).`;
   } else if (observedFrequencyPer10kOrRank === "rare") {
     countPer10k = 1.2;
   } else if (observedFrequencyPer10kOrRank === "moderate") {
@@ -142,16 +173,23 @@ export function calculateEmpiricalRarity(
   }
 
   const frequencyPercent = Number(((countPer10k / 10000) * 100).toFixed(4));
-  const k = priors.bandWidthFactor.gradeC.value;
+  const k =
+    grade === "B"
+      ? priors.bandWidthFactor.gradeB.value
+      : priors.bandWidthFactor.gradeC.value;
   const bandLowPct = Number((frequencyPercent / k).toFixed(4));
   const bandHighPct = Number(Math.min(100, frequencyPercent * k).toFixed(4));
+  const gradeLabelEn =
+    grade === "B" ? "Public corpus prior (Grade B)" : "Rough guide (Grade C)";
+  const gradeLabelTa =
+    grade === "B" ? "பொதுத் தரவு மதிப்பீடு (தரம் B)" : "தோராய வழிகாட்டி (தரம் C)";
   const band: FrequencyBand = {
     low: bandLowPct,
     point: frequencyPercent,
     high: bandHighPct,
-    grade: "C",
-    gradeLabelEn: "Rough guide (Grade C)",
-    gradeLabelTa: "தோராய வழிகாட்டி (தரம் C)",
+    grade,
+    gradeLabelEn,
+    gradeLabelTa,
   };
 
   const classSize = Math.max(2, context?.classSize ?? 40);
@@ -173,11 +211,11 @@ export function calculateEmpiricalRarity(
 
   const classroomDisplayEn =
     classroomRepetition < 0.7
-      ? `About 1 in ${lowClassrooms}–${highClassrooms} classrooms (${lowCollisionPct}–${highCollisionPct}% chance) · Rough guide (Grade C)`
-      : `~${Math.round(classroomRepetition)} same-gender peers per class (${lowCollisionPct}–${highCollisionPct}% chance) · Rough guide (Grade C)`;
+      ? `About 1 in ${lowClassrooms}–${highClassrooms} classrooms (${lowCollisionPct}–${highCollisionPct}% chance) · ${gradeLabelEn}`
+      : `~${Math.round(classroomRepetition)} same-gender peers per class (${lowCollisionPct}–${highCollisionPct}% chance) · ${gradeLabelEn}`;
   const classroomDisplayTa =
     classroomRepetition < 0.7
-      ? `சுமார் ${lowClassrooms}–${highClassrooms} வகுப்பறைகளில் 1 (${lowCollisionPct}–${highCollisionPct}% வாய்ப்பு) · தரம் C`
+      ? `சுமார் ${lowClassrooms}–${highClassrooms} வகுப்பறைகளில் 1 (${lowCollisionPct}–${highCollisionPct}% வாய்ப்பு) · தரம் ${grade}`
       : `வகுப்பில் ~${Math.round(classroomRepetition)} சக மாணவர்கள் (${lowCollisionPct}–${highCollisionPct}%) · தரம் C`;
 
   const v2Fields = {

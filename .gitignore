@@ -35,3 +35,7 @@ Thumbs.db
 !.vscode/extensions.json
 .idea/
 
+# Graphify local knowledge graph output
+graphify-out/
+
+

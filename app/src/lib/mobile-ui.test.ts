@@ -171,4 +171,19 @@ describe("Mobile View & Collapsible Menu Regression Suite (MOB-01..06)", () => {
     assert.match(layout, /href="\/contact"/);
     assert.match(dashboard, /Free Teaser · ₹499 Full/);
   });
+
+  it("B-16 Option 4 Hybrid: >= 100 Grade B Tamil cohort priors wired + ClassroomSurveyWidget mounted on /name/[slug]", async () => {
+    const { calculateEmpiricalRarity, getGradeBCorpusCount } = await import("./frequency-engine");
+    assert.ok(getGradeBCorpusCount() >= 100, `Expected >= 100 Grade B names, got ${getGradeBCorpusCount()}`);
+
+    const yazhini = calculateEmpiricalRarity("யாழினி", "moderate", { nameLatin: "Yazhini" });
+    assert.equal(yazhini.band.grade, "B");
+    assert.match(yazhini.classroomDisplayEn, /Grade B/);
+
+    const rareCustom = calculateEmpiricalRarity("தேன்மலர்", undefined, { nameLatin: "UnlistedSyntheticNameXYZ" });
+    assert.equal(rareCustom.band.grade, "C");
+
+    const namePage = readSrc("app/name/[slug]/page.tsx");
+    assert.match(namePage, /<ClassroomSurveyWidget/);
+  });
 });

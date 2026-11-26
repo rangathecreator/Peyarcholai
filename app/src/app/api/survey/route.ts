@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
+import { getGradeBPrior } from "@/lib/frequency-engine";
 
 const K_ANONYMITY_THRESHOLD = 5;
 
@@ -86,6 +87,9 @@ export async function GET(req: NextRequest) {
     "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
   };
 
+  const gradeBPrior = getGradeBPrior(nameSlug);
+  const fallbackGrade: "B" | "C" = gradeBPrior ? "B" : "C";
+
   // AC-20-06: Enforce k-anonymity >= 5 before exposing aggregate rate
   if (total < K_ANONYMITY_THRESHOLD) {
     return NextResponse.json(
@@ -93,7 +97,8 @@ export async function GET(req: NextRequest) {
         slug: nameSlug,
         kAnonymityMet: false,
         minimumRequired: K_ANONYMITY_THRESHOLD,
-        grade: "C",
+        grade: fallbackGrade,
+        gradeBSource: gradeBPrior?.source || null,
       },
       { headers: cacheHeaders }
     );
@@ -105,7 +110,8 @@ export async function GET(req: NextRequest) {
       kAnonymityMet: true,
       sampleSize: total,
       collisionRatePercent: Number(((matches / total) * 100).toFixed(1)),
-      grade: total >= 30 ? "A" : "C",
+      grade: total >= 30 ? "A" : fallbackGrade,
+      gradeBSource: gradeBPrior?.source || null,
     },
     { headers: cacheHeaders }
   );
