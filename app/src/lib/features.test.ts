@@ -207,6 +207,20 @@ describe('Pronunciation & Syllable Breakdown Guide (Task 33)', () => {
     assert.deepEqual(guide.tamilSyllables, ['யா', 'ழி', 'னி']);
     assert.equal(guide.formattedTamil, 'யா · ழி · னி');
     assert.equal(guide.formattedRoman, 'Ya-zhi-ni');
+    assert.equal(guide.ipa, '/jaː.ɻi.ni/');
+    assert.ok(guide.specialSoundTips.some((t) => t.includes('ழ')));
+  });
+
+  it('handles Aruvi and Iniya cleanly (y treated as consonant, accurate IPA)', () => {
+    const aruvi = buildPronunciationGuide('அருவி', 'Aruvi');
+    assert.deepEqual(aruvi.tamilSyllables, ['அ', 'ரு', 'வி']);
+    assert.equal(aruvi.formattedRoman, 'A-ru-vi');
+    assert.equal(aruvi.ipa, '/a.ɾu.ʋi/');
+
+    const iniya = buildPronunciationGuide('இனியா', 'Iniya');
+    assert.deepEqual(iniya.tamilSyllables, ['இ', 'னி', 'யா']);
+    assert.equal(iniya.formattedRoman, 'I-ni-ya');
+    assert.equal(iniya.ipa, '/i.ni.jaː/');
   });
 
   it('keeps Tamil mei codas attached and preserves Roman digraphs for compound names like Rameshabhishek', () => {
